@@ -140,7 +140,7 @@ sono in [docs/testing.md](docs/testing.md) (in inglese).
   (in inglese).
 - **Traduzioni**: StarLight è disponibile in italiano e in inglese. Aggiungere una lingua non richiede di programmare:
   la guida è in [docs/translating.md](docs/translating.md) (in inglese). Le offerte di aiuto per altre lingue sono
-  benvenute tramite il modulo di contatto indicato più sotto.
+  benvenute nella sezione Issues.
 
 ## Licenza
 
@@ -159,5 +159,5 @@ StarLight è gratuito e lo resterà. Chi desidera sostenerne lo sviluppo può da
 
 ## Contatti
 
-StarLight è sviluppato da FM Digital Tools. Domande e suggerimenti si possono inviare con il
-[modulo di contatto](https://fmdigitaltools.com/#contatti) del sito.
+StarLight è sviluppato da FM Digital Tools. Domande, suggerimenti e segnalazioni sono benvenuti nella sezione
+[Issues](../../issues). Altre informazioni su StarLight su [fmdigitaltools.com](https://fmdigitaltools.com/).

@@ -137,8 +137,7 @@ are in [docs/testing.md](docs/testing.md).
   [docs/plugin.md](docs/plugin.md).
 - **Catalogs**: object catalogs with openly licensed data. The guide is in [docs/catalogs.md](docs/catalogs.md).
 - **Translations**: StarLight is available in Italian and English. Adding a language takes no programming: the guide
-  is in [docs/translating.md](docs/translating.md). Offers of help with other languages are welcome through the contact
-  form given below.
+  is in [docs/translating.md](docs/translating.md). Offers of help with other languages are welcome in the Issues section.
 
 ## License
 
@@ -158,5 +157,5 @@ StarLight is free and will remain so. Anyone who wishes to support its developme
 
 ## Contact
 
-StarLight is developed by FM Digital Tools. Questions and suggestions can be sent through the
-[contact form](https://fmdigitaltools.com/en/#contact) on the website.
+StarLight is developed by FM Digital Tools. Questions, suggestions and bug reports are welcome in the
+[Issues](../../issues) section. More about StarLight on [fmdigitaltools.com](https://fmdigitaltools.com/en/).
