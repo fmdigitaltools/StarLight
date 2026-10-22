@@ -1,0 +1,35 @@
+{
+  "import": {
+    "files": "Import frames",
+    "filesTitle": "Open one or more files: FITS, XISF, TIFF, PNG or camera RAW",
+    "folder": "Folder",
+    "folderTitle": "Import all the FITS, XISF and RAW files in a folder",
+    "telescope": "Telescope",
+    "telescopeTitleUnset": "Import frames from the telescope folder: set it first in Settings, Telescope tab",
+    "telescopeTitle": "Choose the frames to import from the telescope folder ({folder})"
+  },
+  "reset": {
+    "label": "Reset",
+    "title": "Return the image to how it was when opened, undoing the adjustments (R key)"
+  },
+  "rotateCounterclockwise": "Rotate the image 90° counterclockwise. The rotation also applies to the export; to remove it, use Undo.",
+  "rotateClockwise": "Rotate the image 90° clockwise. The rotation also applies to the export; to remove it, use Undo.",
+  "mirrorHorizontal": "Mirror the image left to right, losslessly. The mirroring also applies to the export; to remove it, use Undo.",
+  "mirrorVertical": "Mirror the image top to bottom, losslessly. The mirroring also applies to the export; to remove it, use Undo.",
+  "straighten": "Straighten: rotate the image by any angle, draw a line to straighten or bring north to the top",
+  "zoomIn": "Zoom in ({key} key)",
+  "zoomOut": "Zoom out ({key} key)",
+  "fit": {
+    "label": "Fit",
+    "title": "Fit the image to the window (0 key)"
+  },
+  "crop": {
+    "label": "Crop",
+    "hideTitle": "Hide the crop box in the viewer; the export still uses it ({key} key)",
+    "showTitle": "Show the export crop in the viewer: drag the box to move it, pull the corners and sides to resize it ({key} key)"
+  },
+  "magicWand": {
+    "label": "Abracadabra",
+    "title": "Prepare the image automatically by measuring it and correcting sky background, color, noise, detail, stars and tones. The chosen values remain editable in the Process and Correct steps, and the Reset button returns the image to the original."
+  }
+}

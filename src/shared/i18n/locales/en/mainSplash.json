@@ -1,0 +1,133 @@
+{
+  "version": "Version {version} · {codename}",
+  "starting": "Starting…",
+  "label": "StarLight is starting",
+  "phases": {
+    "loading": "Loading the interface…",
+    "tools": "Preparing the tools…",
+    "firstPaint": "Drawing the interface…",
+    "ready": "Ready"
+  },
+  "phrases": {
+    "dante1": {
+      "text": "And thence we came forth to see again the stars.",
+      "author": "Dante Alighieri"
+    },
+    "dante2": {
+      "text": "The Love which moves the sun and the other stars.",
+      "author": "Dante Alighieri"
+    },
+    "leopardi1": {
+      "text": "What are you doing, moon, up in the sky? Tell me, what are you doing, silent moon?",
+      "author": "Giacomo Leopardi"
+    },
+    "leopardi2": {
+      "text": "Lovely stars of the Bear, I did not think I would return again, as I used to, to gaze upon you…",
+      "author": "Giacomo Leopardi"
+    },
+    "pascoli": {
+      "text": "Saint Lawrence, I know why so many stars burn and fall through the tranquil air…",
+      "author": "Giovanni Pascoli"
+    },
+    "ungaretti": {
+      "text": "I illumine myself with immensity.",
+      "author": "Giuseppe Ungaretti"
+    },
+    "galileo1": {
+      "text": "Philosophy is written in this grand book… (I mean the universe).",
+      "author": "Galileo Galilei"
+    },
+    "galileo2": {
+      "text": "The Galaxy is nothing else but a mass of innumerable stars planted together in clusters.",
+      "author": "Galileo Galilei"
+    },
+    "hack": {
+      "text": "We are the result of stellar evolution; we are made of the matter of the stars.",
+      "author": "Margherita Hack"
+    },
+    "copernicus": {
+      "text": "In the middle of all sits the Sun. Who, in this most beautiful temple, would place this lamp in a better place?",
+      "author": "Nicolaus Copernicus"
+    },
+    "kepler": {
+      "text": "I measured the skies, now the shadows I measure. Skybound was the mind, earthbound the body rests.",
+      "author": "Johannes Kepler"
+    },
+    "ptolemy": {
+      "text": "I know that I am mortal and ephemeral, but when I search out the spirals of the stars my feet no longer touch the earth.",
+      "author": "Ptolemy"
+    },
+    "ovid": {
+      "text": "He gave to man an uplifted face and bade him contemplate the heavens and raise his gaze straight to the stars.",
+      "author": "Ovid"
+    },
+    "kant": {
+      "text": "The starry heavens above me and the moral law within me.",
+      "author": "Immanuel Kant"
+    },
+    "pascal": {
+      "text": "The eternal silence of these infinite spaces frightens me.",
+      "author": "Blaise Pascal"
+    },
+    "hugo": {
+      "text": "There is one spectacle grander than the sea: the sky; there is one spectacle grander than the sky: the interior of the soul.",
+      "author": "Victor Hugo"
+    },
+    "wilde": {
+      "text": "We are all in the gutter, but some of us are looking at the stars.",
+      "author": "Oscar Wilde"
+    },
+    "vanGogh1": {
+      "text": "I know nothing with any certainty, but the sight of the stars always makes me dream.",
+      "author": "Vincent van Gogh"
+    },
+    "vanGogh2": {
+      "text": "I have a terrible need of — shall I say the word? — religion. Then I go out at night to paint the stars.",
+      "author": "Vincent van Gogh"
+    },
+    "saintExupery1": {
+      "text": "I wonder whether the stars are lit up so that one day each of us may find our own again.",
+      "author": "Antoine de Saint-Exupéry"
+    },
+    "saintExupery2": {
+      "text": "If you love a flower that lives on a star, it is sweet to look at the sky at night. All the stars are a-bloom with flowers.",
+      "author": "Antoine de Saint-Exupéry"
+    },
+    "einstein1": {
+      "text": "The most beautiful thing we can experience is the mysterious.",
+      "author": "Albert Einstein"
+    },
+    "einstein2": {
+      "text": "The eternally incomprehensible thing about the world is its comprehensibility.",
+      "author": "Albert Einstein"
+    },
+    "hubble": {
+      "text": "Equipped with his five senses, man explores the universe around him and calls the adventure Science.",
+      "author": "Edwin Hubble"
+    },
+    "feynman": {
+      "text": "I, too, can see the stars on a desert night, and feel them. But do I see less or more?",
+      "author": "Richard Feynman"
+    },
+    "sagan1": {
+      "text": "We are made of star-stuff. We are a way for the cosmos to know itself.",
+      "author": "Carl Sagan"
+    },
+    "sagan2": {
+      "text": "The Earth is a very small stage in a vast cosmic arena.",
+      "author": "Carl Sagan"
+    },
+    "rubin": {
+      "text": "Still other mysteries of the universe remain hidden. Their discovery awaits the adventurous scientists of the future.",
+      "author": "Vera Rubin"
+    },
+    "hawking": {
+      "text": "Remember to look up at the stars and not down at your feet.",
+      "author": "Stephen Hawking"
+    },
+    "tyson": {
+      "text": "The universe is under no obligation to make sense to you.",
+      "author": "Neil deGrasse Tyson"
+    }
+  }
+}

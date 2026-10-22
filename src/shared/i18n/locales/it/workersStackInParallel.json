@@ -1,0 +1,7 @@
+{
+  "noFrames": "Nessun frame da impilare.",
+  "stackingFailed": "Impilamento non riuscito.",
+  "drizzleFailed": "Drizzle non riuscito.",
+  "insufficientMemory": "Memoria insufficiente per il drizzle: servono circa {needed} e ne sono liberi {free}. I frame sono stati impilati senza drizzle.",
+  "insufficientMemoryBayer": "Memoria insufficiente per il Bayer drizzle: servono circa {needed} e ne sono liberi {free}. I frame sono stati impilati senza drizzle."
+}

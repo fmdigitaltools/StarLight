@@ -1,0 +1,10 @@
+{
+  "title": "Recover your work?",
+  "message": "StarLight did not close properly. Automatically saved work is available{when} ({source}).",
+  "sourceProject": "project “{name}”",
+  "sourceUnsaved": "work not yet saved to a project",
+  "explainProject": "If you recover it, the project opens with the unsaved changes, and you decide whether to save them over the project. If you discard it, the copy is deleted.",
+  "explainUnsaved": "If you recover it, it opens as untitled work that you can save to a project. If you discard it, the copy is deleted.",
+  "discard": "Discard",
+  "recover": "Recover"
+}

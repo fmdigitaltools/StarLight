@@ -1,0 +1,61 @@
+{
+  "title": "Plugin gallery",
+  "subtitle": "Free, open source additional tools. Each plugin runs separately from the rest of the program, with no access to your computer’s files or to the internet.",
+  "close": "Close",
+  "done": "Done",
+  "loading": "Loading the gallery…",
+  "noActive": "No active plugins. To load one into StarLight, click Enable on its card in the All section.",
+  "noResults": "No plugins match your search.",
+  "searchPlaceholder": "Search by name, author or description",
+  "searchCatalogsPlaceholder": "Search by name, abbreviation, author or object type",
+  "searchLabel": "Search plugins",
+  "filter": {
+    "all": "All",
+    "catalogs": "Deep-sky catalogs",
+    "active": "Active"
+  },
+  "pluginsSection": "Plugins",
+  "fromFile": {
+    "catalogQuestion": "No connection? Install a catalog locally:",
+    "catalogArchiveHint": "Installs a catalog from a .zip archive containing catalog.json and objects.tsv",
+    "archive": "From a ZIP archive…",
+    "pluginQuestion": "Install a plugin locally:",
+    "folder": "From a folder…",
+    "folderHint": "Installs a plugin from a folder containing plugin.json and plugin.js",
+    "pluginArchiveHint": "Installs a plugin from a .zip archive"
+  },
+  "card": {
+    "authorVersion": "{author} · version {version}",
+    "licenseHint": "Open source license of the plugin",
+    "inUseHint": "Turned on in the Process step",
+    "loadedHint": "Loaded with StarLight, available in the Process step",
+    "active": "active",
+    "activeInUse": "active, in use",
+    "installed": "installed",
+    "installedInUse": "installed, in use",
+    "disabled": "disabled",
+    "disabledHint": "Installed from a file but disabled: it is not loaded until you enable it again",
+    "fromFile": "from file",
+    "fromFileHint": "Installed from a file, not in the gallery",
+    "inProgress": "Working…",
+    "use": "Use",
+    "useHint": "Turns on the plugin in the Process step and opens that step",
+    "disable": "Disable",
+    "disableHint": "The plugin is no longer loaded with StarLight until you enable it again",
+    "disableNotLoadedHint": "The plugin is no longer looked for at startup until you enable it again",
+    "uninstall": "Uninstall",
+    "uninstallHint": "Uninstalls the plugin and deletes its folder",
+    "reenable": "Enable again",
+    "reenableHint": "The plugin is loaded with StarLight again",
+    "enable": "Enable",
+    "enableHint": "The plugin is loaded with StarLight, including the next times you open it, until you disable it"
+  },
+  "preview": {
+    "unavailable": "preview not available",
+    "hint": "Move the pointer over the preview to move the comparison line between the image before and after the plugin",
+    "beforeAlt": "{name}, before",
+    "afterAlt": "{name}, after",
+    "before": "before",
+    "after": "after"
+  }
+}

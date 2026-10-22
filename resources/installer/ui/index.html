@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title data-title="installTitle">StarLight</title>
+<!--
+  StarLight installer window, shown by Neutralinojs.
+  The look is in style.css, the texts in texts.js (one table per language),
+  the logic (real folders, measured progress, preferences) in program.js.
+-->
+<link rel="stylesheet" href="style.css">
+<script src="neutralino.js"></script>
+<script src="texts.js"></script>
+</head>
+<body>
+<div class="window" role="dialog" aria-labelledby="step-title">
+  <aside class="brand" id="brand">
+    <canvas class="star-field" id="stars" aria-hidden="true"></canvas>
+    <div class="logo-box">
+      <span class="halo" aria-hidden="true"></span>
+      <img class="logo" src="logo.svg" alt="" data-alt="logoAlt">
+      <span class="sparkle s1" aria-hidden="true"></span>
+      <span class="sparkle s2" aria-hidden="true"></span>
+      <span class="sparkle s3" aria-hidden="true"></span>
+    </div>
+    <h1 class="name">StarLight</h1>
+    <p class="slogan" data-text="slogan"></p>
+    <span class="version" id="version"></span>
+  </aside>
+
+  <section class="steps">
+    <ol class="step-progress" id="indicator">
+      <li data-text="stepIntro"></li>
+      <li data-text="stepFolders"></li>
+      <li data-text="stepInstall"></li>
+      <li data-text="stepDone"></li>
+    </ol>
+
+    <div class="content">
+      <!-- Step 1 -->
+      <div data-step="0">
+        <h2 id="step-title" data-text="installTitle"></h2>
+        <p class="intro" data-text="intro"></p>
+        <p id="space-intro"></p>
+        <div class="license">
+          <p class="license-own" data-text="licenseOwn"></p>
+          <p class="license-title" data-text="licenseTitle"></p>
+          <ul class="license-lines">
+            <li>Electron — MIT</li>
+            <li data-text="licenseChromium"></li>
+            <li>Node.js — MIT</li>
+            <li>React — MIT</li>
+            <li>React DOM — MIT</li>
+            <li>Zustand — MIT</li>
+            <li>electron-updater — MIT</li>
+            <li data-text="licenseUpdaterLibs"></li>
+            <li data-text="licenseOpenNgc"></li>
+            <li data-text="licenseGaia"></li>
+            <li>Neutralinojs — MIT</li>
+          </ul>
+          <button type="button" class="link" id="read-license" data-text="readLicense"></button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div data-step="1" hidden>
+        <h2 data-text="foldersTitle"></h2>
+        <div class="folder">
+          <span class="folder-label" data-text="programFolder"></span>
+          <div class="folder-row">
+            <span class="path" id="program-path"></span>
+            <button class="change" type="button" id="change-program" data-text="browse"></button>
+          </div>
+          <span class="folder-note" id="space-note"></span>
+        </div>
+        <div class="folder">
+          <span class="folder-label" data-text="workFolder"></span>
+          <div class="folder-row">
+            <span class="path" id="work-path"></span>
+            <button class="change" type="button" id="change-work" data-text="browse"></button>
+          </div>
+          <span class="folder-note" data-text="workFolderNote"></span>
+          <div class="tree" id="tree"></div>
+        </div>
+        <div class="checkboxes">
+          <label class="checkbox"><input type="checkbox" id="c-desktop" checked> <span data-text="desktopShortcut"></span></label>
+          <label class="checkbox"><input type="checkbox" id="c-start" checked> <span data-text="startShortcut"></span></label>
+          <label class="checkbox"><input type="checkbox" id="c-file" checked> <span data-text="fileTypes"></span></label>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div data-step="2" hidden>
+        <h2 data-text="installing"></h2>
+        <p data-text="installingText"></p>
+        <div class="bar" aria-hidden="true">
+          <div class="bar-fill" id="fill"></div>
+          <span class="bar-head" id="head" style="left:0%"></span>
+        </div>
+        <div class="bar-info">
+          <span id="phase" data-text="preparing"></span>
+          <span class="percent" id="percent" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</span>
+        </div>
+        <div class="log" id="log" aria-live="polite"></div>
+      </div>
+
+      <!-- Step 4 -->
+      <div data-step="3" hidden>
+        <h2 data-text="installed"></h2>
+        <p data-text="summaryIntro"></p>
+        <ul class="summary-list" id="summary"></ul>
+        <p data-text="firstRun" id="first-run"></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button class="button ghost" type="button" id="cancel"></button>
+      <span class="spacer"></span>
+      <button class="button" type="button" id="back" data-text="back"></button>
+      <button class="button primary" type="button" id="next"><span></span></button>
+    </div>
+
+    <!-- License text, above the steps column. -->
+    <div class="license-panel" id="license-panel" hidden>
+      <pre id="license-text"></pre>
+      <div class="footer">
+        <span class="spacer"></span>
+        <button class="button" type="button" id="close-license" data-text="close"></button>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="stars.js"></script>
+<script src="program.js"></script>
+</body>
+</html>

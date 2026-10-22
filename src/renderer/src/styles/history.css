@@ -1,0 +1,122 @@
+/* Undo, Redo and edit history, in the second row of the bar. */
+
+.sl-history {
+  position: relative;
+}
+
+.sl-btn-icon {
+  width: 32px;
+  padding: 0;
+}
+
+.sl-history-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: var(--sl-s-3);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  max-height: min(480px, 70vh);
+  padding: var(--sl-s-2);
+  background: var(--sl-bg-2);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-md);
+  box-shadow: var(--sl-shadow-2), var(--sl-glow-soft);
+  animation: sl-fade var(--sl-t-fast) ease-out;
+}
+
+.sl-history-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--sl-s-1) var(--sl-s-2) var(--sl-s-2);
+  font-size: var(--sl-fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sl-text-2);
+}
+
+.sl-history-count {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--sl-text-3);
+}
+
+.sl-history-list {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.sl-history-step {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--sl-s-2);
+  width: 100%;
+  padding: 6px var(--sl-s-2);
+  font: inherit;
+  font-size: var(--sl-fs-md);
+  color: var(--sl-text);
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--sl-r-sm);
+  cursor: pointer;
+  transition: background var(--sl-t-fast), border-color var(--sl-t-fast);
+}
+
+.sl-history-step:hover:not(:disabled),
+.sl-history-step:focus-visible {
+  background: var(--sl-bg-4);
+  outline: none;
+}
+
+.sl-history-step:disabled {
+  cursor: default;
+}
+
+.sl-history-step--current {
+  background: var(--sl-bg-3);
+  border-color: var(--sl-cyan);
+}
+
+.sl-history-step--future {
+  color: var(--sl-text-3);
+}
+
+.sl-history-number {
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sl-history-step--current .sl-history-number {
+  color: var(--sl-cyan);
+}
+
+.sl-history-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sl-history-time {
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.sl-history-note {
+  margin: var(--sl-s-2) var(--sl-s-2) var(--sl-s-1);
+  font-size: var(--sl-fs-xs);
+  line-height: 1.45;
+  color: var(--sl-text-3);
+}

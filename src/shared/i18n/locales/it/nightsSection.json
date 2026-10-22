@@ -1,0 +1,32 @@
+{
+  "title": "Notti di ripresa",
+  "description": "I frame vengono da più notti, riconosciute dalla data di ripresa (o dalla cartella, se la data manca). La qualità minima confronta ogni frame solo con quelli della sua notte. Prima della somma ogni notte viene portata allo stesso fondo cielo e alla stessa luminosità delle stelle della notte di riferimento, e pesa in base al rumore del fondo e alla nitidezza delle stelle; la notte migliore vale 1. Il peso viene calcolato durante l’impilamento e puoi cambiarlo a mano per ogni notte.",
+  "nightLabelOne": "{night}, {count} frame",
+  "nightLabelOther": "{night}, {count} frame",
+  "toggleHintActive": "Disattiva per lasciare fuori dall’impilamento tutti i frame di questa notte",
+  "toggleHintExcluded": "Notte esclusa dall’impilamento. Attiva per includere di nuovo i suoi frame",
+  "hfr": {
+    "name": "Stelle (HFR mediano)",
+    "value": "{value} px",
+    "hint": "Raggio che contiene metà della luce delle stelle. Più è basso, più le stelle sono nitide"
+  },
+  "noise": {
+    "name": "Rumore del fondo",
+    "lowest": "il più basso",
+    "timesLowest": "{value} volte il più basso",
+    "hint": "Misurato su un campione di pixel del fondo cielo, dopo aver portato la notte alla luminosità della notte di riferimento"
+  },
+  "weight": {
+    "label": "Peso",
+    "excluded": "0 (esclusa)",
+    "manual": "{weight}, a mano",
+    "automaticValue": "{weight}, automatico",
+    "automatic": "automatico",
+    "hint": "Quanto contano i frame di questa notte nella somma, rispetto a quelli della notte migliore. Il valore automatico è calcolato da StarLight durante l’impilamento. Con 0 la notte viene esclusa.",
+    "resetToAutomatic": "Torna al peso automatico"
+  },
+  "summary": {
+    "name": "Notti",
+    "value": "{count} notti, pesi {weights}"
+  }
+}

@@ -1,0 +1,286 @@
+/* ---- Dialog windows ---- */
+
+.sl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 5, 10, 0.72);
+  backdrop-filter: blur(6px);
+  animation: sl-fade var(--sl-t-med) ease-out;
+}
+
+@keyframes sl-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sl-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(880px, 92vw);
+  max-height: 86vh;
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-xl);
+  box-shadow: var(--sl-shadow-3), 0 0 80px rgba(34, 232, 255, 0.07);
+  overflow: hidden;
+}
+
+.sl-dialog-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-3);
+  padding: var(--sl-s-4) var(--sl-s-5);
+  border-bottom: 1px solid var(--sl-line);
+  background: linear-gradient(180deg, rgba(34, 232, 255, 0.05), transparent);
+}
+
+.sl-dialog-title {
+  font-size: var(--sl-fs-xl);
+  color: var(--sl-text);
+}
+
+.sl-dialog-subtitle {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+}
+
+.sl-dialog-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sl-s-5);
+}
+
+.sl-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sl-s-3);
+  padding: var(--sl-s-3) var(--sl-s-5);
+  border-top: 1px solid var(--sl-line);
+  background: var(--sl-bg-2);
+}
+
+/* ---- Onboarding overlay ---- */
+
+.sl-tour-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: auto;
+  background: rgba(3, 5, 10, 0.76);
+  transition: opacity var(--sl-t-med);
+}
+
+/*
+ * When an element is highlighted, the dimming is produced by the glow of the spotlight: the veil
+ * becomes transparent so as not to double it.
+ */
+.sl-tour-veil.sl-with-spotlight {
+  background: transparent;
+}
+
+/* The luminous frame that highlights the element being explained. */
+.sl-tour-spotlight {
+  position: fixed;
+  z-index: 91;
+  border-radius: var(--sl-r-md);
+  border: 2px solid var(--sl-cyan);
+  box-shadow:
+    0 0 0 9999px rgba(3, 5, 10, 0.76),
+    0 0 26px rgba(34, 232, 255, 0.55),
+    inset 0 0 26px rgba(34, 232, 255, 0.18);
+  pointer-events: none;
+  transition: all var(--sl-t-med);
+}
+
+.sl-tour-bubble {
+  position: fixed;
+  z-index: 92;
+  width: 406px;
+  padding: var(--sl-s-4);
+  background: var(--sl-bg-2);
+  border: 1px solid rgba(34, 232, 255, 0.45);
+  border-radius: var(--sl-r-lg);
+  box-shadow: var(--sl-shadow-3), 0 0 40px rgba(34, 232, 255, 0.14);
+  transition: all var(--sl-t-med);
+}
+
+.sl-tour-step {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sl-cyan);
+  margin-bottom: 6px;
+}
+
+.sl-tour-title {
+  font-size: var(--sl-fs-lg);
+  margin-bottom: 6px;
+  color: var(--sl-text);
+}
+
+.sl-tour-text {
+  font-size: var(--sl-fs-md);
+  line-height: 1.6;
+  color: var(--sl-text-2);
+  margin-bottom: var(--sl-s-4);
+}
+
+/*
+ * The controls row contains the progress dots and three buttons. The buttons do not wrap their text
+ * and therefore cannot shrink: if space is insufficient, the dots must give way, and only as a last
+ * resort does the row wrap. Without this rule the Next button would stick out of the frame edge.
+ */
+.sl-tour-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: var(--sl-s-2);
+  gap: 6px;
+}
+
+.sl-tour-actions > .sl-btn {
+  flex-shrink: 0;
+}
+
+.sl-tour-dots {
+  display: flex;
+  gap: 4px;
+  margin-right: auto;
+  /* They shrink when there are many steps. */
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sl-tour-dot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sl-bg-4);
+  transition: all var(--sl-t-fast);
+}
+
+.sl-tour-dot.sl-active {
+  background: var(--sl-cyan);
+  box-shadow: 0 0 8px rgba(34, 232, 255, 0.8);
+  transform: scale(1.3);
+}
+
+/* ---- Help center ---- */
+
+.sl-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: var(--sl-s-3);
+}
+
+.sl-guide-entry {
+  padding: var(--sl-s-4);
+  background: var(--sl-bg-2);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+  transition: all var(--sl-t-fast);
+}
+
+.sl-guide-entry:hover {
+  border-color: rgba(34, 232, 255, 0.4);
+  box-shadow: var(--sl-glow-soft);
+  transform: translateY(-2px);
+}
+
+.sl-guide-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: var(--sl-s-3);
+  border-radius: var(--sl-r-sm);
+  background: var(--sl-bg-3);
+  border: 1px solid var(--sl-line-strong);
+}
+
+.sl-guide-entry-title {
+  font-size: var(--sl-fs-md);
+  font-weight: 650;
+  margin-bottom: 5px;
+  color: var(--sl-text);
+}
+
+.sl-guide-entry-text {
+  font-size: var(--sl-fs-sm);
+  line-height: 1.55;
+  color: var(--sl-text-2);
+}
+
+.sl-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sl-s-2);
+  margin-top: var(--sl-s-3);
+}
+
+.sl-key {
+  font-family: var(--sl-font-mono);
+  font-size: 10.5px;
+  padding: 2px 7px;
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  color: var(--sl-text-2);
+}
+
+.sl-guide-section-title {
+  font-size: var(--sl-fs-sm);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sl-cyan);
+  margin: var(--sl-s-5) 0 var(--sl-s-3);
+}
+
+.sl-guide-section-title:first-child {
+  margin-top: 0;
+}
+
+.sl-dialog-narrow {
+  width: min(560px, 92vw);
+}
+
+/*
+ * Workflow button highlighted by the guide: icon and label light up in cyan together with the
+ * frame.
+ */
+.sl-step.sl-tour-active,
+.sl-step.sl-tour-active .sl-step-text,
+.sl-step.sl-tour-active .sl-step-number {
+  color: var(--sl-cyan);
+}
+
+.sl-step.sl-tour-active svg {
+  color: var(--sl-cyan);
+  filter: drop-shadow(0 0 5px rgba(34, 232, 255, 0.7));
+}
+
+.sl-step.sl-tour-active .sl-step-text {
+  text-shadow: 0 0 8px rgba(34, 232, 255, 0.6);
+}
+
+/* Text of the quick guide boxes justified, last line on the left, as in the legal sections. */
+.sl-tour-text {
+  text-align: justify;
+  text-align-last: left;
+}

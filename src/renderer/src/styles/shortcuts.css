@@ -1,0 +1,124 @@
+/* ---- Keyboard shortcuts window and before/after comparison ---- */
+
+.sl-shortcuts {
+  width: min(860px, 92vw);
+  height: 86vh;
+}
+
+.sl-shortcuts-search {
+  display: flex;
+  padding: var(--sl-s-3) var(--sl-s-5);
+  border-bottom: 1px solid var(--sl-line);
+}
+
+.sl-shortcuts-empty {
+  color: var(--sl-text-3);
+}
+
+/* Two columns of groups when there is room, a single one in narrow windows. */
+.sl-shortcuts-groups {
+  columns: 2 360px;
+  column-gap: var(--sl-s-6);
+}
+
+.sl-shortcuts-group {
+  break-inside: avoid;
+  margin-bottom: var(--sl-s-5);
+}
+
+.sl-shortcuts-group .sl-guide-section-title {
+  margin-top: 0;
+}
+
+.sl-shortcuts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sl-shortcut {
+  display: grid;
+  /* Fixed keys column: the descriptions stay aligned. */
+  grid-template-columns: 172px 1fr;
+  gap: var(--sl-s-3);
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--sl-line);
+}
+
+.sl-shortcut:last-child {
+  border-bottom: none;
+}
+
+.sl-shortcut-keys {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.sl-shortcut-combo {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.sl-shortcut-plus,
+.sl-shortcut-or {
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+}
+
+.sl-shortcut-or {
+  padding: 0 2px;
+}
+
+/* The key in the guide, a little larger and with the relief of a real key. */
+.sl-key-large {
+  display: inline-block;
+  min-width: 22px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--sl-text);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.sl-shortcut-action {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+  line-height: 1.45;
+}
+
+/* Label on the viewer during the before/after comparison. */
+.sl-viewer-compare {
+  position: absolute;
+  top: var(--sl-s-3);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  padding: 4px 12px;
+  font-size: var(--sl-fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--sl-text);
+  background: rgba(5, 8, 15, 0.78);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/*
+ * In the help center the groups sit under the Keyboard shortcuts title: quieter headings, so they
+ * do not look like new sections.
+ */
+.sl-guide-shortcuts-intro {
+  margin-bottom: var(--sl-s-4);
+}
+
+.sl-shortcuts-in-guide .sl-guide-section-title {
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-xs);
+  margin-bottom: var(--sl-s-2);
+}

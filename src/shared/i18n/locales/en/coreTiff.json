@@ -1,0 +1,18 @@
+{
+  "bigTiff": "BigTIFF (TIFF over 4 GB) is not supported: save the image as a regular TIFF or as FITS.",
+  "notValid": "The file is not a valid TIFF.",
+  "invalidSize": "The TIFF declares invalid dimensions.",
+  "mixedDepths": "TIFF with channels of different bit depths: not supported.",
+  "unsupportedDepth": "{bit}-bit TIFF: 8, 16 and 32-bit integer and 32 and 64-bit floating-point files are supported.",
+  "unsupportedFloatDepth": "{bit}-bit floating-point TIFF: 8, 16 and 32-bit integer and 32 and 64-bit floating-point files are supported.",
+  "paletteDepth": "Palette-based TIFF with an unsupported bit depth.",
+  "colorSpace": "TIFF with an unsupported color space (photometric interpretation {photometry}, for example CMYK or YCbCr).",
+  "compressionNamed": "TIFF compressed with {method}: uncompressed TIFF files and files compressed with LZW, Deflate (ZIP) and PackBits are supported.",
+  "compressionUnknown": "TIFF compressed with an unknown method ({code}): uncompressed TIFF files and files compressed with LZW, Deflate (ZIP) and PackBits are supported.",
+  "invalidLzw": "Invalid LZW data.",
+  "noPixelLocation": "The TIFF does not say where the pixels are.",
+  "rgbFewChannels": "RGB TIFF with fewer than three channels.",
+  "incomplete": "The TIFF is incomplete: some pixel blocks are missing.",
+  "truncated": "The TIFF is truncated: some data is missing.",
+  "missingColorMap": "Palette-based TIFF without a color map."
+}

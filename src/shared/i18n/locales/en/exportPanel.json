@@ -1,0 +1,149 @@
+{
+  "upscaling": {
+    "edgeDirected": {
+      "label": "Edge-directed",
+      "hint": "Detects the direction of edges and interpolates along them: star profiles and nebula outlines stay smooth, with no stair-stepping or halos. It does not add detail that is not there.",
+      "over2x": "You are upscaling more than 2×. The Edge-directed method avoids stair-stepping and halos, but the extra detail does not exist in the source data."
+    },
+    "lanczos": {
+      "label": "Lanczos",
+      "hint": "Classic filter, sharp and faithful, but on diagonal edges it can leave small steps and dark halos around bright stars.",
+      "over2x": "You are upscaling more than 2×. The Lanczos filter keeps star profiles sharp, but the extra detail does not exist in the source data."
+    }
+  },
+  "waitForJob": "Wait for the current operation to finish, then export.",
+  "exported": "Image exported, {size}.",
+  "exportFailed": "Export failed. {error}",
+  "noImage": {
+    "title": "Export",
+    "text": "Open an image to export it."
+  },
+  "format": {
+    "title": "Format",
+    "description": "PNG, TIFF and BMP save without quality loss, and TIFF at sixteen bits per channel. JPEG and WebP produce lightweight files for sharing. FITS keeps sixteen bits and the capture data.",
+    "lossy": "Lossy compression",
+    "lossless": "Lossless, {bits} bits per channel",
+    "bits": "{bits}-bit",
+    "quality": {
+      "label": "Quality",
+      "hint": "Above ninety percent the loss is hard to notice."
+    },
+    "keepMetadata": {
+      "label": "Keep capture data",
+      "hint": "Copies the header of the source file, with the capture data, into the new file."
+    },
+    "markers": {
+      "label": "Include object markers",
+      "hint": "Draws the circles and names of the recognized objects on the image, as in the viewer."
+    },
+    "coordinates": {
+      "label": "Include coordinates",
+      "hint": "Draws the coordinate grid, orientation and scale bar turned on in the Objects step on the image, as in the viewer."
+    }
+  },
+  "framing": {
+    "title": "Framing",
+    "full": {
+      "title": "Go back to using the whole image",
+      "label": "Full"
+    },
+    "description": "Drag the box to choose the area to export. The dark part is left out. With the Crop button at the top, you can also edit it in the viewer.",
+    "size": {
+      "label": "Box size",
+      "hint": "Shrinking the box enlarges the subject but uses fewer pixels from the original."
+    },
+    "selection": {
+      "name": "Selected area",
+      "hint": "Pixels actually available in the cropped area"
+    }
+  },
+  "presets": {
+    "title": "Presets",
+    "free": "Custom",
+    "description": "Sizes recommended by the platforms, at which the image is shown without automatic cropping.",
+    "groups": {
+      "social": "Social",
+      "screens": "Screens",
+      "print": "Print"
+    },
+    "count": "{count} presets"
+  },
+  "resolution": {
+    "title": "Resolution",
+    "presetNote": "The size is set by the selected preset. Press Custom to choose it yourself.",
+    "finalFile": "Final file",
+    "upscaling": {
+      "name": "Upscaling",
+      "value": "{value}×",
+      "hint": "Relative to the pixels actually available in the selected area"
+    }
+  },
+  "caption": {
+    "title": "Caption",
+    "description": "A small caption with the capture data and the StarLight logo, inside the photo. If you don’t want to cover even a corner of the image, turn it off with one click.",
+    "add": {
+      "label": "Add caption",
+      "hint": "This choice is saved and also applies to batch processing."
+    },
+    "notAllowed": "StarLight does not add a caption in {format} format: it is a data file and the image stays untouched for measurements. The capture data stays in the file header.",
+    "templates": {
+      "minimal": {
+        "label": "Minimal",
+        "hint": "A small, semi-transparent line in a corner of the photo",
+        "description": "A small, semi-transparent line in the corner you choose, with the StarLight logo. This is the most discreet template."
+      },
+      "banner": {
+        "label": "Banner",
+        "hint": "A thin dark strip at the bottom, over the photo, with the data on one line",
+        "description": "A semi-transparent dark strip at the bottom, full width, with the data on one line and the StarLight logo on the right."
+      },
+      "card": {
+        "label": "Card",
+        "hint": "A dark box in a corner, with the object name and the data on two lines",
+        "description": "A semi-transparent dark box in the corner you choose, with the object name as the title and the data on two lines. Designed for social media."
+      }
+    },
+    "position": {
+      "bottom": "Bottom",
+      "top": "Top",
+      "left": "Left",
+      "right": "Right"
+    },
+    "author": {
+      "label": "Author (optional)",
+      "placeholder": "Your name, if you want to sign the photo"
+    },
+    "location": {
+      "label": "Show location",
+      "hint": "Only the place name, if the file includes it. StarLight never writes geographic coordinates."
+    },
+    "data": {
+      "none": "The file contains no capture data, so only the StarLight logo will appear.",
+      "found": "Data found: {entries}. Missing data is not shown.",
+      "foundSomeOmitted": "Data found: {entries}. Missing data is not shown. At this size some entries are left out for lack of space."
+    },
+    "changed": {
+      "title": "Values changed since the last Apply. The viewer already shows them.",
+      "label": "changed"
+    },
+    "apply": {
+      "title": "Frame the exported area in the viewer, with the caption as it will appear in the file",
+      "label": "Apply"
+    }
+  },
+  "summary": {
+    "title": "Summary",
+    "format": "Format",
+    "bitDepth": "Bit depth",
+    "bitsPerChannel": "{bits} bits per channel",
+    "compression": "Compression",
+    "lossy": "lossy, {quality}%",
+    "lossless": "lossless",
+    "filter": "Filter applied",
+    "noFilter": "none",
+    "filterAt": "{filter} at {percent}%"
+  },
+  "exporting": "Exporting",
+  "export": "Export image",
+  "fullResolution": "processing at full resolution"
+}

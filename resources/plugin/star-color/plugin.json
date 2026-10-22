@@ -1,0 +1,70 @@
+{
+  "id": "star-color",
+  "name": "Star color",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Restores the color of stars that the stretch has turned white. For each star it measures the color in the corona, where the channels are not saturated, and carries it into the central part. It acts only inside the stars, so the nebula and the background stay unchanged. It brings out the variety of star colors, from blue to orange, without increasing the saturation of the whole image.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "strength",
+      "label": "Strength",
+      "hint": "At 100% the center of the star receives the color measured in the corona; higher values make it more intense, lower values fainter.",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 0.7,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "minimumSize",
+      "label": "Minimum star size",
+      "hint": "Radius in pixels, at half the maximum brightness, of the smallest star to process. In smaller stars the corona has few pixels and the color measurement is less reliable.",
+      "min": 0.5,
+      "max": 10,
+      "step": 0.1,
+      "default": 1.5,
+      "format": "decimal"
+    },
+    {
+      "type": "slider",
+      "id": "coreProtection",
+      "label": "Saturated core protection",
+      "hint": "Pixels saturated in the data contain no color information. With high values they stay white and the star keeps a light center; with low values they too receive the color of the corona.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5,
+      "format": "percent"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Colore delle stelle",
+      "description": "Ridà colore alle stelle che la distensione ha reso bianche. Per ogni stella misura il colore nella corona, dove i canali non sono saturi, e lo riporta nella parte centrale. Agisce solo all’interno delle stelle, quindi la nebulosa e il fondo restano invariati. Fa risaltare la varietà di colori delle stelle, dal blu all’arancione, senza aumentare la saturazione dell’intera immagine.",
+      "parameters": {
+        "strength": {
+          "label": "Intensità",
+          "hint": "Al 100% il centro della stella riceve il colore misurato nella corona; valori più alti lo rendono più intenso, valori più bassi più tenue."
+        },
+        "minimumSize": {
+          "label": "Dimensione minima delle stelle",
+          "hint": "Raggio in pixel, a metà della luminosità massima, della stella più piccola da trattare. Nelle stelle più piccole la corona ha pochi pixel e la misura del colore è meno affidabile."
+        },
+        "coreProtection": {
+          "label": "Protezione dei nuclei saturi",
+          "hint": "I pixel saturi nei dati non contengono informazione sul colore. Con valori alti restano bianchi e la stella conserva un centro chiaro; con valori bassi ricevono anch’essi il colore della corona."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "megapixels": "{value} megapixels",
+  "fewerWorkersOne": "Limited memory: analysis uses 1 process instead of {wanted}, so that all the {megapixels} frames fit. It will take a little longer.",
+  "fewerWorkersOther": "Limited memory: analysis uses {count} processes instead of {wanted}, so that all the {megapixels} frames fit. It will take a little longer.",
+  "insufficient": "Not enough memory to stack {count} frames of {megapixels}: about {needed} is needed and {available} is available.",
+  "maxFrames": "At most {count} fit: exclude the extra frames from the library (for example the worst ones) and stack in several runs, or close other programs and try again.",
+  "notEvenTwo": "Not even two frames fit: close other programs and try again.",
+  "calibrationMasters": "The calibration library masters take up another {size}."
+}

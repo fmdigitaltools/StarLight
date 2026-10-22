@@ -1,0 +1,13 @@
+{
+  "installed": "Plugin “{name}” installed. It is available in the Process step, among the additional tools, and in the Plugins menu.",
+  "updated": "Plugin “{name}” updated. It is available in the Process step, among the additional tools, and in the Plugins menu.",
+  "enabled": "Plugin “{name}” enabled. It is available in the Process step, among the additional tools, and in the Plugins menu.",
+  "disabled": "Plugin “{name}” disabled.",
+  "reenabled": "Plugin “{name}” enabled again.",
+  "disableFailed": "Could not disable the plugin. {detail}",
+  "uninstalled": "Plugin “{name}” uninstalled.",
+  "uninstallFailed": "Could not uninstall. {detail}",
+  "operationFailed": "The operation failed. {detail}",
+  "fromMenuActive": "“{name}” is active among the additional tools of the Process step. After adjusting the parameters, press Apply.",
+  "fromMenuAlreadyActive": "“{name}” is already active among the additional tools of the Process step. After adjusting the parameters, press Apply."
+}

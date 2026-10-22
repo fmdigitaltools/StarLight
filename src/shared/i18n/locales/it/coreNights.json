@@ -1,0 +1,40 @@
+{
+  "months": {
+    "m1": "gennaio",
+    "m2": "febbraio",
+    "m3": "marzo",
+    "m4": "aprile",
+    "m5": "maggio",
+    "m6": "giugno",
+    "m7": "luglio",
+    "m8": "agosto",
+    "m9": "settembre",
+    "m10": "ottobre",
+    "m11": "novembre",
+    "m12": "dicembre"
+  },
+  "firstOfMonth": "1°",
+  "nightOf": "Notte del {day} {month}",
+  "nightOfElided": "Notte dell’{day} {month}",
+  "folderLabel": "Cartella «{name}»",
+  "undatedFrames": "Frame senza data",
+  "times": {
+    "double": "doppio",
+    "triple": "triplo",
+    "other": "{value} volte"
+  },
+  "reason": {
+    "best": "la migliore per rumore del fondo e nitidezza delle stelle",
+    "brighterBackground": "fondo cielo più chiaro",
+    "darkerBackground": "fondo cielo più scuro",
+    "lessTransparent": "cielo meno trasparente (stelle più deboli del {percent}%)",
+    "noise": "rumore {factor}",
+    "widerStars": "stelle più larghe del {percent}%",
+    "similar": "qualità vicina a quella della notte migliore",
+    "joinLast": "{list} e {last}"
+  },
+  "explanation": {
+    "automatic": "{label}: peso {weight}, {reason}.",
+    "manual": "{label}: peso {weight} scelto a mano (proposto {proposed}, {reason})."
+  }
+}

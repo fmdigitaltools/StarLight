@@ -1,0 +1,7 @@
+{
+  "noImage": "No image to rotate.",
+  "cannotRotateAgain": "The image cannot be rotated again from here: undo the rotation and try again.",
+  "job": {
+    "rotating": "Rotating image"
+  }
+}

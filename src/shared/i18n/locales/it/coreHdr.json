@@ -1,0 +1,5 @@
+{
+  "differentSizes": "Le due serie hanno dimensioni diverse e non possono essere fuse.",
+  "notEnoughOverlap": "Le due serie non hanno abbastanza zone ben esposte in comune per misurarne il rapporto di luminosità.",
+  "shortBrighter": "La serie breve risulta più luminosa della lunga: controlla i tempi di posa."
+}

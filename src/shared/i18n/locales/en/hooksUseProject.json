@@ -1,0 +1,30 @@
+{
+  "defaultName": "New project",
+  "busy": "Please wait for the current operation to finish.",
+  "nothingToSave": "There is nothing to save yet: import some frames first.",
+  "saved": "Project “{name}” saved.",
+  "saveFailed": "Could not save the project. {message}",
+  "newProject": "New project: import your frames to get started.",
+  "unreadableFile": "The project file could not be read.",
+  "recoveryFailed": "Could not recover your work. {message}",
+  "openFailed": "Could not open the project. {message}",
+  "recovered": "Work recovered. Save it to keep it.",
+  "recoveredInProject": "Work recovered in project “{name}”. Save it to keep it.",
+  "opened": "Project “{name}” opened.",
+  "job": {
+    "saving": "Saving project",
+    "opening": "Opening project",
+    "readingMetadata": "Reading capture data",
+    "openingImage": "Opening saved image"
+  },
+  "notices": {
+    "imageMissing": "the image saved in the project could not be found: the original frame has been reopened and you will need to apply the processing again",
+    "originalMissing": "the original image could not be found: Reset will return to the processed image",
+    "missingFramesOne": "1 frame is no longer on disk (the first: {first}). The project still remembers it: if you reconnect the drive, it will come back when you reopen the project",
+    "missingFramesOther": "{count} frames are no longer on disk (the first: {first}). The project still remembers them: if you reconnect the drive, they will come back when you reopen the project",
+    "masksUnreadableOne": "a painted mask could not be read: its local adjustment now applies without it",
+    "masksUnreadableOther": "{count} painted masks could not be read: their local adjustments now apply without them",
+    "drizzleNotRestored": "the scale and astrometric solution of the drizzle could not be restored: markers and measurements will use those of the frame",
+    "mosaicNotRestored": "the scale and astrometric solution of the mosaic could not be restored: markers and measurements will use those of the frame"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "whenSaved": {
+    "today": "at {time}",
+    "yesterday": "yesterday at {time}",
+    "otherDay": "on {date} at {time}"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Live session",
+  "description": "During the session StarLight keeps an eye on the folder where the frames arrive. For every new frame it analyzes it, aligns it and stacks again, so the image in the viewer improves as the session goes on. It also works with a network folder, for example one shared by the telescope.",
+  "state": {
+    "unreachable": "unreachable",
+    "stacking": "stacking",
+    "analyzing": "analyzing",
+    "listening": "listening"
+  },
+  "folder": {
+    "placeholder": "Example: \\\\192.168.1.50\\Images\\M 27",
+    "hint": "Local or network folder where the capture program saves the frames. You can type or paste the path, or choose it with Browse.",
+    "browse": "Browse",
+    "browseHint": "Choose the folder"
+  },
+  "includeExisting": {
+    "label": "Include existing frames",
+    "hint": "When on, it also stacks the frames saved in the folder before the start. Turn it off to follow only the session starting now."
+  },
+  "keepAccepted": {
+    "label": "Keep frames once accepted",
+    "hint": "Off (default): with every new frame all frames are re-evaluated against the best ones received, and those below the quality threshold leave the stack; the result matches a stack run at the end of the session. On: a frame that enters the stack stays there, and the number of stacked frames never decreases."
+  },
+  "stop": "Stop the session",
+  "starting": "Starting",
+  "start": "Start the session",
+  "pollingNotice": "The folder is checked again every two seconds because the system does not report new files in this folder, as often happens with network folders.",
+  "stats": {
+    "arrived": "Frames received",
+    "incoming": "Being written",
+    "incomingHint": "Waiting for the write to finish: {files}",
+    "stacked": "Frames stacked",
+    "rejected": "Frames rejected",
+    "rejectedHint": "The rejected frames also include those below the minimum quality. Quality is measured against the best frames received so far: when better ones arrive, the frames already stacked are re-evaluated too, and hazy ones leave the stack.",
+    "edges": "Edges covered by few frames",
+    "edgesValue": "crop suggested",
+    "edgesHint": "Fewer frames overlap at the edges and the noise stays high, so a crop is suggested that keeps the area covered by at least 70% of the frames. It updates with every new frame and you can change it in the Export step.",
+    "noiseReduced": "Noise reduced by",
+    "noiseTimes": "{times}×",
+    "notMeasurable": "not measurable",
+    "noiseHint": "Comparison between the noise of the reference frame and that of the result. Theory predicts {expected}× with {frames} frames.",
+    "updatedAt": "Image updated at",
+    "lastDuration": "The last stack took {seconds} s"
+  },
+  "waitingImage": "The image will appear in the viewer as soon as there are two frames to stack.",
+  "chart": {
+    "label": "Noise trend during the session",
+    "measured": "measured noise",
+    "theory": "expected from theory"
+  }
+}

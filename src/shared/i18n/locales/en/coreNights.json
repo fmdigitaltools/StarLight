@@ -1,0 +1,40 @@
+{
+  "months": {
+    "m1": "January",
+    "m2": "February",
+    "m3": "March",
+    "m4": "April",
+    "m5": "May",
+    "m6": "June",
+    "m7": "July",
+    "m8": "August",
+    "m9": "September",
+    "m10": "October",
+    "m11": "November",
+    "m12": "December"
+  },
+  "firstOfMonth": "1st",
+  "nightOf": "Night of {day} {month}",
+  "nightOfElided": "Night of {day} {month}",
+  "folderLabel": "Folder “{name}”",
+  "undatedFrames": "Frames without a date",
+  "times": {
+    "double": "twice as high",
+    "triple": "three times as high",
+    "other": "{value} times as high"
+  },
+  "reason": {
+    "best": "the best for background noise and star sharpness",
+    "brighterBackground": "brighter sky background",
+    "darkerBackground": "darker sky background",
+    "lessTransparent": "less transparent sky (stars {percent}% fainter)",
+    "noise": "noise {factor}",
+    "widerStars": "stars {percent}% wider",
+    "similar": "quality close to that of the best night",
+    "joinLast": "{list} and {last}"
+  },
+  "explanation": {
+    "automatic": "{label}: weight {weight}, {reason}.",
+    "manual": "{label}: weight {weight} set manually (suggested {proposed}, {reason})."
+  }
+}

@@ -1,0 +1,121 @@
+/* What's new button next to the version number, and the What's new window. */
+
+.sl-whats-new-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 22px;
+  margin-left: calc(-1 * var(--sl-s-1));
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--sl-r-sm);
+  background: transparent;
+  color: var(--sl-text-3);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.sl-whats-new-button:hover {
+  color: var(--sl-text-2);
+  background: var(--sl-bg-3);
+}
+
+.sl-whats-new-button:focus-visible {
+  outline: none;
+  border-color: var(--sl-cyan-dim);
+}
+
+/* Unread news: the icon lights up and pulses gently. */
+.sl-whats-new-unread {
+  color: var(--sl-cyan);
+  animation: sl-whats-new-pulse 2.4s ease-in-out infinite;
+}
+
+.sl-whats-new-unread:hover {
+  color: var(--sl-cyan);
+}
+
+.sl-whats-new-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-magenta);
+  box-shadow: 0 0 6px var(--sl-magenta);
+}
+
+@keyframes sl-whats-new-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 1px rgba(34, 232, 255, 0.35));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 7px rgba(34, 232, 255, 0.85));
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-whats-new-unread {
+    animation: none;
+    filter: drop-shadow(0 0 5px rgba(34, 232, 255, 0.7));
+  }
+}
+
+/* ---- Window ---- */
+
+.sl-whats-new-icon {
+  flex: none;
+  color: var(--sl-cyan);
+  filter: drop-shadow(0 0 6px rgba(34, 232, 255, 0.45));
+}
+
+.sl-whats-new-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.sl-whats-new-version + .sl-whats-new-version {
+  margin-top: var(--sl-s-4);
+  padding-top: var(--sl-s-4);
+  border-top: 1px solid var(--sl-line);
+}
+
+.sl-whats-new-version-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+  margin: 0 0 var(--sl-s-2);
+  font-size: var(--sl-fs-md);
+  color: var(--sl-text);
+}
+
+.sl-whats-new-current {
+  padding: 1px 6px;
+  border: 1px solid var(--sl-cyan-dim);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--sl-cyan);
+}
+
+.sl-whats-new-items {
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-md);
+  line-height: 1.5;
+}
+
+.sl-whats-new-items li + li {
+  margin-top: var(--sl-s-1);
+}
+
+.sl-whats-new-items li::marker {
+  color: var(--sl-cyan);
+}

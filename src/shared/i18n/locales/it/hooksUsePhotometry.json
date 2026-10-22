@@ -1,0 +1,11 @@
+{
+  "noWcs": "Questo file non contiene la soluzione astrometrica, cioè la corrispondenza fra i pixel e le coordinate del cielo. Senza di essa le stelle dell’immagine non possono essere abbinate al catalogo.",
+  "internetFeature": "La calibrazione fotometrica con il catalogo Gaia",
+  "progress": {
+    "cached": "Calibrazione fotometrica: stelle del catalogo Gaia già scaricate…",
+    "requesting": "Calibrazione fotometrica: richiesta al catalogo Gaia…",
+    "measuring": "Calibrazione fotometrica: misura delle stelle…"
+  },
+  "tooFewStars": "Le stelle abbinate al catalogo sono troppo poche per una calibrazione affidabile.",
+  "done": "Colore calibrato su {count} stelle del catalogo Gaia (scarto {deviation}%). Premi Applica per vedere il risultato."
+}

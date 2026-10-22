@@ -1,0 +1,99 @@
+{
+  "times": "{times} volte",
+  "processing": "Elaborazione in corso",
+  "stack": "Allinea e impila",
+  "method": {
+    "rejection": {
+      "label": "Robusto",
+      "hint": "Calcola la media dei valori vicini alla mediana, cioè al valore centrale fra quelli di tutti i frame, ed elimina le tracce dei satelliti e i raggi cosmici."
+    },
+    "mean": {
+      "label": "Media",
+      "hint": "Usa tutto il segnale disponibile e dà il risultato più pulito, purché nessun frame presenti disturbi."
+    },
+    "median": {
+      "label": "Mediana",
+      "hint": "Usa per ogni pixel il valore centrale fra quelli di tutti i frame. Elimina ogni disturbo presente in un solo frame, ma sfrutta una parte minore del segnale."
+    }
+  },
+  "frames": {
+    "title": "Frame da impilare",
+    "description": "Sommando più scatti il rumore casuale si attenua mentre il segnale dell’oggetto resta. Quadruplicando il numero di frame, il rumore si riduce della metà.",
+    "lights": "Frame di luce",
+    "totalExposure": "Esposizione totale",
+    "expectedNoise": "Riduzione del rumore attesa",
+    "expectedNoiseHint": "Proporzionale alla radice quadrata del numero di frame"
+  },
+  "alignment": {
+    "title": "Allineamento",
+    "align": "Allinea sulle stelle",
+    "alignHint": "Individua le stelle in ogni frame e calcola lo spostamento e la rotazione rispetto al frame migliore. Da tenere attivo, a meno che i frame non siano già allineati fra loro.",
+    "minQuality": "Qualità minima",
+    "all": "tutti",
+    "minQualityHint": "Ogni frame riceve un punteggio in percentuale rispetto ai frame migliori della sessione: conta quante stelle si vedono e quanto sono puntiformi. I frame mossi, sfocati o velati dalle nuvole mostrano meno stelle, o stelle più larghe, e restano sotto la soglia. Con 40% vengono scartati i frame che mostrano meno di circa metà delle stelle dei migliori.",
+    "edgeTrim": "Ritaglia i bordi coperti da pochi frame",
+    "edgeTrimHint": "Durante la ripresa il campo si sposta un po’, e verso i bordi del risultato si sovrappongono meno frame: lì resta una cornice più rumorosa, spesso colorata. Se attivo, dopo l’impilamento viene proposto il ritaglio che tiene solo la parte coperta da almeno il 70% dei frame. Puoi cambiare o togliere il ritaglio nel passo Esporta, e i dati dell’immagine restano interi."
+  },
+  "hdr": {
+    "title": "Fusione HDR",
+    "description": "I frame hanno pose diverse: {series}. Ogni serie viene impilata a parte; poi, dove le pose lunghe saturano (nuclei di galassie e nebulose, stelle brillanti), subentrano le brevi riportate alla stessa scala. Il rapporto di luminosità si misura sulle immagini, non si ricava dai tempi dichiarati.",
+    "series": "{count} da {exposure} s",
+    "merge": "Fondi le serie in HDR",
+    "mergeHint": "Se spento, tutti i frame vengono impilati insieme come una serie sola, ciascuno normalizzato sugli altri."
+  },
+  "combination": {
+    "title": "Combinazione",
+    "threshold": "Soglia di scarto",
+    "thresholdValue": "{value} deviazioni",
+    "thresholdHint": "Definisce la distanza massima dalla mediana, misurata in deviazioni standard (l’ampiezza tipica del rumore), oltre la quale un valore viene ignorato. Una soglia più bassa elimina più disturbi, ma scarta anche più segnale."
+  },
+  "drizzle": {
+    "title": "Drizzle",
+    "description": "Fra uno scatto e l’altro il campo si sposta di frazioni di pixel. Il drizzle sfrutta questi piccoli spostamenti e somma i frame su una griglia due volte più fitta, recuperando dettaglio che il sensore aveva davvero registrato. Rende di più con molti frame (almeno una ventina) e con l’allineamento attivo. Il risultato ha quattro volte i pixel e richiede più memoria e più tempo.",
+    "factor1Hint": "Alla risoluzione dei frame, con l’impilamento normale oppure con il Bayer drizzle, se è attivo.",
+    "factor2Hint": "Raddoppia larghezza e altezza e recupera il dettaglio fra un pixel e l’altro.",
+    "bayer": "Bayer drizzle (dai dati grezzi del sensore)",
+    "bayerHint": "Nel sensore a colori ogni pixel misura un solo colore, e gli altri due vengono ricostruiti dai vicini, ammorbidendo le stelle e lasciando frange colorate sui bordi. Il Bayer drizzle usa solo i colori misurati davvero, sfruttando i piccoli spostamenti fra uno scatto e l’altro per riempire gli altri. Migliora nitidezza e colore già a 1×, e a 2× aggiunge risoluzione. Il rumore fine resta un po’ più alto che nell’impilamento normale. Il Bayer drizzle rende di più con molti frame (qualche decina, meglio se spostati fra loro) e con stelle piccole; se le stelle sono già larghe qualche pixel il guadagno è minimo.",
+    "bayerName": "Bayer drizzle",
+    "unavailable": "non disponibile",
+    "unavailableHint": "Richiede i frame grezzi di un sensore a colori, con lo schema di Bayer nell’intestazione del file. I file già impilati o già a colori non contengono più il colore misurato pixel per pixel.",
+    "dropSize": "Dimensione della goccia",
+    "dropSizeHint": "Ogni pixel del frame viene depositato come una goccia più piccola del pixel stesso. Una goccia piccola dà stelle più nitide, ma con pochi frame lascia rumore e piccoli vuoti; a 1 il risultato è più morbido e uniforme. Fra 0,7 e 0,8 è un buon compromesso.",
+    "memory": "Memoria in più",
+    "memoryValue": "circa {size}",
+    "memoryHint": "Stima della memoria che il drizzle chiede oltre ai frame. Se non è disponibile, i frame vengono impilati senza drizzle e appare un avviso."
+  },
+  "result": {
+    "title": "Risultato",
+    "stacked": "Frame impilati",
+    "method": "Metodo",
+    "hdrValue": "pose brevi nel {share}% dell’immagine, rapporto {ratio}×",
+    "drizzleValue": "{factor}×, goccia {drop}",
+    "drizzleBayerValue": "Bayer, {factor}×, goccia {drop}",
+    "coverage": "Copertura media",
+    "coverageValue": "{frames} frame",
+    "coverageHint": "Quanti frame hanno contribuito, in media, a ciascun pixel della griglia fine",
+    "empty": "Pixel senza dati",
+    "emptyHint": "Pixel della griglia fine su cui non è caduta nessuna goccia: sono stati riempiti con l’impilamento normale. Se sono molti, porta «Dimensione della goccia» più vicino a 1 o usa più frame.",
+    "edges": "Bordi coperti da pochi frame",
+    "edgesValue": "proposto il ritaglio",
+    "edgesHint": "Il ritaglio tiene il {kept}% dell’immagine, la parte in cui contribuisce almeno il {coverage}% dei frame. Puoi cambiarlo o toglierlo nel passo Esporta.",
+    "time": "Tempo impiegato",
+    "noiseReduced": "Rumore ridotto di",
+    "notMeasurable": "non misurabile",
+    "noiseReducedHint": "Confronto fra il rumore del frame di riferimento e quello del risultato",
+    "theory": "Atteso dalla teoria",
+    "theoryHint": "Radice quadrata del numero di frame integrati",
+    "rejected": "Valori scartati",
+    "rejectedHint": "Pixel ignorati perché troppo distanti dalla mediana, come le tracce dei satelliti e i raggi cosmici."
+  },
+  "details": {
+    "title": "Dettaglio dei frame",
+    "description": "Punteggio, nitidezza e spostamento misurati su ciascuno scatto. Il punteggio è la percentuale rispetto ai frame migliori della sessione. L’HFR è il raggio che contiene metà della luce di una stella, e un valore più basso indica stelle più nitide.",
+    "meta": "{stars} stelle - HFR {hfr} px",
+    "shifted": " - spostato di {px} px",
+    "rotated": " - ruotato di {degrees} gradi",
+    "excluded": "esclusa",
+    "rejected": "scartato"
+  }
+}

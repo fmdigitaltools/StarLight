@@ -1,0 +1,14 @@
+{
+  "needTwoPanels": "A mosaic needs at least two panels.",
+  "spreadAcrossSky": "The panels are spread across the whole sky: they do not form a mosaic.",
+  "invalidReferenceSolution": "The astrometric solution of the reference panel is not valid.",
+  "panelTooFar": "A panel is too far from the others to fit in the same mosaic.",
+  "tooLarge": "The mosaic would measure {width} × {height} pixels: too large. Check that the selected panels are really close to each other.",
+  "panelSizeMismatch": "Panel {panel} does not have the size given by its astrometric solution.",
+  "progress": {
+    "reprojecting": "Reprojecting panel {current} of {total}",
+    "matching": "Matching background and brightness between panels",
+    "merging": "Merging panels",
+    "ready": "Mosaic ready"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "noInternetSubject": "Il controllo degli aggiornamenti",
+  "readyOnClose": "{app} {version} è pronto: si installerà quando chiudi il programma.",
+  "skipFailed": "Salvataggio della scelta non riuscito: la versione {version} ti verrà proposta di nuovo. Puoi riprovare più tardi.",
+  "skipped": "La versione {version} non verrà più proposta all’avvio. Puoi sempre installarla dal menu Aiuto, con la voce Controlla gli aggiornamenti.",
+  "close": "Chiudi",
+  "later": "Più tardi",
+  "updateNow": "Aggiorna ora",
+  "skipVersion": "Salta questa versione",
+  "notConfiguredTitle": "Aggiornamenti",
+  "available": {
+    "title": "È disponibile {app} {version}",
+    "subtitle": "Stai usando la versione {version}.",
+    "whatsNew": "Novità",
+    "noNotes": "Per questa versione non è stata scritta una descrizione delle novità.",
+    "explain": "Con «Aggiorna ora» StarLight scarica la nuova versione, si chiude, la installa e si riapre da solo. Con «Più tardi» la scarica in sottofondo e la installa quando chiudi il programma. Progetti, immagini e impostazioni restano come sono."
+  },
+  "downloading": {
+    "title": "Scaricamento di {app} {version}",
+    "subtitleNow": "Al termine StarLight ti avvisa, poi si chiude, installa la nuova versione e si riapre da solo.",
+    "subtitleLater": "Al termine la nuova versione si installerà quando chiudi StarLight.",
+    "amount": "{done} di {total}",
+    "preparing": "In preparazione…",
+    "speed": "{speed} al secondo",
+    "keepWorking": "Puoi continuare a lavorare: lo scaricamento prosegue anche a finestra chiusa.",
+    "background": "Continua in sottofondo",
+    "progressLabel": "Avanzamento dello scaricamento"
+  },
+  "ready": {
+    "title": "{app} {version} è pronto da installare",
+    "countdownBefore": "StarLight si chiude e si riavvia tra ",
+    "countdownAfterOne": " secondo per installarlo.",
+    "countdownAfterOther": " secondi per installarlo.",
+    "subtitle": "L’installazione dura meno di un minuto e non fa domande.",
+    "unsavedWork": "Ci sono modifiche non salvate. Salva il progetto e premi di nuovo «Installa e riavvia», oppure scegli «Più tardi»: la nuova versione si installerà quando chiudi StarLight.",
+    "development": "StarLight è avviato dai sorgenti: l’installazione è solo simulata e non cambia nulla.",
+    "noteCountdown": "Se stai lavorando a qualcosa che non hai salvato, scegli «Più tardi»: la nuova versione si installerà quando chiudi StarLight.",
+    "note": "Con «Installa e riavvia» StarLight si chiude, installa la nuova versione e si riapre da solo. Con «Più tardi» la installa quando chiudi il programma.",
+    "restartNow": "Riavvia adesso",
+    "installRestart": "Installa e riavvia"
+  },
+  "upToDate": {
+    "title": "{app} è aggiornato",
+    "body": "Stai usando la versione più recente, la {version}."
+  },
+  "error": {
+    "title": "Aggiornamento non riuscito",
+    "unexpected": "Si è verificato un problema imprevisto.",
+    "retry": "Riprova"
+  },
+  "checking": {
+    "title": "Controllo degli aggiornamenti",
+    "body": "StarLight chiede al server se c’è una versione nuova…"
+  }
+}

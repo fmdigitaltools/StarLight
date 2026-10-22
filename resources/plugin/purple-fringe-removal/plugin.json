@@ -1,0 +1,86 @@
+{
+  "id": "purple-fringe-removal",
+  "name": "Purple and blue fringe removal",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Removes the purple or blue halo that surrounds stars in images taken with two-lens refractors and camera lenses, caused by chromatic aberration. For each star it measures the color of the inner part and subtracts from the edge only the excess colored light. The star’s center keeps its color, the nebula and the background stay unchanged. It can also correct the red, green and cyan fringes of lateral aberration at the edges of the field.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "strength",
+      "label": "Strength",
+      "hint": "Share of the colored fringe to remove. At 100% the edge of the star takes on the same color as its interior.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.9,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "haloSize",
+      "label": "Halo size",
+      "hint": "Distance in pixels, beyond the edge of the star, up to which the fringe is searched for. Increase it for the wide halos of the brightest stars and for high-resolution images.",
+      "min": 2,
+      "max": 60,
+      "step": 1,
+      "default": 10,
+      "format": "integer"
+    },
+    {
+      "type": "choice",
+      "id": "hue",
+      "label": "Hue to correct",
+      "options": [
+        {
+          "value": "purpleBlue",
+          "label": "Purple and blue",
+          "hint": "Only the blue, violet and magenta halos of longitudinal aberration, the most common. The other hues stay unchanged."
+        },
+        {
+          "value": "all",
+          "label": "All hues",
+          "hint": "Also the red, green and cyan fringes, like those of lateral aberration, which separates the colors at the edges of the field."
+        }
+      ],
+      "default": "purpleBlue"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Rimozione degli aloni viola e blu",
+      "description": "Toglie l’alone viola o blu che circonda le stelle nelle riprese con rifrattori a due lenti e obiettivi fotografici, dovuto all’aberrazione cromatica. Per ogni stella misura il colore della parte interna e sottrae dal bordo solo la luce colorata in eccesso. Il centro della stella conserva il suo colore, la nebulosa e il fondo restano invariati. Può correggere anche le frange rosse, verdi e azzurre dell’aberrazione laterale ai bordi del campo.",
+      "parameters": {
+        "strength": {
+          "label": "Intensità",
+          "hint": "Quota della frangia colorata da togliere. Al 100% il bordo della stella assume lo stesso colore del suo interno."
+        },
+        "haloSize": {
+          "label": "Ampiezza dell’alone",
+          "hint": "Distanza in pixel, oltre il bordo della stella, fino a cui viene cercata la frangia. Aumentala per gli aloni larghi delle stelle più brillanti e per le immagini ad alta risoluzione."
+        },
+        "hue": {
+          "label": "Tinta da correggere",
+          "options": {
+            "purpleBlue": {
+              "label": "Viola e blu",
+              "hint": "Solo gli aloni blu, viola e porpora dell’aberrazione longitudinale, i più frequenti. Le altre tinte restano invariate."
+            },
+            "all": {
+              "label": "Tutte le tinte",
+              "hint": "Anche le frange rosse, verdi e azzurre, come quelle dell’aberrazione laterale che separa i colori ai bordi del campo."
+            }
+          }
+        }
+      }
+    }
+  }
+}

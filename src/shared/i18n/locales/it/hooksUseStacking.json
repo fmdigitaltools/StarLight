@@ -1,0 +1,57 @@
+{
+  "analysisFailed": "analisi non riuscita",
+  "nucleusFrameNotStacked": {
+    "first": "Il primo frame, in cui è stato indicato il nucleo della cometa, non è fra quelli impilati: è stato scartato per la qualità o non si è allineato. Abbassa la qualità minima, oppure escludi quel frame dalla libreria e indica il nucleo nel nuovo primo o ultimo frame.",
+    "last": "L’ultimo frame, in cui è stato indicato il nucleo della cometa, non è fra quelli impilati: è stato scartato per la qualità o non si è allineato. Abbassa la qualità minima, oppure escludi quel frame dalla libreria e indica il nucleo nel nuovo primo o ultimo frame."
+  },
+  "tooFewAfterNightExclusion": "Con le notti escluse restano meno di due frame da impilare. Riattiva almeno una notte nell’elenco delle notti.",
+  "tooFewAligned": "Meno di due frame superano la qualità minima e si allineano al frame di riferimento. Abbassa la qualità minima, oppure spegni «Allinea sulle stelle» se il campo è già fermo.",
+  "reason": {
+    "reference": "riferimento",
+    "stacked": "impilato",
+    "lowQuality": "qualità sotto la soglia rispetto ai frame migliori",
+    "starsNotRecognized": "stelle non riconosciute",
+    "excludedNight": "notte esclusa"
+  },
+  "progress": {
+    "aligning": "Allineamento sulle stelle",
+    "weighingNights": "Misura e pesatura delle notti",
+    "findingNucleus": "Ricerca del nucleo della cometa",
+    "stackingOnComet": "Somma allineata sulla cometa",
+    "separatingComet": "Separazione della cometa dalle stelle",
+    "bayerDrizzle": "Bayer drizzle dei frame allineati",
+    "drizzle": "Drizzle dei frame allineati",
+    "stackingOnStars": "Somma allineata sulle stelle",
+    "stacking": "Somma dei frame allineati",
+    "analyzingParallel": "Analisi dei frame con {count} processi in parallelo",
+    "analyzing": "Analisi dei frame, {done} di {total}",
+    "hdrMerge": "Fusione HDR con la serie da {exposure} s"
+  },
+  "drizzle": {
+    "notWithCometAndStars": "Con cometa e stelle ferme il drizzle non si applica: i frame sono stati impilati normalmente.",
+    "bayerFallbackDrizzle": "Il Bayer drizzle funziona solo con frame grezzi del sensore a colori, tutti con lo stesso schema di Bayer: è stato usato il drizzle normale.",
+    "bayerFallbackStack": "Il Bayer drizzle funziona solo con frame grezzi del sensore a colori, tutti con lo stesso schema di Bayer: i frame sono stati impilati normalmente."
+  },
+  "needTwoLights": "Servono almeno due frame di luce per impilare.",
+  "insufficientMemory": "Memoria insufficiente per impilare questi frame.",
+  "notEnoughReadable": "Non ci sono abbastanza frame leggibili. {detail}",
+  "done": {
+    "summary": "Impilati {used} frame su {total}{nights}{hdr}.",
+    "nights": ", da {count} notti con pesi {weights}",
+    "hdr": ", con fusione HDR di {series} (pose brevi nel {percent}% dell’immagine)",
+    "hdrSeries": "{frames} frame da {exposure} s",
+    "and": " e "
+  },
+  "unreadableFrames": "{count} frame non leggibili.",
+  "calibrationSkipped": "Calibrazione saltata. {detail}",
+  "calibratedWithLibrary": "Calibrati con i master della libreria: {masters}.",
+  "unreadMaster": {
+    "one": "Un master della libreria di calibrazione non si è potuto leggere, e le luci che lo richiedevano sono state calibrate senza. Puoi toglierlo dalla libreria nel passo Calibra e comporlo di nuovo.",
+    "other": "{count} master della libreria di calibrazione non si sono potuti leggere, e le luci che li richiedevano sono state calibrate senza. Puoi toglierli dalla libreria nel passo Calibra e comporli di nuovo."
+  },
+  "hdr": {
+    "seriesName": "Serie da {exposure} s",
+    "needTwoSeries": "Per la fusione HDR servono almeno due serie leggibili con due frame ciascuna.",
+    "seriesNotAligned": "La serie da {exposure} s non si allinea sulla serie più lunga: troppe poche stelle in comune."
+  }
+}

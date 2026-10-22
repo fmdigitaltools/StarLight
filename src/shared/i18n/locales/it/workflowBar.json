@@ -1,0 +1,40 @@
+{
+  "ariaLabel": "Fasi di lavorazione",
+  "title": "Flusso",
+  "lockedNoFrame": "{description} (prima importa un frame)",
+  "lockedNoImage": "{description} (prima apri un frame nel visore)",
+  "steps": {
+    "import": {
+      "label": "Importa",
+      "description": "Carica le riprese da elaborare, dal telescopio o dalla fotocamera"
+    },
+    "calibrate": {
+      "label": "Calibra",
+      "description": "Rimuovi i difetti del sensore con i frame di calibrazione: dark, flat e bias"
+    },
+    "align": {
+      "label": "Impila",
+      "description": "Allinea e combina i frame per ridurre il rumore"
+    },
+    "process": {
+      "label": "Elabora",
+      "description": "Pulisci e migliora i dati: fondo cielo, colore, rumore, dettagli, stelle"
+    },
+    "correct": {
+      "label": "Correggi",
+      "description": "Distendi l’istogramma e regola toni e colore"
+    },
+    "filters": {
+      "label": "Filtri",
+      "description": "Applica i filtri fotografici, riduci il rumore ed esalta i dettagli"
+    },
+    "objects": {
+      "label": "Oggetti",
+      "description": "Scopri quali oggetti celesti sono inquadrati"
+    },
+    "export": {
+      "label": "Esporta",
+      "description": "Salva l’immagine finita nel formato che preferisci"
+    }
+  }
+}

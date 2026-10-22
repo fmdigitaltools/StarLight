@@ -1,0 +1,55 @@
+{
+  "title": "Mosaic",
+  "description": "Joins several nearby fields, for example stacked images of adjacent areas of the sky, into a wider field. Each panel is placed using its astrometric solution, that is, its exact position in the sky as written in the file or found with “Plate solve”; background and brightness are matched in the overlapping areas and the edges blend without seams. Panels should overlap by at least 10-20%.",
+  "solveNotice": "In the Objects step, use “Plate solve”; then come back to Stack and the panel will be ready for the mosaic.",
+  "noCandidates": "Import the panels into the library first.",
+  "removePanel": "Remove from mosaic",
+  "addPanel": "Add to mosaic",
+  "panelSolved": "{width} x {height} - position known, {scale}″ per pixel",
+  "panelUnsolved": "{width} x {height} - no astrometric solution",
+  "openToSolve": "Open the frame to plate solve it in the Objects step",
+  "withoutWcsOne": "One selected panel has no astrometric solution and would be left out: open it with the button on the right and use “Plate solve” in the Objects step.",
+  "withoutWcsOther": "{count} selected panels have no astrometric solution and would be left out: open them with the button on the right and use “Plate solve” in the Objects step.",
+  "size": "Mosaic size",
+  "scale": {
+    "name": "Scale",
+    "value": "{value}″ per pixel",
+    "hint": "Taken from the most detailed panel, so no panel loses resolution"
+  },
+  "memory": {
+    "name": "Memory required",
+    "value": "about {size}",
+    "hint": "Estimate of the memory used during the computation"
+  },
+  "blend": {
+    "label": "Match background and brightness",
+    "hint": "Panels captured at different times have different sky background and brightness. Comparing them in the overlapping areas, channel by channel and ignoring stars, brings them to the same level. Keep this on."
+  },
+  "composing": "Composing",
+  "compose": "Compose mosaic",
+  "previewAriaLabel": "Layout of the panels in the mosaic",
+  "summary": {
+    "title": "Composed mosaic",
+    "panels": "{count} panels",
+    "description": "The mosaic is open in the viewer with its astrometric solution, so object markers and the field scale work here too. If you open another frame from the library, the mosaic closes: export it first if you want to keep it.",
+    "size": "Size",
+    "covered": {
+      "name": "Covered area",
+      "hint": "Part of the final rectangle covered by at least one panel. The rest is filled with the sky background color and is best cropped in Export."
+    },
+    "overlap": {
+      "name": "Overlapping areas",
+      "hint": "Part covered by two or more panels, where they are compared and blended"
+    },
+    "time": "Time taken",
+    "coverageAriaLabel": "Mosaic coverage map",
+    "coverageLegend": "Coverage map:",
+    "coverageOne": "one panel",
+    "coverageTwo": "two",
+    "coverageThree": "three or more",
+    "correction": "brightness × {gain}, background {background}",
+    "pairsWithoutGainOne": "One overlapping area contained almost only sky background, so only the background was matched there and the brightness was derived from the other overlapping areas, where possible.",
+    "pairsWithoutGainOther": "{count} overlapping areas contained almost only sky background, so only the background was matched there and the brightness was derived from the other overlapping areas, where possible.",
+    "isolated": "These panels do not overlap the others and so were not matched: {panels}."
+  }
+}

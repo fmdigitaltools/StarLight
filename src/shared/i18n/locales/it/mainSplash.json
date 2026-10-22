@@ -1,0 +1,133 @@
+{
+  "version": "Versione {version} · {codename}",
+  "starting": "Avvio…",
+  "label": "Avvio di StarLight",
+  "phases": {
+    "loading": "Caricamento dell’interfaccia…",
+    "tools": "Preparazione degli strumenti…",
+    "firstPaint": "Primo disegno dell’interfaccia…",
+    "ready": "Pronto"
+  },
+  "phrases": {
+    "dante1": {
+      "text": "E quindi uscimmo a riveder le stelle.",
+      "author": "Dante Alighieri"
+    },
+    "dante2": {
+      "text": "L’amor che move il sole e l’altre stelle.",
+      "author": "Dante Alighieri"
+    },
+    "leopardi1": {
+      "text": "Che fai tu, luna, in ciel? Dimmi, che fai, silenziosa luna?",
+      "author": "Giacomo Leopardi"
+    },
+    "leopardi2": {
+      "text": "Vaghe stelle dell’Orsa, io non credea tornare ancor per uso a contemplarvi…",
+      "author": "Giacomo Leopardi"
+    },
+    "pascoli": {
+      "text": "San Lorenzo, io lo so perché tanto di stelle per l’aria tranquilla arde e cade…",
+      "author": "Giovanni Pascoli"
+    },
+    "ungaretti": {
+      "text": "M’illumino d’immenso.",
+      "author": "Giuseppe Ungaretti"
+    },
+    "galileo1": {
+      "text": "La filosofia è scritta in questo grandissimo libro… (io dico l’universo).",
+      "author": "Galileo Galilei"
+    },
+    "galileo2": {
+      "text": "La Galassia non è altro che un ammasso di innumerabili stelle disseminate a mucchi.",
+      "author": "Galileo Galilei"
+    },
+    "hack": {
+      "text": "Siamo il risultato dell’evoluzione stellare, siamo fatti della materia degli astri.",
+      "author": "Margherita Hack"
+    },
+    "copernicus": {
+      "text": "Nel mezzo di tutto risiede il Sole. Chi, in questo bellissimo tempio, porrebbe questa lampada in luogo migliore?",
+      "author": "Niccolò Copernico"
+    },
+    "kepler": {
+      "text": "Misuravo i cieli, ora misuro le ombre della Terra. La mente era celeste; del corpo giace l’ombra.",
+      "author": "Giovanni Keplero"
+    },
+    "ptolemy": {
+      "text": "So di essere mortale ed effimero, ma quando scruto le spirali degli astri non tocco più la terra con i piedi.",
+      "author": "Tolomeo"
+    },
+    "ovid": {
+      "text": "Dette all’uomo sublime il volto e gl’impose di contemplare il cielo e di innalzare lo sguardo diritto alle stelle.",
+      "author": "Ovidio"
+    },
+    "kant": {
+      "text": "Il cielo stellato sopra di me, e la legge morale in me.",
+      "author": "Immanuel Kant"
+    },
+    "pascal": {
+      "text": "Il silenzio eterno di questi spazi infiniti mi spaventa.",
+      "author": "Blaise Pascal"
+    },
+    "hugo": {
+      "text": "C’è uno spettacolo più grande del mare: il cielo; c’è uno spettacolo più grande del cielo: l’interno dell’anima.",
+      "author": "Victor Hugo"
+    },
+    "wilde": {
+      "text": "Siamo tutti immersi nel fango, ma alcuni di noi guardano le stelle.",
+      "author": "Oscar Wilde"
+    },
+    "vanGogh1": {
+      "text": "Io non so nulla con certezza, ma la vista delle stelle mi fa sempre sognare.",
+      "author": "Vincent van Gogh"
+    },
+    "vanGogh2": {
+      "text": "Ho un terribile bisogno di – devo dire la parola? – religione; allora esco la notte a dipingere le stelle.",
+      "author": "Vincent van Gogh"
+    },
+    "saintExupery1": {
+      "text": "Mi domando se le stelle brillano perché un giorno ciascuno possa ritrovare la propria.",
+      "author": "Antoine de Saint-Exupéry"
+    },
+    "saintExupery2": {
+      "text": "Se ami una rosa che sta su una stella, di notte è bello guardare il cielo. Tutte le stelle sono fiorite.",
+      "author": "Antoine de Saint-Exupéry"
+    },
+    "einstein1": {
+      "text": "La cosa più bella che possiamo sperimentare è il mistero.",
+      "author": "Albert Einstein"
+    },
+    "einstein2": {
+      "text": "Ciò che di eternamente incomprensibile c’è nel mondo è la sua comprensibilità.",
+      "author": "Albert Einstein"
+    },
+    "hubble": {
+      "text": "Dotato dei suoi cinque sensi, l’uomo esplora l’universo che lo circonda e chiama l’avventura Scienza.",
+      "author": "Edwin Hubble"
+    },
+    "feynman": {
+      "text": "Anch’io vedo le stelle in una notte nel deserto, e le sento. Ma vedo di meno o di più?",
+      "author": "Richard Feynman"
+    },
+    "sagan1": {
+      "text": "Siamo fatti di materia stellare. Siamo un modo per il cosmo di conoscere se stesso.",
+      "author": "Carl Sagan"
+    },
+    "sagan2": {
+      "text": "La Terra è un piccolissimo palco in una vasta arena cosmica.",
+      "author": "Carl Sagan"
+    },
+    "rubin": {
+      "text": "Altri misteri dell’universo restano nascosti: la loro scoperta attende gli scienziati avventurosi del futuro.",
+      "author": "Vera Rubin"
+    },
+    "hawking": {
+      "text": "Ricordatevi di guardare in alto, verso le stelle, e non in basso, verso i vostri piedi.",
+      "author": "Stephen Hawking"
+    },
+    "tyson": {
+      "text": "L’universo non ha alcun obbligo di avere senso per te.",
+      "author": "Neil deGrasse Tyson"
+    }
+  }
+}

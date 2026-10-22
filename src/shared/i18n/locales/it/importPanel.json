@@ -1,0 +1,93 @@
+{
+  "format": {
+    "fits": "FITS",
+    "fitsCompressed": "FITS compresso (.fz)",
+    "fitsGzip": "FITS compresso con gzip",
+    "xisf": "XISF (PixInsight)",
+    "tiff": "TIFF",
+    "png": "PNG"
+  },
+  "frameType": {
+    "stacked": "impilato",
+    "light": "frame light",
+    "dark": "frame dark",
+    "flat": "frame flat",
+    "bias": "frame bias"
+  },
+  "rows": {
+    "exposure": "posa {value} s",
+    "filter": "filtro {filter}",
+    "size": "{width} × {height} pixel"
+  },
+  "dateTime": "{date} ore {time}",
+  "library": {
+    "title": "Libreria",
+    "empty": "La libreria è vuota. Aggiungi i frame con i pulsanti Importa frame e Cartella nella barra in alto, oppure dal menu File.",
+    "description": "Un clic su un frame lo apre nel visore. Il pulsante con l’occhio lo esclude dall’elaborazione senza rimuoverlo dalla libreria.",
+    "include": "Includi di nuovo",
+    "exclude": "Escludi dall’elaborazione",
+    "remove": "Togli dalla libreria",
+    "clear": "Svuota la libreria"
+  },
+  "data": {
+    "title": "Dati dello scatto",
+    "pixelsOnlyWithObject": "I file {format} contengono solo i pixel: niente posa, data, filtro né posizione in cielo. L’immagine è trattata come già impilata. L’oggetto è ricavato dal nome del file; per segnare gli oggetti sull’immagine usa Risolvi il campo nel passo Oggetti.",
+    "pixelsOnlyWithoutObject": "I file {format} contengono solo i pixel: niente posa, data, filtro né posizione in cielo. L’immagine è trattata come già impilata. Per riconoscere gli oggetti serve il loro nome nel nome del file (per esempio «M_27.tif»), oppure un FITS o XISF con l’intestazione.",
+    "object": "Oggetto",
+    "notDeclaredMasculine": "non dichiarato",
+    "notDeclaredFeminine": "non dichiarata",
+    "instrument": "Strumento",
+    "rightAscension": "Ascensione retta",
+    "declination": "Declinazione",
+    "exposure": "Esposizione",
+    "stackCount": "Frame integrati",
+    "totalExposure": "Integrazione totale",
+    "gain": "Guadagno",
+    "sensorTemperature": "Temperatura sensore",
+    "filter": "Filtro",
+    "noFilter": "nessuno",
+    "focuser": {
+      "name": "Fuocheggiatore",
+      "hint": "Posizione del fuocheggiatore registrata dallo strumento, utile per ritrovare la messa a fuoco"
+    },
+    "location": {
+      "name": "Luogo di osservazione",
+      "hint": "Latitudine e longitudine dichiarate nell’intestazione del file"
+    },
+    "bayer": {
+      "name": "Matrice di Bayer",
+      "colorImage": "immagine a colori",
+      "hint": "Schema dei filtri colorati sul sensore, usato per ricostruire il colore"
+    },
+    "pixelScale": {
+      "name": "Scala del campo",
+      "value": "{value} arcosec/px",
+      "unavailable": "non calcolabile",
+      "hint": "Porzione di cielo coperta da un singolo pixel, in arcosecondi"
+    },
+    "format": "Formato",
+    "bitDepth": {
+      "name": "Profondità",
+      "integer": "{bits} bit",
+      "floatingPoint": "{bits} bit a virgola mobile"
+    },
+    "fileSize": "Dimensione file",
+    "captureStart": "Inizio ripresa"
+  },
+  "stats": {
+    "title": "Misure del segnale",
+    "description": "Valori normalizzati fra 0 e 1. La mediana, cioè il valore centrale fra tutti i pixel, indica il livello del fondo cielo.",
+    "min": "Minimo",
+    "median": "Mediana (fondo cielo)",
+    "mean": "Media",
+    "max": "Massimo",
+    "noise": {
+      "name": "Rumore stimato",
+      "hint": "Stima del rumore poco influenzata dalle stelle. Più il valore è basso, più l’immagine è pulita"
+    },
+    "saturated": {
+      "name": "Pixel saturi",
+      "hint": "Percentuale di pixel al massimo della scala, di solito i centri delle stelle più luminose"
+    }
+  }
+}

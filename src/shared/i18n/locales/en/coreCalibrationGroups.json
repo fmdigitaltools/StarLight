@@ -1,0 +1,41 @@
+{
+  "rejectedSingle": "it is the only {type} with these conditions ({conditions}), and a single frame would carry all its noise into the master, so it is not used",
+  "reason": {
+    "dark": "same exposure and same gain",
+    "darkWithTemperature": "same exposure and same gain, {temperature}",
+    "sameTemperature": "same temperature",
+    "temperatureDifference": "{value} difference",
+    "bias": "same gain",
+    "flat": "same filter",
+    "flatSameNight": "same filter, same night",
+    "flatDaysOne": "same filter, captured {days} day apart",
+    "flatDaysOther": "same filter, captured {days} days apart"
+  },
+  "noDark": {
+    "lightsWithoutExposure": "the light frames do not declare the exposure in the header, and without the exposure StarLight cannot check whether a dark matches",
+    "otherSensor": "no dark was captured with the same sensor and the same dimensions",
+    "otherExposure": "no dark has an exposure of {exposure}",
+    "lightsWithoutGain": "the light frames do not declare the gain, while the {exposure} darks do",
+    "otherGain": "no {exposure} dark has a gain of {gain}",
+    "noneSuitable": "no suitable dark",
+    "nearestWarmer": "the closest {exposure} dark is at {temperature}, {difference} warmer than the light frames (the maximum allowed difference is {tolerance} °C)",
+    "nearestColder": "the closest {exposure} dark is at {temperature}, {difference} colder than the light frames (the maximum allowed difference is {tolerance} °C)"
+  },
+  "summary": {
+    "atExposure": "at {exposure}",
+    "lightsOne": "1 light frame",
+    "lightsOther": "{count} light frames"
+  },
+  "usageRow": {
+    "session": "{description}, built in this session: {reason}",
+    "library": "{description}, from the library: {reason}"
+  },
+  "noDarkNotice": {
+    "withBiasAndFlat": "with bias and flat",
+    "withFlatOnly": "with the flat only",
+    "withBiasOnly": "with the bias only",
+    "withoutMasters": "without any master",
+    "one": "{description} calibrated {combined}, without a dark: {reason}. A dark with a different exposure, gain or temperature would remove the wrong thermal signal, so it is not used. The thermal signal and the amplifier glow remain; stacking reduces hot pixels if the exposures were dithered. To remove them completely, capture darks with the same exposure, gain and temperature as the light frames.",
+    "other": "{description} calibrated {combined}, without a dark: {reason}. A dark with a different exposure, gain or temperature would remove the wrong thermal signal, so it is not used. The thermal signal and the amplifier glow remain; stacking reduces hot pixels if the exposures were dithered. To remove them completely, capture darks with the same exposure, gain and temperature as the light frames."
+  }
+}

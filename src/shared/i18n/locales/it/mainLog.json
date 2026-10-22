@@ -1,0 +1,7 @@
+{
+  "windowCrashed": {
+    "message": "La finestra di StarLight si è chiusa per un errore.",
+    "detail": "Alla riapertura, se c’era lavoro non salvato, ti verrà proposto di recuperarlo. Quello che è successo è annotato nel registro (Aiuto → Registro e segnalazione errori).",
+    "reopen": "Riapri la finestra"
+  }
+}

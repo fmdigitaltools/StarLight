@@ -1,0 +1,102 @@
+{
+  "none": {
+    "name": "None",
+    "description": "No filter applied. The image stays as you corrected it."
+  },
+  "natural": {
+    "name": "Natural",
+    "description": "A barely noticeable touch-up, with slightly more vivid colors and soft contrast."
+  },
+  "deepSky": {
+    "name": "Deep-sky",
+    "description": "Darkens the sky background and makes nebula colors stronger. It is the most widely used treatment in astrophotography."
+  },
+  "blazingNebula": {
+    "name": "Blazing nebula",
+    "description": "Brings out the hydrogen reds, the most common color in nebulae that emit their own light."
+  },
+  "polarChill": {
+    "name": "Polar chill",
+    "description": "A cool cast over the whole image, with shadows leaning toward blue."
+  },
+  "aquamarine": {
+    "name": "Aquamarine",
+    "description": "Tones the sky toward aqua green. Works well on planetary nebulae."
+  },
+  "amethyst": {
+    "name": "Amethyst",
+    "description": "Violet reflections in the highlights, blue in the shadows."
+  },
+  "aurora": {
+    "name": "Aurora",
+    "description": "Northern-lights green in the midtones and a hint of magenta in the highlights."
+  },
+  "cosmicSunset": {
+    "name": "Cosmic sunset",
+    "description": "Plum shadows and golden highlights, for a warm atmosphere."
+  },
+  "cinematic": {
+    "name": "Cinematic",
+    "description": "Teal shadows and orange highlights, the color contrast typical of cinema."
+  },
+  "antiqueGold": {
+    "name": "Antique gold",
+    "description": "An even golden toning, with most of the colors muted."
+  },
+  "copper": {
+    "name": "Copper",
+    "description": "A warm metallic tone, with deep shadows."
+  },
+  "blueNight": {
+    "name": "Blue night",
+    "description": "Iron toning like old prints, which pushes the whole image toward blue."
+  },
+  "ice": {
+    "name": "Ice",
+    "description": "Very bright highlights with a slight blue tint, clean shadows."
+  },
+  "pastel": {
+    "name": "Pastel",
+    "description": "Soft colors and reduced contrast, for a delicate result."
+  },
+  "dreamy": {
+    "name": "Dreamy",
+    "description": "Reduced contrast, soft highlights and slightly violet shadows."
+  },
+  "dramatic": {
+    "name": "Dramatic",
+    "description": "Strong contrast and darkened image edges, which draw attention to the subject."
+  },
+  "vintage": {
+    "name": "Vintage",
+    "description": "Muted colors and warm shadows, like an old slide."
+  },
+  "diamondStars": {
+    "name": "Diamond stars",
+    "description": "Brilliant highlights and a compact background, which make stars stand out as points of light."
+  },
+  "milkyWay": {
+    "name": "Milky Way",
+    "description": "Warm tones on rich star fields, without dulling the blue of young stars."
+  },
+  "falseColor": {
+    "name": "False color",
+    "description": "Clearly separates the color channels, with a bold effect similar to narrowband imaging, which uses filters that let through only one color of light."
+  },
+  "silver": {
+    "name": "Silver",
+    "description": "Neutral black and white, from deep black to clean white."
+  },
+  "charcoal": {
+    "name": "Charcoal",
+    "description": "Moody black and white, with closed shadows and contained highlights."
+  },
+  "sepia": {
+    "name": "Sepia",
+    "description": "Sepia toning, the warm brown tone of nineteenth-century photography."
+  },
+  "graphite": {
+    "name": "Graphite",
+    "description": "Cool monochrome with a slight blue cast."
+  }
+}

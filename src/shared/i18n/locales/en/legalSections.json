@@ -1,0 +1,44 @@
+{
+  "privacy": {
+    "title": "Privacy and data",
+    "intro": "StarLight processes images exclusively on your computer. It does not require you to register an account, does not collect personal data, usage statistics or diagnostic data, and contains no advertising or tracking tools."
+  },
+  "network": {
+    "title": "Network connections",
+    "intro": "Internet connections are enabled by default, and you can turn them off at any time in Settings, Network and catalogs tab. StarLight uses them only for the following features.",
+    "updatesLabel": "Updates.",
+    "updatesText": "Checks the StarLight server for new versions and downloads them only after you confirm.",
+    "catalogsLabel": "Catalogs.",
+    "catalogsText": "Downloads from the StarLight server the object and star packages you choose to install.",
+    "gaiaLabel": "Gaia catalog.",
+    "gaiaText": "For photometric color calibration and, when the installed stars are not enough, for plate solving, it sends the coordinates of the image center to the VizieR service of the CDS (University of Strasbourg) or to the ESA Gaia archive and receives the stars of the corresponding area of sky.",
+    "donate": "The Support StarLight button opens the donation page in your default browser; from that point on, the privacy policy of the hosting site applies."
+  },
+  "transmitted": {
+    "title": "Data transmitted and recipients",
+    "ipAddress": "Every connection reveals your computer’s IP address to the responding server. Besides the content of the request, StarLight transmits only the program version and the Windows version, when checking for updates.",
+    "hosting": "The StarLight server is hosted by Cloudflare, with files stored in the European Union, and does not log the requests it receives. Cloudflare processes the IP address to deliver files and protect the service, according to its own privacy policy. CDS and ESA process data according to their respective policies."
+  },
+  "stored": {
+    "title": "Data stored on your computer",
+    "dataFolder": "Settings, the calibration library, installed catalogs and plugins, recovery copies of your work and the error log are stored in the StarLight data folder, {folder}, and are not shared with third parties. In the error log, your user name is replaced with {userProfile}; the log leaves your computer only if you copy it yourself from the Help menu.",
+    "uninstall": "The folder contains only this data, not the program, and updates always keep it. During uninstallation you can choose to keep it, so you find everything again if you reinstall, or to remove it with the “Also delete the program data” option. The projects and images you have saved are never touched."
+  },
+  "metadata": {
+    "title": "Metadata in exported files",
+    "text": "Exported FITS files keep the acquisition metadata of the source file, including, when present, the observer’s name and the geographic coordinates of the observing site. Check them before sharing the file. The caption on the image never shows the coordinates and shows the location only if you turn on that option."
+  },
+  "contacts": {
+    "title": "Contact",
+    "text": "For any request about data processing, you can write to {email}."
+  },
+  "legal": {
+    "title": "Legal notes",
+    "freeSoftware": "StarLight is free software by {author}, distributed under the {license}. You can use, study, modify and redistribute it under the terms of the license.",
+    "licenseLink": "GNU GPL license, version 3 or later",
+    "warrantyLabel": "No warranty.",
+    "warrantyText": "StarLight is provided “as is”, without warranty of any kind, to the extent permitted by law (sections 15 and 16 of the license). Always keep a copy of the original files of your captures.",
+    "thirdPartiesLabel": "Third parties.",
+    "thirdPartiesText": "Catalogs, astronomical data and components by other authors are used under their respective licenses, listed in the credits. Product names and trademarks mentioned belong to their respective owners."
+  }
+}

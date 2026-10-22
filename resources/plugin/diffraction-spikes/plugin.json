@@ -1,0 +1,177 @@
+{
+  "id": "diffraction-spikes",
+  "name": "Diffraction spikes",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Adds to the brightest stars the radiating spikes of light produced, in reflecting telescopes, by the supports of the secondary mirror. The spikes become thinner and fainter towards the tip, are longer on the brightest stars and take on their color. It is an aesthetic effect added during processing. The spikes do not come from the captured data and are not suitable for measurements.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "spikes",
+      "label": "Number of spikes",
+      "options": [
+        {
+          "value": "4",
+          "label": "4",
+          "hint": "Two supports in a cross, the most common arrangement."
+        },
+        {
+          "value": "6",
+          "label": "6",
+          "hint": "Three supports at 120 degrees."
+        },
+        {
+          "value": "8",
+          "label": "8",
+          "hint": "Four supports, or two overlapping crosses."
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "slider",
+      "id": "angle",
+      "label": "Angle",
+      "hint": "Rotation of the spikes from the horizontal, counterclockwise.",
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "default": 0,
+      "format": "degrees"
+    },
+    {
+      "type": "slider",
+      "id": "length",
+      "label": "Length",
+      "hint": "Length of the spikes. Each star receives spikes proportional to the square root of its light, as happens with diffraction, so the brightest stars have the longest spikes.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.65,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "thickness",
+      "label": "Thickness",
+      "hint": "Width of the spikes relative to the natural one, which grows with the size of the star.",
+      "min": 0.3,
+      "max": 3,
+      "step": 0.05,
+      "default": 1,
+      "format": "decimal"
+    },
+    {
+      "type": "slider",
+      "id": "strength",
+      "label": "Strength",
+      "hint": "Brightness of the spikes near the star.",
+      "min": 0.05,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.85,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "threshold",
+      "label": "Brightness threshold",
+      "hint": "Minimum brightness, on the image as it appears on screen, of the stars that receive spikes. A higher threshold limits the effect to the brightest stars.",
+      "min": 0.3,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.85,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "maxStars",
+      "label": "Maximum number of stars",
+      "hint": "Among the stars above the threshold, only the brightest receive spikes, up to this number.",
+      "min": 1,
+      "max": 200,
+      "step": 1,
+      "default": 12,
+      "format": "integer"
+    },
+    {
+      "type": "toggle",
+      "id": "starColor",
+      "label": "Star color",
+      "hint": "The spikes take on the color of the star, measured in the halo around the core. When off, the spikes are white.",
+      "default": true
+    },
+    {
+      "type": "toggle",
+      "id": "spectrum",
+      "label": "Color dispersion",
+      "hint": "Diffraction spreads red light farther than blue light, so towards the tip the spikes shift slightly to red. Requires a color image.",
+      "default": true
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Spighe di diffrazione",
+      "description": "Aggiunge alle stelle più brillanti le punte luminose a raggiera prodotte, nei telescopi a riflessione, dai sostegni dello specchio secondario. Le punte si assottigliano e si attenuano verso l’estremità, sono più lunghe sulle stelle più luminose e ne riprendono il colore. È un effetto estetico aggiunto in elaborazione. Le punte non provengono dai dati della ripresa e non sono adatte a misure.",
+      "parameters": {
+        "spikes": {
+          "label": "Numero di punte",
+          "options": {
+            "4": {
+              "label": "4",
+              "hint": "Due sostegni a croce, la disposizione più comune."
+            },
+            "6": {
+              "label": "6",
+              "hint": "Tre sostegni a 120 gradi."
+            },
+            "8": {
+              "label": "8",
+              "hint": "Quattro sostegni, oppure due croci sovrapposte."
+            }
+          }
+        },
+        "angle": {
+          "label": "Angolo",
+          "hint": "Rotazione delle punte rispetto all’orizzontale, in senso antiorario."
+        },
+        "length": {
+          "label": "Lunghezza",
+          "hint": "Lunghezza delle punte. Ogni stella riceve punte proporzionali alla radice quadrata della sua luce, come avviene con la diffrazione, quindi le stelle più brillanti hanno le punte più lunghe."
+        },
+        "thickness": {
+          "label": "Spessore",
+          "hint": "Larghezza delle punte rispetto a quella naturale, che cresce con la grandezza della stella."
+        },
+        "strength": {
+          "label": "Intensità",
+          "hint": "Luminosità delle punte vicino alla stella."
+        },
+        "threshold": {
+          "label": "Soglia di luminosità",
+          "hint": "Luminosità minima, sull’immagine come appare a schermo, delle stelle che ricevono le punte. Una soglia più alta limita l’effetto alle stelle più brillanti."
+        },
+        "maxStars": {
+          "label": "Numero massimo di stelle",
+          "hint": "Fra le stelle sopra la soglia ricevono le punte solo le più luminose, fino a questo numero."
+        },
+        "starColor": {
+          "label": "Colore della stella",
+          "hint": "Le punte prendono il colore della stella, misurato nell’alone attorno al nucleo. Spento, le punte sono bianche."
+        },
+        "spectrum": {
+          "label": "Dispersione dei colori",
+          "hint": "La diffrazione allontana la luce rossa più di quella blu, quindi verso l’estremità le punte virano leggermente al rosso. Richiede un’immagine a colori."
+        }
+      }
+    }
+  }
+}

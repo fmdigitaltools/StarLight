@@ -1,0 +1,69 @@
+{
+  "file": {
+    "title": "File",
+    "newProject": "Nuovo progetto",
+    "openProject": "Apri progetto",
+    "recentProjects": "Progetti recenti",
+    "clearRecent": "Svuota l’elenco",
+    "noRecent": "Nessun progetto recente",
+    "save": "Salva",
+    "saveHint": "Salva le modifiche in «{name}»",
+    "saveAs": "Salva con nome",
+    "closeProject": "Chiudi progetto",
+    "importFiles": "Importa file",
+    "importFolder": "Importa cartella",
+    "export": "Esporta",
+    "batch": "Elaborazione in serie",
+    "batchHint": "Applica la stessa ricetta a più immagini ed esporta un file per ciascuna",
+    "exit": "Esci"
+  },
+  "edit": {
+    "title": "Modifica",
+    "undo": "Annulla",
+    "undoStep": "Annulla: {step}",
+    "redo": "Ripeti",
+    "redoStep": "Ripeti: {step}",
+    "history": "Cronologia delle modifiche",
+    "historyHint": "Elenco delle modifiche: un clic su un passo riporta l’immagine a quel momento"
+  },
+  "view": {
+    "title": "Visualizza",
+    "fit": "Adatta alla finestra",
+    "actualSize": "Dimensione reale (100%)",
+    "actualSizeHint": "Un pixel dell’immagine per ogni pixel dello schermo",
+    "zoomIn": "Ingrandisci",
+    "zoomOut": "Riduci",
+    "markers": "Mostra i marcatori degli oggetti",
+    "markersHint": "Segna sull’immagine gli oggetti del catalogo riconosciuti nel campo",
+    "stars": "Mostra le stelle rilevate",
+    "starsHint": "Segna le stelle trovate nell’immagine con un cerchio proporzionale all’HFR, il raggio che contiene metà della loro luce",
+    "panel": "Mostra il pannello degli strumenti",
+    "fullScreen": "Schermo intero"
+  },
+  "plugins": {
+    "title": "Plugin",
+    "hint": "Apre la galleria per cercare, installare e disinstallare strumenti aggiuntivi gratuiti e open source"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "hint": "Apre le impostazioni di StarLight (Ctrl+virgola)"
+  },
+  "help": {
+    "title": "Aiuto",
+    "onboarding": "Guida rapida",
+    "onboardingHint": "Percorso breve che indica sull’interfaccia i comandi principali",
+    "guide": "Guida",
+    "glossary": "Glossario",
+    "glossaryHint": "Spiegazione dei termini usati in StarLight, con una ricerca",
+    "checkUpdates": "Controlla gli aggiornamenti",
+    "checkUpdatesHint": "Chiede al server se c’è una versione più recente di StarLight",
+    "log": "Registro e segnalazione errori",
+    "logHint": "Mostra il registro degli errori e copia il rapporto da allegare a una segnalazione",
+    "shortcuts": "Scorciatoie da tastiera",
+    "shortcutsHint": "Elenco di tutti i tasti rapidi, con una ricerca",
+    "license": "Licenza e riconoscimenti",
+    "support": "Sostieni StarLight",
+    "supportHint": "Apre nel browser la pagina per sostenere lo sviluppo con una donazione",
+    "about": "Informazioni su StarLight"
+  }
+}

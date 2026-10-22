@@ -1,0 +1,102 @@
+{
+  "none": {
+    "name": "Nessuno",
+    "description": "Nessun filtro applicato. L’immagine resta come l’hai corretta."
+  },
+  "natural": {
+    "name": "Naturale",
+    "description": "Ritocco appena percettibile, con colori poco più vivi e contrasto morbido."
+  },
+  "deepSky": {
+    "name": "Cielo profondo",
+    "description": "Scurisce il fondo cielo e rende più decisi i colori delle nebulose. È il trattamento più usato in astrofotografia."
+  },
+  "blazingNebula": {
+    "name": "Nebulosa ardente",
+    "description": "Esalta i rossi dell’idrogeno, il colore più diffuso nelle nebulose che emettono luce propria."
+  },
+  "polarChill": {
+    "name": "Freddo polare",
+    "description": "Dominante fredda su tutta l’immagine, con ombre tendenti all’azzurro."
+  },
+  "aquamarine": {
+    "name": "Acquamarina",
+    "description": "Vira il cielo verso il verde acqua. Efficace sulle nebulose planetarie."
+  },
+  "amethyst": {
+    "name": "Ametista",
+    "description": "Riflessi violetti sulle alte luci, azzurro nelle ombre."
+  },
+  "aurora": {
+    "name": "Aurora",
+    "description": "Verde boreale nei mezzitoni e magenta appena accennato sulle luci."
+  },
+  "cosmicSunset": {
+    "name": "Tramonto cosmico",
+    "description": "Ombre prugna e luci dorate, per un’atmosfera calda."
+  },
+  "cinematic": {
+    "name": "Cinematico",
+    "description": "Ombre blu-verdi e luci arancioni, il contrasto di colore tipico del cinema."
+  },
+  "antiqueGold": {
+    "name": "Oro antico",
+    "description": "Viraggio dorato uniforme, con i colori in gran parte attenuati."
+  },
+  "copper": {
+    "name": "Rame",
+    "description": "Tono metallico caldo, con ombre profonde."
+  },
+  "blueNight": {
+    "name": "Notte blu",
+    "description": "Viraggio al ferro come nelle stampe antiche, che porta tutta l’immagine verso il blu."
+  },
+  "ice": {
+    "name": "Ghiaccio",
+    "description": "Luci chiarissime e appena azzurrate, ombre pulite."
+  },
+  "pastel": {
+    "name": "Pastello",
+    "description": "Colori tenui e contrasto ridotto, per un risultato delicato."
+  },
+  "dreamy": {
+    "name": "Sognante",
+    "description": "Contrasto ridotto, luci morbide e ombre appena violacee."
+  },
+  "dramatic": {
+    "name": "Drammatico",
+    "description": "Contrasto spinto e bordi dell’immagine scuriti, che concentrano l’attenzione sul soggetto."
+  },
+  "vintage": {
+    "name": "Vintage",
+    "description": "Colori smorzati e ombre calde, come una vecchia diapositiva."
+  },
+  "diamondStars": {
+    "name": "Stelle di diamante",
+    "description": "Alte luci brillanti e fondo compatto, che fanno risaltare le stelle come punti luminosi."
+  },
+  "milkyWay": {
+    "name": "Via Lattea",
+    "description": "Toni caldi sui campi stellari ricchi, senza spegnere il blu delle stelle giovani."
+  },
+  "falseColor": {
+    "name": "Falso colore",
+    "description": "Separa nettamente i canali di colore, con un effetto deciso simile alle riprese a banda stretta, eseguite con filtri che lasciano passare un solo colore della luce."
+  },
+  "silver": {
+    "name": "Argento",
+    "description": "Bianco e nero neutro, dal nero profondo al bianco pulito."
+  },
+  "charcoal": {
+    "name": "Carbone",
+    "description": "Bianco e nero cupo, con ombre chiuse e alte luci contenute."
+  },
+  "sepia": {
+    "name": "Seppia",
+    "description": "Viraggio seppia, il tono bruno caldo della fotografia dell’Ottocento."
+  },
+  "graphite": {
+    "name": "Grafite",
+    "description": "Monocromo freddo con una leggera dominante azzurra."
+  }
+}

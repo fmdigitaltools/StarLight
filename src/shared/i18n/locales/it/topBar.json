@@ -1,0 +1,35 @@
+{
+  "import": {
+    "files": "Importa frame",
+    "filesTitle": "Apri uno o più file: FITS, XISF, TIFF, PNG o RAW delle fotocamere",
+    "folder": "Cartella",
+    "folderTitle": "Importa tutti i file FITS, XISF e RAW contenuti in una cartella",
+    "telescope": "Telescopio",
+    "telescopeTitleUnset": "Importa i frame dalla cartella del telescopio: indicala prima in Impostazioni, scheda Telescopio",
+    "telescopeTitle": "Scegli i frame da importare nella cartella del telescopio ({folder})"
+  },
+  "reset": {
+    "label": "Ripristina",
+    "title": "Riporta l’immagine come appena aperta, annullando le regolazioni (tasto R)"
+  },
+  "rotateCounterclockwise": "Ruota l’immagine di 90° in senso antiorario. La rotazione vale anche per l’esportazione; per toglierla usa Annulla.",
+  "rotateClockwise": "Ruota l’immagine di 90° in senso orario. La rotazione vale anche per l’esportazione; per toglierla usa Annulla.",
+  "mirrorHorizontal": "Specchia l’immagine da sinistra a destra, senza perdita. Lo specchio vale anche per l’esportazione; per toglierlo usa Annulla.",
+  "mirrorVertical": "Specchia l’immagine dall’alto in basso, senza perdita. Lo specchio vale anche per l’esportazione; per toglierlo usa Annulla.",
+  "straighten": "Raddrizza: ruota l’immagine di un angolo qualsiasi, traccia una linea da raddrizzare o porta il nord in alto",
+  "zoomIn": "Ingrandisce l’immagine (tasto {key})",
+  "zoomOut": "Riduce l’immagine (tasto {key})",
+  "fit": {
+    "label": "Adatta",
+    "title": "Adatta l’immagine alla finestra (tasto 0)"
+  },
+  "crop": {
+    "label": "Ritaglio",
+    "hideTitle": "Nasconde il riquadro del ritaglio nel visore; l’esportazione lo usa comunque (tasto {key})",
+    "showTitle": "Mostra nel visore il ritaglio dell’esportazione: trascina il riquadro per spostarlo, tira angoli e lati per cambiarne la misura (tasto {key})"
+  },
+  "magicWand": {
+    "label": "Abracadabra",
+    "title": "Prepara l’immagine automaticamente, misurandola e correggendo fondo cielo, colore, rumore, dettagli, stelle e toni. I valori scelti restano modificabili nei passi Elabora e Correggi, e il pulsante Ripristina riporta l’immagine all’originale."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "invalidFileName": "Invalid file name.",
+  "tooManySameName": "Too many files with the same name in the destination folder.",
+  "chooseFiles": {
+    "title": "Choose the images to batch process",
+    "button": "Add"
+  },
+  "saveRecipe": {
+    "title": "Save recipe",
+    "button": "Save"
+  },
+  "openRecipe": {
+    "title": "Open a recipe",
+    "button": "Open"
+  },
+  "filters": {
+    "allImages": "All images",
+    "allFiles": "All files",
+    "recipes": "StarLight recipes"
+  },
+  "notARecipe": "The selected file is not a StarLight recipe."
+}

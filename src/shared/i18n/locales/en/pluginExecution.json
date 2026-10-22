@@ -1,0 +1,7 @@
+{
+  "notInstalled": "The plugin “{name}” is not installed and was not applied. You can install it from the plugin gallery.",
+  "sandboxUnavailable": "The plugin “{name}” was not applied: the protected space where plugins run did not respond. Try again; if it happens again, restart StarLight.",
+  "withoutGeometryOne": "The plugin “{name}” moved the pixels without declaring the transformation it applied. As long as this processing stays applied, the object markers are hidden and the exported FITS file does not contain the astrometric solution. To restore them, disable the plugin and press Apply again.",
+  "withoutGeometryOther": "The plugins “{names}” moved the pixels without declaring the transformation they applied. As long as this processing stays applied, the object markers are hidden and the exported FITS file does not contain the astrometric solution. To restore them, disable the plugin and press Apply again.",
+  "nameSeparator": "”, “"
+}

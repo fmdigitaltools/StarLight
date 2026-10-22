@@ -1,0 +1,9 @@
+{
+  "resolutions": {
+    "original": { "name": "Originale", "description": "Mantiene i pixel del file di partenza" },
+    "hd": { "description": "Adatta alla condivisione rapida" },
+    "fullHd": { "description": "Buon compromesso per il web" },
+    "qhd": { "description": "Monitor ad alta densità" },
+    "uhd": { "description": "Massima risoluzione, file più grande" }
+  }
+}

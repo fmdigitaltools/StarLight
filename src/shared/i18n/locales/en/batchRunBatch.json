@@ -1,0 +1,6 @@
+{
+  "rawReadFailed": "could not read the RAW file",
+  "processing": "Processing",
+  "unknownError": "unknown error",
+  "readingFile": "reading the file"
+}

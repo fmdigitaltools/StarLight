@@ -1,0 +1,40 @@
+{
+  "ariaLabel": "Processing steps",
+  "title": "Workflow",
+  "lockedNoFrame": "{description} (import a frame first)",
+  "lockedNoImage": "{description} (open a frame in the viewer first)",
+  "steps": {
+    "import": {
+      "label": "Import",
+      "description": "Load the captures to process, from your telescope or camera"
+    },
+    "calibrate": {
+      "label": "Calibrate",
+      "description": "Remove sensor defects with calibration frames: darks, flats and bias"
+    },
+    "align": {
+      "label": "Stack",
+      "description": "Align and combine the frames to reduce noise"
+    },
+    "process": {
+      "label": "Process",
+      "description": "Clean up and improve the data: sky background, color, noise, detail, stars"
+    },
+    "correct": {
+      "label": "Correct",
+      "description": "Stretch the histogram and adjust tones and color"
+    },
+    "filters": {
+      "label": "Filters",
+      "description": "Apply photo filters, reduce noise and enhance detail"
+    },
+    "objects": {
+      "label": "Objects",
+      "description": "Find out which celestial objects are in the frame"
+    },
+    "export": {
+      "label": "Export",
+      "description": "Save the finished image in the format you prefer"
+    }
+  }
+}

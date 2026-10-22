@@ -1,0 +1,24 @@
+{
+  "network": {
+    "timeout": "the server did not respond in time",
+    "aborted": "download interrupted",
+    "connectionFailed": "connection failed (no network or server unreachable)",
+    "unexpectedReply": "the server answered with a web page instead of the expected file; try again in a few minutes"
+  },
+  "serverNotConfigured": "The catalog server is not configured yet.",
+  "indexUnreachable": "The catalog list cannot be reached: {reason}.",
+  "noCatalogsYet": "There are no catalogs to download on the server yet.",
+  "catalogServerError": "The catalog server responded with error {status}.",
+  "downloadFailed": "Download failed: {reason}.",
+  "serverError": "The server responded with error {status}.",
+  "alreadyDownloading": "This catalog is already being downloaded.",
+  "noLongerAvailable": "The catalog is no longer available on the server.",
+  "chooseArchive": {
+    "title": "Choose the catalog archive",
+    "button": "Install this catalog"
+  },
+  "filters": {
+    "zip": "ZIP archives",
+    "allFiles": "All files"
+  }
+}

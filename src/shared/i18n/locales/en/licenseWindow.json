@@ -1,0 +1,13 @@
+{
+  "title": "License and credits",
+  "subtitle": "{app} is distributed under the GNU GPL version 3 or later ({spdx}).",
+  "tabs": {
+    "license": "License",
+    "credits": "Credits"
+  },
+  "footer": "{app} by {author} is distributed under the GNU GPL version 3 or later",
+  "close": "Close",
+  "licenseIntro": "{app} can be freely used, studied, modified and redistributed under the terms of the GNU General Public License, version 3 or, at your option, any later version. The program comes with no warranty of any kind. The official text of the license follows.",
+  "creditsIntro": "{app} relies on the work of other authors, listed here with their licenses. The full text of the licenses is in the THIRD-PARTY-NOTICES.md file, in the resources subfolder of the program folder.",
+  "openLink": "Opens {link} in your browser"
+}

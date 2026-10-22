@@ -1,0 +1,8 @@
+{
+  "parts": {
+    "strips": "fasce",
+    "cells": "celle",
+    "index": "indice",
+    "total": "totale"
+  }
+}

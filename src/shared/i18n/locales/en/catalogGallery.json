@@ -1,0 +1,62 @@
+{
+  "title": "Deep-sky catalogs",
+  "intro": "Deep-sky catalogs to add to the one included with StarLight (OpenNGC, Messier, Caldwell). The objects of an installed catalog are recognized in the field, marked on the image and can be found by designation. They contain only data under an open license: you download them from the StarLight server or install them from a ZIP archive, and they are checked before installation. The star package for plate solving, instead, lets StarLight recognize the framed sky even without an internet connection.",
+  "loading": "Loading the list…",
+  "retry": "Try again",
+  "empty": {
+    "noMatch": "No catalogs match your search.",
+    "noActive": "No active catalogs.",
+    "none": "No catalogs to show."
+  },
+  "groups": {
+    "stars": "Stars for plate solving",
+    "emissionNebulae": "Emission nebulae",
+    "darkNebulae": "Dark nebulae",
+    "reflectionNebulae": "Reflection nebulae",
+    "planetaryNebulae": "Planetary nebulae",
+    "supernovaRemnants": "Supernova remnants",
+    "galaxies": "Galaxies",
+    "galaxyGroups": "Galaxy groups and clusters",
+    "starClusters": "Star clusters",
+    "other": "Other"
+  },
+  "onDisk": "{size} on disk",
+  "count": {
+    "stars": "stars",
+    "objects": "objects"
+  },
+  "authorVersion": "{authors} · version {version}",
+  "licenseTitle": "Open data license",
+  "limitMagnitude": "down to magnitude {magnitude}",
+  "limitMagnitudeTitle": "Magnitude of the faintest star included in the package",
+  "exampleTitle": "How designations are written in this catalog",
+  "status": {
+    "active": "active",
+    "activeTitle": "Its objects are recognized and marked on the image",
+    "activeStarsTitle": "Plate solving uses these stars before turning to the online Gaia catalog",
+    "disabled": "disabled",
+    "disabledTitle": "Installed but not used: its objects are not recognized",
+    "disabledStarsTitle": "Installed but not used: plate solving only uses the online Gaia catalog",
+    "fromFile": "from file",
+    "fromFileTitle": "Installed from an archive, not available on the server"
+  },
+  "actions": {
+    "stop": "Stop",
+    "uninstall": "Uninstall",
+    "uninstallTitle": "Removes the catalog from StarLight by deleting its folder",
+    "uninstallStarsTitle": "Removes the package from StarLight by deleting its folder",
+    "update": "Update to {version}",
+    "disable": "Disable",
+    "disableTitle": "The catalog stays on disk but its objects are no longer used, including the next time you open StarLight, until you enable it again",
+    "disableStarsTitle": "The package stays on disk but plate solving no longer uses it, including the next time you open StarLight, until you enable it again",
+    "enable": "Enable",
+    "enableTitle": "Its objects are recognized and marked on the image again",
+    "enableStarsTitle": "Plate solving uses these stars again",
+    "download": "Download and install"
+  },
+  "progress": {
+    "connecting": "Connecting…",
+    "installing": "Checking and installing…",
+    "bytes": "{received} of {total}"
+  }
+}

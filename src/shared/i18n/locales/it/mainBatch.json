@@ -1,0 +1,22 @@
+{
+  "invalidFileName": "Nome di file non valido.",
+  "tooManySameName": "Troppi file con lo stesso nome nella cartella di destinazione.",
+  "chooseFiles": {
+    "title": "Scegli le immagini da elaborare in serie",
+    "button": "Aggiungi"
+  },
+  "saveRecipe": {
+    "title": "Salva la ricetta",
+    "button": "Salva"
+  },
+  "openRecipe": {
+    "title": "Apri una ricetta",
+    "button": "Apri"
+  },
+  "filters": {
+    "allImages": "Tutte le immagini",
+    "allFiles": "Tutti i file",
+    "recipes": "Ricette di StarLight"
+  },
+  "notARecipe": "Il file scelto non è una ricetta di StarLight."
+}

@@ -1,0 +1,7 @@
+{
+  "framesNotStacked": "The frames in which the nucleus was marked are not among those being stacked.",
+  "sameMoment": "The nucleus must be marked in two frames taken at different times, the first and the last.",
+  "needThreeFrames": "At least three frames are needed to find the comet automatically.",
+  "notFoundAuto": "The comet could not be found automatically: there is no extended object moving steadily across the frames. If the comet is faint or has barely moved, mark the nucleus with a click on the first and on the last frame.",
+  "nucleusNotMeasured": "The position of the nucleus could not be measured."
+}

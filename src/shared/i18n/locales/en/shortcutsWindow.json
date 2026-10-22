@@ -1,0 +1,18 @@
+{
+  "title": "Keyboard shortcuts",
+  "subtitle": "The main commands without going through the menus. You can also open this list with {keys}.",
+  "groups": {
+    "file": "File",
+    "edit": "Edit",
+    "view": "View",
+    "workflow": "Workflow",
+    "image": "Image",
+    "help": "Help"
+  },
+  "noResults": "No shortcut contains “{query}”.",
+  "or": "or",
+  "searchPlaceholder": "Search for a command or a key, for example “zoom” or “Ctrl+S”",
+  "searchLabel": "Search shortcuts",
+  "footnote": "Letters and numbers on their own do not work as shortcuts while you are typing in a text field.",
+  "close": "Close"
+}

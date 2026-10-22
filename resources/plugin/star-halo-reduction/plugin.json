@@ -1,0 +1,70 @@
+{
+  "id": "star-halo-reduction",
+  "name": "Bright star halo reduction",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Reduces the broad, faint halo that surrounds the brightest stars, caused by haze, reflections between lenses and filters or scattering in the optics. For each star it measures the circular profile of the halo and subtracts it, revealing the background and the nebula it covered. The star’s disc stays identical and small stars are not treated. Unlike star reduction, it does not change their size.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "strength",
+      "label": "Strength",
+      "hint": "Share of the halo to remove. At 100% the measured halo is subtracted entirely; lower values leave a trace of it, for a more natural look.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.65,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "threshold",
+      "label": "Star brightness threshold",
+      "hint": "Minimum brightness of the star’s center, on the image as it appears on screen, for its halo to be treated. High values treat only the brightest stars.",
+      "min": 0.3,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.85,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "haloSize",
+      "label": "Halo size",
+      "hint": "Maximum distance in pixels from the star’s center up to which the halo is measured and removed. It must include the whole halo, otherwise an outer ring of it remains.",
+      "min": 10,
+      "max": 600,
+      "step": 1,
+      "default": 120,
+      "format": "integer"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Riduzione degli aloni delle stelle brillanti",
+      "description": "Attenua l’alone largo e tenue che circonda le stelle più luminose, dovuto a foschia, riflessi fra lenti e filtri o diffusione nell’ottica. Misura per ogni stella il profilo circolare dell’alone e lo sottrae, restituendo il fondo e la nebulosa che copriva. Il disco della stella resta identico e le stelle piccole non vengono trattate. A differenza della riduzione delle stelle, non ne cambia le dimensioni.",
+      "parameters": {
+        "strength": {
+          "label": "Intensità",
+          "hint": "Quota dell’alone da togliere. Al 100% l’alone misurato viene sottratto per intero; valori più bassi ne lasciano una traccia, di aspetto più naturale."
+        },
+        "threshold": {
+          "label": "Soglia di luminosità delle stelle",
+          "hint": "Luminosità minima del centro della stella, sull’immagine come appare a schermo, perché il suo alone venga trattato. Con valori alti si trattano solo le stelle più brillanti."
+        },
+        "haloSize": {
+          "label": "Ampiezza dell’alone",
+          "hint": "Distanza massima in pixel dal centro della stella fino a cui si misura e si toglie l’alone. Deve comprendere tutto l’alone, altrimenti ne resta un anello esterno."
+        }
+      }
+    }
+  }
+}

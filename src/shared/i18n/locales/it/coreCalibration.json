@@ -1,0 +1,5 @@
+{
+  "noFrames": "Nessun frame di calibrazione fornito.",
+  "masterSizesDiffer": "I frame di calibrazione hanno dimensioni diverse fra loro: tutti devono provenire dallo stesso sensore con le stesse impostazioni.",
+  "sizeMismatch": "Un frame di calibrazione ha dimensioni diverse dal frame di luce ({masterWidth} x {masterHeight} contro {lightWidth} x {lightHeight})."
+}

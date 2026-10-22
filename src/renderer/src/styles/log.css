@@ -1,0 +1,247 @@
+/* ---- Log and error report window (LogWindow.tsx) ---- */
+
+.sl-log {
+  width: min(900px, 92vw);
+  height: 82vh;
+}
+
+.sl-log:focus {
+  outline: none;
+}
+
+.sl-log-icon {
+  flex: none;
+  color: var(--sl-cyan);
+}
+
+.sl-log-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+}
+
+.sl-log-intro {
+  flex: none;
+  font-size: var(--sl-fs-sm);
+}
+
+.sl-log-empty {
+  margin: var(--sl-s-5) 0;
+  text-align: center;
+  color: var(--sl-text-3);
+  font-size: var(--sl-fs-sm);
+}
+
+.sl-log-entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+  background: var(--sl-bg-0);
+}
+
+/* Date, level and origin in fixed columns; the text takes the rest. */
+.sl-log-entry {
+  display: grid;
+  grid-template-columns: 9.5em 4.6em 6.6em 1fr;
+  gap: var(--sl-s-3);
+  align-items: baseline;
+  padding: 7px var(--sl-s-3);
+  border-bottom: 1px solid var(--sl-line-soft, var(--sl-line));
+  font-size: var(--sl-fs-sm);
+}
+
+.sl-log-entry:last-child {
+  border-bottom: none;
+}
+
+.sl-log-entry--error {
+  background: rgba(255, 80, 100, 0.04);
+}
+
+.sl-log-when {
+  color: var(--sl-text-3);
+  font-size: var(--sl-fs-xs);
+  white-space: nowrap;
+}
+
+.sl-log-level {
+  justify-self: start;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: var(--sl-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.sl-log-level--info {
+  color: var(--sl-text-3);
+  background: var(--sl-bg-3);
+}
+
+.sl-log-level--warning {
+  color: var(--sl-amber);
+  background: rgba(255, 184, 77, 0.12);
+}
+
+.sl-log-level--error {
+  color: var(--sl-red);
+  background: rgba(255, 80, 100, 0.14);
+}
+
+.sl-log-source {
+  color: var(--sl-text-3);
+  font-size: var(--sl-fs-xs);
+}
+
+.sl-log-text {
+  color: var(--sl-text-2);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.sl-log-details summary {
+  cursor: pointer;
+  color: var(--sl-text-3);
+  font-size: var(--sl-fs-xs);
+  margin-top: 2px;
+}
+
+.sl-log-details pre {
+  margin: var(--sl-s-1) 0 0;
+  padding: var(--sl-s-2);
+  max-height: 220px;
+  overflow: auto;
+  background: var(--sl-bg-1);
+  border-radius: 4px;
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.sl-log-commands {
+  display: flex;
+  gap: var(--sl-s-2);
+  flex-wrap: wrap;
+}
+
+/* ---- Prompt to open the log after a serious error ---- */
+
+.sl-log-proposal {
+  position: fixed;
+  right: var(--sl-s-4);
+  bottom: calc(var(--sl-statusbar-h) + var(--sl-s-4));
+  z-index: 61;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sl-s-3);
+  max-width: 420px;
+  padding: var(--sl-s-3) var(--sl-s-4);
+  border-radius: var(--sl-r-md);
+  background: rgba(17, 23, 38, 0.98);
+  border: 1px solid var(--sl-line-strong);
+  border-left: 3px solid var(--sl-amber);
+  box-shadow: var(--sl-shadow-2);
+  color: var(--sl-amber);
+  animation: sl-enter var(--sl-t-med) ease-out;
+}
+
+.sl-log-proposal-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+  line-height: 1.5;
+}
+
+.sl-log-proposal-text strong {
+  color: var(--sl-text);
+}
+
+.sl-log-proposal-commands {
+  display: flex;
+  gap: var(--sl-s-2);
+}
+
+/* ---- Interface error screen (ErrorBoundary.tsx) ---- */
+
+.sl-error-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 75;
+  display: grid;
+  place-items: center;
+  padding: var(--sl-s-5);
+  background: radial-gradient(ellipse at 50% 30%, rgba(34, 232, 255, 0.06), transparent 60%), var(--sl-bg-0);
+}
+
+.sl-error-drag {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 150px;
+  height: var(--sl-menubar-h);
+  -webkit-app-region: drag;
+}
+
+.sl-error-card {
+  width: min(560px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sl-s-3);
+  padding: var(--sl-s-6) var(--sl-s-5);
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-xl);
+  box-shadow: var(--sl-shadow-3);
+  text-align: center;
+}
+
+.sl-error-icon {
+  color: var(--sl-amber);
+}
+
+.sl-error-title {
+  margin: 0;
+  font-size: var(--sl-fs-xl);
+  color: var(--sl-text);
+}
+
+.sl-error-text {
+  margin: 0;
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-md);
+  line-height: 1.55;
+}
+
+.sl-error-text--small {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+}
+
+.sl-error-detail {
+  margin: 0;
+  width: 100%;
+  padding: var(--sl-s-2) var(--sl-s-3);
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-sm);
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+  overflow-wrap: anywhere;
+}
+
+.sl-error-commands {
+  display: flex;
+  gap: var(--sl-s-3);
+  margin-top: var(--sl-s-2);
+}
+
+.sl-log .sl-segments button {
+  white-space: nowrap;
+}

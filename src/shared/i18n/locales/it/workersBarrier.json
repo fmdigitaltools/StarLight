@@ -1,0 +1,4 @@
+{
+  "threadStopped": "Un thread di calcolo si è fermato: il calcolo è stato interrotto. Riprova; se il problema si ripete, riavvia StarLight.",
+  "threadNotResponding": "Un thread di calcolo non risponde da due minuti: il calcolo è stato interrotto. Riprova; se il problema si ripete, riavvia StarLight."
+}

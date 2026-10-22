@@ -1,0 +1,14 @@
+{
+  "language": {
+    "name": "Italiano",
+    "locale": "it-IT",
+    "label": "Lingua",
+    "hint": "Lingua dei testi del programma. Con «Automatica» segue la lingua di Windows, se StarLight la conosce; altrimenti usa l’inglese.",
+    "auto": "Automatica"
+  },
+  "folders": {
+    "projects": "Progetti",
+    "exports": "Esportazioni",
+    "sessions": "Sessioni dal vivo"
+  }
+}

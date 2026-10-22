@@ -1,0 +1,82 @@
+{
+  "id": "green-removal",
+  "name": "Green removal",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Removes the green cast that the sensor and the filters leave on astrophotographs, with the SCNR method (Subtractive Chromatic Noise Reduction). Green is reduced only in the pixels where it exceeds a reference computed from red and blue, so stars and nebulae keep their colors.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.3.0",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "method",
+      "label": "Method",
+      "options": [
+        {
+          "value": "average",
+          "label": "Neutral average",
+          "hint": "Green is limited to the average of red and blue. This is the recommended method."
+        },
+        {
+          "value": "maximum",
+          "label": "Neutral maximum",
+          "hint": "Green is limited to the higher of red and blue. The reduction is smaller, suited to mild casts."
+        }
+      ],
+      "default": "average"
+    },
+    {
+      "type": "slider",
+      "id": "amount",
+      "label": "Amount",
+      "hint": "Share of the excess green to remove. At 100% all the green above the reference is removed.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 1,
+      "format": "percent"
+    },
+    {
+      "type": "toggle",
+      "id": "preserveLuminance",
+      "label": "Preserve the brightness",
+      "hint": "Removing green slightly darkens the image, because green accounts for most of the brightness perceived by the eye. With this option on, every corrected pixel keeps its original brightness.",
+      "default": false
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Rimozione del verde",
+      "description": "Rimuove la dominante verde che il sensore e i filtri lasciano sulle astrofotografie, con il metodo SCNR (Subtractive Chromatic Noise Reduction, riduzione sottrattiva del rumore cromatico). Il verde viene ridotto solo nei pixel in cui supera un riferimento calcolato da rosso e blu, quindi le stelle e le nebulose conservano i loro colori.",
+      "parameters": {
+        "method": {
+          "label": "Metodo",
+          "options": {
+            "average": {
+              "label": "Media neutra",
+              "hint": "Il verde viene limitato alla media di rosso e blu. È il metodo consigliato."
+            },
+            "maximum": {
+              "label": "Massimo neutro",
+              "hint": "Il verde viene limitato al valore più alto fra rosso e blu. La riduzione è minore, adatta alle dominanti lievi."
+            }
+          }
+        },
+        "amount": {
+          "label": "Quantità",
+          "hint": "Quota del verde in eccesso da rimuovere. Al 100% viene rimosso tutto il verde che supera il riferimento."
+        },
+        "preserveLuminance": {
+          "label": "Conserva la luminosità",
+          "hint": "La rimozione del verde scurisce leggermente l’immagine, perché il verde contribuisce per gran parte alla luminosità percepita dall’occhio. Con questa opzione attiva ogni pixel corretto mantiene la luminosità originale."
+        }
+      }
+    }
+  }
+}

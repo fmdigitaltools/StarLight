@@ -1,0 +1,13 @@
+{
+  "installed": "Plugin «{name}» installato. Il plugin è disponibile nel passo Elabora, fra gli strumenti aggiuntivi, e nel menu Plugin.",
+  "updated": "Plugin «{name}» aggiornato. Il plugin è disponibile nel passo Elabora, fra gli strumenti aggiuntivi, e nel menu Plugin.",
+  "enabled": "Plugin «{name}» attivato. È disponibile nel passo Elabora, fra gli strumenti aggiuntivi, e nel menu Plugin.",
+  "disabled": "Plugin «{name}» disattivato.",
+  "reenabled": "Plugin «{name}» riattivato.",
+  "disableFailed": "Disattivazione non riuscita. {detail}",
+  "uninstalled": "Plugin «{name}» disinstallato.",
+  "uninstallFailed": "Disinstallazione non riuscita. {detail}",
+  "operationFailed": "Operazione non riuscita. {detail}",
+  "fromMenuActive": "«{name}» è attivo fra gli strumenti aggiuntivi del passo Elabora. Dopo aver regolato i parametri, premi Applica.",
+  "fromMenuAlreadyActive": "«{name}» è già attivo fra gli strumenti aggiuntivi del passo Elabora. Dopo aver regolato i parametri, premi Applica."
+}

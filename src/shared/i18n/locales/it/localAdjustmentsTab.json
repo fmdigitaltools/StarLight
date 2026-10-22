@@ -1,0 +1,166 @@
+{
+  "title": "Regolazioni locali",
+  "description": "Ritocca solo una parte della foto. Scegli dove agire (la maschera) e cosa cambiare: per esempio schiarisci le zone deboli della nebulosa senza bruciare il nucleo, o ravviva il rosso dell’idrogeno lasciando stare le stelle. Le regolazioni locali si applicano dopo tutte le altre correzioni e finiscono anche nell’immagine esportata.",
+  "defaultName": "Regolazione {n}",
+  "noObject": "Nessun oggetto riconosciuto con una posizione nell’immagine: usa «Risolvi il campo» nel passo Oggetti, oppure scegli «Cerchio» e collocalo a mano.",
+  "history": {
+    "filled": "Maschera: riempita",
+    "cleared": "Maschera: svuotata",
+    "paintRemoved": "Maschera: disegno tolto"
+  },
+  "add": {
+    "label": "+ Aggiungi",
+    "hint": "Aggiunge una regolazione locale, con una maschera sulle parti deboli",
+    "maxHint": "Al massimo {max} regolazioni locali"
+  },
+  "empty": "Nessuna regolazione locale. Premi «Aggiungi» per crearne una: ne puoi avere fino a {max}.",
+  "noImage": "Apri un’immagine per usare le regolazioni locali.",
+  "layer": {
+    "select": "Scegli questa regolazione per modificarla",
+    "withBrush": " + pennello",
+    "disable": "Spegni questa regolazione senza toglierla, per confrontare",
+    "enable": "Riaccendi questa regolazione",
+    "remove": "Togli questa regolazione locale"
+  },
+  "showMask": {
+    "label": "Mostra la maschera in rosso",
+    "hint": "Colora di rosso la zona in cui la regolazione agisce: più è rossa, più agisce. Ti serve mentre scegli e regoli la maschera."
+  },
+  "where": "Dove agisce",
+  "type": {
+    "brightness": {
+      "label": "Luce",
+      "hint": "Agisce solo sulle parti con una certa luminosità, per esempio per schiarire le zone deboli senza toccare il nucleo già luminoso."
+    },
+    "color": {
+      "label": "Colore",
+      "hint": "Agisce solo sulle parti di un certo colore: per esempio il rosso dell’idrogeno o l’azzurro dell’ossigeno."
+    },
+    "stars": {
+      "label": "Stelle",
+      "hint": "Agisce sulle stelle trovate nell’immagine, con un cerchio che cresce con la loro luminosità. Con «Inverti» agisce su tutto tranne le stelle."
+    },
+    "object": {
+      "label": "Oggetto",
+      "hint": "Agisce in un’ellisse sfumata attorno all’oggetto principale riconosciuto nel campo."
+    },
+    "linear": {
+      "label": "Sfumatura",
+      "hint": "Effetto pieno da un lato, che sfuma fino a sparire. Utile quando il cielo è più chiaro da una parte."
+    },
+    "radial": {
+      "label": "Cerchio",
+      "hint": "Effetto pieno al centro di un’ellisse, che sfuma verso il bordo."
+    },
+    "whole": {
+      "label": "A mano",
+      "hint": "Nessuna maschera automatica, la zona la disegni tu con il pennello."
+    }
+  },
+  "colorPreset": {
+    "red": { "name": "Rosso", "hint": "Il rosso dell’idrogeno (H-alfa), il colore più comune nelle nebulose a emissione" },
+    "cyan": { "name": "Azzurro", "hint": "L’azzurro-verde dell’ossigeno (OIII), per esempio nelle nebulose planetarie" },
+    "blue": { "name": "Blu", "hint": "Il blu delle nebulose a riflessione e dei bracci delle galassie" },
+    "yellow": { "name": "Giallo", "hint": "Il giallo-arancio delle stelle fredde e dei nuclei delle galassie" },
+    "magenta": { "name": "Magenta", "hint": "Il rosa-magenta dove idrogeno e ossigeno si sovrappongono" },
+    "green": { "name": "Verde", "hint": "Il verde, che nelle astrofotografie è quasi sempre una dominante da togliere" }
+  },
+  "lightPreset": {
+    "faint": { "name": "Parti deboli", "hint": "Fondo e zone tenui, per farle emergere senza toccare il resto" },
+    "midtones": { "name": "Mezzitoni", "hint": "I toni intermedi, dove sta la struttura delle nebulose" },
+    "bright": { "name": "Parti luminose", "hint": "Nuclei e stelle, per scurirli e recuperarne il dettaglio" }
+  },
+  "tool": {
+    "none": { "label": "Sposta", "hint": "Il mouse sposta e ingrandisce l’immagine, come sempre" },
+    "brush": { "label": "Pennello", "hint": "Dipingi sulla foto la zona in cui la regolazione deve agire" },
+    "eraser": { "label": "Gomma", "hint": "Cancella dalla zona dipinta" }
+  },
+  "light": {
+    "from": "Luce da",
+    "fromHint": "Sotto questa luminosità la regolazione non agisce. A 0% comprende anche il nero.",
+    "to": "Luce fino a",
+    "toHint": "Sopra questa luminosità la regolazione non agisce. A 100% comprende anche il bianco."
+  },
+  "hue": {
+    "label": "Tinta",
+    "hint": "Il colore su cui agire, sul giro dei colori: 0° rosso, 60° giallo, 120° verde, 180° azzurro, 240° blu, 300° magenta.",
+    "eyedropperHint": "Fai clic su un punto della foto e la sua tinta diventa quella della maschera",
+    "clickPhoto": "Fai clic sulla foto…",
+    "eyedropper": "Prendi il colore dalla foto",
+    "width": "Ampiezza",
+    "widthHint": "Quanto si allarga la scelta attorno alla tinta. Poco per un colore preciso, molto per tutta la famiglia di colori vicini.",
+    "note": "I grigi e il fondo scuro restano sempre fuori, perché lì il colore è solo rumore."
+  },
+  "stars": {
+    "size": "Dimensione attorno alle stelle",
+    "sizeHint": "Allarga o stringe il cerchio attorno a ogni stella. Il cerchio è già più grande per le stelle più luminose, che hanno un alone più esteso.",
+    "searching": "Ricerca delle stelle in corso…",
+    "found": "{count} stelle trovate. Con «Inverti» la regolazione agisce su tutto tranne le stelle.",
+    "pending": "La ricerca delle stelle parte appena la regolazione cambia qualcosa o la maschera è mostrata."
+  },
+  "geometry": {
+    "recenter": "Ricentra sull’oggetto",
+    "recenterHint": "Rimette l’ellisse sull’oggetto principale riconosciuto nel campo",
+    "drawLinearHint": "Trascina sulla foto: dove premi l’effetto è pieno, dove rilasci è finito",
+    "drawRadialHint": "Trascina sulla foto: dove premi è il centro, la distanza a cui rilasci è il raggio",
+    "drawDone": "Fine tracciamento",
+    "draw": "Traccia sulla foto",
+    "radius": "Ampiezza",
+    "radiusHint": "Il raggio dell’ellisse, lungo l’asse maggiore.",
+    "elongation": "Allungamento",
+    "elongationHint": "1 è un cerchio; valori più bassi schiacciano l’ellisse, per seguire una galassia vista di taglio.",
+    "angle": "Inclinazione",
+    "angleHint": "Ruota l’ellisse.",
+    "linearNote": "La linea piena indica dove l’effetto è completo, quella tratteggiata dove è finito."
+  },
+  "feather": {
+    "label": "Sfumatura dei bordi",
+    "hint": "Quanto è morbido il passaggio fra dove la regolazione agisce e dove no. Bordi morbidi danno ritocchi che non si notano."
+  },
+  "intensity": {
+    "label": "Intensità",
+    "hint": "Quanto agisce la regolazione dentro la maschera. Al 50% fa metà effetto."
+  },
+  "invert": {
+    "label": "Inverti la maschera",
+    "hint": "Scambia dentro e fuori, così la regolazione agisce dove prima non agiva. Per esempio «Stelle» invertita agisce su tutto tranne le stelle."
+  },
+  "paint": {
+    "title": "Disegna a mano",
+    "wholeNote": "Dipingi sulla foto la zona in cui agire. La rotella e il tasto destro continuano a ingrandire e a spostare.",
+    "optionalNote": "Facoltativo. Dipingi per limitare a una zona la maschera scelta sopra; la regolazione agisce solo dove valgono entrambe.",
+    "size": "Dimensione del pennello",
+    "sizeHint": "Il diametro del pennello sullo schermo. Se ingrandisci la foto, dipingi più fine.",
+    "hardness": "Durezza",
+    "hardnessHint": "Bassa per un bordo morbido che sfuma, alta per un bordo netto.",
+    "opacity": "Opacità",
+    "opacityHint": "Quanto copre ogni pennellata. Con valori bassi costruisci la maschera poco alla volta, una pennellata sull’altra.",
+    "fill": "Riempi",
+    "fillHint": "Riempie tutta la zona dipinta. Poi, con la gomma, togli le parti da escludere",
+    "clear": "Svuota",
+    "clearHint": "Cancella tutta la zona dipinta",
+    "remove": "Togli il disegno",
+    "removeHint": "Toglie il disegno a mano e lascia solo la maschera scelta sopra"
+  },
+  "what": "Cosa cambia",
+  "adjust": {
+    "brightness": "Luminosità",
+    "brightnessHint": "Schiarisce o scurisce la zona. Quando schiarisci, i toni si avvicinano al bianco senza bruciarlo; quando scurisci, i neri restano neri.",
+    "contrast": "Contrasto",
+    "contrastHint": "Più contrasto separa meglio i toni della zona; meno contrasto la ammorbidisce.",
+    "saturation": "Saturazione",
+    "saturationHint": "Rende i colori della zona più intensi o più spenti; a -1 la zona diventa grigia.",
+    "vibrance": "Vividezza",
+    "vibranceHint": "Ravviva soprattutto i colori spenti della zona e lascia quasi intatti quelli già accesi.",
+    "temperature": "Temperatura",
+    "temperatureHint": "Sposta il colore della zona verso il caldo (giallo-arancio) o verso il freddo (blu).",
+    "tint": "Tinta",
+    "tintHint": "Sposta il colore della zona verso il magenta (valori positivi) o verso il verde (negativi). Utile contro una dominante verde locale.",
+    "sharpness": "Nitidezza",
+    "sharpnessHint": "Esalta i dettagli fini solo nella zona, per esempio la struttura di una nebulosa, e lascia liscio il fondo.",
+    "noiseReduction": "Riduzione del rumore",
+    "noiseReductionHint": "Leviga la grana solo nella zona, per esempio il fondo cielo, e lascia nitido l’oggetto.",
+    "reset": "Azzera le regolazioni",
+    "resetHint": "Riporta a zero i cursori di «Cosa cambia» e lascia com’è la maschera"
+  }
+}

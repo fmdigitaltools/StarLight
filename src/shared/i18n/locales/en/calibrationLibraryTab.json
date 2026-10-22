@@ -1,0 +1,42 @@
+{
+  "title": "Calibration library",
+  "description": "Masters built in this panel are kept on your computer and reused automatically when the capture conditions match. A dark requires the same exposure, the same gain and a sensor temperature within {tolerance} °C; a bias the same gain; a flat the same filter and a capture no older than {maxDays} days, because dust and camera orientation change over time. When several flats are suitable, the one captured closest to each frame’s date is used, so with multiple nights each night gets its own. The same rules apply to masters built in this session, which take precedence; the library covers the light frames that find no master with matching conditions in the session.",
+  "reuse": {
+    "label": "Reuse library masters",
+    "hint": "When this is off, the library is kept but not used during stacking"
+  },
+  "usage": {
+    "session": "{master}, built in this session",
+    "library": "{master}, from {date}",
+    "withNote": "{text} ({note})",
+    "biasNotNeeded": "not needed, because the dark already contains the readout level",
+    "noSuitableDark": "no suitable dark: {reason}",
+    "noneInSessionReuseOff": "no suitable master in the session (library reuse is off)",
+    "noneAnywhere": "no suitable master in the session or in the library"
+  },
+  "removed": "{master} removed from the calibration library.",
+  "removeFailed": "The master was not removed. {error}",
+  "group": {
+    "lightsOne": "{count} light frame",
+    "lightsOther": "{count} light frames",
+    "exposure": ", {value} s",
+    "gain": ", gain {value}",
+    "temperature": ", {value} °C"
+  },
+  "type": {
+    "dark": "Dark",
+    "flat": "Flat",
+    "bias": "Bias"
+  },
+  "empty": "The library is empty. Every master you build in this panel is stored here automatically.",
+  "listAriaLabel": "Stored masters",
+  "details": {
+    "framesOne": "{date} · {count} frame · {width} × {height} · {size}",
+    "framesOther": "{date} · {count} frames · {width} × {height} · {size}"
+  },
+  "delete": {
+    "title": "Removes the master from the library and deletes its file",
+    "label": "Delete"
+  },
+  "openFolder": "Open library folder"
+}

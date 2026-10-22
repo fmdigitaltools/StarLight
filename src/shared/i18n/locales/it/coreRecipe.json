@@ -1,0 +1,19 @@
+{
+  "defaultName": "Ricetta",
+  "defaultFileName": "immagine",
+  "batchSubfolder": "Serie {date}",
+  "errors": {
+    "corrupt": "Il file della ricetta è danneggiato e non è leggibile.",
+    "notRecipe": "Il file scelto non è una ricetta di StarLight.",
+    "newerVersion": "La ricetta è stata salvata da una versione più recente di StarLight. Aggiorna il programma per aprirla."
+  },
+  "time": {
+    "underMinute": "meno di un minuto",
+    "aboutOneMinute": "circa un minuto",
+    "aboutMinutes": "circa {minutes} minuti",
+    "aboutOneHour": "circa un’ora",
+    "aboutHours": "circa {hours} ore",
+    "aboutOneHourMinutes": "circa un’ora e {minutes} minuti",
+    "aboutHoursMinutes": "circa {hours} ore e {minutes} minuti"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "errors": {
+    "nothingPublished": "Sul server degli aggiornamenti non c’è ancora nessuna versione pubblicata.",
+    "refused": "Il server degli aggiornamenti ha rifiutato la richiesta. Potrebbe servire una versione più recente di StarLight, da scaricare a mano.",
+    "checksum": "Il file scaricato non corrisponde a quello pubblicato ed è stato scartato. Riprova più tardi.",
+    "noResponse": "Il server degli aggiornamenti non risponde. Controlla la connessione a internet e riprova più tardi.",
+    "checkFailed": "Il controllo degli aggiornamenti non è riuscito. Riprova più tardi.",
+    "downloadFailed": "Lo scaricamento dell’aggiornamento non è riuscito. Riprova più tardi."
+  },
+  "versionHeading": "Versione {version}"
+}

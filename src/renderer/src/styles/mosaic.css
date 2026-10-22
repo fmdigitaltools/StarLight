@@ -1,0 +1,83 @@
+/* Mosaic, in the Stack panel. */
+
+.sl-mosaic-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--sl-text-2);
+}
+
+.sl-mosaic-notice {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--sl-amber);
+}
+
+.sl-mosaic-check {
+  margin: 0 6px 0 0;
+  vertical-align: -2px;
+  pointer-events: none;
+  accent-color: var(--sl-cyan);
+}
+
+.sl-mosaic-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+}
+
+.sl-mosaic-preview svg {
+  width: 100%;
+  max-height: 260px;
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line-soft);
+  border-radius: var(--sl-r-sm);
+}
+
+.sl-mosaic-field {
+  fill: none;
+  stroke: var(--sl-line-strong);
+  stroke-dasharray: 4 4;
+  vector-effect: non-scaling-stroke;
+}
+
+.sl-mosaic-legend {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.sl-mosaic-legend span {
+  color: var(--sl-text-2);
+  word-break: break-all;
+}
+
+.sl-mosaic-coverage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-1);
+  align-items: center;
+}
+
+.sl-mosaic-coverage canvas {
+  max-width: 100%;
+  max-height: 200px;
+  image-rendering: pixelated;
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line-soft);
+  border-radius: var(--sl-r-sm);
+}
+
+.sl-mosaic-one {
+  color: rgb(90, 140, 190);
+}
+
+.sl-mosaic-two {
+  color: rgb(34, 200, 230);
+}
+
+.sl-mosaic-three {
+  color: rgb(160, 240, 60);
+}

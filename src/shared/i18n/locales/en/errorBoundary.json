@@ -1,0 +1,7 @@
+{
+  "title": "Interface error",
+  "text": "The StarLight interface stopped because of an unexpected error. Reload it to continue. If there was unsaved work and StarLight had kept a copy of it, you’ll be offered to recover it.",
+  "logNote": "The error has been written to the log. If you want to report it, open the log and use “Copy report”; nothing is sent automatically.",
+  "openLog": "Open log",
+  "reload": "Reload"
+}

@@ -1,0 +1,149 @@
+{
+  "upscaling": {
+    "edgeDirected": {
+      "label": "Contorni",
+      "hint": "Riconosce la direzione dei bordi e interpola lungo di essi: profili stellari e contorni delle nebulose restano lisci, senza gradini né aloni. Non aggiunge dettagli che non ci sono.",
+      "over2x": "Stai ingrandendo oltre il doppio. Il metodo Contorni evita gradini e aloni, ma il dettaglio in più non esiste nei dati di partenza."
+    },
+    "lanczos": {
+      "label": "Lanczos",
+      "hint": "Filtro classico, nitido e fedele, ma sui bordi obliqui può lasciare piccoli gradini e aloni scuri attorno alle stelle brillanti.",
+      "over2x": "Stai ingrandendo oltre il doppio. Il filtro di Lanczos mantiene nitidi i profili stellari, ma il dettaglio in più non esiste nei dati di partenza."
+    }
+  },
+  "waitForJob": "Attendi la fine dell’operazione in corso, poi esporta.",
+  "exported": "Immagine esportata, {size}.",
+  "exportFailed": "Esportazione non riuscita. {error}",
+  "noImage": {
+    "title": "Esportazione",
+    "text": "Apri un’immagine per poterla esportare."
+  },
+  "format": {
+    "title": "Formato",
+    "description": "PNG, TIFF e BMP salvano senza perdita di qualità, e TIFF a sedici bit per canale. JPEG e WebP producono file leggeri da condividere. FITS conserva i sedici bit e i dati di scatto.",
+    "lossy": "Compressione con perdita di qualità",
+    "lossless": "Senza perdita, {bits} bit per canale",
+    "bits": "{bits} bit",
+    "quality": {
+      "label": "Qualità",
+      "hint": "Sopra il novanta per cento la perdita è difficile da notare."
+    },
+    "keepMetadata": {
+      "label": "Conserva i dati di scatto",
+      "hint": "Copia nel nuovo file l’intestazione del file di partenza, con i dati di scatto."
+    },
+    "markers": {
+      "label": "Includi i marcatori degli oggetti",
+      "hint": "Disegna sull’immagine i cerchi e i nomi degli oggetti riconosciuti, come nel visore."
+    },
+    "coordinates": {
+      "label": "Includi le coordinate",
+      "hint": "Disegna sull’immagine la griglia delle coordinate, l’orientamento e la barra di scala accesi nel passo Oggetti, come nel visore."
+    }
+  },
+  "framing": {
+    "title": "Inquadratura",
+    "full": {
+      "title": "Torna a usare tutta l’immagine",
+      "label": "Tutta"
+    },
+    "description": "Trascina il riquadro per scegliere la porzione da esportare. La parte scura resta fuori. Con il pulsante Ritaglio, in alto, lo modifichi anche nel visore.",
+    "size": {
+      "label": "Ampiezza del riquadro",
+      "hint": "Se stringi il riquadro, ingrandisci il soggetto ma usi meno pixel dell’originale."
+    },
+    "selection": {
+      "name": "Porzione scelta",
+      "hint": "Pixel realmente disponibili nella porzione ritagliata"
+    }
+  },
+  "presets": {
+    "title": "Formati pronti",
+    "free": "Libero",
+    "description": "Misure consigliate dalle piattaforme, con le quali l’immagine viene mostrata senza tagli automatici.",
+    "groups": {
+      "social": "Social",
+      "screens": "Schermi",
+      "print": "Stampa"
+    },
+    "count": "{count} formati"
+  },
+  "resolution": {
+    "title": "Risoluzione",
+    "presetNote": "Le misure sono imposte dal formato pronto scelto. Premi Libero per deciderle tu.",
+    "finalFile": "File finale",
+    "upscaling": {
+      "name": "Ingrandimento",
+      "value": "{value} volte",
+      "hint": "Rispetto ai pixel realmente disponibili nella porzione scelta"
+    }
+  },
+  "caption": {
+    "title": "Didascalia",
+    "description": "Una piccola didascalia con i dati dello scatto e il marchio di StarLight, dentro la foto. Se non vuoi coprire nemmeno un angolo dell’immagine, spegnila con un clic.",
+    "add": {
+      "label": "Aggiungi la didascalia",
+      "hint": "La scelta resta salvata e vale anche per l’elaborazione in serie."
+    },
+    "notAllowed": "Nel formato {format} StarLight non aggiunge la didascalia: è un file di dati e l’immagine resta intatta per le misure. I dati di scatto restano nell’intestazione del file.",
+    "templates": {
+      "minimal": {
+        "label": "Minimo",
+        "hint": "Una riga piccola e semitrasparente in un angolo della foto",
+        "description": "Una riga piccola e semitrasparente nell’angolo che scegli, con il marchio di StarLight. È il modello più discreto."
+      },
+      "banner": {
+        "label": "Fascia",
+        "hint": "Una striscia scura sottile in basso, sopra la foto, con i dati su una riga",
+        "description": "Una striscia scura semitrasparente in basso, a tutta larghezza, con i dati su una riga e il marchio di StarLight a destra."
+      },
+      "card": {
+        "label": "Scheda",
+        "hint": "Un riquadro scuro in un angolo, con il nome dell’oggetto e i dati su due righe",
+        "description": "Un riquadro scuro semitrasparente nell’angolo che scegli, con il nome dell’oggetto come titolo e i dati su due righe. Pensato per i social."
+      }
+    },
+    "position": {
+      "bottom": "In basso",
+      "top": "In alto",
+      "left": "A sinistra",
+      "right": "A destra"
+    },
+    "author": {
+      "label": "Autore (facoltativo)",
+      "placeholder": "Il tuo nome, se vuoi firmare la foto"
+    },
+    "location": {
+      "label": "Scrivi il luogo",
+      "hint": "Solo il nome del luogo, se il file lo riporta. StarLight non scrive mai le coordinate geografiche."
+    },
+    "data": {
+      "none": "Il file non riporta dati di scatto, quindi comparirà solo il marchio di StarLight.",
+      "found": "Dati trovati: {entries}. Quelli che mancano non compaiono.",
+      "foundSomeOmitted": "Dati trovati: {entries}. Quelli che mancano non compaiono. A queste misure alcuni restano fuori per mancanza di spazio."
+    },
+    "changed": {
+      "title": "Valori cambiati dall’ultimo Applica. Il visore li mostra già.",
+      "label": "cambiata"
+    },
+    "apply": {
+      "title": "Inquadra nel visore la porzione che esporti, con la didascalia come la vedrai nel file",
+      "label": "Applica"
+    }
+  },
+  "summary": {
+    "title": "Riepilogo",
+    "format": "Formato",
+    "bitDepth": "Profondità",
+    "bitsPerChannel": "{bits} bit per canale",
+    "compression": "Compressione",
+    "lossy": "con perdita, {quality}%",
+    "lossless": "senza perdita",
+    "filter": "Filtro applicato",
+    "noFilter": "nessuno",
+    "filterAt": "{filter} al {percent}%"
+  },
+  "exporting": "Esportazione in corso",
+  "export": "Esporta immagine",
+  "fullResolution": "elaborazione a piena risoluzione"
+}

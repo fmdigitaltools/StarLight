@@ -1,0 +1,14 @@
+{
+  "language": {
+    "name": "English",
+    "locale": "en-US",
+    "label": "Language",
+    "hint": "Language of the program's texts. With “Automatic” it follows the Windows language when StarLight has it, and English otherwise.",
+    "auto": "Automatic"
+  },
+  "folders": {
+    "projects": "Projects",
+    "exports": "Exports",
+    "sessions": "Live sessions"
+  }
+}

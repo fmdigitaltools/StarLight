@@ -1,0 +1,10 @@
+{
+  "ariaLabel": "Master di calibrazione usati",
+  "dark": "Dark",
+  "flat": "Flat",
+  "bias": "Bias",
+  "noSuitableDark": "nessuno adatto: {reason}. Restano il segnale termico e il bagliore dell’amplificatore.",
+  "none": "nessuno",
+  "noneSuitable": "nessuno adatto",
+  "biasNotNeeded": "non serve, perché il dark contiene già il livello di lettura"
+}

@@ -1,0 +1,23 @@
+{
+  "gpuLoadFailed": "Caricamento nella scheda grafica non riuscito. {message}",
+  "unavailable": "Visualizzazione non disponibile",
+  "empty": {
+    "title": "Nessuna immagine aperta",
+    "text": "Per cominciare, importa le immagini da elaborare: file FITS e XISF, immagini TIFF e PNG o i formati RAW delle fotocamere. Puoi scegliere singoli file oppure una cartella di sessione. StarLight legge i dati di scatto scritti nell’intestazione dei file, riconosce l’oggetto inquadrato e prepara la distensione automatica.",
+    "chooseFrames": "Scegli i frame",
+    "openFolder": "Apri una cartella"
+  },
+  "projectTitle": "Progetto in {folder}",
+  "projectTitleModified": "Progetto in {folder} (modifiche non salvate)",
+  "unsavedChanges": "modifiche non salvate",
+  "defaultFileName": "immagine",
+  "stacked": {
+    "label": "impilato",
+    "title": "File già impilato, cioè somma di più scatti"
+  },
+  "instrumentTitle": "Modello dello strumento dichiarato nell’intestazione del file",
+  "objectTitle": "Oggetto riconosciuto nel campo inquadrato",
+  "comparisonBefore": "Prima: l’immagine com’era all’apertura",
+  "inField": "Nel campo: {names}",
+  "inFieldHidden": "Nel campo (posizioni nascoste perché un plugin ha spostato i pixel senza dichiarare la trasformazione): {names}"
+}

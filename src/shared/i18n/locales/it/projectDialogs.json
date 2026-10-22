@@ -1,0 +1,28 @@
+{
+  "saveAs": {
+    "title": "Salva il progetto",
+    "subtitle": "Il progetto è una cartella con le impostazioni e l’immagine elaborata. I frame originali restano dove sono.",
+    "name": "Nome del progetto",
+    "location": "Posizione",
+    "change": "Cambia…",
+    "invalidName": "Il nome contiene solo caratteri che non si possono usare per una cartella.",
+    "cleanedName": "Alcuni caratteri non sono ammessi nei nomi di cartella: la cartella si chiamerà «{name}».",
+    "alreadyExists": "Esiste già un progetto con questo nome: salvando lo sostituisci."
+  },
+  "confirm": {
+    "titleProject": "Salvare le modifiche a «{name}»?",
+    "title": "Salvare il lavoro?",
+    "close": "Chiudendo il progetto, la libreria e le regolazioni non salvate andranno perse.",
+    "new": "Iniziando un progetto nuovo, la libreria e le regolazioni non salvate andranno perse.",
+    "open": "Aprendo un altro progetto, il lavoro non salvato andrà perso.",
+    "quit": "Uscendo da StarLight, il lavoro non salvato andrà perso.",
+    "restart": "Riavviando StarLight, il lavoro non salvato andrà perso.",
+    "frame": "Aprendo questo frame, le elaborazioni fatte sull’immagine che vedi andranno perse se non salvi il progetto.",
+    "frameResult": "Aprendo questo frame, l’immagine impilata e le sue regolazioni andranno perse se non salvi il progetto.",
+    "openAnyway": "Apri comunque",
+    "dontSave": "Non salvare"
+  },
+  "cancel": "Annulla",
+  "save": "Salva",
+  "replace": "Sostituisci"
+}

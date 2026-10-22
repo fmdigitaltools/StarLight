@@ -1,0 +1,166 @@
+{
+  "title": "Local adjustments",
+  "description": "Touch up just one part of the photo. Choose where to act (the mask) and what to change: for example, brighten the faint areas of a nebula without blowing out the core, or bring out the red of hydrogen while leaving the stars alone. Local adjustments are applied after all the other corrections and also end up in the exported image.",
+  "defaultName": "Adjustment {n}",
+  "noObject": "No recognized object has a position in the image: use “Plate solve” in the Objects step, or choose “Circle” and place it by hand.",
+  "history": {
+    "filled": "Mask: filled",
+    "cleared": "Mask: cleared",
+    "paintRemoved": "Mask: painting removed"
+  },
+  "add": {
+    "label": "+ Add",
+    "hint": "Adds a local adjustment, with a mask on the faint areas",
+    "maxHint": "At most {max} local adjustments"
+  },
+  "empty": "No local adjustments. Press “Add” to create one: you can have up to {max}.",
+  "noImage": "Open an image to use local adjustments.",
+  "layer": {
+    "select": "Select this adjustment to edit it",
+    "withBrush": " + brush",
+    "disable": "Turn off this adjustment without removing it, to compare",
+    "enable": "Turn this adjustment back on",
+    "remove": "Remove this local adjustment"
+  },
+  "showMask": {
+    "label": "Show the mask in red",
+    "hint": "Colors red the area where the adjustment acts: the redder, the stronger. Useful while you choose and tune the mask."
+  },
+  "where": "Where it acts",
+  "type": {
+    "brightness": {
+      "label": "Light",
+      "hint": "Acts only on parts within a certain brightness, for example to brighten faint areas without touching an already bright core."
+    },
+    "color": {
+      "label": "Color",
+      "hint": "Acts only on parts of a certain color: for example the red of hydrogen or the cyan of oxygen."
+    },
+    "stars": {
+      "label": "Stars",
+      "hint": "Acts on the stars found in the image, with a circle that grows with their brightness. With “Invert the mask” it acts on everything except the stars."
+    },
+    "object": {
+      "label": "Object",
+      "hint": "Acts within a feathered ellipse around the main object recognized in the field."
+    },
+    "linear": {
+      "label": "Gradient",
+      "hint": "Full effect on one side, fading out completely. Useful when the sky is brighter on one side."
+    },
+    "radial": {
+      "label": "Circle",
+      "hint": "Full effect at the center of an ellipse, fading toward the edge."
+    },
+    "whole": {
+      "label": "By hand",
+      "hint": "No automatic mask: you paint the area with the brush."
+    }
+  },
+  "colorPreset": {
+    "red": { "name": "Red", "hint": "The red of hydrogen (H-alpha), the most common color in emission nebulae" },
+    "cyan": { "name": "Cyan", "hint": "The blue-green of oxygen (OIII), for example in planetary nebulae" },
+    "blue": { "name": "Blue", "hint": "The blue of reflection nebulae and galaxy arms" },
+    "yellow": { "name": "Yellow", "hint": "The yellow-orange of cool stars and galaxy cores" },
+    "magenta": { "name": "Magenta", "hint": "The pink-magenta where hydrogen and oxygen overlap" },
+    "green": { "name": "Green", "hint": "Green, which in astrophotos is almost always a cast to remove" }
+  },
+  "lightPreset": {
+    "faint": { "name": "Faint parts", "hint": "Background and faint areas, to bring them out without touching the rest" },
+    "midtones": { "name": "Midtones", "hint": "The intermediate tones, where the structure of nebulae lies" },
+    "bright": { "name": "Bright parts", "hint": "Cores and stars, to darken them and recover their detail" }
+  },
+  "tool": {
+    "none": { "label": "Pan", "hint": "The mouse pans and zooms the image, as usual" },
+    "brush": { "label": "Brush", "hint": "Paint on the photo the area where the adjustment should act" },
+    "eraser": { "label": "Eraser", "hint": "Erases from the painted area" }
+  },
+  "light": {
+    "from": "Light from",
+    "fromHint": "Below this brightness the adjustment does not act. At 0% it includes black too.",
+    "to": "Light up to",
+    "toHint": "Above this brightness the adjustment does not act. At 100% it includes white too."
+  },
+  "hue": {
+    "label": "Hue",
+    "hint": "The color to act on, around the color wheel: 0° red, 60° yellow, 120° green, 180° cyan, 240° blue, 300° magenta.",
+    "eyedropperHint": "Click a point on the photo and its hue becomes the mask’s hue",
+    "clickPhoto": "Click on the photo…",
+    "eyedropper": "Pick the color from the photo",
+    "width": "Range",
+    "widthHint": "How far the selection extends around the hue. Narrow for a precise color, wide for the whole family of nearby colors.",
+    "note": "Grays and the dark background are always left out, because there the color is just noise."
+  },
+  "stars": {
+    "size": "Size around the stars",
+    "sizeHint": "Widens or narrows the circle around each star. The circle is already larger for brighter stars, which have a wider halo.",
+    "searching": "Searching for stars…",
+    "found": "{count} stars found. With “Invert the mask” the adjustment acts on everything except the stars.",
+    "pending": "The star search starts as soon as the adjustment changes something or the mask is shown."
+  },
+  "geometry": {
+    "recenter": "Recenter on the object",
+    "recenterHint": "Puts the ellipse back on the main object recognized in the field",
+    "drawLinearHint": "Drag on the photo: where you press the effect is full, where you release it ends",
+    "drawRadialHint": "Drag on the photo: where you press is the center, the distance at which you release is the radius",
+    "drawDone": "Done drawing",
+    "draw": "Draw on the photo",
+    "radius": "Size",
+    "radiusHint": "The radius of the ellipse, along the major axis.",
+    "elongation": "Elongation",
+    "elongationHint": "1 is a circle; lower values flatten the ellipse, to follow an edge-on galaxy.",
+    "angle": "Angle",
+    "angleHint": "Rotates the ellipse.",
+    "linearNote": "The solid line shows where the effect is full, the dashed line where it ends."
+  },
+  "feather": {
+    "label": "Edge feathering",
+    "hint": "How soft the transition is between where the adjustment acts and where it does not. Soft edges give touch-ups that go unnoticed."
+  },
+  "intensity": {
+    "label": "Intensity",
+    "hint": "How strongly the adjustment acts inside the mask. At 50% it has half the effect."
+  },
+  "invert": {
+    "label": "Invert the mask",
+    "hint": "Swaps inside and outside, so the adjustment acts where it did not before. For example, an inverted “Stars” mask acts on everything except the stars."
+  },
+  "paint": {
+    "title": "Paint by hand",
+    "wholeNote": "Paint on the photo the area to act on. The mouse wheel and right button still zoom and pan.",
+    "optionalNote": "Optional. Paint to restrict the mask chosen above to an area; the adjustment acts only where both apply.",
+    "size": "Brush size",
+    "sizeHint": "The brush diameter on screen. If you zoom into the photo, you paint more finely.",
+    "hardness": "Hardness",
+    "hardnessHint": "Low for a soft, fading edge, high for a sharp edge.",
+    "opacity": "Opacity",
+    "opacityHint": "How much each stroke covers. With low values you build up the mask little by little, one stroke over another.",
+    "fill": "Fill",
+    "fillHint": "Fills the whole painted area. Then use the eraser to remove the parts to exclude",
+    "clear": "Clear",
+    "clearHint": "Erases the whole painted area",
+    "remove": "Remove painting",
+    "removeHint": "Removes the hand painting and keeps only the mask chosen above"
+  },
+  "what": "What changes",
+  "adjust": {
+    "brightness": "Brightness",
+    "brightnessHint": "Brightens or darkens the area. When brightening, tones approach white without clipping it; when darkening, blacks stay black.",
+    "contrast": "Contrast",
+    "contrastHint": "More contrast separates the tones of the area better; less contrast softens it.",
+    "saturation": "Saturation",
+    "saturationHint": "Makes the colors of the area more intense or more muted; at -1 the area turns gray.",
+    "vibrance": "Vibrance",
+    "vibranceHint": "Mainly boosts the muted colors of the area and leaves already vivid ones almost untouched.",
+    "temperature": "Temperature",
+    "temperatureHint": "Shifts the color of the area toward warm (yellow-orange) or cool (blue).",
+    "tint": "Tint",
+    "tintHint": "Shifts the color of the area toward magenta (positive values) or green (negative). Useful against a local green cast.",
+    "sharpness": "Sharpness",
+    "sharpnessHint": "Enhances fine details only in the area, for example the structure of a nebula, and keeps the background smooth.",
+    "noiseReduction": "Noise reduction",
+    "noiseReductionHint": "Smooths the grain only in the area, for example the sky background, and keeps the object sharp.",
+    "reset": "Reset adjustments",
+    "resetHint": "Resets the “What changes” sliders to zero and leaves the mask as it is"
+  }
+}

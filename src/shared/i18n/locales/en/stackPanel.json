@@ -1,0 +1,99 @@
+{
+  "times": "{times}×",
+  "processing": "Processing",
+  "stack": "Align and stack",
+  "method": {
+    "rejection": {
+      "label": "Robust",
+      "hint": "Averages the values close to the median, that is the middle value among those of all frames, and removes satellite trails and cosmic rays."
+    },
+    "mean": {
+      "label": "Mean",
+      "hint": "Uses all the available signal and gives the cleanest result, as long as no frame contains artifacts."
+    },
+    "median": {
+      "label": "Median",
+      "hint": "Uses for each pixel the middle value among those of all frames. Removes any artifact present in a single frame, but uses less of the signal."
+    }
+  },
+  "frames": {
+    "title": "Frames to stack",
+    "description": "Adding up several shots reduces random noise while the object’s signal remains. Quadrupling the number of frames halves the noise.",
+    "lights": "Light frames",
+    "totalExposure": "Total exposure",
+    "expectedNoise": "Expected noise reduction",
+    "expectedNoiseHint": "Proportional to the square root of the number of frames"
+  },
+  "alignment": {
+    "title": "Alignment",
+    "align": "Align on the stars",
+    "alignHint": "Detects the stars in each frame and computes the shift and rotation relative to the best frame. Keep it on unless the frames are already aligned with each other.",
+    "minQuality": "Minimum quality",
+    "all": "all",
+    "minQualityHint": "Each frame gets a percentage score relative to the best frames of the session, based on how many stars are visible and how pinpoint they are. Frames that are trailed, out of focus or veiled by clouds show fewer or wider stars and fall below the threshold. At 40%, frames showing fewer than about half the stars of the best ones are rejected.",
+    "edgeTrim": "Crop edges covered by few frames",
+    "edgeTrimHint": "During the session the field drifts slightly, and fewer frames overlap toward the edges of the result: a noisier border remains there, often colored. When on, after stacking a crop is suggested that keeps only the area covered by at least 70% of the frames. You can change or remove the crop in the Export step, and the image data stays intact."
+  },
+  "hdr": {
+    "title": "HDR merge",
+    "description": "The frames have different exposures: {series}. Each series is stacked separately; then, where the long exposures saturate (cores of galaxies and nebulae, bright stars), the short ones take over, brought to the same scale. The brightness ratio is measured on the images, not derived from the declared times.",
+    "series": "{count} at {exposure} s",
+    "merge": "Merge the series in HDR",
+    "mergeHint": "When off, all frames are stacked together as a single series, each normalized to the others."
+  },
+  "combination": {
+    "title": "Combination",
+    "threshold": "Rejection threshold",
+    "thresholdValue": "{value} deviations",
+    "thresholdHint": "Sets the maximum distance from the median, measured in standard deviations (the typical noise amplitude), beyond which a value is ignored. A lower threshold removes more artifacts, but also discards more signal."
+  },
+  "drizzle": {
+    "title": "Drizzle",
+    "description": "Between one shot and the next the field shifts by fractions of a pixel. Drizzle takes advantage of these small shifts and stacks the frames on a grid twice as fine, recovering detail the sensor actually recorded. It works best with many frames (at least twenty or so) and with alignment on. The result has four times the pixels and needs more memory and time.",
+    "factor1Hint": "At the frames’ resolution, with normal stacking or with Bayer drizzle, if on.",
+    "factor2Hint": "Doubles width and height and recovers detail between one pixel and the next.",
+    "bayer": "Bayer drizzle (from raw sensor data)",
+    "bayerHint": "In a color sensor each pixel measures a single color, and the other two are reconstructed from its neighbors, softening the stars and leaving colored fringes on edges. Bayer drizzle uses only the colors actually measured, taking advantage of the small shifts between shots to fill in the others. It improves sharpness and color even at 1×, and at 2× it adds resolution. Fine noise remains slightly higher than with normal stacking. Bayer drizzle works best with many frames (a few dozen, ideally shifted relative to each other) and small stars; if the stars are already a few pixels wide, the gain is minimal.",
+    "bayerName": "Bayer drizzle",
+    "unavailable": "not available",
+    "unavailableHint": "Requires raw frames from a color sensor, with the Bayer pattern in the file header. Files that are already stacked or already in color no longer contain the per-pixel measured color.",
+    "dropSize": "Drop size",
+    "dropSizeHint": "Each frame pixel is deposited as a drop smaller than the pixel itself. A small drop gives sharper stars, but with few frames it leaves noise and small gaps; at 1 the result is softer and more uniform. Between 0.7 and 0.8 is a good compromise.",
+    "memory": "Extra memory",
+    "memoryValue": "about {size}",
+    "memoryHint": "Estimate of the memory drizzle needs on top of the frames. If it is not available, the frames are stacked without drizzle and a notice appears."
+  },
+  "result": {
+    "title": "Result",
+    "stacked": "Frames stacked",
+    "method": "Method",
+    "hdrValue": "short exposures in {share}% of the image, ratio {ratio}×",
+    "drizzleValue": "{factor}×, drop {drop}",
+    "drizzleBayerValue": "Bayer, {factor}×, drop {drop}",
+    "coverage": "Mean coverage",
+    "coverageValue": "{frames} frames",
+    "coverageHint": "How many frames contributed, on average, to each pixel of the fine grid",
+    "empty": "Pixels without data",
+    "emptyHint": "Pixels of the fine grid on which no drop fell: they were filled with normal stacking. If there are many, bring “Drop size” closer to 1 or use more frames.",
+    "edges": "Edges covered by few frames",
+    "edgesValue": "crop suggested",
+    "edgesHint": "The crop keeps {kept}% of the image, the area where at least {coverage}% of the frames contribute. You can change or remove it in the Export step.",
+    "time": "Time taken",
+    "noiseReduced": "Noise reduced by",
+    "notMeasurable": "not measurable",
+    "noiseReducedHint": "Comparison between the noise of the reference frame and that of the result",
+    "theory": "Expected from theory",
+    "theoryHint": "Square root of the number of integrated frames",
+    "rejected": "Rejected values",
+    "rejectedHint": "Pixels ignored because they were too far from the median, such as satellite trails and cosmic rays."
+  },
+  "details": {
+    "title": "Frame details",
+    "description": "Score, sharpness and shift measured on each shot. The score is the percentage relative to the best frames of the session. HFR is the radius containing half of a star’s light, and a lower value means sharper stars.",
+    "meta": "{stars} stars - HFR {hfr} px",
+    "shifted": " - shifted by {px} px",
+    "rotated": " - rotated by {degrees} degrees",
+    "excluded": "excluded",
+    "rejected": "rejected"
+  }
+}

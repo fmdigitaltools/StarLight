@@ -1,0 +1,32 @@
+{
+  "busy": "Attendi la fine dell’operazione in corso.",
+  "importedOne": "Importato 1 frame.",
+  "importedOther": "Importati {count} frame.",
+  "unreadableFiles": "{count} file non leggibili. Primo errore: {error}",
+  "rawReadFailed": "lettura del RAW non riuscita",
+  "openFailed": "Apertura non riuscita. {message}",
+  "importFailed": "Importazione non riuscita: controlla che il disco o la cartella scelti siano raggiungibili e riprova. {message}",
+  "telescopeUnreachable": "La cartella del telescopio non risponde: controlla che il telescopio sia acceso e collegato alla stessa rete, e che il percorso in Impostazioni, scheda Telescopio, sia giusto.",
+  "noImagesInFolder": "Nessuna immagine trovata nella cartella scelta: vengono presi i file FITS, FITS compressi, XISF e RAW.",
+  "viewReset": "Immagine riportata come all’apertura.",
+  "autostretchApplied": "Distensione automatica applicata.",
+  "job": {
+    "readingMetadata": "Lettura dei dati di scatto di {count} file",
+    "readingMetadataProgress": "Lettura dei dati di scatto, {done} di {total}",
+    "opening": "Apertura di {file}",
+    "debayer": "Ricostruzione del colore"
+  },
+  "abracadabra": {
+    "failed": "Abracadabra non riuscito. {message}",
+    "hotPixels": "{count} pixel difettosi corretti",
+    "trailsOne": "tolta una scia di satellite",
+    "trailsOther": "tolte {count} scie di satelliti",
+    "background": "fondo cielo reso uniforme (la differenza fra le zone era del {percent}%)",
+    "starColor": "colore bilanciato sulle stelle",
+    "crop": "proposto il ritaglio dei bordi rumorosi (visibile in Esporta)",
+    "noiseAndDetail": "rumore ridotto e dettagli, stelle e contrasto regolati",
+    "dualBand": "file a doppia banda: prova la tavolozza HOO nel passo Elabora, scheda Banda stretta",
+    "done": "Abracadabra completato: {items}. Puoi modificare i valori scelti nei passi Elabora e Correggi; il pulsante Ripristina riporta l’immagine all’originale.",
+    "cropNotice": "Abracadabra ha tolto i bordi rumorosi: per vedere o cambiare il riquadro premi Ritaglio, nella barra in alto (tasto {key})."
+  }
+}

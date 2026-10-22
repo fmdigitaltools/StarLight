@@ -1,0 +1,97 @@
+{
+  "types": {
+    "dark": {
+      "name": "Dark",
+      "explanation": "Frames taken with the telescope covered, with the same exposure and at the same temperature as the sky frames. They record the signal produced by the sensor’s heat and the hot pixels, that is, pixels brighter than normal. These defects are identical in every frame, so summing frames alone does not remove them."
+    },
+    "flat": {
+      "name": "Flat",
+      "explanation": "Frames taken of an evenly lit surface. They measure vignetting, the falloff of light toward the edges of the frame, and the shadows of dust on the optics, so that the different sensitivity of each area of the sensor can be corrected."
+    },
+    "bias": {
+      "name": "Bias",
+      "explanation": "Frames taken in the dark with the shortest possible exposure. They record the starting readout level, the value the sensor reports even with no light. They are used for light frames without a suitable dark and to correct flats when the dark for their exposure is missing."
+    }
+  },
+  "correctedWithDark": ", corrected with the dark of the same exposure",
+  "correctedWithBias": ", corrected with the bias",
+  "rejectedOne": "1 {type} excluded from the master: {name} {reason}. If you need it, capture more under the same conditions.",
+  "rejectedOther": "{count} {type} frames excluded from the master. {name} {reason}. The same applies to {others}. If you need them, capture more under the same conditions.",
+  "noReadableFrames": "no readable frames",
+  "noFramesOfType": "No {type} frames among the loaded files.",
+  "job": {
+    "master": "Master {name}",
+    "masterOfMany": "Master {index} of {total}, {name}",
+    "reading": "Reading frames for {name}, {read} of {total}"
+  },
+  "framesOne": "{count} frame",
+  "framesOther": "{count} frames",
+  "composedLine": "{group} ({frames}{correction})",
+  "keptOne": "Stored in the calibration library.",
+  "keptOther": "Stored in the calibration library.",
+  "notKeptOne": "{count} master was not stored in the calibration library.",
+  "notKeptOther": "{count} masters were not stored in the calibration library.",
+  "composedOne": "{type} master created: {lines}. {kept}",
+  "composedOther": "Built {count} {type} masters, one per group of conditions: {lines}. {kept}",
+  "failedOne": "{count} master not created. {details}.",
+  "failedOther": "{count} masters not created. {details}.",
+  "masterNotCreated": "Master not created. {error}",
+  "usage": {
+    "lightsOne": "{count} light frame",
+    "lightsOther": "{count} light frames",
+    "flatCorrection": "flat correction ({filters})",
+    "filter": "filter {filter}",
+    "noFilter": "no filter declared",
+    "both": "{lights} and {flats}",
+    "noLightsLoaded": "no light frames loaded",
+    "biasNotUsed": "no light frames, because the bias is only used for light frames without a suitable dark and with the same gain",
+    "noMatchingLights": "no loaded light frame has these conditions"
+  },
+  "intro": {
+    "title": "What it is for",
+    "description": "A sensor does not record only starlight: it adds the signal produced by its own heat, readout noise and the shadows of dust on the optics. Calibration frames measure these defects so they can be subtracted. StarLight automatically splits the frames by capture conditions (exposure, gain, temperature, filter, night) and builds one master for each group. During stacking, each light frame, that is, each sky frame, uses the master with its same conditions.",
+    "apply": {
+      "label": "Apply calibration during stacking",
+      "hint": "When this is off, the masters stay in memory but are not applied to the frames."
+    },
+    "composeAll": {
+      "title": "Builds bias, dark and flat masters in this order, because flats are corrected with the bias frames or darks just built",
+      "label": "Build all masters"
+    }
+  },
+  "composing": "Building",
+  "masterTitle": "{type} master",
+  "readyOne": "ready",
+  "readyAll": "{count} ready",
+  "readyPartial": "{ready} of {total} ready",
+  "noFramesDark": "No frames recognized as {type}. The type is inferred from the IMAGETYP keyword in the file header and from the file name itself. Some telescopes record the master dark on their own. In that case, just import it like any other file and it is recognized automatically.",
+  "noFramesOther": "No frames recognized as {type}. The type is inferred from the IMAGETYP keyword in the file header and from the file name itself. You can import the frames from a dedicated session or reuse an earlier master, as long as it was captured with the same sensor and the same settings.",
+  "group": {
+    "frames": "Frames",
+    "singleFrame": "1, ready to use as is",
+    "multipleFrames": "{count}, to be combined with the median",
+    "for": "For",
+    "status": "Status",
+    "ready": "ready",
+    "defectivePixels": ", {count} defective pixels",
+    "toCompose": "to be built"
+  },
+  "differentConditions": "Frames captured under different conditions: they produce {count} masters, and each light frame uses the one matching its conditions.",
+  "excludedFrame": "Excluded {name}: {reason}.",
+  "withoutDarkOne": "{group} has no suitable dark: {reason}.",
+  "withoutDarkOther": "{group} have no suitable dark: {reason}.",
+  "staleOne": "{count} master built earlier is still in use even though the frames have changed: {list}. Build again to update it.",
+  "staleOther": "{count} masters built earlier are still in use even though the frames have changed: {list}. Build again to update them.",
+  "button": {
+    "noGroups": "No groups to build",
+    "recomposeOne": "Rebuild the master",
+    "recomposeMany": "Rebuild the {count} masters",
+    "composeMany": "Build {count} masters, one per group",
+    "useSingle": "Use this {type} master",
+    "combine": "Combine the {count} frames into a master"
+  },
+  "applied": {
+    "title": "Correction applied",
+    "text": "Each light frame uses the masters matching its capture conditions: dark subtraction (or bias subtraction when no suitable dark exists), division by the normalized flat and, with a dark, replacement of defective pixels with the median of their neighbors. A dark with a different exposure, gain or temperature is never used. Lights that find no suitable master in the session look for one in the calibration library."
+  }
+}

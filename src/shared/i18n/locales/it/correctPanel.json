@@ -1,0 +1,119 @@
+{
+  "intensity": {
+    "gentle": {
+      "label": "Delicata",
+      "hint": "Cielo molto scuro e rumore contenuto, adatta ai soggetti luminosi",
+      "applied": "Distensione delicata applicata."
+    },
+    "medium": {
+      "label": "Equilibrata",
+      "hint": "Il compromesso consigliato fra segnale debole e rumore",
+      "applied": "Distensione equilibrata applicata."
+    },
+    "strong": {
+      "label": "Spinta",
+      "hint": "Fa emergere il segnale più debole, a costo di un fondo cielo più chiaro e di un rumore più visibile",
+      "applied": "Distensione spinta applicata."
+    }
+  },
+  "channel": {
+    "light": { "label": "Luce", "hint": "Agisce su tutti i canali insieme" },
+    "red": { "label": "R", "hint": "Agisce soltanto sul rosso, utile contro le dominanti calde" },
+    "green": { "label": "G", "hint": "Agisce soltanto sul verde, che i filtri antinquinamento luminoso lasciano spesso in eccesso" },
+    "blue": { "label": "B", "hint": "Agisce soltanto sul blu, utile per regolare la resa del fondo cielo" }
+  },
+  "stretch": {
+    "title": "Distensione",
+    "description": "In un frame appena ripreso i valori sono proporzionali alla luce raccolta, quindi l’immagine appare quasi nera. La distensione ridistribuisce i livelli e rende visibile il segnale debole senza bruciare le stelle.",
+    "auto": {
+      "title": "Calcola il punto di nero e i mezzitoni adatti a questa immagine",
+      "label": "Auto"
+    },
+    "blackPoint": {
+      "label": "Punto di nero",
+      "hint": "Definisce il livello sotto il quale ogni valore diventa nero. Se lo alzi, il fondo cielo si scurisce, ma perdi il segnale più debole."
+    },
+    "mode": {
+      "midtones": {
+        "label": "Mezzitoni",
+        "hint": "Distensione classica, con un solo cursore per la luminosità media"
+      },
+      "ghs": {
+        "label": "Iperbolica (GHS)",
+        "hint": "Distensione iperbolica generalizzata. Concentra il contrasto dove serve, per esempio sui bracci deboli di una galassia, senza bruciare il nucleo."
+      }
+    },
+    "midtones": {
+      "label": "Mezzitoni",
+      "hint": "Regola la luminosità media dell’immagine. I valori bassi schiariscono molto le parti deboli e fanno emergere le nebulose."
+    },
+    "whitePoint": {
+      "label": "Punto di bianco",
+      "hint": "Definisce il livello del bianco pieno. Se lo abbassi, il contrasto aumenta, ma le stelle più luminose si bruciano."
+    },
+    "preserveColor": {
+      "label": "Conserva il colore",
+      "hint": "La distensione agisce sulla luminosità e lascia invariato il rapporto fra rosso, verde e blu, così le stelle e le nebulose tengono il loro colore invece di sbiancarsi. Abracadabra la accende da sola. Con questa scelta le curve R, G e B non hanno effetto."
+    }
+  },
+  "ghs": {
+    "strength": {
+      "label": "Forza",
+      "hint": "Regola il sollevamento dei toni deboli."
+    },
+    "localIntensity": {
+      "label": "Intensità locale",
+      "hint": "I valori alti concentrano il contrasto attorno al punto di simmetria e lasciano quasi invariato il resto dell’immagine."
+    },
+    "symmetryPoint": {
+      "label": "Punto di simmetria",
+      "hint": "Livello di luminosità in cui il contrasto aumenta di più, di solito appena sopra il fondo cielo."
+    },
+    "shadowProtection": {
+      "label": "Protezione delle ombre",
+      "hint": "Sotto questo livello la curva prosegue in linea retta, così i toni più scuri, fondo cielo compreso, non vengono schiacciati verso il nero."
+    },
+    "highlightProtection": {
+      "label": "Protezione delle luci",
+      "hint": "Sopra questo livello la curva prosegue in linea retta, così i nuclei delle galassie e le stelle luminose conservano il loro contrasto invece di confondersi nel bianco."
+    }
+  },
+  "curves": {
+    "title": "Curve",
+    "reset": "Azzera",
+    "description": "Trascina la linea per modificare la resa dei toni. Un clic aggiunge un punto, il tasto destro lo rimuove.",
+    "preserveColorNote": "Con «Conserva il colore» acceso, nella scheda Distensione, agisce solo la curva della luce."
+  },
+  "tones": {
+    "title": "Toni",
+    "brightness": "Luminosità",
+    "contrast": "Contrasto",
+    "gamma": {
+      "label": "Gamma",
+      "hint": "Regola la curva di risposta complessiva. Sotto 1 scurisce i mezzitoni, sopra 1 li schiarisce."
+    }
+  },
+  "color": {
+    "title": "Colore",
+    "description": "I tre cursori Guadagno correggono la dominante di colore. I filtri antinquinamento luminoso lasciano spesso un fondo verdastro o rossastro, che qui puoi compensare.",
+    "neutral": {
+      "title": "Riporta i tre guadagni al valore 1",
+      "label": "Neutro"
+    },
+    "saturation": {
+      "label": "Saturazione",
+      "hint": "A -1 l’immagine diventa in bianco e nero. I valori moderati esaltano il colore delle nebulose senza scolorire le stelle."
+    },
+    "vibrance": {
+      "label": "Vividezza",
+      "hint": "Ravviva soprattutto i colori spenti e lascia quasi intatti quelli già accesi, così le nebulose prendono colore senza che le stelle colorate si impastino. Se hai scelto un filtro fotografico, questo valore si somma alla vividezza del filtro."
+    },
+    "redGain": "Guadagno rosso",
+    "greenGain": "Guadagno verde",
+    "blueGain": "Guadagno blu"
+  },
+  "resetView": {
+    "title": "Annulla le regolazioni e riporta l’immagine come appena aperta",
+    "label": "Ripristina come all’apertura"
+  }
+}

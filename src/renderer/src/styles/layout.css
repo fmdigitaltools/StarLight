@@ -1,0 +1,354 @@
+/* Overall window structure */
+
+.sl-app {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: var(--sl-topbar-h) 1fr var(--sl-statusbar-h);
+  /*
+   * Single column as wide as the window and never wider: without the zero minimum, an overly long
+   * status bar line (for example the progress text) would stretch the grid past the edge and the
+   * photo, centered in the wider area, would slide to the right.
+   */
+  grid-template-columns: minmax(0, 1fr);
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ---- Top bar ---- */
+
+/*
+ * Two rows, as in desktop programs: at the top, thin, the brand and the menus; below, the buttons
+ * for the most used commands.
+ */
+.sl-topbar {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: linear-gradient(180deg, rgba(17, 23, 38, 0.95), rgba(11, 15, 26, 0.92));
+  border-bottom: 1px solid var(--sl-line);
+  backdrop-filter: blur(12px);
+}
+
+.sl-topbar-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-3);
+  flex: none;
+  height: var(--sl-menubar-h);
+  min-width: 0;
+  /*
+   * On the right, the area for the system window controls stays free (titleBarOverlay in
+   * main/index.ts, as tall as this row).
+   */
+  padding: 0 148px 0 var(--sl-s-3);
+  border-bottom: 1px solid var(--sl-line-soft);
+  /* The menu row acts as the window drag area. */
+  -webkit-app-region: drag;
+}
+
+.sl-topbar-menu > * {
+  -webkit-app-region: no-drag;
+}
+
+.sl-topbar-commands {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-4);
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--sl-s-4);
+}
+
+.sl-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+  flex: none;
+  min-width: 0;
+  overflow: hidden;
+  padding-right: var(--sl-s-3);
+  border-right: 1px solid var(--sl-line);
+  height: 18px;
+}
+
+.sl-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 6px rgba(34, 232, 255, 0.5));
+}
+
+.sl-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.sl-brand-name {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  /* background-clip: text paints only inside the box: extra room below keeps descenders (g, p, y) visible. */
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+  background: linear-gradient(92deg, var(--sl-cyan), var(--sl-violet) 55%, var(--sl-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sl-brand-version {
+  font-family: var(--sl-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sl-text-3);
+}
+
+.sl-topbar-spacer {
+  flex: 1;
+}
+
+/* ---- Central body ---- */
+
+.sl-body {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--sl-rail-w) minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---- Workflow steps sidebar ---- */
+
+.sl-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sl-s-3) var(--sl-s-2);
+  background: var(--sl-bg-1);
+  border-right: 1px solid var(--sl-line);
+  overflow-y: auto;
+}
+
+.sl-rail-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sl-text-3);
+  padding: var(--sl-s-2) var(--sl-s-2) var(--sl-s-1);
+}
+
+/* ---- Central area ---- */
+
+.sl-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--sl-bg-0);
+  overflow: hidden;
+}
+
+/*
+ * With the drawer open the central part shrinks and stays centered in the visible space, instead of
+ * centering on the whole window.
+ */
+.sl-body--panel-open .sl-stage {
+  padding-right: var(--sl-panel-w);
+}
+
+/* ---- Right side panel ---- */
+
+.sl-panel {
+  position: fixed;
+  top: var(--sl-topbar-h);
+  right: 0;
+  bottom: var(--sl-statusbar-h);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  width: var(--sl-panel-w);
+  max-width: 92vw;
+  background: var(--sl-bg-1);
+  border-left: 1px solid var(--sl-line);
+  overflow: hidden;
+  box-shadow: -18px 0 44px -26px rgba(0, 0, 0, 0.85);
+  transform: translateX(0);
+  transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Drawer closed: it slides out to the right. */
+.sl-panel--closed {
+  transform: translateX(100%);
+}
+
+/* Tab to open and close the panel, always visible. */
+.sl-panel-toggle {
+  position: fixed;
+  top: calc(var(--sl-topbar-h) + 12px);
+  right: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--sl-line);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  background: var(--sl-bg-1);
+  color: var(--sl-text-2);
+  cursor: pointer;
+  transition: right 240ms cubic-bezier(0.22, 0.61, 0.36, 1), color 120ms;
+}
+
+.sl-panel-toggle:hover {
+  color: var(--sl-text);
+}
+
+.sl-panel-toggle--open {
+  right: var(--sl-panel-w);
+}
+
+.sl-panel-toggle svg {
+  transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.sl-panel-toggle--open svg {
+  transform: rotate(180deg);
+}
+
+.sl-panel-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sl-s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+}
+
+/* ---- Status bar ---- */
+
+.sl-statusbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-4);
+  padding: 0 var(--sl-s-4);
+  background: var(--sl-bg-1);
+  border-top: 1px solid var(--sl-line);
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-2);
+  min-width: 0;
+  overflow: hidden;
+  /*
+   * With a line height of 1, the box of each text coincides with the height of the letters: when
+   * centered, the normal font and the monospaced one fall at the same height.
+   */
+  line-height: 1;
+}
+
+.sl-status-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* The progress text is shortened with an ellipsis instead of pushing. */
+.sl-status-job {
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.sl-status-job-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Label and value side by side (RAM, GPU): same baseline. */
+.sl-status-pair {
+  align-items: baseline;
+}
+
+.sl-status-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--sl-line-strong);
+}
+
+.sl-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.sl-topbar-actions + .sl-topbar-actions {
+  padding-left: var(--sl-s-3);
+  border-left: 1px solid var(--sl-line);
+  height: 100%;
+  align-items: center;
+}
+
+.sl-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sl-dot-lime {
+  background: var(--sl-lime);
+  box-shadow: 0 0 8px rgba(70, 255, 166, 0.8);
+}
+
+.sl-panel-head {
+  padding: var(--sl-s-3) var(--sl-s-3) var(--sl-s-2);
+  border-bottom: 1px solid var(--sl-line);
+  background: linear-gradient(180deg, rgba(34, 232, 255, 0.045), transparent);
+}
+
+.sl-panel-title {
+  font-size: var(--sl-fs-lg);
+  color: var(--sl-text);
+}
+
+.sl-panel-desc {
+  margin-top: 2px;
+  font-size: var(--sl-fs-xs);
+  line-height: 1.45;
+  color: var(--sl-text-3);
+}
+
+/*
+ * In a vertical flex container the items are compressed to fit the available space. Cards have
+ * clipped content, so compression would hide their last part: they must keep their natural height
+ * and let the panel scroll.
+ */
+.sl-panel-scroll > * {
+  flex-shrink: 0;
+}
+
+/* Numbers that change every two seconds: fixed width, so the bar does not jitter. */
+.sl-status-number {
+  display: inline-block;
+  min-width: 4.5ch;
+  text-align: right;
+}
+
+/*
+ * Descriptive texts of the tools panel (cards, notes, plugins): justified, with the last line
+ * always left-aligned.
+ */
+.sl-panel p:not(.sl-empty-text),
+.sl-panel .sl-libcal-text {
+  text-align: justify;
+  text-align-last: left;
+}

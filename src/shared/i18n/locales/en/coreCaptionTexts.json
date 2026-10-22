@@ -1,0 +1,22 @@
+{
+  "labels": {
+    "object": "Object",
+    "date": "Date",
+    "instrument": "Instrument",
+    "camera": "Camera",
+    "exposure": "Exposure",
+    "totalExposure": "Total exposure",
+    "filter": "Filter",
+    "place": "Location",
+    "author": "Photo"
+  },
+  "filter": "{name} filter",
+  "onlyFocalLength": "{focalLength} focal length",
+  "author": "© {name}",
+  "unit": {
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "millimeters": "mm"
+  }
+}

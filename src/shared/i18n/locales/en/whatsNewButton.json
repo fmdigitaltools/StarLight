@@ -1,0 +1,9 @@
+{
+  "title": "What’s new in each version",
+  "unreadTitle": "What’s new in this version, not read yet",
+  "windowTitle": "What’s new in {app}",
+  "currentVersion": "You’re using version {version}.",
+  "version": "Version {version}",
+  "inUse": "current",
+  "close": "Close"
+}

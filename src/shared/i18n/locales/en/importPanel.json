@@ -1,0 +1,93 @@
+{
+  "format": {
+    "fits": "FITS",
+    "fitsCompressed": "Compressed FITS (.fz)",
+    "fitsGzip": "Gzip-compressed FITS",
+    "xisf": "XISF (PixInsight)",
+    "tiff": "TIFF",
+    "png": "PNG"
+  },
+  "frameType": {
+    "stacked": "stacked",
+    "light": "light frame",
+    "dark": "dark frame",
+    "flat": "flat frame",
+    "bias": "bias frame"
+  },
+  "rows": {
+    "exposure": "exposure {value} s",
+    "filter": "filter {filter}",
+    "size": "{width} × {height} pixels"
+  },
+  "dateTime": "{date} at {time}",
+  "library": {
+    "title": "Library",
+    "empty": "The library is empty. Add frames with the Import frames and Folder buttons in the top bar, or from the File menu.",
+    "description": "Click a frame to open it in the viewer. The eye button excludes it from processing without removing it from the library.",
+    "include": "Include again",
+    "exclude": "Exclude from processing",
+    "remove": "Remove from library",
+    "clear": "Clear library"
+  },
+  "data": {
+    "title": "Capture data",
+    "pixelsOnlyWithObject": "{format} files contain only pixels: no exposure, date, filter or sky position. The image is treated as already stacked. The object is taken from the file name; to mark objects on the image, use Plate solve in the Objects step.",
+    "pixelsOnlyWithoutObject": "{format} files contain only pixels: no exposure, date, filter or sky position. The image is treated as already stacked. To recognize objects, their name must be in the file name (for example “M_27.tif”), or use a FITS or XISF file with a header.",
+    "object": "Object",
+    "notDeclaredMasculine": "not specified",
+    "notDeclaredFeminine": "not specified",
+    "instrument": "Instrument",
+    "rightAscension": "Right ascension",
+    "declination": "Declination",
+    "exposure": "Exposure",
+    "stackCount": "Integrated frames",
+    "totalExposure": "Total integration",
+    "gain": "Gain",
+    "sensorTemperature": "Sensor temperature",
+    "filter": "Filter",
+    "noFilter": "none",
+    "focuser": {
+      "name": "Focuser",
+      "hint": "Focuser position recorded by the instrument, useful for finding focus again"
+    },
+    "location": {
+      "name": "Observing site",
+      "hint": "Latitude and longitude declared in the file header"
+    },
+    "bayer": {
+      "name": "Bayer matrix",
+      "colorImage": "color image",
+      "hint": "Pattern of color filters on the sensor, used to reconstruct color"
+    },
+    "pixelScale": {
+      "name": "Pixel scale",
+      "value": "{value} arcsec/px",
+      "unavailable": "cannot be computed",
+      "hint": "Portion of sky covered by a single pixel, in arcseconds"
+    },
+    "format": "Format",
+    "bitDepth": {
+      "name": "Bit depth",
+      "integer": "{bits}-bit",
+      "floatingPoint": "{bits}-bit floating point"
+    },
+    "fileSize": "File size",
+    "captureStart": "Capture start"
+  },
+  "stats": {
+    "title": "Signal statistics",
+    "description": "Values normalized between 0 and 1. The median, the middle value of all pixels, indicates the sky background level.",
+    "min": "Minimum",
+    "median": "Median (sky background)",
+    "mean": "Mean",
+    "max": "Maximum",
+    "noise": {
+      "name": "Estimated noise",
+      "hint": "Noise estimate that is barely affected by stars. The lower the value, the cleaner the image"
+    },
+    "saturated": {
+      "name": "Saturated pixels",
+      "hint": "Percentage of pixels at the top of the scale, usually the cores of the brightest stars"
+    }
+  }
+}

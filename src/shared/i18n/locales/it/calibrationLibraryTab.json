@@ -1,0 +1,42 @@
+{
+  "title": "Libreria di calibrazione",
+  "description": "I master composti in questo pannello restano sul computer e vengono riusati automaticamente quando le condizioni di ripresa coincidono. Un dark richiede la stessa posa, lo stesso guadagno e una temperatura del sensore che non differisca di oltre {tolerance} °C; un bias lo stesso guadagno; un flat lo stesso filtro e una ripresa di non più di {maxDays} giorni, perché la polvere e l’orientamento della camera cambiano nel tempo. Fra più flat adatti viene usato quello ripreso più vicino alla data di ogni frame, così con più notti ciascuna ha il suo. Le stesse regole valgono per i master composti in questa sessione, che hanno la precedenza; la libreria serve per le luci che nella sessione non trovano un master con le loro condizioni.",
+  "reuse": {
+    "label": "Riusa i master della libreria",
+    "hint": "Con l’interruttore spento la libreria viene conservata ma non viene usata durante l’impilamento"
+  },
+  "usage": {
+    "session": "{master}, composto in questa sessione",
+    "library": "{master}, del {date}",
+    "withNote": "{text} ({note})",
+    "biasNotNeeded": "non serve, perché il dark contiene già il livello di lettura",
+    "noSuitableDark": "nessun dark adatto: {reason}",
+    "noneInSessionReuseOff": "nessun master adatto nella sessione (riuso della libreria spento)",
+    "noneAnywhere": "nessun master adatto nella sessione né nella libreria"
+  },
+  "removed": "{master} tolto dalla libreria di calibrazione.",
+  "removeFailed": "Il master non è stato tolto. {error}",
+  "group": {
+    "lightsOne": "{count} frame di luce",
+    "lightsOther": "{count} frame di luce",
+    "exposure": ", {value} s",
+    "gain": ", guadagno {value}",
+    "temperature": ", {value} °C"
+  },
+  "type": {
+    "dark": "Dark",
+    "flat": "Flat",
+    "bias": "Bias"
+  },
+  "empty": "La libreria è vuota. Ogni master composto in questo pannello viene conservato qui automaticamente.",
+  "listAriaLabel": "Master conservati",
+  "details": {
+    "framesOne": "{date} · {count} frame · {width} × {height} · {size}",
+    "framesOther": "{date} · {count} frame · {width} × {height} · {size}"
+  },
+  "delete": {
+    "title": "Toglie il master dalla libreria e ne cancella il file",
+    "label": "Elimina"
+  },
+  "openFolder": "Apri la cartella della libreria"
+}

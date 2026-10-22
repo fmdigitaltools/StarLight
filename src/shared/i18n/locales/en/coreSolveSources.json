@@ -1,0 +1,6 @@
+{
+  "narrowFieldCount": "The local stars aren't enough for this image. Only about {count} stars down to magnitude 12 fall within the framed field, too few to recognize their pattern. This happens with the narrow fields of long-focal-length telescopes.",
+  "narrowFieldFew": "The local stars aren't enough for this image. Only a few stars down to magnitude 12 fall within the framed field, too few to recognize their pattern. This happens with the narrow fields of long-focal-length telescopes.",
+  "unrecognized": "The stars in the image don't match those of the local catalog around the position given in the file. Perhaps nearly all the visible stars are fainter than magnitude 12, or the coordinates written in the header are far from the actual field.",
+  "error": "The local star file can't be read. You can reinstall the package from the Deep-sky catalogs tab of the plugin gallery."
+}

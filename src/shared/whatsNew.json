@@ -1,0 +1,15 @@
+[
+  {
+    "version": "1.0.0-beta.1",
+    "entries": [
+      "Prima Beta pubblica di StarLight: gratuita e open source, con licenza GPL-3.0.",
+      "Apri immagini impilate o singole: file FITS e XISF, immagini TIFF e PNG e i formati RAW delle fotocamere.",
+      "Abracadabra prepara l’immagine in automatico (fondo cielo, colore, rumore, distensione e finitura) e ogni passaggio resta modificabile a mano.",
+      "Calibra e impila le tue riprese: frame di calibrazione, allineamento, scarto dei frame mossi, drizzle, HDR, mosaico, più notti e sessione dal vivo.",
+      "Strumenti di elaborazione e filtri fotografici, con regolazioni locali tramite maschere.",
+      "Scopri gli oggetti inquadrati con la risoluzione astrometrica e i cataloghi deep sky scaricabili; aggiungi coordinate e didascalia ed esporta per la stampa e per i social.",
+      "Plugin e cataloghi aggiuntivi dalla galleria, eseguiti in un ambiente isolato.",
+      "In italiano e in inglese, con gli aggiornamenti automatici del canale Beta."
+    ]
+  }
+]

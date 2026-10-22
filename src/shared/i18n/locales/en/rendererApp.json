@@ -1,0 +1,5 @@
+{
+  "waitForJob": "Wait for the current operation to finish, then open the file again.",
+  "hideTools": "Hide tools",
+  "showTools": "Show tools"
+}

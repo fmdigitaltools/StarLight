@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title data-title="uninstallTitle">StarLight</title>
+<!--
+  StarLight uninstaller window, shown by Neutralinojs with the look of the
+  installer window (style.css). The texts are in texts.js, the logic (silent
+  relaunch of the uninstaller, measured progress) in uninstall.js.
+-->
+<link rel="stylesheet" href="style.css">
+<script src="neutralino.js"></script>
+<script src="texts.js"></script>
+</head>
+<body>
+<div class="window" role="dialog" aria-labelledby="step-title">
+  <aside class="brand" id="brand">
+    <canvas class="star-field" id="stars" aria-hidden="true"></canvas>
+    <div class="logo-box">
+      <span class="halo" aria-hidden="true"></span>
+      <img class="logo" src="logo.svg" alt="" data-alt="logoAlt">
+      <span class="sparkle s1" aria-hidden="true"></span>
+      <span class="sparkle s2" aria-hidden="true"></span>
+      <span class="sparkle s3" aria-hidden="true"></span>
+    </div>
+    <h1 class="name">StarLight</h1>
+    <p class="slogan" data-text="slogan"></p>
+    <span class="version" id="version"></span>
+  </aside>
+
+  <section class="steps">
+    <ol class="step-progress" id="indicator">
+      <li data-text="stepConfirm"></li>
+      <li data-text="stepUninstall"></li>
+      <li data-text="stepDone"></li>
+    </ol>
+
+    <div class="content">
+      <!-- Step 1 -->
+      <div data-step="0">
+        <h2 id="step-title" data-text="uninstallTitle"></h2>
+        <p data-text="uninstallText"></p>
+        <div class="folder">
+          <span class="folder-label" data-text="programFolder"></span>
+          <span class="path" id="program-path"></span>
+        </div>
+        <div class="data-choice">
+          <label class="checkbox"><input type="checkbox" id="c-data"> <span data-text="deleteData"></span></label>
+          <p class="data-choice-note"><span data-text="dataNoteBefore"></span><code id="data-path"></code><span data-text="dataNoteAfter"></span></p>
+          <p class="data-choice-note warning" id="data-warning" data-text="dataWarning" hidden></p>
+        </div>
+        <p data-text="untouched"></p>
+      </div>
+
+      <!-- Step 2 -->
+      <div data-step="1" hidden>
+        <h2 data-text="uninstalling"></h2>
+        <p data-text="uninstallingText"></p>
+        <div class="bar" aria-hidden="true">
+          <div class="bar-fill" id="fill"></div>
+          <span class="bar-head" id="head" style="left:0%"></span>
+        </div>
+        <div class="bar-info">
+          <span id="phase" data-text="preparing"></span>
+          <span class="percent" id="percent" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</span>
+        </div>
+        <div class="log" id="log" aria-live="polite"></div>
+      </div>
+
+      <!-- Step 3 -->
+      <div data-step="2" hidden>
+        <h2 data-text="uninstalled"></h2>
+        <p data-text="uninstallSummaryIntro"></p>
+        <ul class="summary-list" id="summary"></ul>
+        <p data-text="thanks"></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button class="button ghost" type="button" id="cancel"></button>
+      <span class="spacer"></span>
+      <button class="button primary" type="button" id="next"><span></span></button>
+    </div>
+  </section>
+</div>
+<script src="stars.js"></script>
+<script src="uninstall.js"></script>
+</body>
+</html>

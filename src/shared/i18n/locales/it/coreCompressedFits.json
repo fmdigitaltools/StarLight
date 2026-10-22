@@ -1,0 +1,16 @@
+{
+  "invalidTable": "Tabella compressa non valida (TFORM{index} = {shape}).",
+  "unexpectedColumnType": "Tipo di colonna non previsto nella tabella compressa ({type}).",
+  "riceBytesPerPixel": "Compressione Rice con {bytes} byte per pixel: non prevista.",
+  "plioTruncated": "Tessera PLIO troncata.",
+  "tileTruncated": "Tessera compressa troncata.",
+  "notTwoDimensional": "Il file compresso non contiene un’immagine bidimensionale.",
+  "invalidDimensions": "Dimensioni dell’immagine compressa non valide.",
+  "unknownMethod": "Metodo di compressione sconosciuto: {method}. Sono supportati RICE_1, GZIP_1, GZIP_2, HCOMPRESS_1 e PLIO_1.",
+  "undeclaredMethod": "Metodo di compressione sconosciuto: non dichiarato. Sono supportati RICE_1, GZIP_1, GZIP_2, HCOMPRESS_1 e PLIO_1.",
+  "missingDataColumn": "Tabella compressa senza la colonna COMPRESSED_DATA.",
+  "incomplete": "Il file compresso è incompleto: mancano delle tessere.",
+  "truncated": "Il file compresso è troncato.",
+  "truncatedMissingData": "Il file compresso è troncato: manca una parte dei dati.",
+  "hcompressUnexpectedSize": "Tessera HCOMPRESS di dimensioni inattese."
+}

@@ -1,0 +1,15 @@
+{
+  "needTwoSolved": "At least two panels with an astrometric solution are needed.",
+  "needTwo": "Choose at least two panels.",
+  "busy": "Please wait for the current operation to finish.",
+  "cannotCompose": "The mosaic cannot be composed.",
+  "notEnoughMemory": "Not enough memory for the mosaic: about {needed} is needed and {free} is free. Close other programs or use fewer panels.",
+  "interrupted": "The mosaic computation was interrupted.",
+  "done": "Mosaic of {count} panels composed: {width} × {height} pixels.",
+  "isolated": "Some panels do not overlap the others, so their background and brightness could not be matched: {panels}.",
+  "failed": "Mosaic failed. {message}",
+  "job": {
+    "readingPanel": "Reading panel {index} of {total}",
+    "progress": "Mosaic: {label}"
+  }
+}

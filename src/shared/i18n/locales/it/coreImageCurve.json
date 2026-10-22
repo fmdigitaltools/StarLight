@@ -1,0 +1,22 @@
+{
+  "neutral": {
+    "name": "Neutra",
+    "description": "Nessuna alterazione"
+  },
+  "contrast": {
+    "name": "Contrasto",
+    "description": "Curva a S: scurisce le ombre e schiarisce le luci"
+  },
+  "soft": {
+    "name": "Morbida",
+    "description": "Curva a S rovesciata: apre le ombre e trattiene le luci"
+  },
+  "faintSignal": {
+    "name": "Segnale debole",
+    "description": "Solleva i toni bassi, dove si nasconde il cielo profondo"
+  },
+  "containedStars": {
+    "name": "Stelle contenute",
+    "description": "Comprime le alte luci per non bruciare le stelle luminose"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "channel-mixer-bw",
+  "name": "Black and white by channel",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "photography",
+  "description": "Converts the image to black and white with an adjustable weight for each color channel, with a result similar to that of the colored filters used with film. A higher red weight brings out emission nebulae, a higher blue weight brings out reflection nebulae and young stars.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.3.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "red",
+      "label": "Red weight",
+      "hint": "Contribution of the red channel, which collects the light of hydrogen (H-alpha line) emitted by almost all emission nebulae.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "green",
+      "label": "Green weight",
+      "hint": "Contribution of the green channel. The light of ionized oxygen (OIII line), typical of planetary nebulae, falls on the boundary between green and blue.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.3,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "blue",
+      "label": "Blue weight",
+      "hint": "Contribution of the blue channel, which collects the light of hot stars and reflection nebulae.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.2,
+      "format": "percent"
+    },
+    {
+      "type": "toggle",
+      "id": "normalize",
+      "label": "Keep the brightness",
+      "hint": "Brings the sum of the three weights back to 100%. This way the sliders change the relative contribution of the colors and not the overall brightness.",
+      "default": true
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Bianco e nero per canale",
+      "description": "Converte l’immagine in bianco e nero con un peso regolabile per ciascun canale di colore, con un risultato analogo a quello dei filtri colorati usati con la pellicola. Un peso maggiore del rosso mette in risalto le nebulose a emissione, un peso maggiore del blu le nebulose a riflessione e le stelle giovani.",
+      "parameters": {
+        "red": {
+          "label": "Peso del rosso",
+          "hint": "Contributo del canale rosso, che raccoglie la luce dell’idrogeno (riga H-alfa) emessa da quasi tutte le nebulose a emissione."
+        },
+        "green": {
+          "label": "Peso del verde",
+          "hint": "Contributo del canale verde. La luce dell’ossigeno ionizzato (riga OIII), tipica delle nebulose planetarie, cade al confine fra il verde e il blu."
+        },
+        "blue": {
+          "label": "Peso del blu",
+          "hint": "Contributo del canale blu, che raccoglie la luce delle stelle calde e delle nebulose a riflessione."
+        },
+        "normalize": {
+          "label": "Mantieni la luminosità",
+          "hint": "Riporta la somma dei tre pesi al 100%. In questo modo i cursori modificano il contributo relativo dei colori e non la luminosità complessiva."
+        }
+      }
+    }
+  }
+}

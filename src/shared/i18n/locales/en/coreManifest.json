@@ -1,0 +1,16 @@
+{
+  "categories": {
+    "astrophotography": "Astrophotography",
+    "photography": "Photography"
+  },
+  "fields": {
+    "id": "the identifier (id)",
+    "name": "the name",
+    "version": "the version",
+    "author": "the author",
+    "license": "the license",
+    "description": "the description",
+    "icon": "the icon",
+    "minVersion": "the minimum StarLight version"
+  }
+}

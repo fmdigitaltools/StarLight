@@ -1,0 +1,19 @@
+# Configuration of the updates and catalogs Worker, to deploy it from here
+# instead of pasting it into the Cloudflare panel:
+#
+#   npx wrangler deploy -c tools/wrangler.toml
+#
+# The account is given with the CLOUDFLARE_ACCOUNT_ID variable, never in
+# this file. keep_vars leaves in place the variables set in the panel
+# (PREFIX, KEY).
+name = "starlight-updates"
+main = "updates-worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+preview_urls = false
+keep_vars = true
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "starlight-updates"
+jurisdiction = "eu"

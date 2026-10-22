@@ -1,0 +1,55 @@
+{
+  "noInternetSubject": "Checking for updates",
+  "readyOnClose": "{app} {version} is ready: it will be installed when you close the program.",
+  "skipFailed": "Couldn’t save your choice: version {version} will be offered again. You can try again later.",
+  "skipped": "Version {version} will no longer be offered at startup. You can still install it from the Help menu with Check for updates.",
+  "close": "Close",
+  "later": "Later",
+  "updateNow": "Update now",
+  "skipVersion": "Skip this version",
+  "notConfiguredTitle": "Updates",
+  "available": {
+    "title": "{app} {version} is available",
+    "subtitle": "You’re using version {version}.",
+    "whatsNew": "What’s new",
+    "noNotes": "No release notes were written for this version.",
+    "explain": "With “Update now”, StarLight downloads the new version, closes, installs it and reopens on its own. With “Later”, it downloads it in the background and installs it when you close the program. Your projects, images and settings stay as they are."
+  },
+  "downloading": {
+    "title": "Downloading {app} {version}",
+    "subtitleNow": "When it’s done, StarLight lets you know, then closes, installs the new version and reopens on its own.",
+    "subtitleLater": "When it’s done, the new version will be installed when you close StarLight.",
+    "amount": "{done} of {total}",
+    "preparing": "Preparing…",
+    "speed": "{speed} per second",
+    "keepWorking": "You can keep working: the download continues even if you close this window.",
+    "background": "Continue in background",
+    "progressLabel": "Download progress"
+  },
+  "ready": {
+    "title": "{app} {version} is ready to install",
+    "countdownBefore": "StarLight will close and restart in ",
+    "countdownAfterOne": " second to install it.",
+    "countdownAfterOther": " seconds to install it.",
+    "subtitle": "Installation takes less than a minute and asks no questions.",
+    "unsavedWork": "You have unsaved changes. Save the project and press “Install and restart” again, or choose “Later”: the new version will be installed when you close StarLight.",
+    "development": "StarLight is running from source: installation is only simulated and changes nothing.",
+    "noteCountdown": "If you’re working on something you haven’t saved, choose “Later”: the new version will be installed when you close StarLight.",
+    "note": "With “Install and restart”, StarLight closes, installs the new version and reopens on its own. With “Later”, it installs it when you close the program.",
+    "restartNow": "Restart now",
+    "installRestart": "Install and restart"
+  },
+  "upToDate": {
+    "title": "{app} is up to date",
+    "body": "You’re using the latest version, {version}."
+  },
+  "error": {
+    "title": "Update failed",
+    "unexpected": "An unexpected problem occurred.",
+    "retry": "Try again"
+  },
+  "checking": {
+    "title": "Checking for updates",
+    "body": "StarLight is asking the server whether a new version is available…"
+  }
+}

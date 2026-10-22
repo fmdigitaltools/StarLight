@@ -1,0 +1,185 @@
+{
+  "id": "star-separation",
+  "name": "Star and nebula separation",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Splits the image into two layers, the starless nebula and the stars alone, adjusts them separately and recombines them. The nebula can receive more brightness and saturation without the stars growing larger; the stars can be reduced and dimmed without touching the nebula. It uses a classic method of mathematical morphology and interpolation, without artificial intelligence. Each layer can also be obtained on its own.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "output",
+      "label": "Output",
+      "options": [
+        {
+          "value": "recombined",
+          "label": "Nebula and stars recombined",
+          "hint": "The two layers, each with its own adjustments, added back together."
+        },
+        {
+          "value": "nebula",
+          "label": "Nebula only",
+          "hint": "The starless image, with the nebula adjustments."
+        },
+        {
+          "value": "stars",
+          "label": "Stars only",
+          "hint": "The stars alone on a black background, with the star adjustments."
+        }
+      ],
+      "default": "recombined"
+    },
+    {
+      "type": "slider",
+      "id": "starRadius",
+      "label": "Maximum star radius",
+      "hint": "Radius in pixels of the largest star to separate. Larger structures remain in the nebula.",
+      "min": 2,
+      "max": 25,
+      "step": 1,
+      "default": 6,
+      "format": "integer"
+    },
+    {
+      "type": "slider",
+      "id": "sensitivity",
+      "label": "Sensitivity",
+      "hint": "High values also separate the faintest stars, but small knots of the nebula can be mistaken for stars.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "margin",
+      "label": "Margin around the stars",
+      "hint": "Pixels added around each star to include its halo. Larger stars also receive half of their radius.",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "default": 1,
+      "format": "integer"
+    },
+    {
+      "type": "slider",
+      "id": "nebulaBrightness",
+      "label": "Nebula brightness",
+      "hint": "Multiplies the light of the nebula above the sky background. A value of 1 leaves it unchanged.",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 1.15,
+      "format": "decimal"
+    },
+    {
+      "type": "slider",
+      "id": "nebulaSaturation",
+      "label": "Nebula saturation",
+      "hint": "Intensity of the nebula’s colors. A value of 1 leaves it unchanged.",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 1.15,
+      "format": "decimal"
+    },
+    {
+      "type": "slider",
+      "id": "starBrightness",
+      "label": "Star brightness",
+      "hint": "Multiplies the light of the stars. A value of 1 leaves it unchanged.",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 0.9,
+      "format": "decimal"
+    },
+    {
+      "type": "slider",
+      "id": "starReduction",
+      "label": "Star reduction",
+      "hint": "Shrinks the star discs by up to two pixels of radius.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.4,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "starSaturation",
+      "label": "Star saturation",
+      "hint": "Intensity of the stars’ colors. A value of 1 leaves it unchanged.",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 1,
+      "format": "decimal"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Separazione di stelle e nebulosa",
+      "description": "Divide l’immagine in due strati, la nebulosa senza stelle e le sole stelle, li regola separatamente e li ricompone. La nebulosa può ricevere più luminosità e saturazione senza che le stelle si ingrandiscano; le stelle si possono ridurre e attenuare senza toccare la nebulosa. Usa un metodo classico di morfologia matematica e interpolazione, senza intelligenza artificiale. Ciascuno strato si può anche ottenere da solo.",
+      "parameters": {
+        "output": {
+          "label": "Risultato",
+          "options": {
+            "recombined": {
+              "label": "Nebulosa e stelle ricomposte",
+              "hint": "I due strati, ciascuno con le sue regolazioni, sommati di nuovo."
+            },
+            "nebula": {
+              "label": "Solo la nebulosa",
+              "hint": "L’immagine senza stelle, con le regolazioni della nebulosa."
+            },
+            "stars": {
+              "label": "Solo le stelle",
+              "hint": "Le sole stelle su fondo nero, con le regolazioni delle stelle."
+            }
+          }
+        },
+        "starRadius": {
+          "label": "Raggio massimo delle stelle",
+          "hint": "Raggio in pixel della stella più grande da separare. Le strutture più grandi restano nella nebulosa."
+        },
+        "sensitivity": {
+          "label": "Sensibilità",
+          "hint": "Con valori alti si separano anche le stelle più deboli, ma piccoli addensamenti della nebulosa possono essere scambiati per stelle."
+        },
+        "margin": {
+          "label": "Margine attorno alle stelle",
+          "hint": "Pixel aggiunti attorno a ogni stella per comprenderne l’alone. Le stelle più grandi ricevono in più metà del loro raggio."
+        },
+        "nebulaBrightness": {
+          "label": "Luminosità della nebulosa",
+          "hint": "Moltiplica la luce della nebulosa sopra il fondo del cielo. Il valore 1 la lascia invariata."
+        },
+        "nebulaSaturation": {
+          "label": "Saturazione della nebulosa",
+          "hint": "Intensità dei colori della nebulosa. Il valore 1 la lascia invariata."
+        },
+        "starBrightness": {
+          "label": "Luminosità delle stelle",
+          "hint": "Moltiplica la luce delle stelle. Il valore 1 la lascia invariata."
+        },
+        "starReduction": {
+          "label": "Riduzione delle stelle",
+          "hint": "Restringe il disco delle stelle fino a due pixel di raggio."
+        },
+        "starSaturation": {
+          "label": "Saturazione delle stelle",
+          "hint": "Intensità dei colori delle stelle. Il valore 1 la lascia invariata."
+        }
+      }
+    }
+  }
+}

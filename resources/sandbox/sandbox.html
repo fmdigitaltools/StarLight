@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+  StarLight plugin sandbox.
+
+  Invisible page, opened by the main process (src/main/pluginSandbox.ts) in a
+  process separate from the interface. Every plugin runs here in a Web Worker
+  created for a single run: if the plugin exhausts its memory or brings the
+  process down, only this page goes down and StarLight stays open. The main
+  process watches the memory in use and closes the page if a plugin exceeds
+  its limit.
+
+  The page has no access to Node or to the application bridge: for each run
+  it receives from its preload (src/preload/sandbox.ts) a channel
+  (MessagePort) connected directly to the interface. On that channel it
+  receives the source to run (isolation prelude plus plugin code, already
+  composed by the interface) and the image, and sends back the worker's
+  response.
+
+  Messages on the channel: from the interface "run" (source, name, request)
+  and "terminate"; to the interface "response" (the worker's response) and
+  "error" (a message).
+
+  The security policy is stricter than the interface's and the worker
+  inherits it: no connections (connect-src 'none'), no module loaded from
+  elsewhere (script-src without 'self' or blob:), no evaluation of text as
+  code (no 'unsafe-eval').
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval'; worker-src blob:; connect-src 'none'; img-src 'none'; style-src 'none'">
+<title>StarLight · plugin sandbox</title>
+</head>
+<body>
+<script>
+'use strict';
+window.addEventListener('message', function (event) {
+  var d = event.data;
+  if (event.source !== window || !d || d.type !== 'starlight-plugin-sandbox') return;
+  var port = event.ports && event.ports[0];
+  if (!port) return;
+  var worker = null;
+  var address = null;
+  function close() {
+    if (worker) worker.terminate();
+    worker = null;
+    if (address) URL.revokeObjectURL(address);
+    address = null;
+    port.close();
+  }
+  function error(message) {
+    try { port.postMessage({ type: 'error', message: String(message || '') }); } catch (e) { /* channel closed */ }
+  }
+  port.onmessage = function (m) {
+    var r = m.data || {};
+    if (r.type === 'terminate') { close(); return; }
+    if (r.type !== 'run' || worker) return;
+    try {
+      address = URL.createObjectURL(new Blob([String(r.source)], { type: 'text/javascript' }));
+      worker = new Worker(address, { type: 'module', name: String(r.name || 'plugin') });
+      worker.onmessage = function (response) {
+        var data = response.data && response.data.image && response.data.image.data;
+        var transferables = data && data.buffer instanceof ArrayBuffer ? [data.buffer] : [];
+        try { port.postMessage({ type: 'response', response: response.data }, transferables); }
+        catch (e) { error(e && e.message); }
+      };
+      worker.onmessageerror = function () { error(''); };
+      worker.onerror = function (ev) { ev.preventDefault(); error(ev.message); };
+      var image = r.request && r.request.image && r.request.image.data;
+      worker.postMessage(r.request, image && image.buffer instanceof ArrayBuffer ? [image.buffer] : []);
+    } catch (e) {
+      error(e && e.message);
+    }
+  };
+  port.start();
+});
+</script>
+</body>
+</html>

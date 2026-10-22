@@ -1,0 +1,58 @@
+{
+  "id": "negative",
+  "name": "Negative",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Inverts the brightness of the image. The sky background becomes light and the stars become dark dots. Makes it easier to spot the faintest extensions of nebulae and galaxies, because the eye distinguishes dark shades on a light background better.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.3.0",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "mode",
+      "label": "Inversion",
+      "hint": "The negative is computed on the stretch set in the Correct step. After the stretch is changed, Apply must be pressed again.",
+      "options": [
+        {
+          "value": "colors",
+          "label": "Light and colors",
+          "hint": "Full negative: every color becomes its complementary color."
+        },
+        {
+          "value": "luminance",
+          "label": "Light only",
+          "hint": "Inverts the brightness and keeps the hues. A red nebula stays red."
+        }
+      ],
+      "default": "colors"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Negativo",
+      "description": "Inverte la luminosità dell’immagine. Il fondo cielo diventa chiaro e le stelle diventano punti scuri. Facilita l’individuazione delle estensioni più deboli di nebulose e galassie, perché l’occhio distingue meglio le sfumature scure su fondo chiaro.",
+      "parameters": {
+        "mode": {
+          "label": "Inversione",
+          "hint": "Il negativo è calcolato sulla distensione impostata nel passo Correggi. Dopo una modifica della distensione occorre premere di nuovo Applica.",
+          "options": {
+            "colors": {
+              "label": "Luce e colori",
+              "hint": "Negativo completo: ogni colore diventa il suo complementare."
+            },
+            "luminance": {
+              "label": "Solo la luce",
+              "hint": "Inverte la luminosità e conserva le tinte. Una nebulosa rossa resta rossa."
+            }
+          }
+        }
+      }
+    }
+  }
+}

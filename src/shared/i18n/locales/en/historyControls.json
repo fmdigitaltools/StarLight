@@ -1,0 +1,14 @@
+{
+  "undo": "Undo",
+  "redo": "Redo",
+  "history": "History",
+  "undoHint": "Undo: {step} (Ctrl+Z)",
+  "redoHint": "Redo: {step} (Ctrl+Y)",
+  "nothingToUndo": "Nothing to undo",
+  "nothingToRedo": "Nothing to redo",
+  "historyHint": "List of edits: click a step to return the image to that point ({keys})",
+  "listLabel": "Edit history",
+  "editCountOne": "1 edit",
+  "editCountOther": "{count} edits",
+  "greyNote": "Grayed-out steps have been undone: they remain available until you make a new edit."
+}

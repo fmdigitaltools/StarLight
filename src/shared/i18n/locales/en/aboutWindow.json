@@ -1,0 +1,35 @@
+{
+  "subtitle": "Astronomical image processing",
+  "gpu": {
+    "noWebgl": "WebGL 2 not available",
+    "undeclared": "not reported"
+  },
+  "application": {
+    "title": "Application",
+    "version": "Version",
+    "codename": "Codename",
+    "catalog": "Bundled catalog",
+    "catalogValue": "{count} objects, {source}"
+  },
+  "author": {
+    "title": "Author",
+    "developedBy": "Developed by",
+    "contact": "Contact",
+    "contactHint": "Select the text to copy it",
+    "license": "License",
+    "licenseHint": "Opens the license text and the third-party credits"
+  },
+  "computer": {
+    "title": "Your computer",
+    "gpu": "Graphics card in use",
+    "cpu": "Processor",
+    "cpuValue": "{model}, {cores} cores",
+    "memory": "Installed memory"
+  },
+  "support": {
+    "text": "StarLight is free. If you like, you can support its development.",
+    "button": "Support StarLight",
+    "buttonHint": "Opens the donation page in your browser"
+  },
+  "close": "Close"
+}

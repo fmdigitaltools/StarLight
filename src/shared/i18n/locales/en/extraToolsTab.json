@@ -1,0 +1,21 @@
+{
+  "title": "Extra tools",
+  "description": "Plugins enabled from the gallery or installed from a file. They are applied after all the other tools, in the order they were enabled, and each one runs separately from the rest of the program.",
+  "gallery": {
+    "label": "Gallery…",
+    "hint": "Opens the gallery to enable more plugins"
+  },
+  "noPlugins": "No plugins enabled. The Gallery button and the Plugins menu open the gallery, where you can enable them.",
+  "missing": {
+    "text": "The project uses the plugin “{id}”, which is neither enabled nor installed, so it is not applied.",
+    "remove": "Remove from the list"
+  },
+  "tool": {
+    "hint": "{description} ({author}, {license} license)",
+    "orderHint": "Position in the plugin execution order",
+    "defaults": "Default values",
+    "pending": "not applied",
+    "applyHint": "Computes the image with all the adjustments of the Process step, including “{name}”",
+    "apply": "Apply"
+  }
+}

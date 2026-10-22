@@ -1,0 +1,19 @@
+{
+  "label": "Elaborazione",
+  "progress": {
+    "firstStage": "{label}: difetti, fondo, colore…",
+    "deconvolution": "{label}: deconvoluzione…",
+    "bandSeparation": "{label}: separazione delle bande…",
+    "noiseReduction": "{label}: riduzione del rumore…",
+    "thirdStage": "{label}: dettagli, stelle, contrasto…"
+  },
+  "bandSeparationFailed": "Separazione delle bande non riuscita.",
+  "trails": {
+    "none": "Nessuna scia di satellite trovata.",
+    "one": "Tolta una scia di satellite.",
+    "other": "Tolte {count} scie di satelliti."
+  },
+  "noToolsActive": "Nessuno strumento attivo. Il visore mostra di nuovo l’immagine originale.",
+  "applied": "Elaborazione applicata.",
+  "failed": "Elaborazione non riuscita. {error}"
+}

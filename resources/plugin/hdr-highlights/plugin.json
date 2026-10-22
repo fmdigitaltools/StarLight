@@ -1,0 +1,85 @@
+{
+  "id": "hdr-highlights",
+  "name": "HDR, recovery of the bright areas",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Compresses the dynamic range in the bright areas only and restores their detail, without darkening the faint parts. Useful when the stretch needed to show the faint structures pushes the cores and the brightest regions to white. Colors keep their proportions. The plugin recovers the detail present in the data. An area saturated in every frame stays uniform and requires a series of short exposures.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "strength",
+      "label": "Strength",
+      "hint": "Bright areas are always brought back below white, and the strength decides by how much. High values reveal more structure but reduce its brilliance.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.6,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "threshold",
+      "label": "Bright area threshold",
+      "hint": "Brightness, on the image as it appears on screen, above which the plugin acts. Fainter areas stay unchanged.",
+      "min": 0.2,
+      "max": 0.95,
+      "step": 0.01,
+      "default": 0.55,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "structureSize",
+      "label": "Structure size",
+      "hint": "Size in pixels of the structures whose brightness is compressed. Small values act on the details, large values on the whole bright area.",
+      "min": 4,
+      "max": 400,
+      "step": 1,
+      "default": 48,
+      "format": "integer"
+    },
+    {
+      "type": "slider",
+      "id": "detail",
+      "label": "Local contrast",
+      "hint": "Strengthening of the fine detail in the compressed areas. At zero the detail stays as it was.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.35,
+      "format": "percent"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "HDR, recupero delle zone luminose",
+      "description": "Comprime la gamma dinamica nelle sole zone luminose e ne restituisce il dettaglio, senza scurire le parti deboli. Utile quando la distensione necessaria a mostrare le strutture tenui porta al bianco i nuclei e le regioni più brillanti. I colori mantengono le loro proporzioni. Il plugin recupera il dettaglio presente nei dati. Una zona satura in ogni scatto resta uniforme e richiede una serie di pose brevi.",
+      "parameters": {
+        "strength": {
+          "label": "Intensità",
+          "hint": "Le zone luminose vengono sempre riportate sotto il bianco e l’intensità decide di quanto. Valori alti rivelano più struttura ma ne riducono la brillantezza."
+        },
+        "threshold": {
+          "label": "Soglia delle zone luminose",
+          "hint": "Luminosità, sull’immagine come appare a schermo, oltre la quale il plugin interviene. Le zone più deboli restano invariate."
+        },
+        "structureSize": {
+          "label": "Ampiezza delle strutture",
+          "hint": "Dimensione in pixel delle strutture di cui si comprime la luminosità. Valori piccoli agiscono sui dettagli, valori grandi sull’intera zona luminosa."
+        },
+        "detail": {
+          "label": "Contrasto locale",
+          "hint": "Rinforzo del dettaglio fine nelle zone compresse. A zero il dettaglio resta quello originale."
+        }
+      }
+    }
+  }
+}

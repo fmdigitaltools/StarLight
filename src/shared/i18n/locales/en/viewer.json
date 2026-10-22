@@ -1,0 +1,23 @@
+{
+  "gpuLoadFailed": "Couldn’t load the image into the graphics card. {message}",
+  "unavailable": "Display not available",
+  "empty": {
+    "title": "No image open",
+    "text": "To get started, import the images you want to process: FITS and XISF files, TIFF and PNG images or camera RAW formats. You can choose individual files or a session folder. StarLight reads the capture data written in the file headers, recognizes the framed object and prepares the automatic stretch.",
+    "chooseFrames": "Choose frames",
+    "openFolder": "Open a folder"
+  },
+  "projectTitle": "Project in {folder}",
+  "projectTitleModified": "Project in {folder} (unsaved changes)",
+  "unsavedChanges": "unsaved changes",
+  "defaultFileName": "image",
+  "stacked": {
+    "label": "stacked",
+    "title": "Already stacked file, i.e. the sum of several exposures"
+  },
+  "instrumentTitle": "Instrument model declared in the file header",
+  "objectTitle": "Object recognized in the framed field",
+  "comparisonBefore": "Before: the image as it was when opened",
+  "inField": "In the field: {names}",
+  "inFieldHidden": "In the field (positions hidden because a plugin moved the pixels without declaring the transformation): {names}"
+}

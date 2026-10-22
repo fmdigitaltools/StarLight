@@ -1,0 +1,19 @@
+{
+  "title": "Raddrizza",
+  "angle": "Angolo",
+  "angleHint": "Rotazione in senso orario; i valori negativi ruotano in senso antiorario. L’anteprima è immediata, il calcolo avviene con Applica.",
+  "degrees": "Gradi",
+  "reset": "Azzera",
+  "resetHint": "Riporta l’angolo a zero",
+  "trace": "Traccia una linea",
+  "tracing": "Traccia sull’immagine…",
+  "traceHint": "Trascina sull’immagine una linea lungo un elemento che dovrebbe essere orizzontale o verticale: l’angolo si calcola da solo",
+  "needsSolution": "Serve la soluzione astrometrica.",
+  "northUp": "Nord in alto",
+  "northHint": "Ruota l’immagine in modo che il nord del cielo sia in alto",
+  "northUnavailableHint": "Disponibile quando l’immagine ha la soluzione astrometrica, cioè la posizione esatta del campo nel cielo (passo Oggetti, Risolvi il campo)",
+  "trimEdges": "Ritaglia i bordi vuoti",
+  "trimEdgesHint": "Imposta il ritaglio sul rettangolo più grande senza angoli scoperti. Il ritaglio resta modificabile e i dati non vengono tolti.",
+  "cancel": "Annulla",
+  "apply": "Applica"
+}

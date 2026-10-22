@@ -1,0 +1,214 @@
+/* ---- License and acknowledgements window ---- */
+
+.sl-license {
+  width: min(820px, 92vw);
+  height: 86vh;
+}
+
+.sl-license:focus {
+  outline: none;
+}
+
+.sl-license-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+}
+
+.sl-license-intro {
+  flex: none;
+}
+
+/*
+ * The GPL text has fixed line breaks: monospaced font, readable size and horizontal scrolling only
+ * when really needed.
+ */
+.sl-license-text {
+  margin: 0;
+  padding: var(--sl-s-4);
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-sm);
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-fs-sm);
+  line-height: 1.6;
+  color: var(--sl-text-2);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.sl-credits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sl-credit {
+  padding: var(--sl-s-2) 0;
+  border-bottom: 1px solid var(--sl-line);
+}
+
+.sl-credit:last-child {
+  border-bottom: none;
+}
+
+/* Name, license, author and link on one line; it wraps only when the window is narrow. */
+.sl-credit-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.3fr) minmax(90px, 0.9fr) minmax(120px, 1.2fr) minmax(120px, 1fr);
+  gap: var(--sl-s-3);
+  align-items: baseline;
+  font-size: var(--sl-fs-sm);
+}
+
+.sl-credit-name {
+  color: var(--sl-text);
+  font-weight: 600;
+}
+
+.sl-credit-license {
+  color: var(--sl-cyan);
+}
+
+.sl-credit-author {
+  color: var(--sl-text-2);
+}
+
+.sl-credit-link {
+  color: var(--sl-text-3);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sl-credit-link:hover,
+.sl-credit-link:focus-visible {
+  color: var(--sl-cyan);
+  text-decoration: underline;
+}
+
+.sl-credit-note {
+  margin: 4px 0 0;
+  font-size: var(--sl-fs-xs);
+  line-height: 1.5;
+  color: var(--sl-text-3);
+}
+
+@media (max-width: 720px) {
+  .sl-credit-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---- About window: project support ---- */
+
+.sl-info-support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sl-s-3);
+  margin-top: var(--sl-s-4);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+}
+
+.sl-info-notice {
+  margin-top: var(--sl-s-2);
+}
+
+/* The License entry is clickable to open the license window. */
+.sl-info-license {
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--sl-text-2);
+  cursor: pointer;
+}
+
+/* Privacy and data and Legal notes sections of the About window. */
+.sl-legal {
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-md);
+  line-height: 1.55;
+}
+
+.sl-legal p,
+.sl-legal ul {
+  margin: 0 0 var(--sl-s-2);
+}
+
+.sl-legal ul {
+  padding-left: 1.2em;
+}
+
+.sl-legal li + li {
+  margin-top: var(--sl-s-1);
+}
+
+.sl-legal h4 {
+  margin: var(--sl-s-3) 0 var(--sl-s-1);
+  font-size: var(--sl-fs-md);
+  font-weight: 600;
+  color: var(--sl-text);
+}
+
+.sl-legal strong {
+  color: var(--sl-text);
+  font-weight: 600;
+}
+
+/*
+ * Paths and emails: they cannot be hyphenated, so they wrap anywhere rather than widen the spaces
+ * of the justified line.
+ */
+.sl-legal-code {
+  color: var(--sl-text);
+  overflow-wrap: anywhere;
+  hyphens: none;
+}
+
+/* Support StarLight in yellow, with a light glow. */
+.sl-info-support .sl-btn {
+  color: var(--sl-amber);
+  border-color: rgba(255, 194, 71, 0.55);
+  background: rgba(255, 194, 71, 0.08);
+  box-shadow: 0 0 10px rgba(255, 194, 71, 0.25);
+}
+
+.sl-info-support .sl-btn:hover {
+  color: #ffd57a;
+  border-color: var(--sl-amber);
+  background: rgba(255, 194, 71, 0.16);
+  box-shadow: 0 0 14px rgba(255, 194, 71, 0.45);
+}
+
+/*
+ * Link to the license inside the legal notes text: it flows like the text, so the final period
+ * stays attached.
+ */
+.sl-legal-link {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  white-space: normal;
+  overflow: visible;
+  color: var(--sl-text-2);
+  text-decoration: underline;
+  text-decoration-color: var(--sl-line-strong);
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+/*
+ * Justified text, last line of each paragraph left-aligned; hyphenation avoids overly wide spaces
+ * in short lines.
+ */
+.sl-legal p,
+.sl-legal li {
+  text-align: justify;
+  text-align-last: left;
+}

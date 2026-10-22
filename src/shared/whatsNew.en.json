@@ -1,0 +1,15 @@
+[
+  {
+    "version": "1.0.0-beta.1",
+    "entries": [
+      "First public Beta of StarLight: free and open source, under the GPL-3.0 license.",
+      "Open stacked or single images: FITS and XISF files, TIFF and PNG images and camera RAW formats.",
+      "Abracadabra prepares the image automatically (sky background, color, noise, stretch and finish), and every step stays adjustable by hand.",
+      "Calibrate and stack your frames: calibration frames, alignment, rejection of blurred frames, drizzle, HDR, mosaics, multiple nights and live sessions.",
+      "Processing tools and photographic filters, with local adjustments through masks.",
+      "Find out which objects are in the field with plate solving and downloadable deep-sky catalogs; add coordinates and a caption, and export for printing and social media.",
+      "Additional plugins and catalogs from the gallery, run in an isolated environment.",
+      "In Italian and English, with automatic updates from the Beta channel."
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "title": "Galleria dei plugin",
+  "subtitle": "Strumenti aggiuntivi gratuiti e open source. Ogni plugin viene eseguito separatamente dal resto del programma, senza accesso ai file del computer né a internet.",
+  "close": "Chiudi",
+  "done": "Fatto",
+  "loading": "Lettura della galleria…",
+  "noActive": "Nessun plugin attivo. Per caricarne uno in StarLight, premi Attiva nella sua scheda della sezione Tutti.",
+  "noResults": "Nessun plugin corrisponde alla ricerca.",
+  "searchPlaceholder": "Cerca per nome, autore o descrizione",
+  "searchCatalogsPlaceholder": "Cerca per nome, sigla, autore o tipo di oggetto",
+  "searchLabel": "Cerca fra i plugin",
+  "filter": {
+    "all": "Tutti",
+    "catalogs": "Cataloghi deep sky",
+    "active": "Attivi"
+  },
+  "pluginsSection": "Plugin",
+  "fromFile": {
+    "catalogQuestion": "Senza connessione? Installa un catalogo in locale:",
+    "catalogArchiveHint": "Installa un catalogo da un archivio .zip che contiene catalog.json e objects.tsv",
+    "archive": "Da un archivio ZIP…",
+    "pluginQuestion": "Installa un plugin in locale:",
+    "folder": "Da una cartella…",
+    "folderHint": "Installa un plugin da una cartella che contiene plugin.json e plugin.js",
+    "pluginArchiveHint": "Installa un plugin da un archivio .zip"
+  },
+  "card": {
+    "authorVersion": "{author} · versione {version}",
+    "licenseHint": "Licenza open source del plugin",
+    "inUseHint": "Acceso nel passo Elabora",
+    "loadedHint": "Caricato con StarLight, disponibile nel passo Elabora",
+    "active": "attivo",
+    "activeInUse": "attivo, in uso",
+    "installed": "installato",
+    "installedInUse": "installato, in uso",
+    "disabled": "disattivato",
+    "disabledHint": "Installato da un file ma disattivato: non viene caricato finché non lo riattivi",
+    "fromFile": "da file",
+    "fromFileHint": "Installato da un file, non presente nella galleria",
+    "inProgress": "Operazione in corso…",
+    "use": "Usa",
+    "useHint": "Accende il plugin nel passo Elabora e apre quel passo",
+    "disable": "Disattiva",
+    "disableHint": "Il plugin non viene più caricato con StarLight finché non lo riattivi",
+    "disableNotLoadedHint": "Il plugin non viene più cercato all’avvio finché non lo riattivi",
+    "uninstall": "Disinstalla",
+    "uninstallHint": "Disinstalla il plugin ed elimina la sua cartella",
+    "reenable": "Riattiva",
+    "reenableHint": "Il plugin torna a essere caricato con StarLight",
+    "enable": "Attiva",
+    "enableHint": "Il plugin viene caricato con StarLight, anche alle prossime aperture, finché non lo disattivi"
+  },
+  "preview": {
+    "unavailable": "anteprima non disponibile",
+    "hint": "Muovi il puntatore sull’anteprima per spostare la linea di confronto fra l’immagine prima e dopo il plugin",
+    "beforeAlt": "{name}, prima",
+    "afterAlt": "{name}, dopo",
+    "before": "prima",
+    "after": "dopo"
+  }
+}

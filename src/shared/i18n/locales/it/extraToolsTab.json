@@ -1,0 +1,21 @@
+{
+  "title": "Strumenti aggiuntivi",
+  "description": "Plugin attivati dalla galleria o installati da file. Vengono applicati dopo tutti gli altri strumenti, nell’ordine di attivazione, e ciascuno è eseguito separatamente dal resto del programma.",
+  "gallery": {
+    "label": "Galleria…",
+    "hint": "Apre la galleria per attivare altri plugin"
+  },
+  "noPlugins": "Nessun plugin attivo. Il pulsante Galleria e il menu Plugin aprono la galleria, da cui puoi attivarli.",
+  "missing": {
+    "text": "Il progetto usa il plugin «{id}», che non è attivo né installato e quindi non viene applicato.",
+    "remove": "Rimuovi dall’elenco"
+  },
+  "tool": {
+    "hint": "{description} ({author}, licenza {license})",
+    "orderHint": "Posizione nell’ordine di esecuzione dei plugin",
+    "defaults": "Valori predefiniti",
+    "pending": "da applicare",
+    "applyHint": "Calcola l’immagine con tutte le regolazioni del passo Elabora, compreso «{name}»",
+    "apply": "Applica"
+  }
+}

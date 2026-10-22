@@ -1,0 +1,43 @@
+{
+  "aspectRatios": {
+    "original": { "name": "Originale", "description": "Mantiene la forma del frame" },
+    "r4x5": { "description": "Verticale da social" },
+    "r3x4": { "description": "Verticale classico" },
+    "r2x3": { "description": "Verticale da stampa" },
+    "r9x16": { "description": "Schermo del telefono" },
+    "r9x21": { "description": "Verticale molto allungato" },
+    "r1x1": { "description": "Quadrato" },
+    "r5x4": { "description": "Orizzontale quasi quadrato" },
+    "r4x3": { "description": "Orizzontale classico" },
+    "r3x2": { "description": "Orizzontale da stampa" },
+    "r16x9": { "description": "Panoramico da schermo" },
+    "r21x9": { "description": "Panoramico da cinema" }
+  },
+  "presets": {
+    "instagramSquare": { "name": "Instagram quadrato", "description": "Post 1:1, il formato storico" },
+    "instagramPortrait": { "name": "Instagram verticale", "description": "Post 4:5, occupa più schermo" },
+    "instagramStories": { "name": "Instagram storie", "description": "Storie e Reels, 9:16 a schermo intero" },
+    "facebookPost": { "name": "Facebook post", "description": "Anteprima nel diario" },
+    "facebookCover": { "name": "Facebook copertina", "description": "Immagine di intestazione del profilo" },
+    "xPost": { "name": "X post", "description": "Immagine 16:9 nel flusso" },
+    "xHeader": { "name": "X intestazione", "description": "Striscia del profilo, 3:1" },
+    "blueskyPost": { "name": "Bluesky post", "description": "Immagine 16:9 nel flusso" },
+    "blueskyHeader": { "name": "Bluesky intestazione", "description": "Striscia del profilo" },
+    "threads": { "name": "Threads", "description": "Post verticale 4:5" },
+    "mastodon": { "name": "Mastodon", "description": "Allegato 16:9" },
+    "telegram": { "name": "Telegram", "description": "Immagine inviata in chat" },
+    "whatsappStatus": { "name": "WhatsApp stato", "description": "Stato a schermo intero" },
+    "linkedin": { "name": "LinkedIn", "description": "Post con anteprima" },
+    "pinterest": { "name": "Pinterest", "description": "Pin verticale 2:3" },
+    "youtubeThumbnail": { "name": "YouTube miniatura", "description": "Copertina del video" },
+    "wallpaperFullHd": { "name": "Sfondo Full HD", "description": "Monitor comune" },
+    "wallpaperQhd": { "name": "Sfondo QHD", "description": "Monitor ad alta densità" },
+    "wallpaper4k": { "name": "Sfondo 4K", "description": "Massima definizione da schermo" },
+    "wallpaperPhone": { "name": "Sfondo telefono", "description": "Schermo verticale moderno" },
+    "wallpaperTablet": { "name": "Sfondo tablet", "description": "Schermo 3:4 ad alta risoluzione" },
+    "print10x15": { "name": "Stampa 10x15 cm", "description": "Cartolina a 300 punti per pollice" },
+    "print20x30": { "name": "Stampa 20x30 cm", "description": "Formato classico a 300 punti" },
+    "print30x40": { "name": "Stampa 30x40 cm", "description": "Grande formato a 300 punti" },
+    "print30x30": { "name": "Stampa 30x30 cm", "description": "Quadrata a 300 punti" }
+  }
+}

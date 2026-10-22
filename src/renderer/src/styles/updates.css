@@ -1,0 +1,166 @@
+/* ---- Automatic update window (UpdateWindow.tsx) ---- */
+
+.sl-update .sl-dialog-head {
+  /* The same cyan, violet, magenta reflection as the installer borders. */
+  background: linear-gradient(100deg, rgba(34, 232, 255, 0.08), rgba(157, 123, 255, 0.05) 55%, rgba(255, 61, 208, 0.06));
+}
+
+.sl-update-icon {
+  flex: none;
+  color: var(--sl-cyan);
+  filter: drop-shadow(0 0 6px rgba(34, 232, 255, 0.45));
+}
+
+.sl-update-section {
+  margin: 0 0 var(--sl-s-2);
+  font-size: var(--sl-fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sl-text-3);
+}
+
+.sl-update-news {
+  max-height: 38vh;
+  overflow-y: auto;
+  padding: var(--sl-s-3) var(--sl-s-4);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+  background: var(--sl-bg-2);
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-md);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding-left: calc(var(--sl-s-4) + 1.1em);
+}
+
+.sl-update-news li + li {
+  margin-top: var(--sl-s-1);
+}
+
+.sl-update-news li::marker {
+  color: var(--sl-cyan);
+}
+
+.sl-update-text {
+  margin: 0;
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-md);
+  line-height: 1.55;
+}
+
+.sl-update-note {
+  margin: var(--sl-s-3) 0 0;
+  color: var(--sl-text-3);
+  font-size: var(--sl-fs-sm);
+  line-height: 1.5;
+}
+
+.sl-update-notice {
+  margin: var(--sl-s-3) 0 0;
+  padding: var(--sl-s-2) var(--sl-s-3);
+  border: 1px solid rgba(255, 194, 71, 0.35);
+  border-radius: var(--sl-r-sm);
+  background: rgba(255, 194, 71, 0.07);
+  color: var(--sl-amber);
+  font-size: var(--sl-fs-sm);
+  line-height: 1.5;
+}
+
+.sl-update-footer-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+}
+
+/* Progress bar, like the installer one (resources/installer/ui/style.css). */
+.sl-update-bar {
+  position: relative;
+  height: 12px;
+  margin: var(--sl-s-4) 0 var(--sl-s-3);
+  border-radius: 999px;
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line);
+}
+
+.sl-update-bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  background:
+    linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%) 0 0 / 200% 100% no-repeat,
+    linear-gradient(90deg, var(--sl-cyan), var(--sl-violet) 55%, var(--sl-magenta));
+  box-shadow: 0 0 16px rgba(157, 123, 255, 0.55);
+  animation: sl-update-shimmer 1.6s linear infinite;
+  transition: width 220ms ease-out;
+}
+
+@keyframes sl-update-shimmer {
+  from {
+    background-position: 150% 0, 0 0;
+  }
+  to {
+    background-position: -50% 0, 0 0;
+  }
+}
+
+/* The small white star at the head of the bar. */
+.sl-update-bar-head {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  background: #fff;
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  filter: drop-shadow(0 0 6px var(--sl-magenta));
+  animation: sl-update-spin 1.2s linear infinite;
+  transition: left 220ms ease-out;
+}
+
+@keyframes sl-update-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sl-update-data {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sl-s-3);
+  color: var(--sl-text-2);
+  font-size: var(--sl-fs-sm);
+}
+
+.sl-update-percent {
+  font-family: var(--sl-font-mono);
+  color: var(--sl-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Animations turned off, by choice in the settings or by the system. */
+.sl-reduced-motion .sl-update-bar-fill,
+.sl-reduced-motion .sl-update-bar-head {
+  animation: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-update-bar-fill,
+  .sl-update-bar-head {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Countdown before restart: in magenta, clearly visible. */
+.sl-update-count {
+  color: var(--sl-magenta);
+  text-shadow: 0 0 8px rgba(255, 61, 208, 0.45);
+}
+
+.sl-update-count strong {
+  font-size: 1.15em;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,69 @@
+{
+  "file": {
+    "title": "File",
+    "newProject": "New project",
+    "openProject": "Open project",
+    "recentProjects": "Recent projects",
+    "clearRecent": "Clear list",
+    "noRecent": "No recent projects",
+    "save": "Save",
+    "saveHint": "Save changes to “{name}”",
+    "saveAs": "Save as",
+    "closeProject": "Close project",
+    "importFiles": "Import files",
+    "importFolder": "Import folder",
+    "export": "Export",
+    "batch": "Batch processing",
+    "batchHint": "Apply the same recipe to several images and export one file for each",
+    "exit": "Exit"
+  },
+  "edit": {
+    "title": "Edit",
+    "undo": "Undo",
+    "undoStep": "Undo: {step}",
+    "redo": "Redo",
+    "redoStep": "Redo: {step}",
+    "history": "Edit history",
+    "historyHint": "List of edits: click a step to take the image back to that point"
+  },
+  "view": {
+    "title": "View",
+    "fit": "Fit to window",
+    "actualSize": "Actual size (100%)",
+    "actualSizeHint": "One image pixel for every screen pixel",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "markers": "Show object markers",
+    "markersHint": "Marks on the image the catalog objects recognized in the field",
+    "stars": "Show detected stars",
+    "starsHint": "Marks the stars found in the image with a circle proportional to the HFR, the radius that contains half of their light",
+    "panel": "Show tools panel",
+    "fullScreen": "Full screen"
+  },
+  "plugins": {
+    "title": "Plugins",
+    "hint": "Opens the gallery to find, install and uninstall free, open-source add-on tools"
+  },
+  "settings": {
+    "title": "Settings",
+    "hint": "Opens the StarLight settings (Ctrl+comma)"
+  },
+  "help": {
+    "title": "Help",
+    "onboarding": "Quick tour",
+    "onboardingHint": "A short tour that points out the main controls in the interface",
+    "guide": "Guide",
+    "glossary": "Glossary",
+    "glossaryHint": "Explanations of the terms used in StarLight, with search",
+    "checkUpdates": "Check for updates",
+    "checkUpdatesHint": "Asks the server whether a newer version of StarLight is available",
+    "log": "Log and error reporting",
+    "logHint": "Shows the error log and copies the report to attach to a bug report",
+    "shortcuts": "Keyboard shortcuts",
+    "shortcutsHint": "List of all shortcut keys, with search",
+    "license": "License and credits",
+    "support": "Support StarLight",
+    "supportHint": "Opens the page in your browser to support development with a donation",
+    "about": "About StarLight"
+  }
+}

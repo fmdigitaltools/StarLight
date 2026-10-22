@@ -1,0 +1,15 @@
+{
+  "featureCatalogList": "L’elenco dei cataloghi da scaricare",
+  "featureDownload": "Lo scaricamento dei cataloghi",
+  "starsInstalled": "Pacchetto «{name}» installato, con {count} stelle. La risoluzione del campo le usa prima del catalogo Gaia, anche senza internet.",
+  "starsUpdated": "Pacchetto «{name}» aggiornato, con {count} stelle. La risoluzione del campo le usa prima del catalogo Gaia, anche senza internet.",
+  "catalogInstalled": "Catalogo «{name}» installato: {count} oggetti in più fra quelli che StarLight riconosce e segna sull’immagine.",
+  "catalogUpdated": "Catalogo «{name}» aggiornato: {count} oggetti in più fra quelli che StarLight riconosce e segna sull’immagine.",
+  "starsEnabled": "Pacchetto «{name}» attivato.",
+  "starsDisabled": "Pacchetto «{name}» disattivato. Resta installato, ma la risoluzione del campo usa solo il catalogo Gaia in rete.",
+  "catalogEnabled": "Catalogo «{name}» attivato.",
+  "catalogDisabled": "Catalogo «{name}» disattivato. Resta installato, ma i suoi oggetti non vengono usati.",
+  "operationFailed": "Operazione non riuscita. {detail}",
+  "uninstalled": "Catalogo «{name}» disinstallato.",
+  "uninstallFailed": "Disinstallazione non riuscita. {detail}"
+}

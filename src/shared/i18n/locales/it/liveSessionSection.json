@@ -1,0 +1,51 @@
+{
+  "title": "Sessione dal vivo",
+  "description": "Durante la ripresa StarLight tiene d’occhio la cartella in cui arrivano i frame. A ogni frame nuovo lo analizza, lo allinea e rifà l’impilamento, così l’immagine nel visore migliora mentre la ripresa prosegue. Vale anche per una cartella di rete, per esempio quella condivisa dal telescopio.",
+  "state": {
+    "unreachable": "non raggiungibile",
+    "stacking": "impilamento",
+    "analyzing": "analisi",
+    "listening": "in ascolto"
+  },
+  "folder": {
+    "placeholder": "Esempio: \\\\192.168.1.50\\Immagini\\M 27",
+    "hint": "Cartella locale o di rete in cui il programma di ripresa salva i frame. Puoi scrivere o incollare il percorso oppure sceglierlo con Sfoglia.",
+    "browse": "Sfoglia",
+    "browseHint": "Scegli la cartella"
+  },
+  "includeExisting": {
+    "label": "Includi i frame già presenti",
+    "hint": "Se attivo, impila anche i frame già salvati nella cartella prima dell’avvio. Spegnilo per seguire solo la ripresa che comincia adesso."
+  },
+  "keepAccepted": {
+    "label": "Tieni i frame una volta accettati",
+    "hint": "Spento (scelta predefinita): a ogni frame nuovo tutti i frame vengono rivalutati rispetto ai migliori arrivati, e quelli rimasti sotto la soglia di qualità escono dalla somma; il risultato coincide con un impilamento eseguito a fine ripresa. Acceso: un frame entrato nella somma vi resta, e il numero dei frame impilati non diminuisce mai."
+  },
+  "stop": "Ferma la sessione",
+  "starting": "Avvio in corso",
+  "start": "Avvia la sessione",
+  "pollingNotice": "La cartella viene ricontrollata ogni due secondi perché il sistema non segnala i file nuovi in questa cartella, come succede spesso con le cartelle di rete.",
+  "stats": {
+    "arrived": "Frame arrivati",
+    "incoming": "In scrittura",
+    "incomingHint": "In attesa che la scrittura finisca: {files}",
+    "stacked": "Frame impilati",
+    "rejected": "Frame scartati",
+    "rejectedHint": "Fra gli scartati ci sono anche i frame sotto la qualità minima. La qualità è misurata rispetto ai frame migliori arrivati finora: quando ne arrivano di migliori, anche i frame già impilati vengono rivalutati, e quelli velati escono dalla somma.",
+    "edges": "Bordi coperti da pochi frame",
+    "edgesValue": "proposto il ritaglio",
+    "edgesHint": "Ai bordi si sovrappongono meno frame e il rumore resta alto, quindi viene proposto il ritaglio che tiene la parte coperta da almeno il 70% dei frame. Si aggiorna a ogni frame nuovo e puoi cambiarlo nel passo Esporta.",
+    "noiseReduced": "Rumore ridotto di",
+    "noiseTimes": "{times} volte",
+    "notMeasurable": "non misurabile",
+    "noiseHint": "Confronto fra il rumore del frame di riferimento e quello del risultato. La teoria prevede {expected} volte con {frames} frame.",
+    "updatedAt": "Immagine aggiornata alle",
+    "lastDuration": "L’ultimo impilamento ha richiesto {seconds} s"
+  },
+  "waitingImage": "L’immagine comparirà nel visore appena ci saranno due frame da impilare.",
+  "chart": {
+    "label": "Andamento del rumore durante la sessione",
+    "measured": "rumore misurato",
+    "theory": "atteso dalla teoria"
+  }
+}

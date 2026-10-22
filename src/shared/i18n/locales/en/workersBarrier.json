@@ -1,0 +1,4 @@
+{
+  "threadStopped": "A compute thread has stopped, so the computation was interrupted. Try again; if the problem persists, restart StarLight.",
+  "threadNotResponding": "A compute thread has not responded for two minutes, so the computation was interrupted. Try again; if the problem persists, restart StarLight."
+}

@@ -1,0 +1,409 @@
+/* ---- Plugin gallery ---- */
+
+/*
+ * Wide enough for four columns with previews of about 360 px. The double selector wins over the
+ * generic width of .sl-dialog.
+ */
+.sl-dialog.sl-gallery {
+  width: min(1560px, 97vw);
+  height: min(760px, 90vh);
+  max-height: 90vh;
+}
+
+.sl-gallery-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-3);
+  padding: var(--sl-s-3) var(--sl-s-5);
+  border-bottom: 1px solid var(--sl-line);
+}
+
+.sl-gallery-search {
+  flex: 1;
+  font-family: var(--sl-font);
+}
+
+.sl-gallery-filter {
+  flex: none;
+  width: 600px;
+}
+
+.sl-gallery-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-5);
+}
+
+.sl-gallery-empty {
+  padding: var(--sl-s-6) 0;
+  text-align: center;
+  color: var(--sl-text-3);
+}
+
+/* Four columns; three or two when the window is narrow. */
+.sl-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sl-s-4);
+}
+
+@media (max-width: 1180px) {
+  .sl-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .sl-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sl-gallery-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+  padding: var(--sl-s-3);
+  background: var(--sl-bg-2);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-lg);
+  transition: border-color var(--sl-t-fast), box-shadow var(--sl-t-fast);
+}
+
+.sl-gallery-card:hover {
+  border-color: var(--sl-line-strong);
+  box-shadow: var(--sl-glow-soft);
+}
+
+/* Before and after preview, with the line that follows the pointer. */
+.sl-gallery-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--sl-bg-0);
+  border-radius: var(--sl-r-md);
+  cursor: ew-resize;
+  user-select: none;
+}
+
+.sl-gallery-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sl-gallery-preview--empty {
+  display: grid;
+  place-items: center;
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+  cursor: default;
+}
+
+.sl-gallery-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: rgba(234, 241, 255, 0.85);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+.sl-gallery-tag {
+  position: absolute;
+  bottom: 6px;
+  padding: 1px 7px;
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text);
+  background: rgba(4, 7, 13, 0.7);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.sl-gallery-tag--before {
+  left: 6px;
+}
+
+.sl-gallery-tag--after {
+  right: 6px;
+}
+
+.sl-gallery-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-3);
+}
+
+.sl-gallery-icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--sl-r-md);
+  background: var(--sl-bg-3);
+}
+
+.sl-gallery-names {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sl-gallery-name {
+  font-size: var(--sl-fs-lg);
+  color: var(--sl-text);
+}
+
+.sl-gallery-author {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+}
+
+.sl-gallery-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sl-s-1);
+}
+
+.sl-gallery-description {
+  flex: 1;
+  font-size: var(--sl-fs-sm);
+  line-height: 1.45;
+  color: var(--sl-text-2);
+}
+
+/* Plugin or catalog that fails the checks: warning border and list of problems. */
+.sl-gallery-card--rejected {
+  border-color: color-mix(in srgb, var(--sl-err) 55%, transparent);
+}
+
+.sl-gallery-problems {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: var(--sl-fs-sm);
+  line-height: 1.45;
+  color: var(--sl-text-2);
+}
+
+.sl-gallery-problems li + li {
+  margin-top: 0.25em;
+}
+
+.sl-gallery-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sl-s-2);
+  min-height: 32px;
+}
+
+.sl-gallery-from-file {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+}
+
+/* ---- Additional tools in the Process step ---- */
+
+.sl-plugin-tool {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+  padding: var(--sl-s-2) 0 var(--sl-s-3);
+  border-bottom: 1px solid var(--sl-line-soft);
+}
+
+.sl-plugin-tool:last-of-type {
+  border-bottom: 0;
+}
+
+.sl-plugin-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+}
+
+.sl-plugin-head .sl-switch {
+  flex: 1;
+  min-width: 0;
+}
+
+.sl-plugin-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+}
+
+.sl-plugin-order {
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-cyan);
+}
+
+.sl-plugin-params {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+  padding-left: var(--sl-s-2);
+  border-left: 2px solid var(--sl-line);
+}
+
+.sl-plugin-note {
+  font-size: var(--sl-fs-xs);
+  line-height: 1.45;
+  color: var(--sl-text-3);
+}
+
+.sl-plugin-choice-label {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+}
+
+.sl-gallery-question {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+}
+
+/* ---- Deep sky catalogs ---- */
+
+.sl-catalogs-intro {
+  font-size: var(--sl-fs-sm);
+  line-height: 1.55;
+  color: var(--sl-text-2);
+  max-width: 76ch;
+}
+
+.sl-catalogs-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sl-s-3);
+  padding: var(--sl-s-3) var(--sl-s-4);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+  background: var(--sl-bg-2);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+}
+
+.sl-catalogs-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+}
+
+/*
+ * Titles of the "Plugins" and "Deep sky catalogs" blocks in the All and Enabled filters: above the
+ * catalog group titles, larger and in cyan.
+ */
+.sl-gallery-section-title {
+  font-size: var(--sl-fs-md);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sl-cyan);
+  padding-bottom: var(--sl-s-2);
+  border-bottom: 1px solid var(--sl-line);
+  margin-bottom: calc(-1 * var(--sl-s-2));
+}
+
+.sl-catalogs-title {
+  font-size: var(--sl-fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sl-text-3);
+}
+
+/* Band at the top of the card: the group mark and the number of objects. */
+.sl-catalog-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-s-3) var(--sl-s-4);
+  color: var(--sl-cyan);
+  background:
+    radial-gradient(circle at 18% 30%, rgba(157, 123, 255, 0.28), transparent 60%),
+    radial-gradient(circle at 85% 80%, rgba(34, 232, 255, 0.18), transparent 55%),
+    var(--sl-bg-0);
+  border-radius: var(--sl-r-md);
+}
+
+.sl-catalog-band[data-group='emission-nebulae'] {
+  color: #ff7ab8;
+}
+
+.sl-catalog-band[data-group='dark-nebulae'] {
+  color: var(--sl-text-2);
+}
+
+.sl-catalog-band[data-group='planetary-nebulae'],
+.sl-catalog-band[data-group='reflection-nebulae'] {
+  color: #7db8ff;
+}
+
+.sl-catalog-band[data-group='galaxies'],
+.sl-catalog-band[data-group='galaxy-groups'] {
+  color: #ffc98a;
+}
+
+.sl-catalog-band[data-group='stars'] {
+  color: #ffe9a8;
+}
+
+.sl-catalog-count {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.sl-catalog-count strong {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--sl-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.sl-catalog-count span {
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+}
+
+.sl-catalog-reference {
+  font-size: var(--sl-fs-xs);
+  line-height: 1.45;
+  color: var(--sl-text-3);
+}
+
+.sl-catalog-progress {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sl-catalog-bar {
+  height: 4px;
+  overflow: hidden;
+  background: var(--sl-bg-3);
+  border-radius: 999px;
+}
+
+.sl-catalog-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--sl-cyan), #9d7bff);
+  transition: width 0.15s linear;
+}
+
+/* Card texts and introduction: justified, last line left-aligned. */
+.sl-gallery-description,
+.sl-catalog-reference,
+.sl-catalogs-intro {
+  text-align: justify;
+  text-align-last: left;
+}

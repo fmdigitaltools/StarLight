@@ -1,0 +1,86 @@
+{
+  "type": {
+    "galaxy": "galassia",
+    "star": "stella",
+    "planet": "pianeta",
+    "moon": "luna",
+    "sun": "sole",
+    "nebula": "nebulosa",
+    "planetaryNebula": "nebulosa planetaria",
+    "supernovaRemnant": "resto di supernova",
+    "openCluster": "ammasso aperto",
+    "globularCluster": "ammasso globulare",
+    "darkNebula": "nebulosa oscura",
+    "doubleStar": "stella doppia",
+    "galaxyGroup": "gruppo di galassie",
+    "other": "altro"
+  },
+  "method": {
+    "headerName": "Nome dichiarato dal telescopio nel file",
+    "coordinates": "Coordinate del centro del campo",
+    "solvedField": "Oggetto presente nell’inquadratura"
+  },
+  "plateSolve": {
+    "title": "Posizione nel cielo",
+    "descriptionLocal": "Il file non dice con precisione quale porzione di cielo mostra, quindi gli oggetti non si possono segnare sull’immagine. StarLight può ricavarlo confrontando le stelle della foto con quelle di un catalogo. Il pulsante Risolvi il campo usa prima le stelle locali installate, senza internet. Se non bastano, come accade spesso nei campi stretti, passa al catalogo Gaia in rete, purché l’uso di internet sia permesso.",
+    "descriptionOnline": "Il file non dice con precisione quale porzione di cielo mostra, quindi gli oggetti non si possono segnare sull’immagine. StarLight può ricavarlo confrontando le stelle della foto con quelle di un catalogo. Il pulsante usa il catalogo Gaia in rete, che richiede la connessione a internet; la richiesta può durare fino a un minuto. Per farlo senza internet, installa o riattiva il pacchetto «Stelle per la risoluzione del campo» nella scheda Cataloghi deep sky della galleria dei plugin.",
+    "solving": "Risoluzione in corso",
+    "solve": "Risolvi il campo"
+  },
+  "empty": {
+    "title": "Nessun oggetto riconosciuto",
+    "noFrame": "Apri un frame per sapere quale oggetto celeste contiene.",
+    "notRecognized": "Il file non dichiara un oggetto noto né coordinate confrontabili con il catalogo di {count} oggetti a disposizione."
+  },
+  "main": {
+    "title": "Oggetto principale",
+    "constellation": "Costellazione",
+    "magnitude": "Magnitudine",
+    "magnitudeHint": "Luminosità apparente dell’oggetto. Più il numero è basso, più l’oggetto è luminoso",
+    "size": "Dimensione apparente",
+    "sizeHint": "Misurata in arcominuti, cioè in sessantesimi di grado. La Luna piena ne misura circa trenta",
+    "rightAscension": "Ascensione retta",
+    "declination": "Declinazione",
+    "recognition": "Riconoscimento",
+    "offset": "Scostamento dal centro"
+  },
+  "field": {
+    "title": "Campo inquadrato",
+    "size": "Ampiezza",
+    "sizeHint": "Porzione di cielo ripresa, in arcominuti",
+    "degrees": "In gradi"
+  },
+  "others": {
+    "title": "Altri oggetti nel campo",
+    "description": "Oggetti di catalogo le cui coordinate cadono nell’inquadratura.",
+    "offset": " - a {arcmin} ' dal centro"
+  },
+  "overlay": {
+    "title": "Sovrapposizione",
+    "description": "Nei campi ricchi di oggetti StarLight scrive il nome solo dei più importanti, raggruppa i vicini e limita i cerchietti senza nome. Densità e tipi scelti qui valgono anche per l’immagine esportata con i marcatori.",
+    "showMarkers": "Mostra i marcatori sull’immagine"
+  },
+  "coordinates": {
+    "title": "Coordinate sull’immagine",
+    "description": "Calcolate dalla soluzione astrometrica, come i marcatori. La griglia mostra le linee di ascensione retta e declinazione con i valori ai bordi; l’orientamento indica il nord e l’est; la barra di scala riporta una misura angolare. Nel passo Esporta puoi includerle nei file PNG, JPEG e WebP.",
+    "grid": "Griglia delle coordinate",
+    "gridHint": "Linee di ascensione retta e declinazione, con i valori lungo i bordi",
+    "orientation": "Orientamento",
+    "orientationHint": "Due frecce che indicano il nord (N) e l’est (E) nel cielo ripreso",
+    "scaleBar": "Barra di scala",
+    "scaleBarHint": "Una linea con la sua misura angolare, in secondi o minuti d’arco o in gradi"
+  },
+  "density": {
+    "essential": "Essenziale",
+    "essentialHint": "Solo gli oggetti principali, con metà dei nomi e dei cerchietti",
+    "normal": "Normale",
+    "normalHint": "Una decina di nomi su un campo intero, più alcuni cerchietti",
+    "rich": "Ricca",
+    "richHint": "Il doppio dei nomi e dei cerchietti, per i campi da esplorare"
+  },
+  "markerTypes": {
+    "label": "Tipi di oggetto mostrati",
+    "hide": "Nasconde i marcatori di questo tipo (il bersaglio della ripresa resta)",
+    "show": "Mostra i marcatori di questo tipo"
+  }
+}

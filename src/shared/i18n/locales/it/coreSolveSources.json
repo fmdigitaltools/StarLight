@@ -1,0 +1,6 @@
+{
+  "narrowFieldCount": "Le stelle locali non bastano per questa immagine. Nel campo inquadrato ne cadono circa {count} fino alla magnitudine 12, troppo poche per riconoscerne la disposizione. Accade con i campi stretti dei telescopi a focale lunga.",
+  "narrowFieldFew": "Le stelle locali non bastano per questa immagine. Nel campo inquadrato ne cadono poche fino alla magnitudine 12, troppo poche per riconoscerne la disposizione. Accade con i campi stretti dei telescopi a focale lunga.",
+  "unrecognized": "Le stelle dell’immagine non coincidono con quelle del catalogo locale attorno al punto indicato nel file. Forse quasi tutte le stelle visibili sono più deboli della magnitudine 12, oppure le coordinate scritte nell’intestazione sono lontane dal campo reale.",
+  "error": "Il file delle stelle locali non è leggibile. Puoi reinstallare il pacchetto dalla scheda Cataloghi deep sky della galleria dei plugin."
+}

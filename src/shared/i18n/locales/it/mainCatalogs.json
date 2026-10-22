@@ -1,0 +1,24 @@
+{
+  "network": {
+    "timeout": "il server non ha risposto in tempo",
+    "aborted": "scaricamento interrotto",
+    "connectionFailed": "connessione non riuscita (rete assente o server irraggiungibile)",
+    "unexpectedReply": "il server ha risposto con una pagina web invece del file atteso; riprova fra qualche minuto"
+  },
+  "serverNotConfigured": "Il server dei cataloghi non è ancora configurato.",
+  "indexUnreachable": "Elenco dei cataloghi non raggiungibile: {reason}.",
+  "noCatalogsYet": "Sul server non ci sono ancora cataloghi da scaricare.",
+  "catalogServerError": "Il server dei cataloghi ha risposto con errore {status}.",
+  "downloadFailed": "Scaricamento non riuscito: {reason}.",
+  "serverError": "Il server ha risposto con errore {status}.",
+  "alreadyDownloading": "Lo scaricamento di questo catalogo è già in corso.",
+  "noLongerAvailable": "Il catalogo non è più disponibile sul server.",
+  "chooseArchive": {
+    "title": "Scegli l’archivio del catalogo",
+    "button": "Installa questo catalogo"
+  },
+  "filters": {
+    "zip": "Archivi ZIP",
+    "allFiles": "Tutti i file"
+  }
+}

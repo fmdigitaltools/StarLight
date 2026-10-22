@@ -1,0 +1,15 @@
+{
+  "title": "Guida",
+  "subtitle": "Il funzionamento di ogni strumento, le scorciatoie da tastiera e il rimando al glossario dei termini tecnici",
+  "close": "Chiudi",
+  "sections": {
+    "tools": "Gli strumenti",
+    "shortcuts": "Scorciatoie da tastiera",
+    "glossary": "Glossario"
+  },
+  "openGlossary": "Apri il glossario",
+  "footer": {
+    "tourNote": "La guida rapida indica i comandi direttamente sull’interfaccia.",
+    "replayTour": "Rivedi la guida rapida"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Log and error reporting",
+  "subtitle": "The log stays on your computer: StarLight never sends anything automatically.",
+  "filter": {
+    "all": "All",
+    "problems": "Problems only"
+  },
+  "intro": "StarLight records startup, shutdown and errors here. To report a problem, use “Copy report” and paste the text into your message: it contains the version, the system and the last lines of the log, with your personal folder shown as %USERPROFILE% and without your user name. It contains no images.",
+  "reading": "Reading the log…",
+  "afterRestart": "The log will be available after StarLight restarts.",
+  "noProblems": "No errors or warnings in the log.",
+  "empty": "The log is empty.",
+  "openFolder": "Open log folder",
+  "openFolderHint": "Opens the folder with the log files in File Explorer",
+  "clear": "Clear log",
+  "clearConfirm": "Confirm: clear",
+  "clearHint": "Deletes all log entries",
+  "close": "Close",
+  "copyReport": "Copy report",
+  "reportCopied": "Report copied",
+  "copyReportHint": "Copies to the clipboard the text to paste into a bug report",
+  "technicalDetails": "Technical details",
+  "notices": {
+    "copied": "Report copied. Paste it into your report message (Ctrl+V).",
+    "copyFailed": "Could not copy the report. You can open the log folder and attach the file.",
+    "reportFailed": "Could not prepare the report.",
+    "cleared": "Log cleared.",
+    "clearFailed": "Could not clear the log: a file may be open in another program."
+  },
+  "sources": {
+    "startup": "Startup",
+    "main": "Program",
+    "window": "Window",
+    "ui": "Interface",
+    "worker": "Processing",
+    "plugin": "Plugin",
+    "process": "Process"
+  },
+  "levels": {
+    "info": "Info",
+    "warning": "Warning",
+    "error": "Error"
+  },
+  "severe": {
+    "title": "An error occurred last time",
+    "text": "{description}. If you want to report it, you’ll find the report to copy in the log.",
+    "textWithWhen": "{description}, {when}. If you want to report it, you’ll find the report to copy in the log.",
+    "openLog": "Open log",
+    "notNow": "Not now"
+  }
+}

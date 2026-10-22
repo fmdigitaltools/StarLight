@@ -1,0 +1,5 @@
+{
+  "noContextAccelerationOff": "The viewer cannot draw the image while graphics acceleration is turned off. Turn it back on in Settings, Performance tab, “Use graphics acceleration”, and restart StarLight.",
+  "noWebgl2": "Your graphics card does not support WebGL 2, which is required for real-time display. Try updating your graphics drivers, or turn off “Use graphics acceleration” in Settings, Performance tab, and restart StarLight: drawing then runs on the processor, which is slower.",
+  "textureRejected": "The graphics card rejected the image (code {code}). Requested size: {width} x {height} with {channels} channels."
+}

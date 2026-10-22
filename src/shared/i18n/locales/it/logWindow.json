@@ -1,0 +1,51 @@
+{
+  "title": "Registro e segnalazione errori",
+  "subtitle": "Il registro resta sul tuo computer: StarLight non invia nulla in automatico.",
+  "filter": {
+    "all": "Tutto",
+    "problems": "Solo problemi"
+  },
+  "intro": "Qui StarLight annota avvio, chiusura ed errori. Per segnalare un problema usa «Copia il rapporto» e incolla il testo nel messaggio: contiene la versione, il sistema e le ultime righe del registro, con la tua cartella personale indicata come %USERPROFILE% e senza il tuo nome utente. Non contiene immagini.",
+  "reading": "Lettura del registro…",
+  "afterRestart": "Il registro sarà disponibile dopo il riavvio di StarLight.",
+  "noProblems": "Nessun errore né avviso nel registro.",
+  "empty": "Il registro è vuoto.",
+  "openFolder": "Apri la cartella del registro",
+  "openFolderHint": "Apre in Esplora risorse la cartella con i file del registro",
+  "clear": "Svuota il registro",
+  "clearConfirm": "Conferma: svuota",
+  "clearHint": "Cancella tutte le voci del registro",
+  "close": "Chiudi",
+  "copyReport": "Copia il rapporto",
+  "reportCopied": "Rapporto copiato",
+  "copyReportHint": "Copia negli appunti il testo da incollare in una segnalazione",
+  "technicalDetails": "Dettagli tecnici",
+  "notices": {
+    "copied": "Rapporto copiato. Incollalo nel messaggio della segnalazione (Ctrl+V).",
+    "copyFailed": "Copia del rapporto non riuscita. Puoi aprire la cartella del registro e allegare il file.",
+    "reportFailed": "Preparazione del rapporto non riuscita.",
+    "cleared": "Registro svuotato.",
+    "clearFailed": "Svuotamento del registro non riuscito: forse un file è aperto in un altro programma."
+  },
+  "sources": {
+    "startup": "Avvio",
+    "main": "Programma",
+    "window": "Finestra",
+    "ui": "Interfaccia",
+    "worker": "Calcolo",
+    "plugin": "Plugin",
+    "process": "Processo"
+  },
+  "levels": {
+    "info": "Info",
+    "warning": "Avviso",
+    "error": "Errore"
+  },
+  "severe": {
+    "title": "L’ultima volta si è verificato un errore",
+    "text": "{description}. Se vuoi segnalarlo, nel registro trovi il rapporto da copiare.",
+    "textWithWhen": "{description}, {when}. Se vuoi segnalarlo, nel registro trovi il rapporto da copiare.",
+    "openLog": "Apri il registro",
+    "notNow": "Non ora"
+  }
+}

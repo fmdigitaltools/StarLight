@@ -1,0 +1,213 @@
+/* ---- Projects: name and confirmation windows, bar controls ---- */
+
+.sl-project-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+}
+
+.sl-project-label {
+  margin-top: var(--sl-s-2);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+}
+
+.sl-project-label:first-child {
+  margin-top: 0;
+}
+
+.sl-project-field {
+  width: 100%;
+  padding: 9px var(--sl-s-3);
+  font: inherit;
+  font-size: var(--sl-fs-lg);
+  color: var(--sl-text);
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-md);
+  outline: none;
+  transition: border-color var(--sl-t-fast), box-shadow var(--sl-t-fast);
+}
+
+.sl-project-field:focus {
+  border-color: var(--sl-cyan-dim);
+  box-shadow: var(--sl-glow-cyan);
+}
+
+.sl-project-location {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+  min-width: 0;
+}
+
+.sl-project-path {
+  flex: 1;
+  min-width: 0;
+  padding: 8px var(--sl-s-3);
+  overflow: hidden;
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* The final part, with the project name, is the one that matters. */
+  direction: rtl;
+  text-align: left;
+  background: var(--sl-bg-2);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+}
+
+.sl-project-note {
+  margin-top: var(--sl-s-2);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-3);
+}
+
+.sl-project-note-warning {
+  color: var(--sl-warn);
+}
+
+.sl-project-note-error {
+  color: var(--sl-err);
+}
+
+.sl-project-buttons {
+  display: flex;
+  gap: var(--sl-s-2);
+}
+
+/* Name of the open project and dot for changes (bar above the viewer). */
+.sl-project-name-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sl-project-modified {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sl-amber);
+  box-shadow: 0 0 6px rgba(255, 194, 71, 0.6);
+}
+
+/* ---- Drop-down menu of the top bar (File, ...) ---- */
+
+.sl-menubar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sl-menu {
+  position: relative;
+}
+
+.sl-menu-title {
+  height: 24px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: var(--sl-fs-md);
+  font-weight: 550;
+  color: var(--sl-text-2);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--sl-r-sm);
+  cursor: pointer;
+  transition: background var(--sl-t-fast), color var(--sl-t-fast);
+}
+
+.sl-menu-title:hover,
+.sl-menu-title:focus-visible,
+.sl-menu-title--open {
+  color: var(--sl-text);
+  background: var(--sl-bg-3);
+  outline: none;
+}
+
+.sl-menu-title--open {
+  border-color: var(--sl-line-strong);
+}
+
+.sl-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  padding: var(--sl-s-1);
+  background: var(--sl-bg-2);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-md);
+  box-shadow: var(--sl-shadow-2), var(--sl-glow-soft);
+  animation: sl-fade var(--sl-t-fast) ease-out;
+}
+
+.sl-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sl-s-5);
+  padding: 7px var(--sl-s-3);
+  font: inherit;
+  font-size: var(--sl-fs-md);
+  color: var(--sl-text);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: var(--sl-r-sm);
+  cursor: pointer;
+}
+
+.sl-menu-item:focus-visible,
+.sl-menu-item:focus {
+  background: var(--sl-bg-4);
+  outline: none;
+}
+
+.sl-menu-item:disabled {
+  color: var(--sl-text-3);
+  opacity: 0.6;
+  cursor: default;
+}
+
+.sl-menu-keys {
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-text-3);
+}
+
+.sl-menu-separator {
+  height: 1px;
+  margin: var(--sl-s-1) var(--sl-s-2);
+  background: var(--sl-line);
+}
+
+/* ---- Side submenu (for example File > Recent projects) ---- */
+
+.sl-menu-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sl-menu-submenu {
+  top: calc(-1 * var(--sl-s-1) - 1px);
+  left: calc(100% + var(--sl-s-1));
+  min-width: 220px;
+}
+
+.sl-menu-item--open {
+  background: var(--sl-bg-4);
+}
+
+.sl-menu-arrow {
+  font-size: var(--sl-fs-md);
+  line-height: 1;
+  color: var(--sl-text-3);
+}

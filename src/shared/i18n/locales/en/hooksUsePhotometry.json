@@ -1,0 +1,11 @@
+{
+  "noWcs": "This file does not contain an astrometric solution, that is, the mapping between pixels and sky coordinates. Without it, the stars in the image cannot be matched to the catalog.",
+  "internetFeature": "Photometric calibration with the Gaia catalog",
+  "progress": {
+    "cached": "Photometric calibration: Gaia catalog stars already downloaded…",
+    "requesting": "Photometric calibration: querying the Gaia catalog…",
+    "measuring": "Photometric calibration: measuring the stars…"
+  },
+  "tooFewStars": "Too few stars were matched to the catalog for a reliable calibration.",
+  "done": "Color calibrated on {count} Gaia catalog stars (deviation {deviation}%). Press Apply to see the result."
+}

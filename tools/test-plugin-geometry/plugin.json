@@ -1,0 +1,53 @@
+{
+  "id": "rotate-mirror",
+  "name": "Rotate and mirror",
+  "version": "1.1.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "photography",
+  "description": "Rotates the image in 90-degree steps and flips it horizontally or vertically, without loss of quality. It brings north to the top or straightens a shot. The object markers and the astrometric solution, that is the correspondence between pixels and celestial coordinates, are transformed together with the image.",
+  "icon": "icon.png",
+  "previews": { "before": "before.png", "after": "after.png" },
+  "minimumStarLightVersion": "0.4.0",
+  "geometry": "transformed",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "rotation",
+      "label": "Rotation",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "clockwise", "label": "90° clockwise" },
+        { "value": "half", "label": "180°" },
+        { "value": "counterclockwise", "label": "90° counterclockwise" }
+      ],
+      "default": "clockwise"
+    },
+    {
+      "type": "toggle",
+      "id": "mirrorHorizontal",
+      "label": "Mirror left to right",
+      "default": false
+    },
+    {
+      "type": "toggle",
+      "id": "mirrorVertical",
+      "label": "Mirror top to bottom",
+      "default": false
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Ruota e specchia",
+      "description": "Ruota l’immagine a passi di 90 gradi e la ribalta in orizzontale o in verticale, senza perdita di qualità. Serve a portare il nord in alto o a raddrizzare una ripresa. I marcatori degli oggetti e la soluzione astrometrica, cioè la corrispondenza fra pixel e coordinate celesti, vengono trasformati insieme all’immagine.",
+      "parameters": {
+        "rotation": {
+          "label": "Rotazione",
+          "options": { "none": "Nessuna", "clockwise": "90° orario", "half": "180°", "counterclockwise": "90° antiorario" }
+        },
+        "mirrorHorizontal": { "label": "Specchia da sinistra a destra" },
+        "mirrorVertical": { "label": "Specchia dall’alto in basso" }
+      }
+    }
+  }
+}

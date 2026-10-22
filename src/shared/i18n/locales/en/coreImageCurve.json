@@ -1,0 +1,22 @@
+{
+  "neutral": {
+    "name": "Neutral",
+    "description": "No change"
+  },
+  "contrast": {
+    "name": "Contrast",
+    "description": "S-curve: darkens shadows and brightens highlights"
+  },
+  "soft": {
+    "name": "Soft",
+    "description": "Inverted S-curve: opens up shadows and holds back highlights"
+  },
+  "faintSignal": {
+    "name": "Faint signal",
+    "description": "Lifts the low tones, where deep-sky detail hides"
+  },
+  "containedStars": {
+    "name": "Contained stars",
+    "description": "Compresses highlights so bright stars do not burn out"
+  }
+}

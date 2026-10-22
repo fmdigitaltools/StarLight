@@ -1,0 +1,16 @@
+{
+  "noFolder": "Enter the folder where the capture frames arrive.",
+  "watchFailed": "Could not start watching the folder. {message}",
+  "started": "Live session started: with every new frame the stack is redone and the image is updated.",
+  "stopped": "Live session stopped: {used} frames stacked out of {arrived} received.",
+  "stoppedSave": "Live session stopped: {used} frames stacked out of {arrived} received. To keep the result, save the project: the Live sessions folder is suggested.",
+  "memoryProblem": "Out of memory: the session stopped with {used} frames stacked.",
+  "memoryStopped": "Out of memory: the live session stopped to keep StarLight from closing. Frames stacked: {used}. The result so far stays in the viewer. To resume, close other programs and start a new session.",
+  "memoryStoppedSave": "Out of memory: the live session stopped to keep StarLight from closing. Frames stacked: {used}. The result so far stays in the viewer: save the project to keep it. To resume, close other programs and start a new session.",
+  "calibrationSkipped": "Calibration skipped for {file}: {error}",
+  "reason": {
+    "calibrationFrame": "calibration frame, not a light frame",
+    "excludedManually": "excluded manually in the library",
+    "unreadable": "unreadable: {message}"
+  }
+}

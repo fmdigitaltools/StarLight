@@ -1,0 +1,35 @@
+{
+  "subtitle": "Elaborazione delle immagini astronomiche",
+  "gpu": {
+    "noWebgl": "WebGL 2 non disponibile",
+    "undeclared": "non dichiarata"
+  },
+  "application": {
+    "title": "Applicazione",
+    "version": "Versione",
+    "codename": "Nome in codice",
+    "catalog": "Catalogo incluso",
+    "catalogValue": "{count} oggetti, {source}"
+  },
+  "author": {
+    "title": "Autore",
+    "developedBy": "Sviluppato da",
+    "contact": "Contatto",
+    "contactHint": "Seleziona il testo per copiarlo",
+    "license": "Licenza",
+    "licenseHint": "Apre il testo della licenza e i riconoscimenti di terze parti"
+  },
+  "computer": {
+    "title": "Il tuo computer",
+    "gpu": "Scheda grafica in uso",
+    "cpu": "Processore",
+    "cpuValue": "{model}, {cores} nuclei",
+    "memory": "Memoria installata"
+  },
+  "support": {
+    "text": "StarLight è gratuito. Se lo desideri, puoi sostenerne lo sviluppo.",
+    "button": "Sostieni StarLight",
+    "buttonHint": "Apre nel browser la pagina delle donazioni"
+  },
+  "close": "Chiudi"
+}

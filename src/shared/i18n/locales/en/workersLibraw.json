@@ -1,0 +1,3 @@
+{
+  "wasmNotFound": "The RAW file reader is missing from the installation (libraw.wasm, code {status}): reinstall StarLight."
+}

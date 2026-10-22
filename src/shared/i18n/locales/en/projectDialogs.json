@@ -1,0 +1,28 @@
+{
+  "saveAs": {
+    "title": "Save project",
+    "subtitle": "A project is a folder with the settings and the processed image. The original frames stay where they are.",
+    "name": "Project name",
+    "location": "Location",
+    "change": "Change…",
+    "invalidName": "The name contains only characters that cannot be used for a folder.",
+    "cleanedName": "Some characters are not allowed in folder names: the folder will be named “{name}”.",
+    "alreadyExists": "A project with this name already exists: saving will replace it."
+  },
+  "confirm": {
+    "titleProject": "Save changes to “{name}”?",
+    "title": "Save your work?",
+    "close": "If you close the project, the library and any unsaved adjustments will be lost.",
+    "new": "If you start a new project, the library and any unsaved adjustments will be lost.",
+    "open": "If you open another project, any unsaved work will be lost.",
+    "quit": "If you quit StarLight, any unsaved work will be lost.",
+    "restart": "If you restart StarLight, any unsaved work will be lost.",
+    "frame": "If you open this frame, the processing applied to the image you are viewing will be lost unless you save the project.",
+    "frameResult": "If you open this frame, the stacked image and its adjustments will be lost unless you save the project.",
+    "openAnyway": "Open anyway",
+    "dontSave": "Don’t save"
+  },
+  "cancel": "Cancel",
+  "save": "Save",
+  "replace": "Replace"
+}

@@ -1,0 +1,11 @@
+{
+  "errors": {
+    "nothingPublished": "No version has been published on the update server yet.",
+    "refused": "The update server refused the request. You may need a newer version of StarLight, downloaded manually.",
+    "checksum": "The downloaded file does not match the published one and has been discarded. Try again later.",
+    "noResponse": "The update server is not responding. Check your internet connection and try again later.",
+    "checkFailed": "The update check failed. Try again later.",
+    "downloadFailed": "The update download failed. Try again later."
+  },
+  "versionHeading": "Version {version}"
+}

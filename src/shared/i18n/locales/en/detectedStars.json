@@ -1,0 +1,7 @@
+{
+  "job": "Detecting stars in the image",
+  "countNone": "No stars detected",
+  "countOne": "1 star detected",
+  "countOther": "{count} stars detected",
+  "countBrightest": "{count} stars detected (the brightest)"
+}

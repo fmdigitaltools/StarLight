@@ -1,0 +1,97 @@
+{
+  "types": {
+    "dark": {
+      "name": "Dark",
+      "explanation": "Scatti eseguiti con il telescopio coperto, della stessa durata e alla stessa temperatura degli scatti del cielo. Registrano il segnale prodotto dal calore del sensore e i pixel caldi, cioè i pixel più luminosi del normale. Sono difetti identici in ogni scatto, che la somma dei frame da sola non elimina."
+    },
+    "flat": {
+      "name": "Flat",
+      "explanation": "Scatti eseguiti su una superficie illuminata in modo uniforme. Misurano la vignettatura, cioè il calo di luce verso i bordi del fotogramma, e le ombre della polvere sull’ottica, permettendo di correggere la diversa sensibilità delle varie zone del sensore."
+    },
+    "bias": {
+      "name": "Bias",
+      "explanation": "Scatti eseguiti al buio con la minima esposizione possibile. Registrano il livello di partenza della lettura, cioè il valore che il sensore riporta anche in assenza di luce. Servono alle luci senza un dark adatto e a correggere i flat quando manca il dark della loro posa."
+    }
+  },
+  "correctedWithDark": ", corretto con il dark della stessa posa",
+  "correctedWithBias": ", corretto con il bias",
+  "rejectedOne": "1 {type} escluso dalla composizione: {name} {reason}. Se ti servono, riprendine altri nelle stesse condizioni.",
+  "rejectedOther": "{count} {type} esclusi dalla composizione. {name} {reason}. Lo stesso per {others}. Se ti servono, riprendine altri nelle stesse condizioni.",
+  "noReadableFrames": "nessun frame leggibile",
+  "noFramesOfType": "Nessun frame di tipo {type} fra i file caricati.",
+  "job": {
+    "master": "Master {name}",
+    "masterOfMany": "Master {index} di {total}, {name}",
+    "reading": "Lettura dei frame per {name}, {read} di {total}"
+  },
+  "framesOne": "{count} frame",
+  "framesOther": "{count} frame",
+  "composedLine": "{group} ({frames}{correction})",
+  "keptOne": "Conservato nella libreria di calibrazione.",
+  "keptOther": "Conservati nella libreria di calibrazione.",
+  "notKeptOne": "{count} master non è stato conservato nella libreria di calibrazione.",
+  "notKeptOther": "{count} master non sono stati conservati nella libreria di calibrazione.",
+  "composedOne": "Master {type} creato: {lines}. {kept}",
+  "composedOther": "Composti {count} master {type}, uno per gruppo di condizioni: {lines}. {kept}",
+  "failedOne": "{count} master non creato. {details}.",
+  "failedOther": "{count} master non creati. {details}.",
+  "masterNotCreated": "Master non creato. {error}",
+  "usage": {
+    "lightsOne": "{count} luce",
+    "lightsOther": "{count} luci",
+    "flatCorrection": "la correzione dei flat ({filters})",
+    "filter": "filtro {filter}",
+    "noFilter": "senza filtro dichiarato",
+    "both": "{lights} e {flats}",
+    "noLightsLoaded": "nessuna luce caricata",
+    "biasNotUsed": "nessuna luce, perché il bias serve solo alle luci senza un dark adatto e con lo stesso guadagno",
+    "noMatchingLights": "nessuna luce caricata ha queste condizioni"
+  },
+  "intro": {
+    "title": "A cosa serve",
+    "description": "Un sensore non registra soltanto la luce delle stelle, ma aggiunge il segnale prodotto dal proprio calore, il rumore di lettura e le ombre della polvere sull’ottica. I frame di calibrazione misurano questi difetti e permettono di sottrarli. StarLight divide da solo i frame per condizioni di ripresa (posa, guadagno, temperatura, filtro, notte) e compone un master per ogni gruppo. Nell’impilamento ogni luce, cioè ogni scatto del cielo, usa il master con le sue stesse condizioni.",
+    "apply": {
+      "label": "Applica la calibrazione durante l’impilamento",
+      "hint": "Con l’interruttore spento i master restano in memoria ma non vengono applicati ai frame."
+    },
+    "composeAll": {
+      "title": "Compone bias, dark e flat in quest’ordine, perché i flat si correggono con i bias o con i dark appena composti",
+      "label": "Componi tutti i master"
+    }
+  },
+  "composing": "Composizione in corso",
+  "masterTitle": "Master {type}",
+  "readyOne": "pronto",
+  "readyAll": "{count} pronti",
+  "readyPartial": "{ready} di {total} pronti",
+  "noFramesDark": "Nessun frame riconosciuto come {type}. Il tipo viene dedotto dalla parola chiave IMAGETYP scritta nell’intestazione del file e dal nome del file stesso. Alcuni telescopi registrano da soli il master dark. In quel caso basta importarlo come un file qualsiasi, e viene riconosciuto automaticamente.",
+  "noFramesOther": "Nessun frame riconosciuto come {type}. Il tipo viene dedotto dalla parola chiave IMAGETYP scritta nell’intestazione del file e dal nome del file stesso. Puoi importare i frame di una sessione dedicata oppure riutilizzare un master precedente, purché ripreso con lo stesso sensore e con le stesse impostazioni.",
+  "group": {
+    "frames": "Frame",
+    "singleFrame": "1, già pronto da usare così com’è",
+    "multipleFrames": "{count}, da combinare con la mediana",
+    "for": "Per",
+    "status": "Stato",
+    "ready": "pronto",
+    "defectivePixels": ", {count} pixel difettosi",
+    "toCompose": "da comporre"
+  },
+  "differentConditions": "Frame ripresi in condizioni diverse: ne nascono {count} master, e ogni luce usa quello con le sue condizioni.",
+  "excludedFrame": "Escluso {name}: {reason}.",
+  "withoutDarkOne": "{group} non ha un dark adatto: {reason}.",
+  "withoutDarkOther": "{group} non hanno un dark adatto: {reason}.",
+  "staleOne": "{count} master composto prima resta in uso anche se i frame sono cambiati: {list}. Componi di nuovo per aggiornarli.",
+  "staleOther": "{count} master composti prima restano in uso anche se i frame sono cambiati: {list}. Componi di nuovo per aggiornarli.",
+  "button": {
+    "noGroups": "Nessun gruppo da comporre",
+    "recomposeOne": "Componi di nuovo il master",
+    "recomposeMany": "Componi di nuovo i {count} master",
+    "composeMany": "Componi {count} master, uno per gruppo",
+    "useSingle": "Usa questo master {type}",
+    "combine": "Combina i {count} frame in un master"
+  },
+  "applied": {
+    "title": "Correzione applicata",
+    "text": "Ogni luce usa i master con le sue condizioni di ripresa: sottrazione del dark (o del bias quando non c’è un dark adatto), divisione per il flat normalizzato e, con il dark, sostituzione dei pixel difettosi con la mediana dei vicini. Un dark di posa, guadagno o temperatura diversi non viene mai usato. Le luci che nella sessione non trovano un master adatto lo cercano nella libreria di calibrazione."
+  }
+}

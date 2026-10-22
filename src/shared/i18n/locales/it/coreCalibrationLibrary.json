@@ -1,0 +1,6 @@
+{
+  "temperatureNotComparable": "temperatura non confrontabile",
+  "gain": "guadagno {value}",
+  "filter": "filtro {name}",
+  "flatMasterSizes": "Il master da sottrarre al flat ha dimensioni diverse."
+}

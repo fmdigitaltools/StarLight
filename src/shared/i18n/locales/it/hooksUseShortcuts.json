@@ -1,0 +1,6 @@
+{
+  "fullScreenFailed": "Schermo intero non disponibile. {message}",
+  "noLayerSelected": "Prima scegli o aggiungi una regolazione locale nel passo Correggi, scheda Regolazioni locali.",
+  "stepNeedsFrame": "Per il passo {step} importa prima almeno un frame.",
+  "stepNeedsImage": "Per il passo {step} apri prima un frame nel visore."
+}

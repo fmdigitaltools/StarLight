@@ -1,0 +1,8 @@
+{
+  "parts": {
+    "strips": "strips",
+    "cells": "cells",
+    "index": "index",
+    "total": "total"
+  }
+}

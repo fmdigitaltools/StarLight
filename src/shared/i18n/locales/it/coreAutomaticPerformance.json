@@ -1,0 +1,32 @@
+{
+  "entries": {
+    "analysisWorkers": "Thread per l’analisi dei frame",
+    "frameMemory": "Memoria per i frame",
+    "gpu": "Scheda grafica",
+    "graphicsAcceleration": "Accelerazione grafica",
+    "lowPriority": "Calcolo a priorità bassa"
+  },
+  "values": {
+    "threadsAutomatic": "automatico",
+    "threadsOne": "1 thread",
+    "threadsOther": "{count} threads",
+    "memoryAutomatic": "automatica",
+    "gigabytes": "{value} GB",
+    "gpuLowPower": "risparmio energetico",
+    "gpuHighPerformance": "alte prestazioni",
+    "on": "accesa",
+    "off": "spenta"
+  },
+  "recap": {
+    "sentence": "{processors} processori logici, {memory} di memoria, {card}{viewer}: {threads}, {frameMemory} per i frame, scheda grafica {gpu}, accelerazione grafica {acceleration}, calcolo a priorità {priority}.",
+    "softwareRendering": "disegno affidato al processore",
+    "gpuUnknown": "scheda grafica non dichiarata",
+    "dedicated": "dedicata",
+    "integrated": "integrata",
+    "viewerUnavailable": ", visore non disponibile",
+    "gpuHighPerformance": "ad alte prestazioni",
+    "gpuLowPower": "a risparmio energetico",
+    "priorityLow": "bassa",
+    "priorityNormal": "normale"
+  }
+}

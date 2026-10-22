@@ -1,0 +1,10 @@
+{
+  "unknownHuffmanCode": "Invalid compressed data (unknown Huffman code).",
+  "invalidData": "Invalid compressed data.",
+  "unknownBlockType": "Invalid compressed data (unknown block type).",
+  "distanceBeforeStart": "Invalid compressed data (distance beyond the start).",
+  "truncated": "The compressed file is truncated: the data ends earlier than expected.",
+  "zlibDictionary": "zlib compression with a dictionary: not supported.",
+  "gzipUnknownMethod": "gzip file with an unknown compression method.",
+  "notGzip": "The file is not a valid gzip."
+}

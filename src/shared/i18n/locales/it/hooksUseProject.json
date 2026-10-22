@@ -1,0 +1,30 @@
+{
+  "defaultName": "Nuovo progetto",
+  "busy": "Attendi la fine dell’operazione in corso.",
+  "nothingToSave": "Non c’è ancora nulla da salvare: importa prima dei frame.",
+  "saved": "Progetto «{name}» salvato.",
+  "saveFailed": "Salvataggio non riuscito. {message}",
+  "newProject": "Nuovo progetto: importa i frame per cominciare.",
+  "unreadableFile": "Non è stato possibile leggere il file del progetto.",
+  "recoveryFailed": "Recupero non riuscito. {message}",
+  "openFailed": "Apertura non riuscita. {message}",
+  "recovered": "Lavoro recuperato. Salvalo per conservarlo.",
+  "recoveredInProject": "Lavoro recuperato nel progetto «{name}». Salvalo per conservarlo.",
+  "opened": "Progetto «{name}» aperto.",
+  "job": {
+    "saving": "Salvataggio del progetto",
+    "opening": "Apertura del progetto",
+    "readingMetadata": "Lettura dei dati di scatto",
+    "openingImage": "Apertura dell’immagine salvata"
+  },
+  "notices": {
+    "imageMissing": "l’immagine salvata nel progetto non si trova: è stato riaperto il frame di partenza e dovrai applicare di nuovo l’elaborazione",
+    "originalMissing": "l’immagine di partenza non si trova: «Ripristina» tornerà all’immagine elaborata",
+    "missingFramesOne": "1 frame non si trova più sul disco (il primo: {first}). Il progetto continua a ricordarli: se ricolleghi il disco, riaprendo il progetto torneranno",
+    "missingFramesOther": "{count} frame non si trovano più sul disco (il primo: {first}). Il progetto continua a ricordarli: se ricolleghi il disco, riaprendo il progetto torneranno",
+    "masksUnreadableOne": "una maschera dipinta non si è potuta leggere: la sua regolazione locale ora agisce senza",
+    "masksUnreadableOther": "{count} maschere dipinte non si sono potute leggere: le loro regolazioni locali ora agiscono senza",
+    "drizzleNotRestored": "la scala e la soluzione astrometrica del drizzle non si sono potute ripristinare: marcatori e misure useranno quelle del frame",
+    "mosaicNotRestored": "la scala e la soluzione astrometrica del mosaico non si sono potute ripristinare: marcatori e misure useranno quelle del frame"
+  }
+}

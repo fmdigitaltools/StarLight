@@ -1,0 +1,7 @@
+{
+  "title": "Errore dell’interfaccia",
+  "text": "L’interfaccia di StarLight si è interrotta per un errore imprevisto. Ricaricala per continuare. Se c’era lavoro non salvato e StarLight ne aveva messo da parte una copia, ti proporrà di recuperarlo.",
+  "logNote": "L’errore è annotato nel registro. Se vuoi segnalarlo, apri il registro e usa «Copia il rapporto»; nulla viene inviato in automatico.",
+  "openLog": "Apri il registro",
+  "reload": "Ricarica"
+}

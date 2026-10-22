@@ -1,0 +1,15 @@
+{
+  "invalidLz4": "Invalid LZ4 data.",
+  "incompleteLz4": "Incomplete LZ4 data.",
+  "unknownCompression": "The XISF file uses an unknown compression: {codec}. zlib, LZ4 and Zstandard are supported.",
+  "notValid": "The file is not a valid XISF.",
+  "noImages": "The XISF file contains no images.",
+  "invalidSize": "The XISF file declares invalid dimensions.",
+  "tooManyDimensions": "The XISF file contains an image with more than two dimensions.",
+  "unsupportedPixelFormat": "The XISF file uses an unsupported pixel format ({format}).",
+  "undeclaredPixelFormat": "The XISF file uses an unsupported pixel format (not declared).",
+  "truncatedImage": "The XISF file is truncated: the image data is missing.",
+  "missingEmbeddedData": "The XISF file declares embedded data that is missing.",
+  "unsupportedLocation": "The XISF file specifies the data in an unsupported way ({location}).",
+  "truncatedPixels": "The XISF file is truncated: there are fewer pixels than declared."
+}

@@ -1,0 +1,86 @@
+{
+  "type": {
+    "galaxy": "galaxy",
+    "star": "star",
+    "planet": "planet",
+    "moon": "moon",
+    "sun": "sun",
+    "nebula": "nebula",
+    "planetaryNebula": "planetary nebula",
+    "supernovaRemnant": "supernova remnant",
+    "openCluster": "open cluster",
+    "globularCluster": "globular cluster",
+    "darkNebula": "dark nebula",
+    "doubleStar": "double star",
+    "galaxyGroup": "galaxy group",
+    "other": "other"
+  },
+  "method": {
+    "headerName": "Name declared by the telescope in the file",
+    "coordinates": "Coordinates of the field center",
+    "solvedField": "Object within the framing"
+  },
+  "plateSolve": {
+    "title": "Position in the sky",
+    "descriptionLocal": "The file does not say precisely which part of the sky it shows, so objects cannot be marked on the image. StarLight can work it out by comparing the stars in the photo with those in a catalog. The Plate solve button first uses the installed local stars, without the internet. If they are not enough, as often happens with narrow fields, it switches to the online Gaia catalog, provided internet access is allowed.",
+    "descriptionOnline": "The file does not say precisely which part of the sky it shows, so objects cannot be marked on the image. StarLight can work it out by comparing the stars in the photo with those in a catalog. The button uses the online Gaia catalog, which requires an internet connection; the request can take up to a minute. To do it without the internet, install or re-enable the “Stars for plate solving” package in the Deep-sky catalogs tab of the plugin gallery.",
+    "solving": "Solving",
+    "solve": "Plate solve"
+  },
+  "empty": {
+    "title": "No object recognized",
+    "noFrame": "Open a frame to find out which celestial object it contains.",
+    "notRecognized": "The file declares neither a known object nor coordinates that can be matched against the catalog of {count} available objects."
+  },
+  "main": {
+    "title": "Main object",
+    "constellation": "Constellation",
+    "magnitude": "Magnitude",
+    "magnitudeHint": "Apparent brightness of the object. The lower the number, the brighter the object",
+    "size": "Apparent size",
+    "sizeHint": "Measured in arcminutes, that is sixtieths of a degree. The full Moon is about thirty across",
+    "rightAscension": "Right ascension",
+    "declination": "Declination",
+    "recognition": "Recognition",
+    "offset": "Offset from center"
+  },
+  "field": {
+    "title": "Field of view",
+    "size": "Size",
+    "sizeHint": "Portion of sky captured, in arcminutes",
+    "degrees": "In degrees"
+  },
+  "others": {
+    "title": "Other objects in the field",
+    "description": "Catalog objects whose coordinates fall within the framing.",
+    "offset": " - {arcmin} ' from center"
+  },
+  "overlay": {
+    "title": "Overlay",
+    "description": "In fields crowded with objects, StarLight labels only the most important ones, groups nearby ones and limits the unnamed circles. The density and types chosen here also apply to the image exported with markers.",
+    "showMarkers": "Show markers on the image"
+  },
+  "coordinates": {
+    "title": "Coordinates on the image",
+    "description": "Computed from the astrometric solution, like the markers. The grid shows the lines of right ascension and declination with their values at the edges; the orientation shows north and east; the scale bar shows an angular measure. In the Export step you can include them in PNG, JPEG and WebP files.",
+    "grid": "Coordinate grid",
+    "gridHint": "Lines of right ascension and declination, with values along the edges",
+    "orientation": "Orientation",
+    "orientationHint": "Two arrows showing north (N) and east (E) in the captured sky",
+    "scaleBar": "Scale bar",
+    "scaleBarHint": "A line with its angular measure, in arcseconds, arcminutes or degrees"
+  },
+  "density": {
+    "essential": "Essential",
+    "essentialHint": "Only the main objects, with half the names and circles",
+    "normal": "Normal",
+    "normalHint": "About ten names over a full field, plus a few circles",
+    "rich": "Rich",
+    "richHint": "Twice the names and circles, for fields worth exploring"
+  },
+  "markerTypes": {
+    "label": "Object types shown",
+    "hide": "Hides markers of this type (the capture target stays)",
+    "show": "Shows markers of this type"
+  }
+}

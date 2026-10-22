@@ -1,0 +1,104 @@
+{
+  "none": "Nessuno",
+  "off": "spento",
+  "pending": "da applicare",
+  "pendingHint": "I valori sono cambiati dall’ultima volta che hai premuto Applica",
+  "apply": "Applica",
+  "applyHint": "Calcola l’immagine con tutte le regolazioni del passo Elabora, comprese quelle di questa scheda",
+  "applyAll": "Applica tutto",
+  "applyAllHint": "Calcola l’immagine con tutti gli strumenti di questo passo, partendo sempre dall’originale",
+  "reset": "Reset",
+  "resetHint": "Riporta tutti gli strumenti di questo passo ai valori iniziali e spegne i plugin. Se poi premi Applica, l’immagine torna com’era all’apertura",
+  "defects": {
+    "title": "Difetti e fondo cielo",
+    "description": "I pixel difettosi sono punti isolati molto più luminosi dei pixel vicini. Il fondo cielo è la luce diffusa dall’inquinamento luminoso e dalla Luna, e la sua estrazione rende il cielo uniforme e di colore neutro.",
+    "hotPixels": "Correggi i pixel difettosi",
+    "hotPixelsHint": "Sostituisce i punti isolati anomali con la mediana, cioè il valore centrale, dei pixel vicini. Le stelle illuminano anche i pixel attorno e quindi non vengono toccate.",
+    "simple": "Semplice",
+    "simpleHint": "Modella il fondo con una superficie morbida, adatta ai gradienti regolari, cioè alle variazioni graduali di luminosità del cielo.",
+    "advanced": "Avanzato",
+    "advancedHint": "Modella il fondo con funzioni a base radiale, che seguono anche aloni e gradienti irregolari.",
+    "samples": "Campioni per lato",
+    "samplesHint": "Un numero maggiore di campioni segue gradienti più complessi, ma rischia di intaccare un oggetto molto esteso.",
+    "smoothness": "Levigatezza",
+    "smoothnessHint": "Un valore più alto rende il modello del fondo più morbido e meno aderente ai dettagli.",
+    "tolerance": "Tolleranza",
+    "toleranceHint": "Definisce lo scostamento massimo di un campione dal modello, oltre il quale il campione viene considerato parte dell’oggetto e scartato."
+  },
+  "trails": {
+    "title": "Scie di satelliti",
+    "description": "Aerei e satelliti che passano nel campo durante la posa lasciano una riga luminosa. Su un singolo fotogramma la riga viene trovata e i suoi pixel vengono ricostruiti con il cielo e la grana dei due lati. Vengono riconosciute anche le righe che si interrompono a metà immagine, come quella di un satellite che entra nell’ombra della Terra, e le file di trattini lasciate dalle luci di un aereo. Una riga viene tolta solo se è dritta, lunga e larga quanto una stella per tutto il suo percorso, così una galassia vista di taglio o il filamento di una nebulosa non vengono scambiati per una scia; con la soluzione astrometrica restano escluse anche le galassie e le nebulose del catalogo. Nelle immagini impilate di solito non serve, perché l’impilamento scarta già le scie.",
+    "remove": "Togli le scie",
+    "removeHint": "Cerca le righe dritte, intere o interrotte, e le sostituisce con il fondo cielo dei lati, solo nel tratto in cui ci sono.",
+    "sensitivity": "Sensibilità",
+    "sensitivityHint": "Con un valore più alto vengono trovate anche le scie più deboli, ma cresce il rischio di scambiare per una scia una struttura dell’oggetto."
+  },
+  "color": {
+    "title": "Colore",
+    "description": "Il bilanciamento sulle stelle rende bianco il colore medio delle stelle. Il bilanciamento fotometrico confronta le stelle con il catalogo Gaia, che ne riporta il colore vero. È il metodo più preciso, ma richiede la connessione a internet e la soluzione astrometrica, cioè la posizione esatta del campo, letta dall’intestazione del file o ottenuta con «Risolvi il campo» nel passo Oggetti.",
+    "stars": "Sulle stelle",
+    "photometric": "Fotometrico",
+    "recompute": "Ricalcola da Gaia",
+    "compute": "Calcola da Gaia",
+    "notComputed": "non ancora calcolato",
+    "colorNoise": "Grana colorata",
+    "colorNoiseNarrowbandHint": "Con la banda stretta il rumore si riduce su ogni banda separatamente. Questo cursore regola solo quanto il fondo cielo diventa grigio neutro.",
+    "colorNoiseHint": "Elimina le macchie di colore dal fondo cielo e rende uniforme il colore di ogni stella. Agisce soltanto sul colore, quindi la nitidezza dell’immagine non cambia."
+  },
+  "deconvolution": {
+    "title": "Deconvoluzione",
+    "description": "Recupera la nitidezza persa per la turbolenza dell’aria e per l’ottica, misurando la forma delle stelle. Non inventa dettagli, ma ripristina quelli attenuati.",
+    "iterations": "Iterazioni",
+    "off": "spenta",
+    "iterationsHint": "Ogni iterazione, cioè ogni ripetizione del calcolo, aumenta la nitidezza. Oltre un certo numero compaiono aloni e grana.",
+    "psfRadius": "Ampiezza della sfocatura",
+    "automatic": "automatica",
+    "psfRadiusHint": "A zero l’ampiezza viene misurata automaticamente sulle stelle dell’immagine.",
+    "regularization": "Regolarizzazione",
+    "regularizationHint": "Limita l’amplificazione del rumore causata dalla deconvoluzione."
+  },
+  "noise": {
+    "title": "Riduzione del rumore",
+    "description": "NL-Bayes confronta ogni piccola zona dell’immagine con quelle simili e ne conserva la struttura comune, scartando la grana. Le ondine (wavelet) scompongono l’immagine in scale di dimensione diversa e agiscono su ciascuna separatamente, quindi sono utili sulla grana a grumi di qualche pixel.",
+    "waveletScale": "Ondine, scala {scale}"
+  },
+  "detail": {
+    "title": "Dettagli per scala",
+    "description": "Rinforza o attenua i dettagli di ciascuna dimensione. Le scale piccole corrispondono alla grana e ai filamenti sottili, quelle grandi ai bracci delle galassie e alle nubi.",
+    "scale": "Scala {scale}"
+  },
+  "narrowband": {
+    "title": "Banda stretta",
+    "description": "Con il filtro a doppia banda il sensore a colori raccoglie due sole righe di luce: l’idrogeno (H-alfa), che finisce nel rosso, e l’ossigeno (OIII), che finisce nel verde e nel blu. Qui le due righe si separano e si ricompongono con le tavolozze usate in banda stretta, che rendono più leggibile dove sta ciascun gas. I colori che ne escono sono una scelta, non quelli che vedrebbe l’occhio.",
+    "dualBand": "Questo file è stato ripreso con il filtro a doppia banda, quindi la tavolozza consigliata è HOO.",
+    "notDualBand": "Secondo l’intestazione questo file non è stato ripreso con il filtro a doppia banda. Senza quel filtro le tavolozze danno colori poco attendibili.",
+    "hoo": "HOO: l’idrogeno va nel rosso, l’ossigeno nel verde e nel blu, quindi nell’azzurro.",
+    "foraxx": "Foraxx: come HOO, ma dove idrogeno e ossigeno sono entrambi forti il verde segue l’idrogeno, e fra il rosso e l’azzurro compaiono passaggi dorati.",
+    "sho": "Imita la «tavolozza Hubble», oro e blu. Quella vera usa anche lo zolfo (SII), che questo filtro non raccoglie: qui al suo posto c’è di nuovo l’idrogeno, quindi la tavolozza è sintetica e non mostra dove sta lo zolfo.",
+    "balance": "Equilibrio H-alfa / OIII",
+    "measured": "misurato",
+    "moreOiii": "più OIII {value}",
+    "moreHalpha": "più H-alfa {value}",
+    "balanceHint": "Al centro resta l’equilibrio misurato sull’immagine. Verso sinistra prevale l’idrogeno, verso destra l’ossigeno.",
+    "oiii": "Intensità OIII",
+    "oiiiHint": "Rinforza o attenua soltanto l’ossigeno, che di solito è più debole. Rinforzarlo ne fa crescere anche la grana.",
+    "naturalStars": "Stelle con il loro colore",
+    "naturalStarsHint": "Le stelle conservano il colore dell’immagine di partenza invece di prendere quello della tavolozza."
+  },
+  "starReduction": {
+    "title": "Riduzione delle stelle",
+    "description": "Rimpicciolisce le stelle per dare risalto a nebulose e galassie, riempiendo lo spazio liberato con il fondo circostante.",
+    "size": "Dimensione",
+    "brightness": "Luminosità",
+    "brightnessHint": "Regola l’attenuazione della luce delle stelle."
+  },
+  "localContrast": {
+    "title": "Contrasto locale",
+    "description": "Fa risaltare le strutture interne di galassie e nebulose regolando il contrasto zona per zona, con il metodo CLAHE. Va dosato con moderazione, perché accentua anche il rumore.",
+    "strength": "Forza",
+    "limit": "Limite",
+    "limitHint": "Definisce il contrasto massimo che ogni zona può ricevere.",
+    "boxes": "Zone per lato",
+    "boxesHint": "Con più zone il contrasto segue strutture più piccole."
+  }
+}

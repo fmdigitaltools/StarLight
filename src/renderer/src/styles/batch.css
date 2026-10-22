@@ -1,0 +1,225 @@
+/* ---- Batch processing window ---- */
+
+.sl-batch {
+  width: min(760px, 94vw);
+  height: 88vh;
+}
+
+.sl-batch:focus {
+  outline: none;
+}
+
+.sl-batch-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-5);
+}
+
+.sl-batch-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+}
+
+.sl-batch-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sl-s-3);
+}
+
+.sl-batch-section-head .sl-guide-section-title {
+  margin: 0;
+}
+
+.sl-batch-explanation {
+  margin: 0;
+  font-size: var(--sl-fs-sm);
+  line-height: 1.5;
+  color: var(--sl-text-3);
+}
+
+.sl-batch-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sl-s-2);
+}
+
+.sl-batch-row .sl-settings-path {
+  flex: 1;
+  min-width: 0;
+}
+
+.sl-batch-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-1);
+}
+
+.sl-batch-note {
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text-2);
+}
+
+.sl-batch-notice {
+  margin: 0;
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-warn);
+}
+
+.sl-batch-actions {
+  display: flex;
+  gap: var(--sl-s-2);
+  margin-left: auto;
+}
+
+/* There can be many format and framing choices: they wrap. */
+.sl-batch .sl-segments {
+  flex-wrap: wrap;
+}
+
+.sl-batch .sl-settings-select {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---- File list ---- */
+
+.sl-batch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-sm);
+  background: var(--sl-bg-0);
+}
+
+.sl-batch-report .sl-batch-list {
+  max-height: none;
+}
+
+.sl-batch-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sl-s-3);
+  padding: 6px var(--sl-s-3);
+  border-bottom: 1px solid var(--sl-line);
+  font-size: var(--sl-fs-sm);
+}
+
+.sl-batch-item:last-child {
+  border-bottom: none;
+}
+
+.sl-batch-item-name {
+  flex: 1;
+  min-width: 0;
+  color: var(--sl-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sl-batch-item-data {
+  color: var(--sl-text-3);
+  font-family: var(--sl-font-mono);
+  overflow-wrap: anywhere;
+}
+
+.sl-batch-item-result .sl-batch-item-data {
+  flex: 2;
+  min-width: 0;
+}
+
+.sl-batch-item-warnings {
+  flex-basis: 100%;
+  color: var(--sl-warn);
+}
+
+.sl-batch-remove {
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  color: var(--sl-text-3);
+  background: none;
+  border: none;
+  border-radius: var(--sl-r-sm);
+  cursor: pointer;
+}
+
+.sl-batch-remove:hover {
+  color: var(--sl-text);
+  background: var(--sl-bg-3);
+}
+
+.sl-batch-mark {
+  flex: none;
+  min-width: 88px;
+  font-size: var(--sl-fs-xs);
+  font-weight: 600;
+}
+
+.sl-batch-ok {
+  color: var(--sl-ok);
+}
+
+.sl-batch-ko {
+  color: var(--sl-err);
+}
+
+/* ---- Recipe summary ---- */
+
+.sl-batch-summary {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px var(--sl-s-4);
+  margin: 0;
+  padding: var(--sl-s-3);
+  font-size: var(--sl-fs-sm);
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-sm);
+}
+
+.sl-batch-summary dt {
+  color: var(--sl-text-3);
+}
+
+.sl-batch-summary dd {
+  margin: 0;
+  color: var(--sl-text);
+}
+
+/* ---- Progress ---- */
+
+.sl-batch-running,
+.sl-batch-report {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+}
+
+.sl-batch-running-title {
+  margin: 0;
+  font-size: var(--sl-fs-lg);
+  color: var(--sl-text);
+  overflow-wrap: anywhere;
+}
+
+.sl-batch-bar {
+  height: 8px;
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.sl-batch-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sl-cyan), var(--sl-violet));
+  transition: width var(--sl-t-med);
+}

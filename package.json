@@ -1,0 +1,45 @@
+{
+  "name": "starlight",
+  "productName": "StarLight",
+  "version": "1.0.0-beta.1",
+  "description": "StarLight — elaborazione delle immagini astronomiche: file FITS e XISF, immagini TIFF e PNG, formati RAW delle fotocamere",
+  "author": {
+    "name": "FM Digital Tools",
+    "url": "https://fmdigitaltools.com/"
+  },
+  "license": "GPL-3.0-or-later",
+  "private": true,
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node tools/run-tests.mjs",
+    "dist": "node tools/generate-locales-index.mjs && node tools/run-tests.mjs --quick && node tools/update-attribution.mjs && node tools/write-release-notes.mjs && node tools/generate-credits.mjs && electron-vite build && electron-builder --win",
+    "dist:portable": "node tools/generate-locales-index.mjs && node tools/run-tests.mjs --quick && node tools/update-attribution.mjs && node tools/write-release-notes.mjs && node tools/generate-credits.mjs && electron-vite build && electron-builder --win portable",
+    "attribution": "node tools/update-attribution.mjs",
+    "publish": "node tools/publish.mjs",
+    "withdraw": "node tools/withdraw.mjs",
+    "prepare-catalogs": "node tools/prepare-catalogs.mjs",
+    "publish-catalogs": "node tools/publish-catalogs.mjs"
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
+  "devDependencies": {
+    "@colorhythm/libraw-wasm": "1.1.1",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^5.0.0",
+    "electron": "^44.9.1",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^6.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.0.0",
+    "zustand": "^5.0.15"
+  }
+}

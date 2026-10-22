@@ -1,0 +1,7 @@
+{
+  "framesNotStacked": "I frame in cui è stato indicato il nucleo non sono fra quelli impilati.",
+  "sameMoment": "Il nucleo va indicato in due frame ripresi in momenti diversi, il primo e l’ultimo.",
+  "needThreeFrames": "Per trovare la cometa in automatico servono almeno tre frame.",
+  "notFoundAuto": "La cometa non è stata trovata in automatico: non c’è un oggetto esteso che si sposti in modo regolare fra i frame. Se la cometa è debole o si è spostata di pochissimo, indica il nucleo con un clic sul primo e sull’ultimo frame.",
+  "nucleusNotMeasured": "La posizione del nucleo non è stata misurata."
+}

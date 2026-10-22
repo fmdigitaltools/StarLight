@@ -1,0 +1,22 @@
+{
+  "labels": {
+    "object": "Oggetto",
+    "date": "Data",
+    "instrument": "Strumento",
+    "camera": "Fotocamera",
+    "exposure": "Posa",
+    "totalExposure": "Posa totale",
+    "filter": "Filtro",
+    "place": "Luogo",
+    "author": "Foto"
+  },
+  "filter": "filtro {name}",
+  "onlyFocalLength": "focale {focalLength}",
+  "author": "© {name}",
+  "unit": {
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "millimeters": "mm"
+  }
+}

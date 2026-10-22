@@ -1,0 +1,9 @@
+{
+  "megapixels": "{value} megapixel",
+  "fewerWorkersOne": "Memoria limitata: l’analisi usa 1 processo invece di {wanted}, perché i frame da {megapixels} ci stiano tutti. Ci vorrà un po’ più di tempo.",
+  "fewerWorkersOther": "Memoria limitata: l’analisi usa {count} processi invece di {wanted}, perché i frame da {megapixels} ci stiano tutti. Ci vorrà un po’ più di tempo.",
+  "insufficient": "Memoria insufficiente per impilare {count} frame da {megapixels}: servono circa {needed} e ne sono disponibili {available}.",
+  "maxFrames": "Ne stanno al massimo {count}: escludi dalla libreria i frame in più (per esempio i peggiori) e impila in più volte, oppure chiudi altri programmi e riprova.",
+  "notEvenTwo": "Non ci stanno nemmeno due frame: chiudi altri programmi e riprova.",
+  "calibrationMasters": "I master della libreria di calibrazione occupano altri {size}."
+}

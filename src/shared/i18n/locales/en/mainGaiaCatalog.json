@@ -1,0 +1,16 @@
+{
+  "services": {
+    "vizier": "VizieR (CDS Strasbourg)",
+    "esa": "ESA Gaia archive"
+  },
+  "invalidCoordinates": "Invalid field coordinates. The Gaia catalog cannot be queried.",
+  "noResponse": "The Gaia catalog is not responding, so color calibration is not available right now. Check your internet connection and try again in a few minutes. Technical details: {details}",
+  "noResponseSolve": "The Gaia catalog is not responding, so the field cannot be plate solved right now. Check your internet connection and try again in a few minutes. Technical details: {details}",
+  "timeout": "no response within {seconds} seconds",
+  "connectionFailed": "connection failed (no network or service unreachable)",
+  "httpError": "the service responded with error {status}",
+  "httpErrorUnavailable": "the service responded with error {status} (temporarily unavailable)",
+  "rejected": "request rejected",
+  "rejectedWithReason": "request rejected: {reason}",
+  "unknownFormat": "catalog response in an unrecognized format"
+}

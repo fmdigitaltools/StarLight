@@ -1,0 +1,18 @@
+{
+  "publicDomain": "Pubblico dominio",
+  "indexUnreadable": "L’elenco dei cataloghi sul server non è leggibile.",
+  "fromCatalog": "Dal catalogo {name}.",
+  "fields": {
+    "id": "l’identificatore",
+    "name": "il nome",
+    "version": "la versione",
+    "group": "il gruppo",
+    "description": "la descrizione",
+    "authors": "gli autori",
+    "reference": "il riferimento bibliografico",
+    "source": "la fonte dei dati",
+    "license": "la licenza",
+    "licenseLink": "l’indirizzo della licenza",
+    "example": "una sigla di esempio"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "truncated": "Tessera HCOMPRESS troncata.",
+  "unknownBitPlaneCode": "Tessera HCOMPRESS non valida (codice del piano di bit sconosciuto).",
+  "missingSignature": "Tessera HCOMPRESS non valida (firma mancante).",
+  "invalidDimensions": "Tessera HCOMPRESS non valida (dimensioni).",
+  "invalidBitPlanes": "Tessera HCOMPRESS non valida (piani di bit).",
+  "invalidEnd": "Tessera HCOMPRESS non valida (fine dei piani di bit)."
+}

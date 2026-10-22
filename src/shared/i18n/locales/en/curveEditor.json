@@ -1,0 +1,6 @@
+{
+  "canvasHint": "Click to add a point, drag it to move it, right-click to remove it. The background shows the histogram of the image entering the curve, that is, before the curve itself, color and the photo filter, which are applied afterwards.",
+  "axisShadows": "shadows",
+  "axisMidtones": "midtones",
+  "axisHighlights": "highlights"
+}

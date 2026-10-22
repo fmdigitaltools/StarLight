@@ -1,0 +1,106 @@
+{
+  "id": "mono-colorize",
+  "name": "Colorize monochrome images",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Gives a tint to a black and white shot, for example one taken with a narrowband filter, and preserves its brightness, so every pixel looks as light or dark as before. The presets reproduce the color of the main emission lines; alternatively you can choose a custom tint. A color image is first reduced to its luminance. The brightest areas fade toward white when the pure tint is not enough to reach their brightness.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "tint",
+      "label": "Tint",
+      "hint": "The tints of the lines are computed from their color coordinates (CIE 1931) and brought to the most saturated color a screen can display.",
+      "options": [
+        {
+          "value": "hAlpha",
+          "label": "H-alpha",
+          "hint": "Red of hydrogen, line at 656 nm. Also suitable for shots taken with an SII or NII filter, whose lines have practically the same color."
+        },
+        {
+          "value": "hBeta",
+          "label": "H-beta",
+          "hint": "Light blue of hydrogen, line at 486 nm."
+        },
+        {
+          "value": "oIII",
+          "label": "OIII",
+          "hint": "Teal of doubly ionized oxygen, line at 501 nm."
+        },
+        {
+          "value": "custom",
+          "label": "Custom",
+          "hint": "Tint chosen with the “Custom tint” slider."
+        }
+      ],
+      "default": "hAlpha"
+    },
+    {
+      "type": "slider",
+      "id": "customHue",
+      "label": "Custom tint",
+      "hint": "Hue used with the “Custom” tint, on the color wheel: 0° red, 60° yellow, 120° green, 180° cyan, 240° blue, 300° magenta.",
+      "min": 0,
+      "max": 360,
+      "step": 1,
+      "default": 30,
+      "format": "degrees"
+    },
+    {
+      "type": "slider",
+      "id": "saturation",
+      "label": "Saturation",
+      "hint": "Strength of the tint. At zero the image stays black and white; at the maximum the tint is pure wherever the brightness allows it.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.75,
+      "format": "percent"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Colorazione delle immagini monocromatiche",
+      "description": "Dà una tinta a una ripresa in bianco e nero, per esempio quella di un filtro a banda stretta, e ne conserva la luminosità, così ogni pixel appare chiaro o scuro come prima. Le preimpostazioni riproducono il colore delle principali righe di emissione; in alternativa puoi scegliere una tinta libera. Un’immagine a colori viene prima ridotta alla sua luminanza. Le zone più luminose sfumano verso il bianco quando la tinta pura non basta a raggiungerne la luminosità.",
+      "parameters": {
+        "tint": {
+          "label": "Tinta",
+          "hint": "Le tinte delle righe sono calcolate dalle loro coordinate di colore (CIE 1931) e riportate al colore più saturo che uno schermo può mostrare.",
+          "options": {
+            "hAlpha": {
+              "label": "H-alfa",
+              "hint": "Rosso dell’idrogeno, riga a 656 nm. Adatto anche alle riprese con filtro SII o NII, le cui righe hanno praticamente lo stesso colore."
+            },
+            "hBeta": {
+              "label": "H-beta",
+              "hint": "Azzurro dell’idrogeno, riga a 486 nm."
+            },
+            "oIII": {
+              "label": "OIII",
+              "hint": "Verde acqua dell’ossigeno doppiamente ionizzato, riga a 501 nm."
+            },
+            "custom": {
+              "label": "Libera",
+              "hint": "Tinta scelta con il cursore «Tinta libera»."
+            }
+          }
+        },
+        "customHue": {
+          "label": "Tinta libera",
+          "hint": "Tono usato con la tinta «Libera», sul cerchio dei colori: 0° rosso, 60° giallo, 120° verde, 180° ciano, 240° blu, 300° magenta."
+        },
+        "saturation": {
+          "label": "Saturazione",
+          "hint": "Forza della tinta. A zero l’immagine resta in bianco e nero; al massimo la tinta è pura dove la luminosità lo consente."
+        }
+      }
+    }
+  }
+}

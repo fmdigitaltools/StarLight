@@ -1,0 +1,6 @@
+{
+  "temperatureNotComparable": "temperature not comparable",
+  "gain": "gain {value}",
+  "filter": "filter {name}",
+  "flatMasterSizes": "The master to subtract from the flat has different dimensions."
+}

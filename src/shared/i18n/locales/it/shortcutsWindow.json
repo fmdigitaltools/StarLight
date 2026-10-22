@@ -1,0 +1,18 @@
+{
+  "title": "Scorciatoie da tastiera",
+  "subtitle": "I comandi principali senza passare dai menu. Questo elenco si apre anche con {keys}.",
+  "groups": {
+    "file": "File",
+    "edit": "Modifica",
+    "view": "Visualizza",
+    "workflow": "Flusso",
+    "image": "Immagine",
+    "help": "Aiuto"
+  },
+  "noResults": "Nessuna scorciatoia contiene «{query}».",
+  "or": "o",
+  "searchPlaceholder": "Cerca un comando o un tasto, per esempio «zoom» o «Ctrl+S»",
+  "searchLabel": "Cerca fra le scorciatoie",
+  "footnote": "Le lettere e i numeri da soli non funzionano come scorciatoie mentre scrivi in un campo di testo.",
+  "close": "Chiudi"
+}

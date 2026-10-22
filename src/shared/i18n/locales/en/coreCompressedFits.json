@@ -1,0 +1,16 @@
+{
+  "invalidTable": "Invalid compressed table (TFORM{index} = {shape}).",
+  "unexpectedColumnType": "Unexpected column type in the compressed table ({type}).",
+  "riceBytesPerPixel": "Rice compression with {bytes} bytes per pixel: not supported.",
+  "plioTruncated": "Truncated PLIO tile.",
+  "tileTruncated": "Truncated compressed tile.",
+  "notTwoDimensional": "The compressed file does not contain a two-dimensional image.",
+  "invalidDimensions": "Invalid dimensions of the compressed image.",
+  "unknownMethod": "Unknown compression method: {method}. Supported methods are RICE_1, GZIP_1, GZIP_2, HCOMPRESS_1 and PLIO_1.",
+  "undeclaredMethod": "Unknown compression method: not declared. Supported methods are RICE_1, GZIP_1, GZIP_2, HCOMPRESS_1 and PLIO_1.",
+  "missingDataColumn": "Compressed table without the COMPRESSED_DATA column.",
+  "incomplete": "The compressed file is incomplete: some tiles are missing.",
+  "truncated": "The compressed file is truncated.",
+  "truncatedMissingData": "The compressed file is truncated: part of the data is missing.",
+  "hcompressUnexpectedSize": "HCOMPRESS tile of unexpected size."
+}

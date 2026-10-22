@@ -1,0 +1,14 @@
+{
+  "undo": "Annulla",
+  "redo": "Ripeti",
+  "history": "Cronologia",
+  "undoHint": "Annulla: {step} (Ctrl+Z)",
+  "redoHint": "Ripeti: {step} (Ctrl+Y)",
+  "nothingToUndo": "Nessuna modifica da annullare",
+  "nothingToRedo": "Nessuna modifica da ripetere",
+  "historyHint": "Elenco delle modifiche: un clic su un passo riporta l’immagine a quel momento ({keys})",
+  "listLabel": "Cronologia delle modifiche",
+  "editCountOne": "1 modifica",
+  "editCountOther": "{count} modifiche",
+  "greyNote": "I passi in grigio sono stati annullati: restano disponibili finché non fai una modifica nuova."
+}

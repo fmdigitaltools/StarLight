@@ -1,0 +1,17 @@
+Neutralinojs, engine of the StarLight installer window.
+
+Version: 6.10.0 (stable, released on October 6, 2026)
+Source:  https://github.com/neutralinojs/neutralinojs/releases/tag/v6.10.0
+         file neutralinojs-v6.10.0.zip, of which only neutralino-win_x64.exe
+         https://github.com/neutralinojs/neutralino.js/releases/tag/v6.10.0
+         file neutralino.js (page library, in ../ui/)
+License: MIT, full text in LICENSE-neutralinojs.txt (together with the
+         licenses of the libraries the binary contains).
+
+SHA-256 of neutralino-win_x64.exe:
+1b3f87c0dd1b53015f8b33aae17ea2fa806cceba18afe2737b9f522438ed043d
+SHA-256 of neutralino.js:
+3b435cf313fbb92a7faaf18fb2dec94571903885b506c5ec378612843ddf7351
+
+To update it: download the same two files of the new version, replace them,
+and update this note and LICENSE-neutralinojs.txt.

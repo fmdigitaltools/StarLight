@@ -1,0 +1,13 @@
+{
+  "title": "Licenza e riconoscimenti",
+  "subtitle": "{app} è distribuito con licenza GNU GPL versione 3 o successiva ({spdx}).",
+  "tabs": {
+    "license": "Licenza",
+    "credits": "Riconoscimenti"
+  },
+  "footer": "{app} di {author} è distribuito con licenza GNU GPL versione 3 o successiva",
+  "close": "Chiudi",
+  "licenseIntro": "{app} può essere usato, studiato, modificato e ridistribuito liberamente secondo i termini della GNU General Public License, versione 3 o, a scelta, una versione successiva. Il programma è fornito senza alcuna garanzia. Segue il testo ufficiale della licenza, in lingua inglese.",
+  "creditsIntro": "{app} si serve del lavoro di altri autori, elencato qui con le relative licenze. Il testo integrale delle licenze è nel file THIRD-PARTY-NOTICES.md, nella sottocartella resources della cartella del programma.",
+  "openLink": "Apre {link} nel browser"
+}

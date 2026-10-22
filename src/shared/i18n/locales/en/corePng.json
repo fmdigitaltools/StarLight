@@ -1,0 +1,10 @@
+{
+  "notValid": "The file is not a valid PNG.",
+  "missingIhdr": "Invalid PNG: the IHDR chunk is missing.",
+  "invalidSize": "The PNG declares invalid dimensions.",
+  "unknownColorType": "PNG with an unknown color type.",
+  "unknownFilter": "Invalid PNG: unknown row filter ({type}).",
+  "noPixels": "The PNG contains no pixels (IDAT chunk missing).",
+  "truncated": "The PNG is truncated: there are fewer pixels than declared.",
+  "missingPalette": "Palette-based PNG without a palette."
+}

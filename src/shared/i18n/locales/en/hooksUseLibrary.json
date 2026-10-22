@@ -1,0 +1,32 @@
+{
+  "busy": "Please wait for the current operation to finish.",
+  "importedOne": "Imported 1 frame.",
+  "importedOther": "Imported {count} frames.",
+  "unreadableFiles": "{count} files could not be read. First error: {error}",
+  "rawReadFailed": "could not read the RAW file",
+  "openFailed": "Could not open the file. {message}",
+  "importFailed": "Import failed: check that the selected drive or folder is reachable and try again. {message}",
+  "telescopeUnreachable": "The telescope folder is not responding: check that the telescope is on and connected to the same network, and that the path in Settings, Telescope tab, is correct.",
+  "noImagesInFolder": "No images found in the selected folder: FITS, compressed FITS, XISF and RAW files are accepted.",
+  "viewReset": "Image restored to how it was when opened.",
+  "autostretchApplied": "Automatic stretch applied.",
+  "job": {
+    "readingMetadata": "Reading capture data of {count} files",
+    "readingMetadataProgress": "Reading capture data, {done} of {total}",
+    "opening": "Opening {file}",
+    "debayer": "Debayering"
+  },
+  "abracadabra": {
+    "failed": "Abracadabra failed. {message}",
+    "hotPixels": "{count} defective pixels corrected",
+    "trailsOne": "one satellite trail removed",
+    "trailsOther": "{count} satellite trails removed",
+    "background": "sky background evened out (the difference between areas was {percent}%)",
+    "starColor": "color balanced on the stars",
+    "crop": "crop of the noisy edges suggested (visible in Export)",
+    "noiseAndDetail": "noise reduced and detail, stars and contrast adjusted",
+    "dualBand": "dual-band file: try the HOO palette in the Process step, Narrowband card",
+    "done": "Abracadabra complete: {items}. You can change the chosen values in the Process and Correct steps; the Reset button returns the image to the original.",
+    "cropNotice": "Abracadabra removed the noisy edges: to see or change the crop box, press Crop in the top bar (key {key})."
+  }
+}

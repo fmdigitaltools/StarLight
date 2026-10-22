@@ -1,0 +1,292 @@
+/* ---- Appearance choices (classes set on the document by settings.ts) ---- */
+
+/* Abracadabra without the rotating glow or sparks: only the button remains. */
+:root.sl-abracadabra-still .sl-abracadabra,
+:root.sl-abracadabra-still .sl-abracadabra-halo,
+:root.sl-abracadabra-still .sl-abracadabra-text,
+:root.sl-abracadabra-still .sl-abracadabra-icon,
+:root.sl-abracadabra-still .sl-sparkle {
+  animation: none;
+}
+
+:root.sl-abracadabra-still .sl-sparkle {
+  display: none;
+}
+
+/*
+ * Reduced animations chosen in the settings: equivalent to the system preference
+ * (prefers-reduced-motion in theme.css), but for the whole interface. Elements appear instantly and
+ * nothing moves on its own.
+ */
+:root.sl-reduced-motion {
+  --sl-t-fast: 1ms;
+  --sl-t-med: 1ms;
+}
+
+:root.sl-reduced-motion *,
+:root.sl-reduced-motion *::before,
+:root.sl-reduced-motion *::after {
+  animation: none !important;
+  transition-duration: 1ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ---- Menu: entries with check marks and notes ---- */
+
+.sl-menu-item-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+}
+
+/* Room for the check mark, even when the entry is not active, so the texts stay aligned. */
+.sl-menu-check {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  color: var(--sl-cyan);
+}
+
+.sl-menu-note {
+  font-size: var(--sl-fs-xs);
+  font-style: italic;
+  color: var(--sl-text-3);
+}
+
+/* ---- Settings window ---- */
+
+.sl-settings {
+  width: min(820px, 94vw);
+  height: min(600px, 86vh);
+}
+
+.sl-settings-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sl-settings-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: none;
+  width: 190px;
+  padding: var(--sl-s-3);
+  background: var(--sl-bg-2);
+  border-right: 1px solid var(--sl-line);
+}
+
+.sl-settings-tab {
+  padding: 9px var(--sl-s-3);
+  font: inherit;
+  font-size: var(--sl-fs-md);
+  color: var(--sl-text-2);
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--sl-r-sm);
+  cursor: pointer;
+  transition: background var(--sl-t-fast), color var(--sl-t-fast);
+}
+
+.sl-settings-tab:hover {
+  color: var(--sl-text);
+  background: var(--sl-bg-3);
+}
+
+.sl-settings-tab:focus-visible {
+  outline: none;
+  box-shadow: var(--sl-glow-cyan);
+}
+
+.sl-settings-tab[aria-selected='true'] {
+  color: var(--sl-text);
+  background: var(--sl-bg-4);
+  border-color: var(--sl-line-strong);
+}
+
+.sl-settings-page {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: var(--sl-s-5);
+}
+
+.sl-settings-page-title {
+  margin-bottom: var(--sl-s-4);
+  font-size: var(--sl-fs-lg);
+  color: var(--sl-text);
+}
+
+.sl-settings-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+  padding: var(--sl-s-4) 0;
+  border-bottom: 1px solid var(--sl-line-soft);
+}
+
+.sl-settings-item:first-of-type {
+  padding-top: 0;
+}
+
+.sl-settings-item:last-child {
+  border-bottom: 0;
+}
+
+.sl-settings-label {
+  font-size: var(--sl-fs-md);
+  font-weight: 550;
+  color: var(--sl-text);
+}
+
+.sl-settings-explanation {
+  font-size: var(--sl-fs-sm);
+  line-height: 1.5;
+  color: var(--sl-text-3);
+}
+
+.sl-settings-explanation-warning {
+  color: var(--sl-warn);
+}
+
+.sl-settings-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-s-2);
+  min-width: 0;
+}
+
+.sl-settings-field {
+  flex: 1;
+  min-width: 0;
+  padding: 8px var(--sl-s-3);
+  font: inherit;
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text);
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-md);
+  outline: none;
+  transition: border-color var(--sl-t-fast), box-shadow var(--sl-t-fast);
+}
+
+/*
+ * Path shown and not editable by hand: it is changed with the system dialog. If it is too long it
+ * is cut at the start of the line, and the full path remains in the tooltip on mouse hover.
+ */
+.sl-settings-path {
+  flex: 1;
+  min-width: 0;
+  padding: 8px var(--sl-s-3);
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+  user-select: text;
+}
+
+.sl-settings-folders {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-3);
+  padding-left: var(--sl-s-3);
+  border-left: 2px solid var(--sl-line);
+}
+
+.sl-settings-folder {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sl-settings-folder-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sl-s-2);
+}
+
+.sl-settings-folder-name {
+  font-size: var(--sl-fs-sm);
+  font-weight: 550;
+  color: var(--sl-text-2);
+}
+
+.sl-settings-folder-note {
+  font-size: var(--sl-fs-xs);
+  font-style: italic;
+  color: var(--sl-cyan);
+}
+
+.sl-settings-field::placeholder {
+  color: var(--sl-text-3);
+}
+
+.sl-settings-field:focus,
+.sl-settings-select:focus {
+  border-color: var(--sl-cyan-dim);
+  box-shadow: var(--sl-glow-cyan);
+}
+
+.sl-settings-select {
+  align-self: flex-start;
+  min-width: 260px;
+  padding: 7px var(--sl-s-3);
+  font: inherit;
+  font-size: var(--sl-fs-md);
+  color: var(--sl-text);
+  background: var(--sl-bg-0);
+  border: 1px solid var(--sl-line-strong);
+  border-radius: var(--sl-r-md);
+  outline: none;
+  cursor: pointer;
+}
+
+.sl-settings-select option {
+  background: var(--sl-bg-2);
+  color: var(--sl-text);
+}
+
+/*
+ * The top bar, with its blur filter, forms a layer of its own: without an explicit order the window
+ * body, which comes later, would be drawn on top of the menu drawers. It stays below the dialog
+ * windows (.sl-overlay, level 80).
+ */
+.sl-topbar {
+  position: relative;
+  z-index: 70;
+}
+
+/* Performance tab: box with the settings chosen for the computer and restart notice. */
+.sl-settings-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-s-2);
+  margin-bottom: var(--sl-s-2);
+  padding: var(--sl-s-3) var(--sl-s-4);
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-r-md);
+}
+
+.sl-settings-changes {
+  margin: 0;
+  padding-left: var(--sl-s-5);
+  font-size: var(--sl-fs-sm);
+  line-height: 1.6;
+  color: var(--sl-text-2);
+}
+
+/* How much space one Disk space entry takes. */
+.sl-settings-space-amount {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-fs-xs);
+  color: var(--sl-cyan);
+}

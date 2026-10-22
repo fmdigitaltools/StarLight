@@ -1,0 +1,19 @@
+{
+  "gpu": {
+    "detecting": "detecting",
+    "noWebgl": "WebGL 2 not available",
+    "undeclared": "GPU not reported"
+  },
+  "library": {
+    "empty": "No frames in the library",
+    "countOne": "1 frame in the library",
+    "countOther": "{count} frames in the library"
+  },
+  "color": "color",
+  "monochrome": "monochrome",
+  "zoomFit": "zoom to fit",
+  "zoomPercent": "zoom {percent}%",
+  "cpuHint": "Processor currently used by StarLight, as a percentage of the whole computer (updated every two seconds)",
+  "ramHint": "Memory currently used by StarLight, all its processes combined (updated every two seconds). Of this, frames kept in memory take up {usage} of {budget} available.",
+  "gpuHint": "Graphics card running the real-time adjustments: {name}"
+}

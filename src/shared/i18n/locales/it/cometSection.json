@@ -1,0 +1,66 @@
+{
+  "title": "Cometa",
+  "description": "Durante la ripresa una cometa si sposta fra le stelle. Scegli che cosa deve restare fermo nel risultato.",
+  "mode": {
+    "stars": {
+      "label": "Stelle ferme",
+      "hint": "Impilamento normale, allineato sulle stelle, in cui la cometa esce mossa",
+      "explanation": "I frame vengono allineati sulle stelle, come per qualsiasi altro oggetto. Le stelle restano puntiformi, ma la cometa, che durante la ripresa si è spostata, esce allungata nel verso del suo cammino. Va bene se la cometa si è mossa pochissimo."
+    },
+    "comet": {
+      "label": "Cometa ferma",
+      "hint": "Allineato sul nucleo, con la cometa nitida e le stelle che diventano strisce",
+      "explanation": "I frame vengono allineati sul nucleo della cometa, che esce nitida con la chioma e la coda. Le stelle invece, rispetto alla cometa, si spostano e diventano strisce. Lo scarto delle code (sempre attivo in questo modo, con una soglia più severa) le toglie quasi tutte se i frame sono molti e la cometa si è spostata parecchio."
+    },
+    "both": {
+      "label": "Tutte e due",
+      "hint": "Due impilamenti, uno sulle stelle e uno sulla cometa, poi uniti, per avere stelle puntiformi e cometa nitida",
+      "explanation": "Il programma fa una somma allineata sulla cometa e ne ricava la sola cometa, senza stelle e senza fondo cielo; la toglie da ogni frame nel punto in cui stava, somma i frame sulle stelle e alla fine rimette sopra la cometa, ferma e nitida. Richiede circa il doppio del tempo; il drizzle non si applica."
+    }
+  },
+  "nucleusMode": {
+    "automatic": {
+      "label": "Automatico",
+      "hint": "Il programma cerca il punto luminoso esteso che si sposta in modo regolare fra i frame"
+    },
+    "manual": {
+      "label": "Lo indico io",
+      "hint": "Un clic sul nucleo nel primo e nell’ultimo frame, il modo più sicuro"
+    }
+  },
+  "missingNucleus": "Indica il nucleo della cometa nel primo e nell’ultimo frame, oppure scegli la ricerca automatica.",
+  "point": {
+    "waiting": "fai clic nel visore",
+    "set": "indicato ({x}, {y})",
+    "toSet": "da indicare"
+  },
+  "declaredComet": "Il file dichiara come bersaglio «{name}», che sembra una cometa. Per avere stelle puntiformi e cometa nitida scegli «Tutte e due».",
+  "automaticExplanation": "Dopo l’allineamento sulle stelle, il programma cerca il punto luminoso esteso che si sposta a velocità costante fra i frame, ne misura la posizione in ognuno e la ricava dal moto, usando l’ora di scatto scritta nei file. Se la cometa è debole o si è mossa pochissimo può non trovarla; in quel caso lo segnala e puoi indicarla a mano.",
+  "manualExplanation": "Apri il primo frame e fai clic sul nucleo, il punto più luminoso della chioma; poi fai lo stesso sull’ultimo. Fra i due il programma calcola la posizione in ogni frame in base all’ora di scatto e la rifinisce sul punto più luminoso vicino.",
+  "firstFrame": "Primo frame",
+  "firstFrameNamed": "Primo frame, {file}",
+  "setFirst": "Indica il nucleo nel primo frame",
+  "lastFrame": "Ultimo frame",
+  "lastFrameNamed": "Ultimo frame, {file}",
+  "setLast": "Indica il nucleo nell’ultimo frame",
+  "summary": {
+    "modeName": {
+      "comet": "cometa ferma",
+      "both": "cometa e stelle ferme",
+      "stars": "stelle ferme"
+    },
+    "comet": "Cometa",
+    "nucleus": "Nucleo",
+    "nucleusAutomatic": "trovato in automatico, misurato in {measured} frame su {total}",
+    "nucleusManual": "indicato a mano, misurato in {measured} frame su {total}",
+    "nucleusHint": "Frame in cui la posizione del nucleo è stata misurata e confermata dal moto regolare; negli altri è stata ricavata dal moto",
+    "path": "Cammino del nucleo",
+    "pathHint": "Di quanto si è spostata la cometa rispetto alle stelle fra il primo e l’ultimo frame",
+    "speed": "Velocità",
+    "speedValue": "{speed} px all’ora",
+    "speedUnknown": "non misurabile",
+    "speedUnknownHint": "I file non riportano l’ora di scatto, quindi il moto è stato calcolato supponendo scatti a intervalli regolari, nell’ordine della libreria",
+    "deviation": "Scarto dal moto regolare",
+    "deviationHint": "Quanto le posizioni misurate si discostano dal moto a velocità costante. Sotto il pixel la cometa è stata seguita bene"
+  }
+}

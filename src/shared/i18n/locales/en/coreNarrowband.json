@@ -1,0 +1,7 @@
+{
+  "sensor": {
+    "unknown": "Sensor response curves are not available: the two lines are separated using the mean response of the IMX462 and IMX662 sensors, so the result is slightly less precise.",
+    "known": "The two lines are separated using the response of the {sensor} sensor, so the hydrogen picked up by green and blue is removed from the oxygen."
+  },
+  "requiresColor": "Narrowband requires a color image."
+}

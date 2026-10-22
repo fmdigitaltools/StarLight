@@ -1,0 +1,12 @@
+{
+  "notReady": "The RAW reader is not ready yet at this point in the program. Try again in a moment; if the problem persists, report it.",
+  "invalidLayout": "Invalid sensor data layout ({bytes} bytes per row).",
+  "unreadable": "This {format} cannot be read: the camera may be newer than the bundled version of LibRaw, or the file may be damaged ({detail}).",
+  "outOfMemory": "Not enough memory to decode this {format} ({detail}).",
+  "readFailed": "Reading the {format} failed: {detail}.",
+  "notBayer": "The color matrix of this sensor is not a 2x2 Bayer pattern: it is not supported.",
+  "unusualFilters": "Sensor with unusual color filters ({pattern}): not supported.",
+  "noSensorData": "LibRaw did not return the sensor data for this {format}.",
+  "invalidSensorSize": "Invalid sensor dimensions ({width} x {height}).",
+  "libRawNotStarted": "The RAW file reader failed to start: restart StarLight and try again."
+}

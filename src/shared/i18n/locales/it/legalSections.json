@@ -1,0 +1,44 @@
+{
+  "privacy": {
+    "title": "Privacy e dati",
+    "intro": "StarLight elabora le immagini esclusivamente sul tuo computer. Non richiede la registrazione di un account, non raccoglie dati personali, statistiche d’uso o dati di diagnostica e non integra pubblicità né strumenti di tracciamento."
+  },
+  "network": {
+    "title": "Connessioni di rete",
+    "intro": "Le connessioni a internet sono abilitate per impostazione predefinita e puoi disattivarle in qualsiasi momento da Impostazioni, scheda Rete e cataloghi. StarLight le utilizza esclusivamente per le seguenti funzioni.",
+    "updatesLabel": "Aggiornamenti.",
+    "updatesText": "Verifica sul server di StarLight la disponibilità di nuove versioni e le scarica solo dopo la tua conferma.",
+    "catalogsLabel": "Cataloghi.",
+    "catalogsText": "Scarica dal server di StarLight i pacchetti di oggetti e di stelle che scegli di installare.",
+    "gaiaLabel": "Catalogo Gaia.",
+    "gaiaText": "Per la calibrazione fotometrica del colore e, se le stelle installate non sono sufficienti, per la risoluzione astrometrica del campo, trasmette le coordinate del centro dell’immagine al servizio VizieR del CDS (Università di Strasburgo) o all’archivio Gaia dell’ESA e riceve le stelle della zona di cielo corrispondente.",
+    "donate": "Il pulsante Sostieni StarLight apre la pagina delle donazioni nel browser predefinito; da quel momento si applica l’informativa del sito che la ospita."
+  },
+  "transmitted": {
+    "title": "Dati trasmessi e destinatari",
+    "ipAddress": "Ogni connessione comunica al server che risponde l’indirizzo IP del tuo computer. Oltre al contenuto della richiesta, StarLight trasmette soltanto, per la verifica degli aggiornamenti, la versione del programma e quella di Windows.",
+    "hosting": "Il server di StarLight è ospitato da Cloudflare, con i file conservati nell’Unione europea, e non registra le richieste ricevute. Cloudflare tratta l’indirizzo IP per consegnare i file e proteggere il servizio, secondo la propria informativa sulla privacy. CDS ed ESA trattano i dati secondo le rispettive informative."
+  },
+  "stored": {
+    "title": "Dati conservati sul computer",
+    "dataFolder": "Impostazioni, libreria di calibrazione, cataloghi e plugin installati, copie di recupero del lavoro e registro degli errori sono conservati nella cartella dati di StarLight, {folder}, e non vengono trasmessi a terzi. Nel registro degli errori il nome utente è sostituito da {userProfile}; il registro lascia il computer solo se sei tu a copiarlo dal menu Aiuto.",
+    "uninstall": "La cartella contiene soltanto questi dati, non il programma, e gli aggiornamenti la conservano sempre. Durante la disinstallazione puoi scegliere se mantenerla, per ritrovare tutto in caso di reinstallazione, oppure rimuoverla con l’opzione «Elimina anche i dati del programma». I progetti e le immagini che hai salvato non vengono mai toccati."
+  },
+  "metadata": {
+    "title": "Metadati nei file esportati",
+    "text": "I file FITS esportati mantengono i metadati di ripresa del file di origine, inclusi, se presenti, il nome dell’osservatore e le coordinate geografiche del luogo di ripresa. Verificali prima di condividere il file. La didascalia sull’immagine non riporta mai le coordinate e indica il luogo solo se attivi l’opzione."
+  },
+  "contacts": {
+    "title": "Contatti",
+    "text": "Per qualsiasi richiesta relativa al trattamento dei dati puoi scrivere a {email}."
+  },
+  "legal": {
+    "title": "Note legali",
+    "freeSoftware": "StarLight è software libero di {author}, distribuito con la {license}. Puoi usarlo, studiarlo, modificarlo e ridistribuirlo alle condizioni della licenza.",
+    "licenseLink": "licenza GNU GPL, versione 3 o successiva",
+    "warrantyLabel": "Nessuna garanzia.",
+    "warrantyText": "StarLight è fornito «così com’è», senza garanzie di alcun tipo, nei limiti consentiti dalla legge (sezioni 15 e 16 della licenza). Conserva sempre una copia dei file originali delle tue riprese.",
+    "thirdPartiesLabel": "Terze parti.",
+    "thirdPartiesText": "Cataloghi, dati astronomici e componenti di altri autori sono usati secondo le rispettive licenze, elencate nei riconoscimenti. I nomi di prodotti e i marchi citati appartengono ai rispettivi titolari."
+  }
+}

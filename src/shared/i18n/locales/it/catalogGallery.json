@@ -1,0 +1,62 @@
+{
+  "title": "Cataloghi deep sky",
+  "intro": "Cataloghi del cielo profondo da aggiungere a quello incluso in StarLight (OpenNGC, Messier, Caldwell). Gli oggetti di un catalogo installato si riconoscono nel campo, si segnano sull’immagine e si trovano per sigla. Contengono solo dati, con licenza aperta: si scaricano dal server di StarLight o si installano da un archivio ZIP, e vengono controllati prima dell’installazione. Il pacchetto di stelle per la risoluzione del campo permette invece di riconoscere il cielo inquadrato anche senza internet.",
+  "loading": "Caricamento dell’elenco in corso…",
+  "retry": "Riprova",
+  "empty": {
+    "noMatch": "Nessun catalogo corrisponde alla ricerca.",
+    "noActive": "Nessun catalogo attivo.",
+    "none": "Nessun catalogo da mostrare."
+  },
+  "groups": {
+    "stars": "Stelle per la risoluzione del campo",
+    "emissionNebulae": "Nebulose a emissione",
+    "darkNebulae": "Nebulose oscure",
+    "reflectionNebulae": "Nebulose a riflessione",
+    "planetaryNebulae": "Nebulose planetarie",
+    "supernovaRemnants": "Resti di supernova",
+    "galaxies": "Galassie",
+    "galaxyGroups": "Gruppi e ammassi di galassie",
+    "starClusters": "Ammassi stellari",
+    "other": "Altro"
+  },
+  "onDisk": "{size} sul disco",
+  "count": {
+    "stars": "stelle",
+    "objects": "oggetti"
+  },
+  "authorVersion": "{authors} · versione {version}",
+  "licenseTitle": "Licenza aperta dei dati",
+  "limitMagnitude": "fino alla magnitudine {magnitude}",
+  "limitMagnitudeTitle": "Magnitudine della stella più debole compresa nel pacchetto",
+  "exampleTitle": "Come si scrivono le sigle di questo catalogo",
+  "status": {
+    "active": "attivo",
+    "activeTitle": "I suoi oggetti vengono riconosciuti e segnati sull’immagine",
+    "activeStarsTitle": "La risoluzione del campo usa queste stelle prima di rivolgersi al catalogo Gaia in rete",
+    "disabled": "disattivato",
+    "disabledTitle": "Installato ma non usato: i suoi oggetti non vengono riconosciuti",
+    "disabledStarsTitle": "Installato ma non usato: la risoluzione del campo usa solo il catalogo Gaia in rete",
+    "fromFile": "da file",
+    "fromFileTitle": "Installato da un archivio, non presente sul server"
+  },
+  "actions": {
+    "stop": "Interrompi",
+    "uninstall": "Disinstalla",
+    "uninstallTitle": "Toglie il catalogo da StarLight cancellandone la cartella",
+    "uninstallStarsTitle": "Toglie il pacchetto da StarLight cancellandone la cartella",
+    "update": "Aggiorna alla {version}",
+    "disable": "Disattiva",
+    "disableTitle": "Il catalogo resta sul disco ma i suoi oggetti non vengono più usati, anche alle prossime aperture, finché non lo riattivi",
+    "disableStarsTitle": "Il pacchetto resta sul disco ma la risoluzione del campo non lo usa più, anche alle prossime aperture, finché non lo riattivi",
+    "enable": "Attiva",
+    "enableTitle": "I suoi oggetti tornano a essere riconosciuti e segnati sull’immagine",
+    "enableStarsTitle": "La risoluzione del campo torna a usare queste stelle",
+    "download": "Scarica e installa"
+  },
+  "progress": {
+    "connecting": "Collegamento…",
+    "installing": "Controllo e installazione…",
+    "bytes": "{received} di {total}"
+  }
+}

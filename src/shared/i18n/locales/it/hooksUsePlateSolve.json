@@ -1,0 +1,23 @@
+{
+  "openFrame": "Apri un frame.",
+  "noStartingPoint": "Il file non dice dove era puntato il telescopio, né il nome di un oggetto del catalogo: senza un punto di partenza il campo non si può risolvere.",
+  "cannotSolve": "Il campo non si può risolvere.",
+  "reenableInternet": "Riattiva internet",
+  "internetReenabled": "Internet riattivato. Premi di nuovo «Risolvi il campo» sull’immagine da risolvere.",
+  "tooFewStars": "Nell’immagine si vedono troppo poche stelle ({count}) per riconoscere il campo.",
+  "gaiaFeature": "La risoluzione del campo con il catalogo Gaia",
+  "offlineNoLocal": "{notice} Per risolvere il campo senza internet installa o riattiva il pacchetto «Stelle per la risoluzione del campo» nella scheda Cataloghi deep sky della galleria dei plugin.",
+  "offlineWithExplanation": "{explanation} Il catalogo Gaia in rete, che contiene stelle molto più deboli, potrebbe riuscirci, ma l’uso di internet è disattivato nelle impostazioni.",
+  "noMatch": "Le stelle dell’immagine non coincidono con quelle del catalogo Gaia attorno al punto indicato nel file. Può accadere se le coordinate scritte nell’intestazione sono sbagliate, se la scala è molto diversa da quella calcolata dalla focale, o se il cielo è velato e le stelle sono poche.",
+  "noMatchWithExplanation": "{explanation} Le stelle dell’immagine non coincidono con quelle del catalogo Gaia attorno al punto indicato nel file. Può accadere se le coordinate scritte nell’intestazione sono sbagliate, se la scala è molto diversa da quella calcolata dalla focale, o se il cielo è velato e le stelle sono poche.",
+  "solvedLocal": "Campo risolto con le stelle locali: {stars} stelle coincidono, con uno scarto medio di {residual} secondi d’arco. Scala {scale}″ per pixel, nord ruotato di {rotation}° rispetto all’alto.",
+  "solvedLocalMirrored": "Campo risolto con le stelle locali: {stars} stelle coincidono, con uno scarto medio di {residual} secondi d’arco. Scala {scale}″ per pixel, nord ruotato di {rotation}° rispetto all’alto, immagine speculare.",
+  "solvedGaia": "Campo risolto con il catalogo Gaia in rete: {stars} stelle coincidono, con uno scarto medio di {residual} secondi d’arco. Scala {scale}″ per pixel, nord ruotato di {rotation}° rispetto all’alto.",
+  "solvedGaiaMirrored": "Campo risolto con il catalogo Gaia in rete: {stars} stelle coincidono, con uno scarto medio di {residual} secondi d’arco. Scala {scale}″ per pixel, nord ruotato di {rotation}° rispetto all’alto, immagine speculare.",
+  "job": {
+    "detectingStars": "Risoluzione del campo: ricerca delle stelle nell’immagine…",
+    "gaiaRequest": "Risoluzione del campo: richiesta al catalogo Gaia in rete (fino a un minuto)…",
+    "matchingLocal": "Risoluzione del campo: confronto con le stelle locali…",
+    "matchingGaia": "Risoluzione del campo: confronto con il catalogo Gaia in rete…"
+  }
+}

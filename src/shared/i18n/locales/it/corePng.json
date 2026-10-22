@@ -1,0 +1,10 @@
+{
+  "notValid": "Il file non è un PNG valido.",
+  "missingIhdr": "PNG non valido: manca il blocco IHDR.",
+  "invalidSize": "Il PNG dichiara dimensioni non valide.",
+  "unknownColorType": "PNG con un tipo di colore sconosciuto.",
+  "unknownFilter": "PNG non valido: filtro di riga sconosciuto ({type}).",
+  "noPixels": "Il PNG non contiene pixel (blocco IDAT assente).",
+  "truncated": "Il PNG è troncato: i pixel sono meno del dichiarato.",
+  "missingPalette": "PNG a tavolozza senza la tavolozza."
+}

@@ -1,0 +1,15 @@
+{
+  "needTwoSolved": "Servono almeno due pannelli con la soluzione astrometrica.",
+  "needTwo": "Scegli almeno due pannelli.",
+  "busy": "Attendi la fine dell’operazione in corso.",
+  "cannotCompose": "Il mosaico non si può comporre.",
+  "notEnoughMemory": "Memoria insufficiente per il mosaico: servono circa {needed} e ne sono liberi {free}. Chiudi altri programmi o usa meno pannelli.",
+  "interrupted": "Il calcolo del mosaico si è interrotto.",
+  "done": "Mosaico di {count} pannelli composto: {width} × {height} pixel.",
+  "isolated": "Alcuni pannelli non si sovrappongono agli altri e non è stato possibile pareggiarne fondo e luminosità: {panels}.",
+  "failed": "Mosaico non riuscito. {message}",
+  "job": {
+    "readingPanel": "Lettura del pannello {index} di {total}",
+    "progress": "Mosaico: {label}"
+  }
+}

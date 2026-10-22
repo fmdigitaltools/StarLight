@@ -1,0 +1,7 @@
+{
+  "sensor": {
+    "unknown": "Curve di risposta del sensore non disponibili: le due righe si separano con la risposta media dei sensori IMX462 e IMX662, quindi in modo un po’ meno preciso.",
+    "known": "Le due righe si separano con la risposta del sensore {sensor}: così dall’ossigeno si toglie l’idrogeno raccolto dal verde e dal blu."
+  },
+  "requiresColor": "La banda stretta richiede un’immagine a colori."
+}

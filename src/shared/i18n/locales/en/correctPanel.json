@@ -1,0 +1,119 @@
+{
+  "intensity": {
+    "gentle": {
+      "label": "Gentle",
+      "hint": "Very dark sky and limited noise, suited to bright subjects",
+      "applied": "Gentle stretch applied."
+    },
+    "medium": {
+      "label": "Balanced",
+      "hint": "The recommended compromise between faint signal and noise",
+      "applied": "Balanced stretch applied."
+    },
+    "strong": {
+      "label": "Strong",
+      "hint": "Brings out the faintest signal, at the cost of a brighter sky background and more visible noise",
+      "applied": "Strong stretch applied."
+    }
+  },
+  "channel": {
+    "light": { "label": "Light", "hint": "Acts on all channels together" },
+    "red": { "label": "R", "hint": "Acts only on red, useful against warm color casts" },
+    "green": { "label": "G", "hint": "Acts only on green, which light pollution filters often leave in excess" },
+    "blue": { "label": "B", "hint": "Acts only on blue, useful for adjusting the look of the sky background" }
+  },
+  "stretch": {
+    "title": "Stretch",
+    "description": "In a freshly captured frame the values are proportional to the light collected, so the image looks almost black. Stretching redistributes the levels and reveals the faint signal without blowing out the stars.",
+    "auto": {
+      "title": "Compute the black point and midtones suited to this image",
+      "label": "Auto"
+    },
+    "blackPoint": {
+      "label": "Black point",
+      "hint": "Sets the level below which every value becomes black. Raising it darkens the sky background, but you lose the faintest signal."
+    },
+    "mode": {
+      "midtones": {
+        "label": "Midtones",
+        "hint": "Classic stretch, with a single slider for mean brightness"
+      },
+      "ghs": {
+        "label": "Hyperbolic (GHS)",
+        "hint": "Generalized hyperbolic stretch. Concentrates contrast where it is needed, for example on the faint arms of a galaxy, without blowing out the core."
+      }
+    },
+    "midtones": {
+      "label": "Midtones",
+      "hint": "Adjusts the mean brightness of the image. Low values strongly brighten the faint parts and bring out nebulae."
+    },
+    "whitePoint": {
+      "label": "White point",
+      "hint": "Sets the level of full white. Lowering it increases contrast, but the brightest stars get blown out."
+    },
+    "preserveColor": {
+      "label": "Preserve color",
+      "hint": "The stretch acts on luminance and keeps the ratio between red, green and blue unchanged, so stars and nebulae keep their color instead of turning white. Abracadabra turns it on automatically. With this option the R, G and B curves have no effect."
+    }
+  },
+  "ghs": {
+    "strength": {
+      "label": "Strength",
+      "hint": "Controls how much the faint tones are lifted."
+    },
+    "localIntensity": {
+      "label": "Local intensity",
+      "hint": "High values concentrate contrast around the symmetry point and leave the rest of the image almost unchanged."
+    },
+    "symmetryPoint": {
+      "label": "Symmetry point",
+      "hint": "Brightness level where contrast increases the most, usually just above the sky background."
+    },
+    "shadowProtection": {
+      "label": "Shadow protection",
+      "hint": "Below this level the curve continues as a straight line, so the darkest tones, sky background included, are not crushed toward black."
+    },
+    "highlightProtection": {
+      "label": "Highlight protection",
+      "hint": "Above this level the curve continues as a straight line, so galaxy cores and bright stars keep their contrast instead of merging into white."
+    }
+  },
+  "curves": {
+    "title": "Curves",
+    "reset": "Reset",
+    "description": "Drag the line to change the tonal response. Click to add a point, right-click to remove it.",
+    "preserveColorNote": "With “Preserve color” turned on in the Stretch card, only the light curve has an effect."
+  },
+  "tones": {
+    "title": "Tones",
+    "brightness": "Brightness",
+    "contrast": "Contrast",
+    "gamma": {
+      "label": "Gamma",
+      "hint": "Adjusts the overall response curve. Below 1 it darkens the midtones, above 1 it brightens them."
+    }
+  },
+  "color": {
+    "title": "Color",
+    "description": "The three Gain sliders correct the color cast. Light pollution filters often leave a greenish or reddish background, which you can compensate for here.",
+    "neutral": {
+      "title": "Reset the three gains to 1",
+      "label": "Neutral"
+    },
+    "saturation": {
+      "label": "Saturation",
+      "hint": "At -1 the image becomes black and white. Moderate values enhance the color of nebulae without washing out the stars."
+    },
+    "vibrance": {
+      "label": "Vibrance",
+      "hint": "Boosts mainly the dull colors and leaves the already vivid ones almost untouched, so nebulae gain color without colored stars becoming muddy. If you chose a photo filter, this value adds to the filter’s vibrance."
+    },
+    "redGain": "Red gain",
+    "greenGain": "Green gain",
+    "blueGain": "Blue gain"
+  },
+  "resetView": {
+    "title": "Undo the adjustments and restore the image as it was when opened",
+    "label": "Restore as opened"
+  }
+}

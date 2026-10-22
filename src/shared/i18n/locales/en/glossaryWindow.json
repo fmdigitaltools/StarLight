@@ -1,0 +1,32 @@
+{
+  "title": "Glossary",
+  "subtitle": "The astrophotography terms used in StarLight: what they mean and how the program uses them.",
+  "close": "Close",
+  "searchPlaceholder": "Search for a term or an abbreviation, for example “master dark”, “MTF” or “drizzle”",
+  "searchLabel": "Search the glossary",
+  "countOne": "1 entry",
+  "countOther": "{count} entries",
+  "categoriesLabel": "Glossary categories",
+  "allEntries": "All entries",
+  "categories": {
+    "capture": "Capture and sensor",
+    "calibration": "Calibration",
+    "stacking": "Stacking",
+    "processing": "Processing",
+    "color": "Color",
+    "astrometry": "Astrometry and catalogs",
+    "plugins": "Additional tools (plugins)",
+    "export": "Export and formats",
+    "usage": "Using the program"
+  },
+  "noResults": "No entry contains “{query}”.",
+  "noResultsInCategory": "No entry in the “{category}” category contains “{query}”.",
+  "searchAllCategories": "Search all categories",
+  "searchScope": "The search covers the term name, abbreviations, synonyms and the text of the explanations.",
+  "emptyCategory": "No entries in this category.",
+  "footnote": "“See also” links take you to the related entry. Esc clears the search and, pressed again, closes the window.",
+  "alsoKnownAs": "Also",
+  "inStarLight": "In StarLight",
+  "seeAlso": "See also",
+  "showEntry": "Show the “{term}” entry"
+}

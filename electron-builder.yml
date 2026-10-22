@@ -1,0 +1,73 @@
+appId: it.starlight.app
+productName: StarLight
+copyright: GNU General Public License versione 3 o successiva (GPL-3.0-or-later)
+directories:
+  buildResources: resources
+  output: dist-build
+files:
+  - out/**
+  - package.json
+# Chromium language files: only those of the languages StarLight speaks
+# (the other 53 weigh about 47 MB and are never used).
+electronLanguages:
+  - it
+  - en-US
+# Electron switches that stay on unless turned off. Off: running the
+# executable as plain Node, Node options and debugger from the command line,
+# and loading code from outside app.asar, whose integrity is also checked at
+# startup. grantFileProtocolExtraPrivileges stays on: the interface is loaded
+# from file:// and its workers read libraw.wasm with fetch.
+electronFuses:
+  runAsNode: false
+  enableCookieEncryption: true
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+extraResources:
+  - from: resources/icon.png
+    to: icon.png
+  # Plugin gallery bundled with the app (read by src/main/plugin.ts).
+  - from: resources/plugin
+    to: plugin
+  # Splash window and the logo it shows (read by src/main/splash.ts).
+  - from: resources/splash
+    to: splash
+  # Invisible page where plugins run (read by src/main/pluginSandbox.ts).
+  - from: resources/sandbox
+    to: sandbox
+  - from: resources/icon.svg
+    to: icon.svg
+  # StarLight license and third-party credits, next to the installed
+  # program (the GPL asks for the text to accompany the program).
+  - from: LICENSE
+    to: LICENSE.txt
+  - from: THIRD-PARTY-NOTICES.md
+    to: THIRD-PARTY-NOTICES.md
+
+win:
+  icon: resources/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  # the portable file name is defined below, under portable:
+nsis:
+  artifactName: StarLight-Installer-${version}.${ext}
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  shortcutName: StarLight
+  # Per-user installation, without asking for administrator rights: the same
+  # mode electron-updater uses to reinstall during updates.
+  perMachine: false
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
+  # Custom installer window (Neutralinojs) instead of the NSIS pages; in
+  # silent mode (/S, updates) nothing changes.
+  # See the comment at the top of that file.
+  include: resources/installer/installer.nsh
+
+portable:
+  artifactName: StarLight-Portable-${version}.${ext}

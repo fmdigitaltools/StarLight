@@ -1,0 +1,8 @@
+{
+  "truncated": "Truncated HCOMPRESS tile.",
+  "unknownBitPlaneCode": "Invalid HCOMPRESS tile (unknown bit-plane code).",
+  "missingSignature": "Invalid HCOMPRESS tile (missing signature).",
+  "invalidDimensions": "Invalid HCOMPRESS tile (dimensions).",
+  "invalidBitPlanes": "Invalid HCOMPRESS tile (bit planes).",
+  "invalidEnd": "Invalid HCOMPRESS tile (end of bit planes)."
+}

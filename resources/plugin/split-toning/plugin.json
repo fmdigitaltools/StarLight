@@ -1,0 +1,111 @@
+{
+  "id": "split-toning",
+  "name": "Split toning of shadows and highlights",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "photography",
+  "description": "Gives one tint to the dark parts and another to the light parts, a classic technique of photographic printing. The brightness of every pixel stays unchanged, the brightest stars stay white and, with the protection on, the sky background is not colored. Useful to give a warm or cool mood to a shot, or a tone to a black and white image.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "shadowHue",
+      "label": "Shadow tint",
+      "hint": "Hue given to the dark parts, on the color wheel: 0° red, 60° yellow, 120° green, 180° cyan, 240° blue, 300° magenta.",
+      "min": 0,
+      "max": 360,
+      "step": 1,
+      "default": 215,
+      "format": "degrees"
+    },
+    {
+      "type": "slider",
+      "id": "shadowSaturation",
+      "label": "Strength in the shadows",
+      "hint": "Strength of the tint in the dark parts. At zero the shadows stay as they are.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.3,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "highlightHue",
+      "label": "Highlight tint",
+      "hint": "Hue given to the light parts, on the color wheel: 0° red, 60° yellow, 120° green, 180° cyan, 240° blue, 300° magenta.",
+      "min": 0,
+      "max": 360,
+      "step": 1,
+      "default": 35,
+      "format": "degrees"
+    },
+    {
+      "type": "slider",
+      "id": "highlightSaturation",
+      "label": "Strength in the highlights",
+      "hint": "Strength of the tint in the light parts. At zero the highlights stay as they are.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.3,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "balance",
+      "label": "Balance",
+      "hint": "Moves the transition point between the two tints. Positive values extend the shadow tint toward the lighter areas, negative values extend the highlight tint toward the darker areas.",
+      "min": -1,
+      "max": 1,
+      "step": 0.01,
+      "default": 0,
+      "format": "percent"
+    },
+    {
+      "type": "toggle",
+      "id": "protectBackground",
+      "label": "Protect the sky background",
+      "hint": "Leaves the pixels of the sky background and of its noise identical, recognizing them by the typical brightness of the image. Without protection the background also receives the shadow tint.",
+      "default": true
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Viraggio di ombre e luci",
+      "description": "Dà una tinta alle parti scure e un’altra alle parti chiare, una tecnica classica della stampa fotografica. La luminosità di ogni pixel resta invariata, le stelle più brillanti restano bianche e, con la protezione attiva, il fondo cielo non viene colorato. Utile per dare un’atmosfera calda o fredda a una ripresa, o un tono a un’immagine in bianco e nero.",
+      "parameters": {
+        "shadowHue": {
+          "label": "Tinta delle ombre",
+          "hint": "Tono dato alle parti scure, sul cerchio dei colori: 0° rosso, 60° giallo, 120° verde, 180° ciano, 240° blu, 300° magenta."
+        },
+        "shadowSaturation": {
+          "label": "Intensità nelle ombre",
+          "hint": "Forza della tinta nelle parti scure. A zero le ombre restano come sono."
+        },
+        "highlightHue": {
+          "label": "Tinta delle luci",
+          "hint": "Tono dato alle parti chiare, sul cerchio dei colori: 0° rosso, 60° giallo, 120° verde, 180° ciano, 240° blu, 300° magenta."
+        },
+        "highlightSaturation": {
+          "label": "Intensità nelle luci",
+          "hint": "Forza della tinta nelle parti chiare. A zero le luci restano come sono."
+        },
+        "balance": {
+          "label": "Bilanciamento",
+          "hint": "Sposta il punto di passaggio fra le due tinte. Valori positivi estendono la tinta delle ombre verso le zone più chiare, valori negativi estendono quella delle luci verso le zone più scure."
+        },
+        "protectBackground": {
+          "label": "Proteggi il fondo cielo",
+          "hint": "Lascia identici i pixel del fondo cielo e del suo rumore, riconosciuti dalla luminosità tipica dell’immagine. Senza protezione anche il fondo riceve la tinta delle ombre."
+        }
+      }
+    }
+  }
+}

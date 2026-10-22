@@ -1,0 +1,19 @@
+{
+  "title": "Straighten",
+  "angle": "Angle",
+  "angleHint": "Clockwise rotation; negative values rotate counterclockwise. The preview is immediate; the computation runs when you click Apply.",
+  "degrees": "Degrees",
+  "reset": "Reset",
+  "resetHint": "Sets the angle back to zero",
+  "trace": "Draw a line",
+  "tracing": "Draw on the image…",
+  "traceHint": "Drag a line on the image along a feature that should be horizontal or vertical: the angle is calculated automatically",
+  "needsSolution": "An astrometric solution is required.",
+  "northUp": "North up",
+  "northHint": "Rotates the image so that celestial north is at the top",
+  "northUnavailableHint": "Available when the image has an astrometric solution, that is, the exact position of the field in the sky (Objects step, Plate solve)",
+  "trimEdges": "Crop empty edges",
+  "trimEdgesHint": "Sets the crop to the largest rectangle with no uncovered corners. The crop stays editable and no data is removed.",
+  "cancel": "Cancel",
+  "apply": "Apply"
+}

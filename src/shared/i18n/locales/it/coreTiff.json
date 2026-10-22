@@ -1,0 +1,18 @@
+{
+  "bigTiff": "BigTIFF (TIFF oltre 4 GB) non ancora supportato: salva l’immagine come TIFF normale o come FITS.",
+  "notValid": "Il file non è un TIFF valido.",
+  "invalidSize": "Il TIFF dichiara dimensioni non valide.",
+  "mixedDepths": "TIFF con canali di profondità diverse: non supportato.",
+  "unsupportedDepth": "TIFF a {bit} bit: sono supportati 8, 16 e 32 bit interi, 32 e 64 bit a virgola mobile.",
+  "unsupportedFloatDepth": "TIFF a {bit} bit a virgola mobile: sono supportati 8, 16 e 32 bit interi, 32 e 64 bit a virgola mobile.",
+  "paletteDepth": "TIFF a tavolozza con profondità non supportata.",
+  "colorSpace": "TIFF con uno spazio colore non supportato (fotometria {photometry}, per esempio CMYK o YCbCr).",
+  "compressionNamed": "TIFF compresso con {method}: sono supportati i TIFF non compressi o compressi con LZW, Deflate (ZIP) e PackBits.",
+  "compressionUnknown": "TIFF compresso con un metodo sconosciuto ({code}): sono supportati i TIFF non compressi o compressi con LZW, Deflate (ZIP) e PackBits.",
+  "invalidLzw": "Dati LZW non validi.",
+  "noPixelLocation": "Il TIFF non indica dove sono i pixel.",
+  "rgbFewChannels": "TIFF RGB con meno di tre canali.",
+  "incomplete": "Il TIFF è incompleto: mancano dei blocchi di pixel.",
+  "truncated": "Il TIFF è troncato: mancano dei dati.",
+  "missingColorMap": "TIFF a tavolozza senza tabella dei colori."
+}

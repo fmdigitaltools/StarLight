@@ -1,0 +1,99 @@
+/*
+ * StarLight style system
+ * Deep dark theme with fluorescent accents. Text colors are chosen to stay readable for a long time
+ * in front of a monitor at night: primary text has a contrast ratio above 14:1 against the
+ * background, secondary text stays above 7:1.
+ */
+
+:root {
+  /* Backgrounds, from the deepest to the most elevated */
+  --sl-bg-0: #070910;
+  --sl-bg-1: #0b0f1a;
+  --sl-bg-2: #111726;
+  --sl-bg-3: #18202f;
+  --sl-bg-4: #1f2a3d;
+
+  /* Separator lines */
+  --sl-line: #1e283b;
+  --sl-line-soft: #151d2b;
+  --sl-line-strong: #2c3a53;
+
+  /* Text */
+  --sl-text: #eaf1ff;
+  --sl-text-2: #a9b8d4;
+  --sl-text-3: #6e7f9e;
+  --sl-text-inv: #04070d;
+
+  /* Fluorescent accents */
+  --sl-cyan: #22e8ff;
+  --sl-cyan-dim: #0d8fa6;
+  --sl-magenta: #ff3dd0;
+  --sl-magenta-dim: #a62186;
+  --sl-lime: #46ffa6;
+  --sl-lime-dim: #1f9d63;
+  --sl-amber: #ffc247;
+  --sl-violet: #9d7bff;
+  --sl-red: #ff5c7a;
+
+  /* Status colors */
+  --sl-ok: var(--sl-lime);
+  --sl-warn: var(--sl-amber);
+  --sl-err: var(--sl-red);
+  --sl-accent: var(--sl-cyan);
+
+  /* Glows */
+  --sl-glow-cyan: 0 0 0 1px rgba(34, 232, 255, 0.45), 0 0 18px rgba(34, 232, 255, 0.22);
+  --sl-glow-magenta: 0 0 0 1px rgba(255, 61, 208, 0.45), 0 0 18px rgba(255, 61, 208, 0.22);
+  --sl-glow-lime: 0 0 0 1px rgba(70, 255, 166, 0.45), 0 0 18px rgba(70, 255, 166, 0.2);
+  --sl-glow-soft: 0 0 24px rgba(34, 232, 255, 0.12);
+
+  /* Shadows */
+  --sl-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --sl-shadow-2: 0 8px 28px rgba(0, 0, 0, 0.55);
+  --sl-shadow-3: 0 24px 64px rgba(0, 0, 0, 0.7);
+
+  /* Corner radii */
+  --sl-r-sm: 6px;
+  --sl-r-md: 10px;
+  --sl-r-lg: 14px;
+  --sl-r-xl: 20px;
+
+  /* Spacing */
+  --sl-s-1: 4px;
+  --sl-s-2: 8px;
+  --sl-s-3: 12px;
+  --sl-s-4: 16px;
+  --sl-s-5: 24px;
+  --sl-s-6: 32px;
+
+  /* Typography */
+  --sl-font: "Segoe UI Variable Text", "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+  --sl-font-display: "Segoe UI Variable Display", "Segoe UI", Inter, system-ui, sans-serif;
+  --sl-font-mono: "Cascadia Mono", Consolas, "SF Mono", "Roboto Mono", monospace;
+
+  --sl-fs-xs: 11px;
+  --sl-fs-sm: 12px;
+  --sl-fs-md: 13px;
+  --sl-fs-lg: 15px;
+  --sl-fs-xl: 19px;
+  --sl-fs-xxl: 26px;
+
+  /* Structure measurements */
+  --sl-menubar-h: 32px;
+  --sl-topbar-h: 80px;
+  --sl-statusbar-h: 30px;
+  --sl-rail-w: 86px;
+  --sl-panel-w: 320px;
+
+  /* Transitions */
+  --sl-t-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --sl-t-med: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Users who prefer less animation are not subjected to it. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sl-t-fast: 1ms;
+    --sl-t-med: 1ms;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "reasons": {
+    "notRaw": "non è un RAW di fotocamera riconoscibile",
+    "headerNoEnd": "l’intestazione FITS non termina",
+    "notFits": "non è un file FITS",
+    "invalidHeader": "intestazione FITS non valida",
+    "stillIncomplete": "il file è fermo da {seconds} secondi ma è ancora incompleto"
+  },
+  "errors": {
+    "notFolder": "Il percorso indicato non è una cartella.",
+    "notFound": "La cartella non esiste, oppure il computer o il telescopio che la condivide non è raggiungibile.",
+    "noPermission": "StarLight non ha il permesso di leggere la cartella.",
+    "networkNotResponding": "La cartella di rete non risponde.",
+    "unreadable": "La cartella non è leggibile.",
+    "unreadableWithDetail": "La cartella non è leggibile ({detail})."
+  },
+  "reachableAgain": "La cartella è di nuovo raggiungibile.",
+  "unreachableRetrying": "{error} Continuo a riprovare."
+}

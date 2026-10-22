@@ -1,0 +1,16 @@
+{
+  "noFolder": "Indica la cartella in cui arrivano i frame della ripresa.",
+  "watchFailed": "Sorveglianza non avviata. {message}",
+  "started": "Sessione dal vivo avviata: a ogni frame nuovo l’impilamento viene rifatto e l’immagine si aggiorna.",
+  "stopped": "Sessione dal vivo fermata: {used} frame impilati su {arrived} arrivati.",
+  "stoppedSave": "Sessione dal vivo fermata: {used} frame impilati su {arrived} arrivati. Per conservare il risultato salva il progetto: viene proposta la cartella Sessioni dal vivo.",
+  "memoryProblem": "Memoria al limite: la sessione si è fermata con {used} frame impilati.",
+  "memoryStopped": "Memoria al limite: la sessione dal vivo si è fermata per non far chiudere StarLight. Frame impilati: {used}. Il risultato fin qui resta nel visore. Per riprendere chiudi altri programmi e avvia una nuova sessione.",
+  "memoryStoppedSave": "Memoria al limite: la sessione dal vivo si è fermata per non far chiudere StarLight. Frame impilati: {used}. Il risultato fin qui resta nel visore: per conservarlo salva il progetto. Per riprendere chiudi altri programmi e avvia una nuova sessione.",
+  "calibrationSkipped": "Calibrazione saltata per {file}: {error}",
+  "reason": {
+    "calibrationFrame": "frame di calibrazione, non di luce",
+    "excludedManually": "escluso a mano nella libreria",
+    "unreadable": "non leggibile: {message}"
+  }
+}

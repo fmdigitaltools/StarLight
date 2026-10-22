@@ -1,0 +1,46 @@
+{
+  "photoFilters": {
+    "title": "Photo filters",
+    "description": "Filters change how colors are rendered without altering the file’s data. You can change them as often as you like and adjust their intensity.",
+    "intensity": {
+      "label": "Filter intensity",
+      "hint": "At zero the filter has no effect. Around seventy percent the result still looks natural."
+    }
+  },
+  "noise": {
+    "title": "Noise reduction",
+    "description": "Averages neighboring pixels only where their brightness is similar. The sky background gets cleaner while star edges stay sharp. At higher values the filter looks at a wider area and also smooths out blotchy grain.",
+    "intensity": {
+      "label": "Intensity",
+      "hint": "Above seventy percent the faintest stars and finest details start to soften. For very strong noise, use NL-Bayes in the Process step."
+    }
+  },
+  "detail": {
+    "title": "Detail",
+    "description": "Sharpening enhances fine detail by subtracting a blurred version of the image.",
+    "sharpness": {
+      "label": "Sharpening",
+      "hint": "Use it sparingly: high values create halos around stars and amplify noise."
+    }
+  },
+  "vignette": {
+    "title": "Vignette",
+    "description": "Gradually darkens the edges and corners of the image, leaving the center untouched, and draws the eye to the subject. If a crop is set, the vignette is centered on the part that will be exported.",
+    "intensity": {
+      "label": "Intensity",
+      "hint": "Low values, up to thirty percent, stay subtle. If the chosen photo filter already has its own vignette, this value is added to it."
+    }
+  },
+  "lightPollution": {
+    "title": "Light pollution",
+    "description": "Subtracts a constant level from each color channel, equal to the sky background measured on the image, reducing the color cast that scattered city light leaves on the background. It acts the same way across the whole image, so it does not correct background variations from one area to another; you can correct those in the Process step.",
+    "removal": {
+      "label": "Background removal",
+      "hint": "At one hundred percent the sky background level is fully subtracted from each channel. The black point is lowered by the same average amount, so overall brightness stays the same and only the color balance of the background changes."
+    }
+  },
+  "reset": {
+    "title": "Reset noise, detail, vignette, background and filter to their starting values",
+    "label": "Reset filters"
+  }
+}

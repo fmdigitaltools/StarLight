@@ -1,0 +1,9 @@
+{
+  "defaultName": "Project",
+  "reservedNameSuffix": "project",
+  "errors": {
+    "corrupt": "The project file is damaged and can’t be read.",
+    "notProject": "The selected file isn’t a StarLight project.",
+    "newerVersion": "This project was saved by a newer version of StarLight. Update the program to open it."
+  }
+}

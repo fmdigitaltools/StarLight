@@ -1,0 +1,7 @@
+{
+  "job": "Ricerca delle stelle nell’immagine",
+  "countNone": "Nessuna stella rilevata",
+  "countOne": "1 stella rilevata",
+  "countOther": "{count} stelle rilevate",
+  "countBrightest": "{count} stelle rilevate (le più luminose)"
+}

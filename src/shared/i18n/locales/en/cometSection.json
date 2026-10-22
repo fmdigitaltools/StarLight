@@ -1,0 +1,66 @@
+{
+  "title": "Comet",
+  "description": "During the session a comet moves across the stars. Choose what should stay still in the result.",
+  "mode": {
+    "stars": {
+      "label": "Still stars",
+      "hint": "Normal stacking, aligned on the stars, where the comet comes out blurred",
+      "explanation": "The frames are aligned on the stars, as for any other object. The stars stay pinpoint, but the comet, which moved during the session, comes out stretched along its path. Fine if the comet moved very little."
+    },
+    "comet": {
+      "label": "Still comet",
+      "hint": "Aligned on the nucleus, with a sharp comet and stars turning into trails",
+      "explanation": "The frames are aligned on the comet’s nucleus, which comes out sharp along with its coma and tail. The stars, however, move relative to the comet and turn into trails. Rejection (always on in this mode, with a stricter threshold) removes almost all of them if there are many frames and the comet moved a lot."
+    },
+    "both": {
+      "label": "Both",
+      "hint": "Two stacks, one on the stars and one on the comet, then merged, for pinpoint stars and a sharp comet",
+      "explanation": "The program makes a sum aligned on the comet and extracts the comet alone, without stars or sky background; it removes it from each frame where it was, stacks the frames on the stars and finally puts the comet back on top, still and sharp. It takes about twice as long; drizzle is not applied."
+    }
+  },
+  "nucleusMode": {
+    "automatic": {
+      "label": "Automatic",
+      "hint": "The program looks for the extended bright spot that moves steadily between frames"
+    },
+    "manual": {
+      "label": "I’ll mark it",
+      "hint": "One click on the nucleus in the first and last frame, the most reliable way"
+    }
+  },
+  "missingNucleus": "Mark the comet’s nucleus in the first and last frame, or choose automatic search.",
+  "point": {
+    "waiting": "click in the viewer",
+    "set": "marked ({x}, {y})",
+    "toSet": "not marked"
+  },
+  "declaredComet": "The file declares “{name}” as its target, which looks like a comet. For pinpoint stars and a sharp comet, choose “Both”.",
+  "automaticExplanation": "After aligning on the stars, the program looks for the extended bright spot that moves at constant speed between frames, measures its position in each one and derives it from the motion, using the shot time written in the files. If the comet is faint or moved very little it may not find it; in that case it tells you and you can mark it by hand.",
+  "manualExplanation": "Open the first frame and click on the nucleus, the brightest point of the coma; then do the same on the last one. Between the two, the program computes the position in each frame from the shot time and refines it on the nearest brightest point.",
+  "firstFrame": "First frame",
+  "firstFrameNamed": "First frame, {file}",
+  "setFirst": "Mark the nucleus in the first frame",
+  "lastFrame": "Last frame",
+  "lastFrameNamed": "Last frame, {file}",
+  "setLast": "Mark the nucleus in the last frame",
+  "summary": {
+    "modeName": {
+      "comet": "fixed comet",
+      "both": "fixed comet and stars",
+      "stars": "fixed stars"
+    },
+    "comet": "Comet",
+    "nucleus": "Nucleus",
+    "nucleusAutomatic": "found automatically, measured in {measured} of {total} frames",
+    "nucleusManual": "marked by hand, measured in {measured} of {total} frames",
+    "nucleusHint": "Frames in which the nucleus position was measured and confirmed by the steady motion; in the others it was derived from the motion",
+    "path": "Nucleus path",
+    "pathHint": "How far the comet moved relative to the stars between the first and last frame",
+    "speed": "Speed",
+    "speedValue": "{speed} px per hour",
+    "speedUnknown": "not measurable",
+    "speedUnknownHint": "The files do not record the shot time, so the motion was computed assuming shots at regular intervals, in library order",
+    "deviation": "Deviation from steady motion",
+    "deviationHint": "How far the measured positions deviate from constant-speed motion. Below one pixel the comet was tracked well"
+  }
+}

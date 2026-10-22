@@ -1,0 +1,32 @@
+{
+  "title": "Imaging nights",
+  "description": "The frames come from more than one night, recognized from the capture date (or from the folder, if the date is missing). Minimum quality compares each frame only with the others from the same night. Before the sum, each night is brought to the same sky background and star brightness as the reference night, and is weighted by background noise and star sharpness; the best night has a weight of 1. The weight is computed during stacking and you can change it by hand for each night.",
+  "nightLabelOne": "{night}, {count} frame",
+  "nightLabelOther": "{night}, {count} frames",
+  "toggleHintActive": "Turn off to leave all the frames from this night out of the stack",
+  "toggleHintExcluded": "Night excluded from stacking. Turn on to include its frames again",
+  "hfr": {
+    "name": "Stars (median HFR)",
+    "value": "{value} px",
+    "hint": "Radius containing half of the star's light. The lower it is, the sharper the stars"
+  },
+  "noise": {
+    "name": "Background noise",
+    "lowest": "the lowest",
+    "timesLowest": "{value} times the lowest",
+    "hint": "Measured on a sample of sky background pixels, after bringing the night to the brightness of the reference night"
+  },
+  "weight": {
+    "label": "Weight",
+    "excluded": "0 (excluded)",
+    "manual": "{weight}, manual",
+    "automaticValue": "{weight}, automatic",
+    "automatic": "automatic",
+    "hint": "How much the frames from this night count in the sum, compared with those from the best night. The automatic value is computed by StarLight during stacking. At 0 the night is excluded.",
+    "resetToAutomatic": "Back to automatic weight"
+  },
+  "summary": {
+    "name": "Nights",
+    "value": "{count} nights, weights {weights}"
+  }
+}

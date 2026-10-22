@@ -1,0 +1,70 @@
+{
+  "id": "orton-effect",
+  "name": "Orton effect",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "photography",
+  "description": "Adds a diffuse glow around the bright areas by blending the image with a brightened, blurred copy of itself. The technique is named after the photographer Michael Orton, who obtained it by overlaying two slides. Nebulae take on a softer look and the outlines remain readable.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.3.0",
+  "parameters": [
+    {
+      "type": "slider",
+      "id": "strength",
+      "label": "Strength",
+      "hint": "Amount of glow blended with the sharp image.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.45,
+      "format": "percent"
+    },
+    {
+      "type": "slider",
+      "id": "radius",
+      "label": "Glow size",
+      "hint": "Extent of the glow around the bright areas, in pixels.",
+      "min": 2,
+      "max": 60,
+      "step": 1,
+      "default": 14,
+      "format": "integer"
+    },
+    {
+      "type": "slider",
+      "id": "brightening",
+      "label": "Glow brightening",
+      "hint": "Overexposure of the blurred copy. With higher values the glow also brightens the dark areas.",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5,
+      "format": "percent"
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Effetto Orton",
+      "description": "Aggiunge un bagliore diffuso attorno alle zone luminose, fondendo l’immagine con una sua copia schiarita e sfocata. La tecnica prende il nome dal fotografo Michael Orton, che la otteneva sovrapponendo due diapositive. Le nebulose acquistano un aspetto più morbido e i contorni restano leggibili.",
+      "parameters": {
+        "strength": {
+          "label": "Intensità",
+          "hint": "Quantità di bagliore fusa con l’immagine nitida."
+        },
+        "radius": {
+          "label": "Ampiezza del bagliore",
+          "hint": "Estensione del bagliore attorno alle zone luminose, in pixel."
+        },
+        "brightening": {
+          "label": "Schiarita del bagliore",
+          "hint": "Sovraesposizione della copia sfocata. Con valori più alti il bagliore schiarisce anche le zone scure."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "groupOne": "{name} e un altro",
+  "groupOther": "{name} e altri {count}",
+  "markerGroups": {
+    "galaxies": "Galassie",
+    "galaxyGroups": "Gruppi e ammassi di galassie",
+    "nebulae": "Nebulose",
+    "darkNebulae": "Nebulose oscure",
+    "planetaryNebulae": "Nebulose planetarie",
+    "supernovaRemnants": "Resti di supernova",
+    "starClusters": "Ammassi stellari",
+    "other": "Altri oggetti"
+  }
+}

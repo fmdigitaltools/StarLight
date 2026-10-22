@@ -1,0 +1,315 @@
+<!doctype html>
+<!--
+  StarLight splash window.
+
+  A standalone page, without React or other code to load: it must appear the
+  instant the program opens, while the real interface gets ready behind it.
+  The main process (src/main/splash.ts) opens and closes it and passes in the
+  address the quotation, the version, the texts in the chosen language and
+  the animation choice; during loading it reports progress with
+  window.splash.step() and, at the end, window.splash.close().
+
+  The style follows the brand column of the installer and the Abracadabra
+  button: cyan-magenta conic halo, breathing logo, three sparkles, gradient
+  title with a glint, star field.
+-->
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src file: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>StarLight</title>
+<style>
+:root {
+  --night: #070910;
+  --panel: #0b0f1a;
+  --line: rgba(157, 123, 255, 0.18);
+  --text: #eaf1ff;
+  --text-2: #9aa8c7;
+  --cyan: #22e8ff;
+  --violet: #9d7bff;
+  --magenta: #ff3dd0;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-text: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  height: 100%;
+  /* The window is transparent: only the card with rounded corners shows. */
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+}
+body {
+  /* Never automatic hyphenation: words are not split. */
+  hyphens: none;
+  /* Margin for the card shadow, which would otherwise be cut. */
+  padding: 10px;
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: 14px;
+}
+
+/* ---- The card ---- */
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background:
+    radial-gradient(circle at 50% 34%, #121a33, #070910 72%) padding-box,
+    linear-gradient(120deg, rgba(34, 232, 255, 0.55), rgba(157, 123, 255, 0.35), rgba(255, 61, 208, 0.55)) border-box;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 26px 32px 22px;
+  opacity: 0;
+  transform: scale(0.98);
+  animation: enter 260ms ease-out forwards;
+}
+.card.leaving { animation: leave 280ms ease-in forwards; }
+@keyframes enter { to { opacity: 1; transform: scale(1); } }
+@keyframes leave { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.985); } }
+
+.star-field { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; }
+
+/* ---- Logo with halo and sparkles ---- */
+.logo-box { position: relative; width: 96px; height: 96px; margin-bottom: 4px; }
+.halo {
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: 50%;
+  background: conic-gradient(from var(--angle), transparent 0deg, rgba(34, 232, 255, 0.6) 70deg,
+    transparent 140deg, rgba(255, 61, 208, 0.55) 230deg, transparent 300deg);
+  filter: blur(14px);
+  animation: rotate-ring 6s linear infinite;
+}
+@property --angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes rotate-ring { to { --angle: 360deg; } }
+.logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  display: block;
+  animation: breathe 4.5s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(157, 123, 255, 0.45)); }
+  50% { transform: scale(1.03); filter: drop-shadow(0 0 18px rgba(34, 232, 255, 0.55)); }
+}
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  opacity: 0;
+  animation: twinkle 3s ease-in-out infinite;
+}
+.sparkle.s1 { top: -6px; right: 2px; filter: drop-shadow(0 0 4px var(--cyan)); }
+.sparkle.s2 { bottom: 6px; left: -10px; width: 7px; height: 7px; filter: drop-shadow(0 0 4px var(--magenta)); animation-delay: 1s; }
+.sparkle.s3 { top: 26px; right: -13px; width: 8px; height: 8px; filter: drop-shadow(0 0 4px var(--violet)); animation-delay: 2s; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.2) rotate(0deg); }
+  30% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+  60% { opacity: 0; transform: scale(0.4) rotate(90deg); }
+}
+
+/* ---- Name, quotation, version ---- */
+.name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  /* background-clip: text paints only inside the box: extra room below keeps the descender of the "g" visible. */
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+  letter-spacing: 0.01em;
+  background:
+    linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.95) 50%, transparent 65%) 0 0 / 250% 100% no-repeat,
+    linear-gradient(92deg, var(--cyan), var(--violet) 55%, var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glint 3.6s ease-in-out infinite;
+}
+@keyframes glint {
+  0%, 55% { background-position: 150% 0, 0 0; }
+  100% { background-position: -100% 0, 0 0; }
+}
+.phrase {
+  margin: 0;
+  min-height: 2.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-2);
+  font-size: 13.5px;
+  line-height: 1.45;
+  max-width: 54ch; /* quotations up to ~110 characters fit on two lines */
+  text-wrap: balance;
+}
+.author {
+  margin-top: 2px;
+  font-size: 11.5px;
+  color: rgba(154, 168, 199, 0.7);
+}
+.author:empty { display: none; }
+.version {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--violet);
+  text-transform: uppercase;
+}
+
+/* ---- Loading bar ---- */
+.loading {
+  width: 100%;
+  max-width: 340px;
+  margin-top: 6px;
+  display: grid;
+  gap: 6px;
+}
+.bar {
+  position: relative;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(157, 123, 255, 0.14);
+  overflow: hidden;
+}
+/* The fill follows the real startup phases; the glint crossing it shows
+   that the program is working between one phase and the next. */
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8%;
+  border-radius: 999px;
+  background:
+    linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%) 0 0 / 200% 100% no-repeat,
+    linear-gradient(90deg, var(--cyan), var(--violet) 55%, var(--magenta));
+  box-shadow: 0 0 10px rgba(157, 123, 255, 0.6);
+  animation: shimmer 1.6s linear infinite;
+  transition: width 420ms ease-out;
+}
+@keyframes shimmer { from { background-position: 150% 0, 0 0; } to { background-position: -50% 0, 0 0; } }
+.phase {
+  font-size: 11px;
+  color: rgba(154, 168, 199, 0.75);
+  text-align: center;
+  min-height: 1.3em;
+}
+
+/* Reduced animations: from the operating system or from StarLight settings. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .card { opacity: 1; transform: none; }
+}
+.reduced *, .reduced *::before, .reduced *::after { animation: none !important; transition: none !important; }
+.reduced .card { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+<main class="card" id="card" role="status">
+  <canvas class="star-field" id="stars" aria-hidden="true"></canvas>
+  <div class="logo-box">
+    <span class="halo" aria-hidden="true"></span>
+    <img class="logo" id="logo" alt="">
+    <span class="sparkle s1" aria-hidden="true"></span>
+    <span class="sparkle s2" aria-hidden="true"></span>
+    <span class="sparkle s3" aria-hidden="true"></span>
+  </div>
+  <h1 class="name">StarLight</h1>
+  <p class="phrase"><span id="phrase"></span><span class="author" id="author"></span></p>
+  <span class="version" id="version"></span>
+  <div class="loading">
+    <div class="bar" aria-hidden="true"><div class="fill" id="fill"></div></div>
+    <span class="phase" id="phase"></span>
+  </div>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var reduced = q.get('reducedMotion') === '1' || matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) document.documentElement.classList.add('reduced');
+
+  // Language and texts chosen by the main process (the language set in the
+  // preferences, or the Windows one).
+  if (q.get('lang')) document.documentElement.lang = q.get('lang');
+  document.getElementById('card').setAttribute('aria-label', q.get('label') || 'StarLight');
+  document.getElementById('phase').textContent = q.get('starting') || '';
+  document.getElementById('logo').src = q.get('logo') || '';
+  document.getElementById('phrase').textContent = q.get('phrase') || '';
+  var author = q.get('author') || '';
+  document.getElementById('author').textContent = author ? '— ' + author : '';
+  document.getElementById('version').textContent = q.get('version') || '';
+
+  // Star field: a few small stars pulsing slowly, as in the installer.
+  var canvas = document.getElementById('stars');
+  var ctx = canvas.getContext('2d');
+  var colors = ['#ffffff', '#9fefff', '#c9b8ff', '#ffb3ec'];
+  var stars = [];
+  function resize() {
+    var r = canvas.getBoundingClientRect();
+    canvas.width = r.width * devicePixelRatio;
+    canvas.height = r.height * devicePixelRatio;
+    stars = [];
+    for (var i = 0; i < 80; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: (Math.random() * 1.1 + 0.3) * devicePixelRatio,
+        f: Math.random() * Math.PI * 2,
+        v: 0.6 + Math.random() * 1.4,
+        c: colors[Math.floor(Math.random() * colors.length)]
+      });
+    }
+  }
+  function draw(t) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      ctx.globalAlpha = reduced ? 0.55 : 0.3 + 0.6 * (0.5 + 0.5 * Math.sin(t / 900 * s.v + s.f));
+      ctx.fillStyle = s.c;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    if (!reduced && !stopped) requestAnimationFrame(draw);
+  }
+  var stopped = false;
+  resize();
+  draw(0);
+  if (!reduced) requestAnimationFrame(draw);
+
+  // Commands used by the main process (src/main/splash.ts).
+  window.splash = {
+    /** Moves the bar to the given percentage and writes the current phase. */
+    step: function (percent, text) {
+      document.getElementById('fill').style.width = Math.max(0, Math.min(100, percent)) + '%';
+      if (text) document.getElementById('phase').textContent = text;
+    },
+    /** Fades the card out; returns after how many milliseconds the window can close. */
+    close: function () {
+      if (reduced) return 0;
+      document.getElementById('card').classList.add('leaving');
+      setTimeout(function () { stopped = true; }, 300);
+      return 300;
+    }
+  };
+})();
+</script>
+</body>
+</html>

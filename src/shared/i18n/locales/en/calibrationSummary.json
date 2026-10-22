@@ -1,0 +1,10 @@
+{
+  "ariaLabel": "Calibration masters used",
+  "dark": "Dark",
+  "flat": "Flat",
+  "bias": "Bias",
+  "noSuitableDark": "none suitable: {reason}. Thermal signal and amp glow remain.",
+  "none": "none",
+  "noneSuitable": "none suitable",
+  "biasNotNeeded": "not needed, because the dark already contains the readout level"
+}

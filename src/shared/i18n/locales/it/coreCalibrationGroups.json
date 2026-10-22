@@ -1,0 +1,41 @@
+{
+  "rejectedSingle": "è l’unico {type} con queste condizioni ({conditions}) e un frame solo porterebbe nel master tutto il suo rumore, quindi non viene usato",
+  "reason": {
+    "dark": "stessa posa e stesso guadagno",
+    "darkWithTemperature": "stessa posa e stesso guadagno, {temperature}",
+    "sameTemperature": "stessa temperatura",
+    "temperatureDifference": "{value} di differenza",
+    "bias": "stesso guadagno",
+    "flat": "stesso filtro",
+    "flatSameNight": "stesso filtro, stessa notte",
+    "flatDaysOne": "stesso filtro, ripreso a {days} giorno di distanza",
+    "flatDaysOther": "stesso filtro, ripreso a {days} giorni di distanza"
+  },
+  "noDark": {
+    "lightsWithoutExposure": "le luci non dichiarano la posa nell’intestazione, e senza posa StarLight non può verificare se un dark corrisponde",
+    "otherSensor": "nessun dark è stato ripreso con lo stesso sensore e le stesse dimensioni",
+    "otherExposure": "nessun dark ha la posa di {exposure}",
+    "lightsWithoutGain": "le luci non dichiarano il guadagno, i dark da {exposure} sì",
+    "otherGain": "nessun dark da {exposure} ha il guadagno {gain}",
+    "noneSuitable": "nessun dark adatto",
+    "nearestWarmer": "il dark da {exposure} più vicino è a {temperature}, {difference} più caldo delle luci (la differenza ammessa è al massimo di {tolerance} °C)",
+    "nearestColder": "il dark da {exposure} più vicino è a {temperature}, {difference} più freddo delle luci (la differenza ammessa è al massimo di {tolerance} °C)"
+  },
+  "summary": {
+    "atExposure": "da {exposure}",
+    "lightsOne": "1 luce",
+    "lightsOther": "{count} luci"
+  },
+  "usageRow": {
+    "session": "{description}, composto in questa sessione: {reason}",
+    "library": "{description}, dalla libreria: {reason}"
+  },
+  "noDarkNotice": {
+    "withBiasAndFlat": "con bias e flat",
+    "withFlatOnly": "con il solo flat",
+    "withBiasOnly": "con il solo bias",
+    "withoutMasters": "senza alcun master",
+    "one": "{description} calibrata {combined}, senza dark: {reason}. Un dark di posa, guadagno o temperatura diversi toglierebbe un segnale termico sbagliato, quindi non viene usato. Restano il segnale termico e il bagliore dell’amplificatore; i pixel caldi li riduce l’impilamento se fra le pose c’è il dithering. Per toglierli del tutto riprendi dei dark con la stessa posa, lo stesso guadagno e la stessa temperatura delle luci.",
+    "other": "{description} calibrate {combined}, senza dark: {reason}. Un dark di posa, guadagno o temperatura diversi toglierebbe un segnale termico sbagliato, quindi non viene usato. Restano il segnale termico e il bagliore dell’amplificatore; i pixel caldi li riduce l’impilamento se fra le pose c’è il dithering. Per toglierli del tutto riprendi dei dark con la stessa posa, lo stesso guadagno e la stessa temperatura delle luci."
+  }
+}

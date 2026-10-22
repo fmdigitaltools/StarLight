@@ -1,0 +1,129 @@
+{
+  "id": "false-color",
+  "name": "False color by brightness",
+  "version": "1.0.0",
+  "author": "FM Digital Tools",
+  "license": "MIT",
+  "category": "astrophotography",
+  "description": "Colors the image according to brightness with a perceptually uniform scientific palette. Each level of light corresponds to a color, and the colors lighten steadily from dark to bright. Small differences in brightness become differences in color, easier to tell apart, and reveal faint structures and background gradients. The logarithmic scale extends the reading to the faintest parts. It is an analysis tool and the colors are not the real ones.",
+  "icon": "icon.png",
+  "previews": {
+    "before": "before.png",
+    "after": "after.png"
+  },
+  "minimumStarLightVersion": "0.4.0",
+  "parameters": [
+    {
+      "type": "choice",
+      "id": "palette",
+      "label": "Palette",
+      "hint": "Palettes designed so that perceived lightness increases uniformly. They are by Nathaniel J. Smith, Stéfan van der Walt and Eric Firing, released into the public domain (CC0).",
+      "options": [
+        {
+          "value": "viridis",
+          "label": "Viridis",
+          "hint": "From dark purple to yellow through blue and green. Readable even by those who have trouble telling red from green."
+        },
+        {
+          "value": "magma",
+          "label": "Magma",
+          "hint": "From black to cream white through purple and orange."
+        },
+        {
+          "value": "inferno",
+          "label": "Inferno",
+          "hint": "From black to light yellow through purple and fiery red."
+        },
+        {
+          "value": "plasma",
+          "label": "Plasma",
+          "hint": "From blue to yellow through magenta and orange, without black."
+        }
+      ],
+      "default": "viridis"
+    },
+    {
+      "type": "choice",
+      "id": "scale",
+      "label": "Scale",
+      "hint": "How the levels of light are distributed over the palette. The logarithmic and linear scales do not depend on the stretch.",
+      "options": [
+        {
+          "value": "screen",
+          "label": "As on screen",
+          "hint": "Follows the brightness of the image as it appears with the current stretch."
+        },
+        {
+          "value": "logarithmic",
+          "label": "Logarithmic",
+          "hint": "Computed on the linear data, from the sky background to the brightest areas: it gives many color levels to the faint parts and few to the bright ones. Suited to images not yet stretched; on an image already stretched the bright areas become uniform."
+        },
+        {
+          "value": "linear",
+          "label": "Linear",
+          "hint": "Computed on the linear data, proportional to the light collected. It shows the differences in the bright areas; the faint parts stay dark."
+        }
+      ],
+      "default": "screen"
+    },
+    {
+      "type": "toggle",
+      "id": "grayStars",
+      "label": "Stars in black and white",
+      "hint": "Leaves the stars in grayscale, so the false colors describe only the extended structures and the stars do not distract.",
+      "default": false
+    }
+  ],
+  "translations": {
+    "it": {
+      "name": "Falsi colori per luminosità",
+      "description": "Colora l’immagine secondo la luminosità con una tavolozza scientifica percettivamente uniforme. A ogni livello di luce corrisponde un colore e i colori schiariscono in modo regolare dal buio al chiaro. Le piccole differenze di luminosità diventano differenze di colore, più facili da distinguere, e rivelano le strutture deboli e i gradienti del fondo. La scala logaritmica estende la lettura alle parti più tenui. È uno strumento di analisi e i colori non sono quelli reali.",
+      "parameters": {
+        "palette": {
+          "label": "Tavolozza",
+          "hint": "Tavolozze progettate perché la chiarezza percepita cresca in modo uniforme. Sono di Nathaniel J. Smith, Stéfan van der Walt ed Eric Firing, rilasciate nel pubblico dominio (CC0).",
+          "options": {
+            "viridis": {
+              "label": "Viridis",
+              "hint": "Dal viola scuro al giallo passando per il blu e il verde. Leggibile anche da chi distingue male il rosso dal verde."
+            },
+            "magma": {
+              "label": "Magma",
+              "hint": "Dal nero al bianco crema passando per il viola e l’arancio."
+            },
+            "inferno": {
+              "label": "Inferno",
+              "hint": "Dal nero al giallo chiaro passando per il viola e il rosso fuoco."
+            },
+            "plasma": {
+              "label": "Plasma",
+              "hint": "Dal blu al giallo passando per il magenta e l’arancio, senza il nero."
+            }
+          }
+        },
+        "scale": {
+          "label": "Scala",
+          "hint": "Come i livelli di luce si distribuiscono sulla tavolozza. Le scale logaritmica e lineare non dipendono dalla distensione.",
+          "options": {
+            "screen": {
+              "label": "Come a schermo",
+              "hint": "Segue la luminosità dell’immagine come appare con la distensione attuale."
+            },
+            "logarithmic": {
+              "label": "Logaritmica",
+              "hint": "Calcolata sui dati lineari, dal fondo cielo alle zone più luminose: dà molti livelli di colore alle parti deboli e pochi a quelle brillanti. Adatta alle riprese non ancora distese; su un’immagine già distesa le zone luminose diventano uniformi."
+            },
+            "linear": {
+              "label": "Lineare",
+              "hint": "Calcolata sui dati lineari, proporzionale alla luce raccolta. Mostra le differenze nelle zone brillanti; le parti deboli restano scure."
+            }
+          }
+        },
+        "grayStars": {
+          "label": "Stelle in bianco e nero",
+          "hint": "Lascia le stelle in scala di grigi, così i falsi colori descrivono solo le strutture estese e le stelle non distraggono."
+        }
+      }
+    }
+  }
+}

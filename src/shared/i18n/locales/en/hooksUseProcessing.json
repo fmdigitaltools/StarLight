@@ -1,0 +1,19 @@
+{
+  "label": "Processing",
+  "progress": {
+    "firstStage": "{label}: defects, background, color…",
+    "deconvolution": "{label}: deconvolution…",
+    "bandSeparation": "{label}: separating the bands…",
+    "noiseReduction": "{label}: noise reduction…",
+    "thirdStage": "{label}: details, stars, contrast…"
+  },
+  "bandSeparationFailed": "Band separation failed.",
+  "trails": {
+    "none": "No satellite trails found.",
+    "one": "Removed one satellite trail.",
+    "other": "Removed {count} satellite trails."
+  },
+  "noToolsActive": "No tool is active. The viewer shows the original image again.",
+  "applied": "Processing applied.",
+  "failed": "Processing failed. {error}"
+}

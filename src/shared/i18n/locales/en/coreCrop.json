@@ -1,0 +1,43 @@
+{
+  "aspectRatios": {
+    "original": { "name": "Original", "description": "Keeps the shape of the frame" },
+    "r4x5": { "description": "Social media portrait" },
+    "r3x4": { "description": "Classic portrait" },
+    "r2x3": { "description": "Print portrait" },
+    "r9x16": { "description": "Phone screen" },
+    "r9x21": { "description": "Very tall portrait" },
+    "r1x1": { "description": "Square" },
+    "r5x4": { "description": "Near-square landscape" },
+    "r4x3": { "description": "Classic landscape" },
+    "r3x2": { "description": "Print landscape" },
+    "r16x9": { "description": "Widescreen" },
+    "r21x9": { "description": "Cinema widescreen" }
+  },
+  "presets": {
+    "instagramSquare": { "name": "Instagram square", "description": "1:1 post, the original format" },
+    "instagramPortrait": { "name": "Instagram portrait", "description": "4:5 post, fills more of the screen" },
+    "instagramStories": { "name": "Instagram stories", "description": "Stories and Reels, full-screen 9:16" },
+    "facebookPost": { "name": "Facebook post", "description": "Preview in the feed" },
+    "facebookCover": { "name": "Facebook cover", "description": "Profile header image" },
+    "xPost": { "name": "X post", "description": "16:9 image in the timeline" },
+    "xHeader": { "name": "X header", "description": "Profile banner, 3:1" },
+    "blueskyPost": { "name": "Bluesky post", "description": "16:9 image in the feed" },
+    "blueskyHeader": { "name": "Bluesky header", "description": "Profile banner" },
+    "threads": { "name": "Threads", "description": "4:5 portrait post" },
+    "mastodon": { "name": "Mastodon", "description": "16:9 attachment" },
+    "telegram": { "name": "Telegram", "description": "Image sent in a chat" },
+    "whatsappStatus": { "name": "WhatsApp status", "description": "Full-screen status" },
+    "linkedin": { "name": "LinkedIn", "description": "Post with preview" },
+    "pinterest": { "name": "Pinterest", "description": "2:3 portrait pin" },
+    "youtubeThumbnail": { "name": "YouTube thumbnail", "description": "Video cover image" },
+    "wallpaperFullHd": { "name": "Full HD wallpaper", "description": "Standard monitor" },
+    "wallpaperQhd": { "name": "QHD wallpaper", "description": "High-density monitor" },
+    "wallpaper4k": { "name": "4K wallpaper", "description": "Highest screen definition" },
+    "wallpaperPhone": { "name": "Phone wallpaper", "description": "Modern portrait screen" },
+    "wallpaperTablet": { "name": "Tablet wallpaper", "description": "High-resolution 3:4 screen" },
+    "print10x15": { "name": "10x15 cm print", "description": "Postcard at 300 dots per inch" },
+    "print20x30": { "name": "20x30 cm print", "description": "Classic format at 300 dpi" },
+    "print30x40": { "name": "30x40 cm print", "description": "Large format at 300 dpi" },
+    "print30x30": { "name": "30x30 cm print", "description": "Square at 300 dpi" }
+  }
+}

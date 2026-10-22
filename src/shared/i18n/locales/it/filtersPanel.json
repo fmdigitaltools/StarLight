@@ -1,0 +1,46 @@
+{
+  "photoFilters": {
+    "title": "Filtri fotografici",
+    "description": "I filtri modificano la resa dei colori senza alterare i dati del file. Puoi cambiarli quante volte vuoi e regolarne l’intensità.",
+    "intensity": {
+      "label": "Intensità del filtro",
+      "hint": "A zero il filtro non ha effetto. Attorno al settanta per cento il risultato resta naturale."
+    }
+  },
+  "noise": {
+    "title": "Riduzione del rumore",
+    "description": "Calcola la media dei pixel vicini soltanto dove hanno luminosità simile. Il fondo cielo si pulisce e i bordi delle stelle restano nitidi. Con valori più alti il filtro considera una zona più ampia e scioglie anche la grana a grumi.",
+    "intensity": {
+      "label": "Intensità",
+      "hint": "Oltre il settanta per cento le stelle più deboli e i dettagli più fini iniziano ad ammorbidirsi. Per un rumore molto forte usa NL-Bayes, nel passo Elabora."
+    }
+  },
+  "detail": {
+    "title": "Dettaglio",
+    "description": "La nitidezza esalta i dettagli fini sottraendo una versione sfocata dell’immagine.",
+    "sharpness": {
+      "label": "Nitidezza",
+      "hint": "Usala con moderazione, perché i valori alti creano aloni intorno alle stelle e amplificano il rumore."
+    }
+  },
+  "vignette": {
+    "title": "Vignettatura",
+    "description": "Scurisce gradualmente i bordi e gli angoli dell’immagine, lasciando intatto il centro, e porta lo sguardo sul soggetto. Se è impostato un ritaglio, la vignettatura si centra sulla parte che verrà esportata.",
+    "intensity": {
+      "label": "Intensità",
+      "hint": "Valori bassi, fino al trenta per cento, restano discreti. Se il filtro fotografico scelto ha già una sua vignettatura, questo valore si aggiunge a quella."
+    }
+  },
+  "lightPollution": {
+    "title": "Inquinamento luminoso",
+    "description": "Sottrae da ogni canale di colore un livello costante, pari al fondo cielo misurato sull’immagine, e attenua così la dominante che la luce diffusa delle città lascia sul fondo. Agisce allo stesso modo su tutta l’immagine, quindi non corregge le variazioni del fondo da una zona all’altra, che puoi correggere nel passo Elabora.",
+    "removal": {
+      "label": "Rimozione del fondo",
+      "hint": "Al cento per cento il livello del fondo cielo viene sottratto per intero da ciascun canale. Il punto di nero viene abbassato della stessa quantità media, quindi la luminosità complessiva resta invariata e cambia soltanto l’equilibrio fra i colori del fondo."
+    }
+  },
+  "reset": {
+    "title": "Riporta rumore, dettaglio, vignettatura, fondo e filtro ai valori di partenza",
+    "label": "Azzera i filtri"
+  }
+}

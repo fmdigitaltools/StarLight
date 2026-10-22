@@ -1,0 +1,15 @@
+{
+  "title": "Guide",
+  "subtitle": "How each tool works, the keyboard shortcuts and a link to the glossary of technical terms",
+  "close": "Close",
+  "sections": {
+    "tools": "Tools",
+    "shortcuts": "Keyboard shortcuts",
+    "glossary": "Glossary"
+  },
+  "openGlossary": "Open the glossary",
+  "footer": {
+    "tourNote": "The quick tour points out the commands directly in the interface.",
+    "replayTour": "Replay the quick tour"
+  }
+}

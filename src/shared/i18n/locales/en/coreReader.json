@@ -1,0 +1,10 @@
+{
+  "truncated": "The file is truncated: {needed} bytes of data are needed but only {available} are available.",
+  "unsupportedBitpix": "Unsupported data format (BITPIX = {bitpix}).",
+  "rawNotDecoded": "The file is a camera RAW ({format}) that StarLight could not decode. Try importing it again with Import frames.",
+  "lossyImage": "{format} images are not suitable for astronomical processing (8-bit, often lossy-compressed). StarLight reads FITS, XISF, TIFF, PNG and camera RAW files.",
+  "unknownFormat": "File format not recognized. StarLight reads FITS (including compressed .fz and .fits.gz), XISF, TIFF, PNG and camera RAW files.",
+  "notTwoDimensional": "The file does not contain a two-dimensional image (NAXIS = {naxis}).",
+  "invalidDimensions": "Invalid image dimensions: {width} x {height}.",
+  "gzipNoFits": "The gzip-compressed file does not contain a FITS."
+}

@@ -1,0 +1,6 @@
+{
+  "canvasHint": "Fai clic per aggiungere un punto, trascinalo per spostarlo, fai clic con il tasto destro per toglierlo. Sullo sfondo c’è l’istogramma dell’immagine che arriva alla curva, cioè prima della curva stessa, del colore e del filtro fotografico, che agiscono dopo.",
+  "axisShadows": "ombre",
+  "axisMidtones": "mezzitoni",
+  "axisHighlights": "luci"
+}

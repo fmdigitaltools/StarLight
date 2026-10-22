@@ -1,0 +1,5 @@
+{
+  "differentSizes": "The two series have different dimensions and cannot be merged.",
+  "notEnoughOverlap": "The two series do not share enough well-exposed areas to measure their brightness ratio.",
+  "shortBrighter": "The short series appears brighter than the long one: check the exposure times."
+}

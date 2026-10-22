@@ -1,0 +1,57 @@
+{
+  "analysisFailed": "analysis failed",
+  "nucleusFrameNotStacked": {
+    "first": "The first frame, where you marked the comet nucleus, is not among the stacked frames: it was rejected for quality or could not be aligned. Lower the minimum quality, or exclude that frame from the library and mark the nucleus in the new first or last frame.",
+    "last": "The last frame, where you marked the comet nucleus, is not among the stacked frames: it was rejected for quality or could not be aligned. Lower the minimum quality, or exclude that frame from the library and mark the nucleus in the new first or last frame."
+  },
+  "tooFewAfterNightExclusion": "With the excluded nights, fewer than two frames are left to stack. Turn at least one night back on in the list of nights.",
+  "tooFewAligned": "Fewer than two frames pass the minimum quality and align with the reference frame. Lower the minimum quality, or turn off “Align on the stars” if the field is already still.",
+  "reason": {
+    "reference": "reference",
+    "stacked": "stacked",
+    "lowQuality": "quality below the threshold compared with the best frames",
+    "starsNotRecognized": "stars not recognized",
+    "excludedNight": "excluded night"
+  },
+  "progress": {
+    "aligning": "Aligning on the stars",
+    "weighingNights": "Measuring and weighting the nights",
+    "findingNucleus": "Finding the comet nucleus",
+    "stackingOnComet": "Stacking aligned on the comet",
+    "separatingComet": "Separating the comet from the stars",
+    "bayerDrizzle": "Bayer drizzle of the aligned frames",
+    "drizzle": "Drizzle of the aligned frames",
+    "stackingOnStars": "Stacking aligned on the stars",
+    "stacking": "Stacking the aligned frames",
+    "analyzingParallel": "Analyzing frames with {count} parallel processes",
+    "analyzing": "Analyzing frames, {done} of {total}",
+    "hdrMerge": "HDR merge with the {exposure} s series"
+  },
+  "drizzle": {
+    "notWithCometAndStars": "Drizzle does not apply with comet and still stars: the frames were stacked normally.",
+    "bayerFallbackDrizzle": "Bayer drizzle only works with raw color sensor frames that all share the same Bayer pattern: normal drizzle was used instead.",
+    "bayerFallbackStack": "Bayer drizzle only works with raw color sensor frames that all share the same Bayer pattern: the frames were stacked normally."
+  },
+  "needTwoLights": "You need at least two light frames to stack.",
+  "insufficientMemory": "Not enough memory to stack these frames.",
+  "notEnoughReadable": "There are not enough readable frames. {detail}",
+  "done": {
+    "summary": "Stacked {used} of {total} frames{nights}{hdr}.",
+    "nights": ", from {count} nights with weights {weights}",
+    "hdr": ", with an HDR merge of {series} (short exposures in {percent}% of the image)",
+    "hdrSeries": "{frames} frames of {exposure} s",
+    "and": " and "
+  },
+  "unreadableFrames": "{count} frames could not be read.",
+  "calibrationSkipped": "Calibration skipped. {detail}",
+  "calibratedWithLibrary": "Calibrated with masters from the library: {masters}.",
+  "unreadMaster": {
+    "one": "A master in the calibration library could not be read, so the light frames that needed it were calibrated without it. You can remove it from the library in the Calibrate step and build it again.",
+    "other": "{count} masters in the calibration library could not be read, so the light frames that needed them were calibrated without them. You can remove them from the library in the Calibrate step and build them again."
+  },
+  "hdr": {
+    "seriesName": "{exposure} s series",
+    "needTwoSeries": "An HDR merge needs at least two readable series with two frames each.",
+    "seriesNotAligned": "The {exposure} s series does not align with the longest series: too few stars in common."
+  }
+}

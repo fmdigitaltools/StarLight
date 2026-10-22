@@ -1,0 +1,48 @@
+{
+  "notAvailable": "non disponibile",
+  "filters": {
+    "allImages": "Tutte le immagini",
+    "fits": "Immagini FITS",
+    "xisf": "Immagini XISF (PixInsight)",
+    "tiffPng": "TIFF e PNG",
+    "raw": "RAW delle fotocamere",
+    "allFiles": "Tutti i file",
+    "projects": "Progetti StarLight"
+  },
+  "importFrames": {
+    "title": "Importa frame",
+    "button": "Importa"
+  },
+  "importFromTelescope": {
+    "title": "Importa frame dal telescopio"
+  },
+  "importFolder": {
+    "title": "Importa una cartella di frame",
+    "button": "Importa cartella"
+  },
+  "saveFilters": {
+    "png": "Immagine PNG",
+    "jpeg": "Immagine JPEG",
+    "webp": "Immagine WebP",
+    "tiff": "Immagine TIFF",
+    "bmp": "Immagine BMP",
+    "fits": "Immagine FITS"
+  },
+  "exportImage": {
+    "title": "Esporta immagine",
+    "button": "Esporta"
+  },
+  "watchFolder": {
+    "title": "Cartella in cui arrivano i frame della ripresa",
+    "button": "Sorveglia questa cartella"
+  },
+  "chooseThisFolder": "Scegli questa cartella",
+  "projectLocation": {
+    "title": "Dove salvare il progetto"
+  },
+  "invalidFileName": "Nome di file non valido.",
+  "openProject": {
+    "title": "Apri un progetto",
+    "button": "Apri progetto"
+  }
+}

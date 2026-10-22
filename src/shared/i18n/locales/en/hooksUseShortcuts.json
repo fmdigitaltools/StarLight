@@ -1,0 +1,6 @@
+{
+  "fullScreenFailed": "Full screen is not available. {message}",
+  "noLayerSelected": "First select or add a local adjustment in the Correct step, Local adjustments tab.",
+  "stepNeedsFrame": "For the {step} step, import at least one frame first.",
+  "stepNeedsImage": "For the {step} step, open a frame in the viewer first."
+}

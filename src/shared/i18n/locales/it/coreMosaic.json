@@ -1,0 +1,14 @@
+{
+  "needTwoPanels": "Per un mosaico servono almeno due pannelli.",
+  "spreadAcrossSky": "I pannelli sono sparsi su tutto il cielo: non formano un mosaico.",
+  "invalidReferenceSolution": "La soluzione astrometrica del pannello di riferimento non è valida.",
+  "panelTooFar": "Un pannello è troppo lontano dagli altri per entrare nello stesso mosaico.",
+  "tooLarge": "Il mosaico misurerebbe {width} × {height} pixel: troppo grande. Controlla che i pannelli scelti siano davvero vicini fra loro.",
+  "panelSizeMismatch": "Il pannello {panel} non ha la misura indicata dalla sua soluzione astrometrica.",
+  "progress": {
+    "reprojecting": "Riproiezione del pannello {current} di {total}",
+    "matching": "Raccordo di fondo e luminosità fra i pannelli",
+    "merging": "Fusione dei pannelli",
+    "ready": "Mosaico pronto"
+  }
+}

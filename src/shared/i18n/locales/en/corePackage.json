@@ -1,0 +1,18 @@
+{
+  "publicDomain": "Public domain",
+  "indexUnreadable": "The list of catalogs on the server can’t be read.",
+  "fromCatalog": "From the {name} catalog.",
+  "fields": {
+    "id": "the identifier",
+    "name": "the name",
+    "version": "the version",
+    "group": "the group",
+    "description": "the description",
+    "authors": "the authors",
+    "reference": "the bibliographic reference",
+    "source": "the data source",
+    "license": "the license",
+    "licenseLink": "the license URL",
+    "example": "an example designation"
+  }
+}

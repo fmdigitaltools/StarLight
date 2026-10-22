@@ -1,0 +1,10 @@
+{
+  "title": "Recuperare il lavoro?",
+  "message": "StarLight non si è chiuso regolarmente. È disponibile il lavoro salvato automaticamente{when} ({source}).",
+  "sourceProject": "progetto «{name}»",
+  "sourceUnsaved": "lavoro non ancora salvato in un progetto",
+  "explainProject": "Recuperandolo, il progetto si apre con le modifiche non salvate: sarai tu a decidere se salvarle sopra il progetto. Scartandolo, la copia viene eliminata.",
+  "explainUnsaved": "Recuperandolo, si apre come lavoro senza nome, da salvare in un progetto. Scartandolo, la copia viene eliminata.",
+  "discard": "Scarta",
+  "recover": "Recupera"
+}

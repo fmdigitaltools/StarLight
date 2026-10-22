@@ -1,0 +1,209 @@
+/* ---- Local adjustments (masks) ---- */
+
+/*
+ * Viewer layer: it does not intercept the mouse until a tool is chosen, so moving and zooming the
+ * image works as usual.
+ */
+.sl-mask-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sl-mask-layer--active {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.sl-mask-layer svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sl-mask-outline line,
+.sl-mask-outline ellipse,
+.sl-mask-outline circle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.9));
+}
+
+.sl-mask-outline circle {
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.sl-mask-outline circle.sl-mask-empty {
+  fill: none;
+}
+
+.sl-mask-brush circle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.95));
+}
+
+.sl-mask-brush circle.sl-mask-empty {
+  stroke: rgba(255, 255, 255, 0.45);
+  stroke-dasharray: 3 3;
+}
+
+/* List of levels. */
+.sl-locals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sl-local-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px 3px 8px;
+  border-radius: var(--sl-r-sm);
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line);
+  transition: all var(--sl-t-fast);
+}
+
+.sl-local-row:hover {
+  border-color: var(--sl-line-strong);
+}
+
+.sl-local-row.sl-active {
+  border-color: var(--sl-cyan-dim);
+  background: var(--sl-bg-3);
+}
+
+.sl-local-name {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  font-size: var(--sl-fs-sm);
+  color: var(--sl-text);
+  padding: 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sl-local-name small {
+  color: var(--sl-text-3);
+  font-size: var(--sl-fs-xs);
+  margin-left: 6px;
+}
+
+.sl-local-off .sl-local-name {
+  color: var(--sl-text-3);
+}
+
+.sl-local-icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  color: var(--sl-text-2);
+}
+
+.sl-local-icon:hover {
+  background: var(--sl-bg-4);
+  color: var(--sl-text);
+}
+
+/* Small-button choices (mask type, ready-made colors, tools). */
+.sl-locals-choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.sl-locals-choices--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sl-locals-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 4px;
+  border-radius: 5px;
+  background: var(--sl-bg-1);
+  border: 1px solid var(--sl-line);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sl-text-2);
+  transition: all var(--sl-t-fast);
+}
+
+.sl-locals-choice:hover {
+  background: var(--sl-bg-3);
+  border-color: var(--sl-cyan-dim);
+  color: var(--sl-text);
+}
+
+.sl-locals-choice.sl-active {
+  background: var(--sl-bg-4);
+  border-color: var(--sl-cyan);
+  color: var(--sl-text);
+  box-shadow: var(--sl-glow-cyan);
+}
+
+.sl-locals-choice:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.sl-locals-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.sl-locals-subtitle {
+  margin: 6px 0 0;
+  font-size: var(--sl-fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sl-text-3);
+}
+
+.sl-locals-note {
+  margin: 0;
+  font-size: var(--sl-fs-xs);
+  line-height: 1.45;
+  color: var(--sl-text-3);
+}
+
+.sl-locals-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* Hue bar under the color slider. */
+.sl-locals-tints {
+  height: 6px;
+  border-radius: 3px;
+  margin: -4px 0 2px;
+  background: linear-gradient(
+    90deg,
+    hsl(0 85% 55%),
+    hsl(60 85% 55%),
+    hsl(120 85% 50%),
+    hsl(180 85% 50%),
+    hsl(240 85% 60%),
+    hsl(300 85% 58%),
+    hsl(360 85% 55%)
+  );
+  opacity: 0.85;
+}

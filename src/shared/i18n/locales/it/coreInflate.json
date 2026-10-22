@@ -1,0 +1,10 @@
+{
+  "unknownHuffmanCode": "Dati compressi non validi (codice di Huffman sconosciuto).",
+  "invalidData": "Dati compressi non validi.",
+  "unknownBlockType": "Dati compressi non validi (tipo di blocco sconosciuto).",
+  "distanceBeforeStart": "Dati compressi non validi (distanza oltre l’inizio).",
+  "truncated": "Il file compresso è troncato: i dati finiscono prima del previsto.",
+  "zlibDictionary": "Compressione zlib con dizionario: non supportata.",
+  "gzipUnknownMethod": "File gzip con un metodo di compressione sconosciuto.",
+  "notGzip": "Il file non è un gzip valido."
+}

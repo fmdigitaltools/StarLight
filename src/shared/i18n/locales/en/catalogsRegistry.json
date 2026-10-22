@@ -1,0 +1,15 @@
+{
+  "featureCatalogList": "The list of downloadable catalogs",
+  "featureDownload": "Downloading catalogs",
+  "starsInstalled": "Package “{name}” installed, with {count} stars. Plate solving uses them before the Gaia catalog, even without internet access.",
+  "starsUpdated": "Package “{name}” updated, with {count} stars. Plate solving uses them before the Gaia catalog, even without internet access.",
+  "catalogInstalled": "Catalog “{name}” installed: {count} more objects that StarLight recognizes and marks on the image.",
+  "catalogUpdated": "Catalog “{name}” updated: {count} more objects that StarLight recognizes and marks on the image.",
+  "starsEnabled": "Package “{name}” enabled.",
+  "starsDisabled": "Package “{name}” disabled. It stays installed, but plate solving uses only the online Gaia catalog.",
+  "catalogEnabled": "Catalog “{name}” enabled.",
+  "catalogDisabled": "Catalog “{name}” disabled. It stays installed, but its objects are not used.",
+  "operationFailed": "The operation failed. {detail}",
+  "uninstalled": "Catalog “{name}” uninstalled.",
+  "uninstallFailed": "Could not uninstall. {detail}"
+}

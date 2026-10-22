@@ -1,0 +1,33 @@
+{
+  "applicationId": "it.starlight.uninstaller",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "documentRoot": "/page/",
+  "url": "/uninstall.html",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "tokenSecurity": "one-time",
+  "logging": { "enabled": false, "writeToLogFile": false },
+  "nativeAllowList": ["app.*", "os.*", "filesystem.*", "window.*"],
+  "modes": {
+    "window": {
+      "title": "StarLight",
+      "width": 820,
+      "height": 620,
+      "resizable": false,
+      "maximizable": false,
+      "borderless": true,
+      "center": true,
+      "hidden": true,
+      "exitProcessOnClose": false,
+      "enableInspector": false,
+      "useSavedState": false,
+      "icon": "/page/logo.png"
+    }
+  },
+  "cli": {
+    "binaryName": "starlight-uninstaller",
+    "resourcesPath": "/page/",
+    "clientLibrary": "/page/neutralino.js"
+  }
+}

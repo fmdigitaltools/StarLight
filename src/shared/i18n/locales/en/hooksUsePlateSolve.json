@@ -1,0 +1,23 @@
+{
+  "openFrame": "Open a frame.",
+  "noStartingPoint": "The file does not say where the telescope was pointing, nor the name of a catalog object: without a starting point the field cannot be plate solved.",
+  "cannotSolve": "The field cannot be plate solved.",
+  "reenableInternet": "Turn internet back on",
+  "internetReenabled": "Internet turned back on. Press Plate solve again on the image to solve.",
+  "tooFewStars": "Too few stars are visible in the image ({count}) to recognize the field.",
+  "gaiaFeature": "Plate solving with the Gaia catalog",
+  "offlineNoLocal": "{notice} To plate solve without internet, install or re-enable the “Stars for plate solving” package in the Deep-sky catalogs tab of the plugin gallery.",
+  "offlineWithExplanation": "{explanation} The online Gaia catalog, which contains much fainter stars, might succeed, but internet access is turned off in the settings.",
+  "noMatch": "The stars in the image do not match those of the Gaia catalog around the point given in the file. This can happen if the coordinates written in the header are wrong, if the scale is very different from the one calculated from the focal length, or if the sky is hazy and few stars are visible.",
+  "noMatchWithExplanation": "{explanation} The stars in the image do not match those of the Gaia catalog around the point given in the file. This can happen if the coordinates written in the header are wrong, if the scale is very different from the one calculated from the focal length, or if the sky is hazy and few stars are visible.",
+  "solvedLocal": "Field solved with the local stars: {stars} stars match, with a mean residual of {residual} arcseconds. Scale {scale}″ per pixel, north rotated {rotation}° from up.",
+  "solvedLocalMirrored": "Field solved with the local stars: {stars} stars match, with a mean residual of {residual} arcseconds. Scale {scale}″ per pixel, north rotated {rotation}° from up, image mirrored.",
+  "solvedGaia": "Field solved with the online Gaia catalog: {stars} stars match, with a mean residual of {residual} arcseconds. Scale {scale}″ per pixel, north rotated {rotation}° from up.",
+  "solvedGaiaMirrored": "Field solved with the online Gaia catalog: {stars} stars match, with a mean residual of {residual} arcseconds. Scale {scale}″ per pixel, north rotated {rotation}° from up, image mirrored.",
+  "job": {
+    "detectingStars": "Plate solving: detecting stars in the image…",
+    "gaiaRequest": "Plate solving: querying the online Gaia catalog (up to a minute)…",
+    "matchingLocal": "Plate solving: matching against the local stars…",
+    "matchingGaia": "Plate solving: matching against the online Gaia catalog…"
+  }
+}

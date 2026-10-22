@@ -1,0 +1,16 @@
+{
+  "services": {
+    "vizier": "VizieR (CDS Strasburgo)",
+    "esa": "archivio Gaia dell'ESA"
+  },
+  "invalidCoordinates": "Coordinate del campo non valide. Il catalogo Gaia non può essere interrogato.",
+  "noResponse": "Il catalogo Gaia non risponde, quindi la calibrazione del colore non è disponibile in questo momento. Controlla la connessione a internet e riprova fra qualche minuto. Dettagli tecnici: {details}",
+  "noResponseSolve": "Il catalogo Gaia non risponde, quindi il campo non si può risolvere in questo momento. Controlla la connessione a internet e riprova fra qualche minuto. Dettagli tecnici: {details}",
+  "timeout": "nessuna risposta entro {seconds} secondi",
+  "connectionFailed": "connessione non riuscita (rete assente o servizio irraggiungibile)",
+  "httpError": "il servizio ha risposto con errore {status}",
+  "httpErrorUnavailable": "il servizio ha risposto con errore {status} (temporaneamente fuori servizio)",
+  "rejected": "richiesta rifiutata",
+  "rejectedWithReason": "richiesta rifiutata: {reason}",
+  "unknownFormat": "risposta del catalogo in un formato non riconosciuto"
+}

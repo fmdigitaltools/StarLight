@@ -1,0 +1,5 @@
+{
+  "noContextAccelerationOff": "Il visore non riesce a disegnare l’immagine con l’accelerazione grafica spenta. Riaccendila in Impostazioni, scheda Prestazioni, voce «Usa l’accelerazione grafica», e riavvia StarLight.",
+  "noWebgl2": "La scheda grafica non supporta WebGL 2, necessario per la visualizzazione in tempo reale. Prova ad aggiornare i driver della scheda grafica, oppure spegni «Usa l’accelerazione grafica» in Impostazioni, scheda Prestazioni, e riavvia StarLight: il disegno passa al processore, più lento.",
+  "textureRejected": "La scheda grafica ha rifiutato l’immagine (codice {code}). Dimensioni richieste: {width} x {height} su {channels} canali."
+}

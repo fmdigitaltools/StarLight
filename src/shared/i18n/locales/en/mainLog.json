@@ -1,0 +1,7 @@
+{
+  "windowCrashed": {
+    "message": "The StarLight window closed because of an error.",
+    "detail": "When it reopens, you will be offered to recover any unsaved work. What happened has been recorded in the log (Help → Log and error reporting).",
+    "reopen": "Reopen the window"
+  }
+}

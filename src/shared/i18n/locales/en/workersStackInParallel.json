@@ -1,0 +1,7 @@
+{
+  "noFrames": "There are no frames to stack.",
+  "stackingFailed": "Stacking failed.",
+  "drizzleFailed": "Drizzle failed.",
+  "insufficientMemory": "Not enough memory for drizzle: about {needed} are needed and {free} are free. The frames were stacked without drizzle.",
+  "insufficientMemoryBayer": "Not enough memory for Bayer drizzle: about {needed} are needed and {free} are free. The frames were stacked without drizzle."
+}

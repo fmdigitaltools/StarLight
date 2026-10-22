@@ -1,0 +1,104 @@
+{
+  "none": "None",
+  "off": "off",
+  "pending": "not applied",
+  "pendingHint": "The values have changed since you last pressed Apply",
+  "apply": "Apply",
+  "applyHint": "Computes the image with all the adjustments of the Process step, including those of this card",
+  "applyAll": "Apply all",
+  "applyAllHint": "Computes the image with all the tools of this step, always starting from the original",
+  "reset": "Reset",
+  "resetHint": "Resets all the tools of this step to their initial values and disables the plugins. If you then press Apply, the image goes back to how it was when opened",
+  "defects": {
+    "title": "Defects and sky background",
+    "description": "Defective pixels are isolated points much brighter than their neighbors. The sky background is the diffuse light from light pollution and the Moon, and extracting it makes the sky uniform and neutral in color.",
+    "hotPixels": "Correct defective pixels",
+    "hotPixelsHint": "Replaces isolated anomalous points with the median, that is the middle value, of the neighboring pixels. Stars also light up the surrounding pixels, so they are left untouched.",
+    "simple": "Simple",
+    "simpleHint": "Models the background with a smooth surface, suited to regular gradients, that is gradual changes in sky brightness.",
+    "advanced": "Advanced",
+    "advancedHint": "Models the background with radial basis functions, which also follow halos and irregular gradients.",
+    "samples": "Samples per side",
+    "samplesHint": "More samples follow more complex gradients, but risk eating into a very extended object.",
+    "smoothness": "Smoothness",
+    "smoothnessHint": "A higher value makes the background model smoother and less tied to details.",
+    "tolerance": "Tolerance",
+    "toleranceHint": "Sets the maximum deviation of a sample from the model, beyond which the sample is treated as part of the object and discarded."
+  },
+  "trails": {
+    "title": "Satellite trails",
+    "description": "Aircraft and satellites crossing the field during the exposure leave a bright line. On a single frame the line is detected and its pixels are rebuilt with the sky and grain from both sides. Lines that stop halfway across the image, such as a satellite entering the Earth’s shadow, and rows of dashes left by aircraft lights are also recognized. A line is removed only if it is straight, long and as wide as a star along its whole length, so an edge-on galaxy or a nebula filament is not mistaken for a trail; with the astrometric solution, catalog galaxies and nebulae are also excluded. Stacked images usually do not need it, because stacking already rejects trails.",
+    "remove": "Remove trails",
+    "removeHint": "Looks for straight lines, whole or broken, and replaces them with the sky background from both sides, only along the stretch where they are.",
+    "sensitivity": "Sensitivity",
+    "sensitivityHint": "A higher value also finds fainter trails, but increases the risk of mistaking a structure of the object for a trail."
+  },
+  "color": {
+    "title": "Color",
+    "description": "Star-based balance makes the average color of the stars white. Photometric balance compares the stars with the Gaia catalog, which records their true color. It is the most accurate method, but requires an internet connection and the astrometric solution, that is the exact position of the field, read from the file header or obtained with “Plate solve” in the Objects step.",
+    "stars": "On the stars",
+    "photometric": "Photometric",
+    "recompute": "Recompute from Gaia",
+    "compute": "Compute from Gaia",
+    "notComputed": "not computed yet",
+    "colorNoise": "Color noise",
+    "colorNoiseNarrowbandHint": "With narrowband, noise is reduced on each band separately. This slider only controls how neutral gray the sky background becomes.",
+    "colorNoiseHint": "Removes color blotches from the sky background and evens out the color of each star. It acts only on color, so image sharpness does not change."
+  },
+  "deconvolution": {
+    "title": "Deconvolution",
+    "description": "Recovers the sharpness lost to air turbulence and optics by measuring the shape of the stars. It does not invent details, but restores attenuated ones.",
+    "iterations": "Iterations",
+    "off": "off",
+    "iterationsHint": "Each iteration, that is each repetition of the computation, increases sharpness. Beyond a certain number, halos and grain appear.",
+    "psfRadius": "Blur size",
+    "automatic": "automatic",
+    "psfRadiusHint": "At zero the size is measured automatically on the stars in the image.",
+    "regularization": "Regularization",
+    "regularizationHint": "Limits the noise amplification caused by deconvolution."
+  },
+  "noise": {
+    "title": "Noise reduction",
+    "description": "NL-Bayes compares each small area of the image with similar ones and keeps their common structure, discarding the grain. Wavelets break the image down into scales of different sizes and act on each one separately, so they are useful on clumpy grain a few pixels wide.",
+    "waveletScale": "Wavelets, scale {scale}"
+  },
+  "detail": {
+    "title": "Detail by scale",
+    "description": "Strengthens or softens the details of each size. Small scales correspond to grain and thin filaments, large ones to galaxy arms and clouds.",
+    "scale": "Scale {scale}"
+  },
+  "narrowband": {
+    "title": "Narrowband",
+    "description": "With a dual-band filter, a color sensor collects only two lines of light: hydrogen (H-alpha), which ends up in red, and oxygen (OIII), which ends up in green and blue. Here the two lines are separated and recombined with narrowband palettes, which make it easier to see where each gas is. The resulting colors are a choice, not what the eye would see.",
+    "dualBand": "This file was captured with a dual-band filter, so the recommended palette is HOO.",
+    "notDualBand": "According to its header, this file was not captured with a dual-band filter. Without that filter the palettes give unreliable colors.",
+    "hoo": "HOO: hydrogen goes into red, oxygen into green and blue, so into cyan.",
+    "foraxx": "Foraxx: like HOO, but where hydrogen and oxygen are both strong, green follows hydrogen, and golden transitions appear between red and cyan.",
+    "sho": "Mimics the “Hubble palette”, gold and blue. The real one also uses sulfur (SII), which this filter does not collect: here hydrogen takes its place again, so the palette is synthetic and does not show where the sulfur is.",
+    "balance": "H-alpha / OIII balance",
+    "measured": "measured",
+    "moreOiii": "more OIII {value}",
+    "moreHalpha": "more H-alpha {value}",
+    "balanceHint": "The center keeps the balance measured on the image. Toward the left hydrogen prevails, toward the right oxygen.",
+    "oiii": "OIII intensity",
+    "oiiiHint": "Strengthens or softens only the oxygen, which is usually fainter. Strengthening it also increases its grain.",
+    "naturalStars": "Stars in their own color",
+    "naturalStarsHint": "Stars keep the color of the starting image instead of taking the palette’s."
+  },
+  "starReduction": {
+    "title": "Star reduction",
+    "description": "Shrinks the stars to bring out nebulae and galaxies, filling the freed space with the surrounding background.",
+    "size": "Size",
+    "brightness": "Brightness",
+    "brightnessHint": "Adjusts how much the starlight is dimmed."
+  },
+  "localContrast": {
+    "title": "Local contrast",
+    "description": "Brings out the inner structures of galaxies and nebulae by adjusting the contrast tile by tile, with the CLAHE method. Use it sparingly, because it also accentuates noise.",
+    "strength": "Strength",
+    "limit": "Limit",
+    "limitHint": "Sets the maximum contrast each tile can receive.",
+    "boxes": "Tiles per side",
+    "boxesHint": "With more tiles, the contrast follows smaller structures."
+  }
+}

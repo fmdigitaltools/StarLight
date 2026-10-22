@@ -1,0 +1,55 @@
+{
+  "title": "Mosaico",
+  "description": "Unisce più inquadrature vicine, per esempio le immagini impilate di zone adiacenti del cielo, in un campo più ampio. Ogni pannello viene collocato con la sua soluzione astrometrica, cioè con la posizione esatta nel cielo scritta nel file o trovata con «Risolvi il campo»; fondo e luminosità vengono pareggiati nelle zone in comune e i bordi si fondono senza cuciture. Conviene che i pannelli si sovrappongano almeno del 10-20%.",
+  "solveNotice": "Nel passo Oggetti usa «Risolvi il campo»; poi torna in Impila e il pannello sarà pronto per il mosaico.",
+  "noCandidates": "Importa prima i pannelli nella libreria.",
+  "removePanel": "Togli dal mosaico",
+  "addPanel": "Aggiungi al mosaico",
+  "panelSolved": "{width} x {height} - posizione nota, {scale}″ per pixel",
+  "panelUnsolved": "{width} x {height} - senza soluzione astrometrica",
+  "openToSolve": "Apri il frame per risolverne il campo nel passo Oggetti",
+  "withoutWcsOne": "Un pannello scelto non ha la soluzione astrometrica e resterebbe fuori: aprili con il pulsante a destra e usa «Risolvi il campo» nel passo Oggetti.",
+  "withoutWcsOther": "{count} pannelli scelti non hanno la soluzione astrometrica e resterebbero fuori: aprili con il pulsante a destra e usa «Risolvi il campo» nel passo Oggetti.",
+  "size": "Misura del mosaico",
+  "scale": {
+    "name": "Scala",
+    "value": "{value}″ per pixel",
+    "hint": "È quella del pannello più dettagliato, così nessun pannello perde risoluzione"
+  },
+  "memory": {
+    "name": "Memoria necessaria",
+    "value": "circa {size}",
+    "hint": "Stima della memoria usata durante il calcolo"
+  },
+  "blend": {
+    "label": "Pareggia fondo e luminosità",
+    "hint": "Pannelli ripresi in momenti diversi hanno un fondo cielo e una luminosità diversi. Il confronto nelle zone in comune, canale per canale e ignorando le stelle, li porta allo stesso livello. Tienilo attivo."
+  },
+  "composing": "Composizione in corso",
+  "compose": "Componi il mosaico",
+  "previewAriaLabel": "Disposizione dei pannelli nel mosaico",
+  "summary": {
+    "title": "Mosaico composto",
+    "panels": "{count} pannelli",
+    "description": "Il mosaico è aperto nel visore con la sua soluzione astrometrica, quindi i marcatori degli oggetti e la scala del campo valgono anche qui. Se apri un altro frame dalla libreria, il mosaico si chiude: esportalo prima, se vuoi conservarlo.",
+    "size": "Misura",
+    "covered": {
+      "name": "Area coperta",
+      "hint": "Parte del rettangolo finale coperta da almeno un pannello. Il resto è riempito con il colore del fondo cielo e conviene ritagliarlo in Esporta."
+    },
+    "overlap": {
+      "name": "Zone in comune",
+      "hint": "Parte coperta da due o più pannelli, dove vengono confrontati e fusi"
+    },
+    "time": "Tempo impiegato",
+    "coverageAriaLabel": "Mappa di copertura del mosaico",
+    "coverageLegend": "Mappa di copertura:",
+    "coverageOne": "un pannello",
+    "coverageTwo": "due",
+    "coverageThree": "tre o più",
+    "correction": "luminosità × {gain}, fondo {background}",
+    "pairsWithoutGainOne": "In una zona in comune c’era quasi solo fondo cielo, quindi lì è stato pareggiato solo il fondo e la luminosità è stata ricavata dalle altre zone in comune, dove possibile.",
+    "pairsWithoutGainOther": "In {count} zone in comune c’era quasi solo fondo cielo, quindi lì è stato pareggiato solo il fondo e la luminosità è stata ricavata dalle altre zone in comune, dove possibile.",
+    "isolated": "Questi pannelli non si sovrappongono agli altri e quindi non sono stati pareggiati: {panels}."
+  }
+}

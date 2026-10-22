@@ -1,0 +1,19 @@
+{
+  "reasons": {
+    "notRaw": "not a recognizable camera RAW file",
+    "headerNoEnd": "the FITS header does not end",
+    "notFits": "not a FITS file",
+    "invalidHeader": "invalid FITS header",
+    "stillIncomplete": "the file has not changed for {seconds} seconds but is still incomplete"
+  },
+  "errors": {
+    "notFolder": "The specified path is not a folder.",
+    "notFound": "The folder does not exist, or the computer or telescope sharing it cannot be reached.",
+    "noPermission": "StarLight does not have permission to read the folder.",
+    "networkNotResponding": "The network folder is not responding.",
+    "unreadable": "The folder cannot be read.",
+    "unreadableWithDetail": "The folder cannot be read ({detail})."
+  },
+  "reachableAgain": "The folder can be reached again.",
+  "unreachableRetrying": "{error} Still trying."
+}

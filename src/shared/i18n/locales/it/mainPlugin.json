@@ -1,0 +1,13 @@
+{
+  "chooseFolder": {
+    "title": "Scegli la cartella del plugin"
+  },
+  "chooseArchive": {
+    "title": "Scegli l’archivio del plugin"
+  },
+  "installButton": "Installa questo plugin",
+  "filters": {
+    "zip": "Archivi ZIP",
+    "allFiles": "Tutti i file"
+  }
+}
