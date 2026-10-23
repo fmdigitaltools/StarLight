@@ -196,21 +196,21 @@ function addUnknownTarget(
 
 /** Converts decimal degrees into hours, minutes and seconds of right ascension. */
 export function formatRightAscension(degrees: number): string {
-  const hours = degrees / 15
-  const h = Math.floor(hours)
-  const minutes = (hours - h) * 60
-  const m = Math.floor(minutes)
-  const s = (minutes - m) * 60
+  // Rounded to tenths of a second before splitting, so 59.96 s never shows as 60.0.
+  const tenths = Math.round((degrees / 15) * 36000) % 864000
+  const h = Math.floor(tenths / 36000)
+  const m = Math.floor((tenths % 36000) / 600)
+  const s = (tenths % 600) / 10
   return h + 'h ' + String(m).padStart(2, '0') + 'm ' + s.toFixed(1) + 's'
 }
 
 /** Converts decimal degrees into degrees, minutes and seconds of declination. */
 export function formatDeclination(degrees: number): string {
   const sign = degrees < 0 ? '-' : '+'
-  const absolute = Math.abs(degrees)
-  const g = Math.floor(absolute)
-  const minutes = (absolute - g) * 60
-  const m = Math.floor(minutes)
-  const s = (minutes - m) * 60
+  // Rounded to whole seconds before splitting, so 59.6" never shows as 60".
+  const seconds = Math.round(Math.abs(degrees) * 3600)
+  const g = Math.floor(seconds / 3600)
+  const m = Math.floor((seconds % 3600) / 60)
+  const s = seconds % 60
   return sign + g + '° ' + String(m).padStart(2, '0') + "' " + s.toFixed(0) + '"'
 }
