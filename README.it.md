@@ -2,7 +2,7 @@
 
 [English](README.md) · **Italiano**
 
-<!-- image: StarLight logo -->
+<p align="center"><img src="resources/icon-256.png" alt="StarLight" width="128"></p>
 
 StarLight è un programma libero e gratuito per Windows dedicato all'elaborazione delle immagini astronomiche.
 Accompagna il lavoro dai file di ripresa all'immagine finita, lungo un percorso a passi in cui ogni scelta automatica
@@ -12,7 +12,14 @@ resta regolabile e spiegata.
 segnale dal rumore; è in grado di assistere anche nel miglioramento di una singola immagine già impilata, per esempio
 quella prodotta da un telescopio.
 
-<!-- image: the main window with a processed image -->
+![StarLight con la Nebulosa Testa di Cavallo, prima e dopo l'elaborazione](https://www.fmdigitaltools.com/img/starlight/horsehead-it.jpg)
+
+| | | |
+|:-:|:-:|:-:|
+| ![Nebulosa Laguna (M 8)](https://www.fmdigitaltools.com/img/starlight/m8-it.jpg) | ![Galassia Fuochi d'Artificio (NGC 6946)](https://www.fmdigitaltools.com/img/starlight/ngc6946-it.jpg) | ![Nebulosa Manubrio (M 27)](https://www.fmdigitaltools.com/img/starlight/m27-it.jpg) |
+| Nebulosa Laguna (M 8) | Galassia Fuochi d'Artificio (NGC 6946) | Nebulosa Manubrio (M 27) |
+
+*Riprese amatoriali dell'autore, prima e dopo l'elaborazione con StarLight.*
 
 ## Funzioni
 

@@ -2,7 +2,7 @@
 
 **English** · [Italiano](README.it.md)
 
-<!-- image: StarLight logo -->
+<p align="center"><img src="resources/icon-256.png" alt="StarLight" width="128"></p>
 
 StarLight is a free, open source program for Windows dedicated to processing astronomical images.
 It guides the work from the capture files to the finished image, through a step-by-step path in which every automatic
@@ -12,7 +12,14 @@ It is designed first and foremost for stacked captures, that is, for adding up m
 the signal out of the noise; it also helps improve a single image that is already stacked, for example one produced by
 a telescope.
 
-<!-- image: the main window with a processed image -->
+![StarLight with the Horsehead Nebula, before and after processing](https://www.fmdigitaltools.com/img/starlight/horsehead-en.jpg)
+
+| | | |
+|:-:|:-:|:-:|
+| ![Lagoon Nebula (M 8)](https://www.fmdigitaltools.com/img/starlight/m8-en.jpg) | ![Fireworks Galaxy (NGC 6946)](https://www.fmdigitaltools.com/img/starlight/ngc6946-en.jpg) | ![Dumbbell Nebula (M 27)](https://www.fmdigitaltools.com/img/starlight/m27-en.jpg) |
+| Lagoon Nebula (M 8) | Fireworks Galaxy (NGC 6946) | Dumbbell Nebula (M 27) |
+
+*Amateur captures by the author, before and after processing with StarLight.*
 
 ## Features
 
