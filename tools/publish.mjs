@@ -47,7 +47,7 @@ const packageJson = JSON.parse(readFileSync(join(root, 'package.json'), 'utf-8')
 const version = packageJson.version
 const versionText = readFileSync(join(root, 'src/shared/version.ts'), 'utf-8')
 const appVersion = /APP_VERSION\s*=\s*'([^']+)'/.exec(versionText)?.[1]
-const address = /URL_AGGIORNAMENTI\s*=\s*'([^']+)'/.exec(versionText)?.[1] ?? ''
+const address = /UPDATES_URL\s*=\s*'([^']+)'/.exec(versionText)?.[1] ?? ''
 
 if (appVersion !== version) {
   stop(
@@ -57,7 +57,7 @@ if (appVersion !== version) {
 }
 if (address.includes('…') || address === '') {
   const text =
-    'URL_AGGIORNAMENTI in src/shared/version.ts is still the placeholder: the published version would not ' +
+    'UPDATES_URL in src/shared/version.ts is still the placeholder: the published version would not ' +
     'know where to look for later updates. Write the Worker address.'
   if (dryRun) console.warn('\n⚠ ' + text + '\n')
   else stop(text)
