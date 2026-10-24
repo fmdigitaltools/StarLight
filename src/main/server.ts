@@ -17,6 +17,13 @@ import { writeLog } from './log'
 /** How long a choice stays valid, in milliseconds. */
 const CHOICE_VALIDITY_MS = 10 * 60 * 1000
 
+/**
+ * File asked for to see whether the main address responds: the catalog
+ * index is always on the server, whatever the published versions are
+ * (a Beta, for example, writes beta.yml but no latest.yml).
+ */
+const PROBE_FILE = 'catalogs/catalogs.json'
+
 let chosen: string | null = null
 let chosenAt = 0
 
@@ -30,7 +37,7 @@ export async function serverAddressReachable(): Promise<string> {
   if (chosen !== null && Date.now() - chosenAt < CHOICE_VALIDITY_MS) return chosen
   let mainResponds = false
   try {
-    const response = await fetch(UPDATES_URL + 'latest.yml', {
+    const response = await fetch(UPDATES_URL + PROBE_FILE, {
       method: 'HEAD',
       redirect: 'follow',
       signal: AbortSignal.timeout(6000)
