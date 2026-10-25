@@ -1,24 +1,34 @@
 /*
- * Publishes a new StarLight version for automatic updates.
+ * Publishes a new StarLight version: uploads it to R2 for automatic updates
+ * and creates the GitHub release with the installer, for first downloads.
  *
- *   npm run publish                  builds the installer and uploads it to R2
- *   npm run publish -- --dry-run     builds and shows what it would upload, without uploading
- *   npm run publish -- --skip-build  uploads the files already present in dist-build
+ *   npm run publish                  builds the installer, uploads it to R2 and creates the release
+ *   npm run publish -- --dry-run     builds and shows what it would do, without uploading
+ *   npm run publish -- --skip-build  publishes the files already present in dist-build
  *   npm run publish -- --folder=DIR  takes the files from DIR instead of dist-build
+ *
+ * Published versions are built on GitHub Actions (.github/workflows/build.yml):
+ * download the run's artifact into a folder and use --skip-build --folder=DIR.
+ * The artifact contains build-commit.txt, the commit the installer was built
+ * from: the release tag is placed exactly there.
  *
  * Environment variables:
  *   STARLIGHT_R2_BUCKET        name of the R2 bucket (required, except with --dry-run)
  *   STARLIGHT_R2_PREFIX        folder inside the bucket, for example "starlight/" (optional)
  *   STARLIGHT_R2_JURISDICTION  "eu" if the bucket is under European jurisdiction (optional)
  *   CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID, or a "wrangler login" already done
+ * The GitHub CLI (gh) must be logged in to the account that owns the repository.
  *
  * Upload order: first the installer and its blockmap, last latest.yml.
  * Anyone checking for updates mid-upload still finds the old latest.yml,
  * which points to a complete installer, and never a new latest.yml pointing
- * to a file that has not arrived yet.
+ * to a file that has not arrived yet. The GitHub release comes after R2:
+ * rerunning the script after a failure overwrites the R2 files and adds the
+ * installer to the release if it already exists.
  */
 import { spawnSync } from 'node:child_process'
-import { readFileSync, existsSync } from 'node:fs'
+import { readFileSync, existsSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
 import { join, resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -48,6 +58,7 @@ const version = packageJson.version
 const versionText = readFileSync(join(root, 'src/shared/version.ts'), 'utf-8')
 const appVersion = /APP_VERSION\s*=\s*'([^']+)'/.exec(versionText)?.[1]
 const address = /UPDATES_URL\s*=\s*'([^']+)'/.exec(versionText)?.[1] ?? ''
+const codename = /APP_CODENAME\s*=\s*'([^']+)'/.exec(versionText)?.[1] ?? ''
 
 if (appVersion !== version) {
   stop(
@@ -177,6 +188,62 @@ for (const name of channelFiles) {
 console.log('\nVersion ' + version + ', bucket «' + (bucket || '(not specified)') + '»' + (prefix ? ', folder «' + prefix + '»' : '') + ':')
 for (const c of uploads) console.log('  ' + prefix + c.key + '   ← ' + c.file)
 
+/* ---- GitHub release: checked before uploading anything ---- */
+
+const tag = 'v' + version
+// The commit the installer was built from: written by the GitHub build, else the local one.
+const commitFile = join(folder, 'build-commit.txt')
+const commit = existsSync(commitFile)
+  ? readFileSync(commitFile, 'utf-8').trim()
+  : spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).stdout.trim()
+if (!/^[0-9a-f]{40}$/.test(commit)) stop('Could not tell which commit the installer was built from.')
+
+if (!dryRun) {
+  if (spawnSync('gh', ['auth', 'status'], { cwd: root, stdio: 'ignore', shell: true }).status !== 0) {
+    stop('The GitHub CLI is not logged in: run "gh auth login" and retry.')
+  }
+  // The tag goes on this commit: GitHub must already have it, otherwise the
+  // release would point to code nobody can see.
+  const known = spawnSync('gh', ['api', 'repos/{owner}/{repo}/commits/' + commit, '--silent'], { cwd: root, stdio: 'ignore', shell: true })
+  if (known.status !== 0) stop('Commit ' + commit + ' is not on GitHub: push it before publishing.')
+}
+
+/** Release page text: the release notes, English first, then Italian. */
+function releaseBody() {
+  const path = join(root, 'resources/release-notes.md')
+  const notes = existsSync(path) ? readFileSync(path, 'utf-8') : ''
+  const section = (language) =>
+    (new RegExp('<!-- lang:' + language + ' -->([\\s\\S]*?)(?=<!-- lang:|$)').exec(notes)?.[1] ?? '')
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter((line) => line !== '')
+      .map((line) => '- ' + line)
+      .join('\n')
+  return [
+    "## What's new",
+    section('en'),
+    '## Novità',
+    section('it'),
+    '---',
+    // Relative links do not work on release pages: full address of the file in the tagged version.
+    'Download **' + installerName + '** below and run it. Full history in [CHANGELOG.md](' + changelogUrl + ').',
+    'Scarica **' + installerName + '** qui sotto e avvialo. Storia completa in [CHANGELOG.md](' + changelogUrl + ').'
+  ].join('\n\n') + '\n'
+}
+
+// All the channel files name the same installer: only that one goes in the release.
+const installerName = [...installers][0]
+const installerList = [...installers].map((name) => join(folder, name))
+const repositoryUrl = spawnSync('git', ['remote', 'get-url', 'origin'], { cwd: root, encoding: 'utf8' })
+  .stdout.trim()
+  .replace(/\.git$/, '')
+const changelogUrl = repositoryUrl + '/blob/' + tag + '/CHANGELOG.md'
+const releaseTitle = 'StarLight ' + version + (codename ? ' «' + codename + '»' : '')
+const notesFile = join(tmpdir(), 'starlight-release-' + version + '.md')
+writeFileSync(notesFile, releaseBody())
+console.log('\nGitHub release ' + tag + ' «' + releaseTitle + '» on commit ' + commit + ', with:')
+for (const file of installerList) console.log('  ' + file)
+
 /* ---- Upload ---- */
 
 for (const c of uploads) {
@@ -200,8 +267,31 @@ for (const c of uploads) {
   else run('npx', args)
 }
 
+/* ---- GitHub release ---- */
+
+const quoted = installerList.map((file) => '"' + file + '"')
+const exists = !dryRun && spawnSync('gh', ['release', 'view', tag], { cwd: root, stdio: 'ignore', shell: true }).status === 0
+// Rerun after a failure: the release is already there, only the installer is replaced.
+const releaseArgs = exists
+  ? ['release', 'upload', tag, ...quoted, '--clobber']
+  : [
+      'release', 'create', tag, ...quoted,
+      '--target', commit,
+      '--title', '"' + releaseTitle + '"',
+      '--notes-file', '"' + notesFile + '"',
+      // Versions with a pre-release tag (1.0.0-beta.1) are not offered as the latest stable one.
+      ...(version.includes('-') ? ['--prerelease'] : [])
+    ]
+if (dryRun) {
+  console.log('\n(dry run) gh ' + releaseArgs.join(' '))
+  console.log('\nRelease text (' + notesFile + '):\n\n' + readFileSync(notesFile, 'utf-8'))
+} else {
+  run('gh', releaseArgs)
+}
+
 console.log(
   dryRun
     ? '\nDry run finished: nothing was uploaded.\n'
-    : '\n✔ StarLight ' + version + ' is published. Installed copies will find it at their next check.\n'
+    : '\n✔ StarLight ' + version + ' is published: installed copies will find it at their next check, ' +
+        'and the installer is on the GitHub release ' + tag + '.\n'
 )

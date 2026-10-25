@@ -57,6 +57,11 @@ jobs:
         shell: bash
         run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
 
+      # tools/publish.mjs places the release tag on this commit.
+      - name: Record the commit
+        shell: bash
+        run: echo "$GITHUB_SHA" > dist-build/build-commit.txt
+
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: StarLight-${{ steps.version.outputs.version }}
@@ -64,6 +69,7 @@ jobs:
             dist-build/StarLight-Installer-${{ steps.version.outputs.version }}.exe
             dist-build/StarLight-Installer-${{ steps.version.outputs.version }}.exe.blockmap
             dist-build/*.yml
+            dist-build/build-commit.txt
             !dist-build/builder-debug.yml
           if-no-files-found: error
           retention-days: 30
