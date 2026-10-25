@@ -1,0 +1,104 @@
+name: Bug report / Segnalazione di un problema
+description: Something does not work as expected. / Qualcosa non funziona come dovrebbe.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for the report. Please write in English or Italian, one problem per report.
+        Before sending, check that the same problem has not already been reported.
+
+        Grazie della segnalazione. Si può scrivere in inglese o in italiano, un problema per segnalazione.
+        Prima di inviarla, conviene controllare che lo stesso problema non sia già stato segnalato.
+
+  - type: input
+    id: version
+    attributes:
+      label: StarLight version / Versione di StarLight
+      description: Help → About StarLight. / Aiuto → Informazioni su StarLight.
+      placeholder: 1.0.0-beta.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows version / Versione di Windows
+      options:
+        - Windows 11
+        - Windows 10
+        - Other / Altro
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened / Cosa è successo
+      description: What went wrong, and any message shown. / Cosa non ha funzionato ed eventuali messaggi comparsi.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Come riprodurre il problema
+      description: The steps that lead to the problem, in order. / I passaggi che portano al problema, in ordine.
+      placeholder: |
+        1. Open a FITS file / Aprire un file FITS
+        2. Run Abracadabra / Avviare Abracadabra
+        3. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result / Risultato atteso
+      description: What should have happened instead. / Cosa sarebbe dovuto succedere.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: files
+    attributes:
+      label: Files involved / File coinvolti
+      multiple: true
+      options:
+        - FITS
+        - XISF
+        - TIFF
+        - PNG
+        - Camera RAW / RAW della fotocamera
+        - Not related to a file / Non riguarda un file
+    validations:
+      required: false
+
+  - type: input
+    id: equipment
+    attributes:
+      label: Telescope and camera (optional) / Telescopio e camera (facoltativo)
+      description: Useful when the problem concerns a specific kind of file. / Utile quando il problema riguarda un certo tipo di file.
+    validations:
+      required: false
+
+  - type: textarea
+    id: report
+    attributes:
+      label: Error report / Rapporto degli errori
+      description: |
+        Help → Log and error reporting → Copy report, then paste it here. It contains the version, the system and the last lines of the log, without the user name and without images.
+        Aiuto → Registro e segnalazione errori → Copia il rapporto, poi incollarlo qui. Contiene la versione, il sistema e le ultime righe del registro, senza il nome utente e senza immagini.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or files (optional) / Screenshot o file (facoltativi)
+      description: |
+        Drag images here. Everything attached is public: FITS and RAW files can contain the observing location and the date, so remove them first if they should stay private.
+        Trascinare qui le immagini. Tutto ciò che si allega è pubblico: i file FITS e RAW possono contenere il luogo e la data della ripresa, quindi conviene toglierli prima se devono restare privati.
+    validations:
+      required: false

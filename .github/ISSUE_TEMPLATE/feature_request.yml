@@ -1,0 +1,33 @@
+name: Suggestion / Proposta
+description: An idea to improve StarLight. / Un'idea per migliorare StarLight.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please write in English or Italian, one idea per suggestion.
+        Si può scrivere in inglese o in italiano, un'idea per proposta.
+
+  - type: textarea
+    id: need
+    attributes:
+      label: What is missing / Cosa manca
+      description: What you would like to do and cannot do today. / Cosa si vorrebbe fare e oggi non si può fare.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposed solution / Soluzione proposta
+      description: How StarLight could help. / Come potrebbe aiutare StarLight.
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (optional) / Contesto (facoltativo)
+      description: Kind of images, equipment, examples. / Tipo di immagini, strumentazione, esempi.
+    validations:
+      required: false
