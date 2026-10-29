@@ -7,8 +7,8 @@ import { autoStretch } from '@core/image/stretch'
 import { ImageCache, recommendedBudget } from '@core/memory'
 import { useApp } from '../store/appStore'
 import { recognizeObjects } from '@core/catalog/recognition'
-import { abracadabraFinish, knownLinear } from '@core/image/abracadabraFinish'
-import { ABRACADABRA_PROCESSING } from '@core/image/chain'
+import { abracadabraFinish, knownLinear, openingStretch } from '@core/image/abracadabraFinish'
+import { abracadabraProcessing } from '@core/image/chain'
 import { dualBandFile } from '@core/image/narrowband'
 import { runProcessing } from './useProcessing'
 import { readSettings, subscribeSettings } from '../settings'
@@ -224,9 +224,10 @@ export function useLibrary(): {
         // from them without rereading the file.
         previewFromImage(frame.path, image, frame.metadata.frameType !== 'stacked')
 
-        // Statistics and automatic stretch on first open.
+        // Statistics and automatic stretch on first open (none for files
+        // that arrive already stretched).
         const stats = computeImageStats(image)
-        const stretch = autoStretch(image)
+        const stretch = openingStretch(image, frame.metadata, frame.bitpix)
         updateAdjustments({ stretch })
 
         // Update the frame statistics in the library.
@@ -330,7 +331,8 @@ export function useLibrary(): {
     const state = useApp.getState()
     const image = state.originalImage ?? state.image
     if (!image) return
-    state.resetView(autoStretch(image))
+    const opened = state.frame.find((f) => f.id === state.activeFrameId)
+    state.resetView(openingStretch(image, opened?.metadata, opened?.bitpix ?? 16))
     notify('info', t('hooksUseLibrary.viewReset'))
   }, [notify])
 
@@ -355,10 +357,11 @@ export function useLibrary(): {
   const magicWand = useCallback(async (): Promise<void> => {
     const state = useApp.getState()
     if (!(state.originalImage ?? state.image) || state.job.active) return
+    const strength = readSettings().abracadabraStrength
 
     let result
     try {
-      result = await runProcessing(ABRACADABRA_PROCESSING, true, 'Abracadabra')
+      result = await runProcessing(abracadabraProcessing(strength), true, 'Abracadabra')
     } catch (error) {
       notify(
         'error',
@@ -374,7 +377,7 @@ export function useLibrary(): {
     // Stretch, color and edge crop measured on the processed image: the same
     // computation as batch processing.
     const shown = now.frame.find((f) => f.id === now.activeFrameId)
-    const finish = abracadabraFinish(result.image, result.measurements, knownLinear(shown?.metadata))
+    const finish = abracadabraFinish(result.image, result.measurements, knownLinear(shown?.metadata), shown?.bitpix, strength)
     now.resetCurves()
     updateAdjustments(finish.adjustments)
 

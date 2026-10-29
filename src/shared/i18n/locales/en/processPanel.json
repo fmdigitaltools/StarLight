@@ -23,7 +23,9 @@
     "smoothness": "Smoothness",
     "smoothnessHint": "A higher value makes the background model smoother and less tied to details.",
     "tolerance": "Tolerance",
-    "toleranceHint": "Sets the maximum deviation of a sample from the model, beyond which the sample is treated as part of the object and discarded."
+    "toleranceHint": "Sets the maximum deviation of a sample from the model, beyond which the sample is treated as part of the object and discarded.",
+    "wedges": "Even out poorly covered edges",
+    "wedgesHint": "When the frames rotate during the session, areas covered by fewer frames remain toward the edges, with more grain and a slightly different sky. This option recognizes their stronger grain and brings their sky to the level of the rest. Turn it off if dark blotches or holes appear in the object, as can happen with data that has very little grain, such as images from professional archives."
   },
   "trails": {
     "title": "Satellite trails",

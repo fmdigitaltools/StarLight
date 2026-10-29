@@ -134,6 +134,7 @@ import viewer_it from './locales/it/viewer.json'
 import whatsNewButton_it from './locales/it/whatsNewButton.json'
 import workersAlignParallel_it from './locales/it/workersAlignParallel.json'
 import workersBarrier_it from './locales/it/workersBarrier.json'
+import workersDeconvolveParallel_it from './locales/it/workersDeconvolveParallel.json'
 import workersLibraw_it from './locales/it/workersLibraw.json'
 import workersMosaic_it from './locales/it/workersMosaic.json'
 import workersStackInParallel_it from './locales/it/workersStackInParallel.json'
@@ -269,6 +270,7 @@ import viewer_en from './locales/en/viewer.json'
 import whatsNewButton_en from './locales/en/whatsNewButton.json'
 import workersAlignParallel_en from './locales/en/workersAlignParallel.json'
 import workersBarrier_en from './locales/en/workersBarrier.json'
+import workersDeconvolveParallel_en from './locales/en/workersDeconvolveParallel.json'
 import workersLibraw_en from './locales/en/workersLibraw.json'
 import workersMosaic_en from './locales/en/workersMosaic.json'
 import workersStackInParallel_en from './locales/en/workersStackInParallel.json'
@@ -407,6 +409,7 @@ export const LOCALES = {
     "whatsNewButton": whatsNewButton_it,
     "workersAlignParallel": workersAlignParallel_it,
     "workersBarrier": workersBarrier_it,
+    "workersDeconvolveParallel": workersDeconvolveParallel_it,
     "workersLibraw": workersLibraw_it,
     "workersMosaic": workersMosaic_it,
     "workersStackInParallel": workersStackInParallel_it,
@@ -544,6 +547,7 @@ export const LOCALES = {
     "whatsNewButton": whatsNewButton_en,
     "workersAlignParallel": workersAlignParallel_en,
     "workersBarrier": workersBarrier_en,
+    "workersDeconvolveParallel": workersDeconvolveParallel_en,
     "workersLibraw": workersLibraw_en,
     "workersMosaic": workersMosaic_en,
     "workersStackInParallel": workersStackInParallel_en,

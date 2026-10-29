@@ -35,13 +35,21 @@ import { takeShared, returnShared } from './parallel'
  *
  * Only sky boxes count: where the object is, noise grows with the light (and
  * fine detail inflates the measurement), and it is right for it to stay as
- * it is.
+ * it is. And only areas that reach the edge of the image count (see
+ * `keepFromEdges`).
  */
 
 /** Side of the boxes on which noise and level are measured. */
 const BOX = 32
 /** Number of times its own noise above the sky beyond which a box is considered object. */
-const NOISE_OBJECT = 12
+const OBJECT_STEP = 4
+/**
+ * Times the structure of the sky (see `measureBoxes`) beyond which a box is
+ * considered object: real wedges stay within 1.25 in 92-94% of their boxes.
+ */
+const OBJECT_STRUCTURE = 1.25
+/** Step of the wide second difference that measures structure, in pixels. */
+const WIDE_STEP = 8
 /** Below this ratio the noise is considered the typical one. */
 const MIN_RATIO = 1.15
 /** If no area exceeds this ratio, there are no wedges. */
@@ -77,41 +85,63 @@ function measureBoxes(plane: Float32Array, w: number, h: number): Boxes | null {
   const rows = Math.floor(h / B)
   if (columns < 4 || rows < 4) return null
   const noise = new Float32Array(columns * rows)
+  const wide = new Float32Array(columns * rows)
   const level = new Float32Array(columns * rows)
   const differences = new Float32Array(B * B)
+  const wideDifferences = new Float32Array(B * B)
   const values = new Float32Array(B * B)
   for (let cy = 0; cy < rows; cy++) {
     for (let cx = 0; cx < columns; cx++) {
       let k = 0
       let d = 0
+      let e = 0
       for (let y = cy * B; y < (cy + 1) * B; y++) {
         const o = y * w + cx * B
         for (let x = 0; x < B; x++) {
           values[k++] = plane[o + x]
           if (x + 4 < B) differences[d++] = Math.abs(plane[o + x + 4] - 2 * plane[o + x + 2] + plane[o + x])
+          if (x + 2 * WIDE_STEP < B) {
+            wideDifferences[e++] = Math.abs(plane[o + x + 2 * WIDE_STEP] - 2 * plane[o + x + WIDE_STEP] + plane[o + x])
+          }
         }
       }
       noise[cy * columns + cx] = kth(differences, d >> 1, d) / SECOND_DIFFERENCE
+      wide[cy * columns + cx] = kth(wideDifferences, e >> 1, e) / SECOND_DIFFERENCE
       level[cy * columns + cx] = kth(values, k >> 1, k)
     }
   }
   const typical = Math.max(1e-12, kth(Float32Array.from(noise), noise.length >> 1))
   // Sky from the low end of the levels: in a field filled by a nebula the
-  // median would fall on the nebula. A wedge's level differs from the sky by
-  // a few times its noise; where the object's light raises the noise by more
-  // than 15%, it is tens of times above the sky.
+  // median would fall on the nebula. The level of a wedge differs from the
+  // sky by less than its own noise (0.1 times in the middle, 0.7 at most, on
+  // mosaics with wide wedges), while the detail of an object, even where it
+  // raises the noise, stands higher: in data with very little grain
+  // (survey images, already background-subtracted) the knots and dust lanes
+  // of a galaxy raise the noise of the boxes, and with a threshold of tens
+  // of times the box no longer looked like object, its "sky" was equalized
+  // and black holes were dug in the galaxy.
   const sky = kth(Float32Array.from(level), level.length >> 2)
+  // Grain against structure: on grain the wide second difference stays
+  // close to that of the sky (correlated grain makes it grow, but the same
+  // everywhere), on the detail of an object it grows more. The measure of
+  // the sky is the median of the boxes with typical noise.
+  const structure = new Float32Array(columns * rows)
+  let q = 0
+  for (let b = 0; b < noise.length; b++) {
+    if (noise[b] < 1.1 * typical && level[b] - sky < OBJECT_STEP * noise[b]) structure[q++] = wide[b] / Math.max(1e-12, noise[b])
+  }
+  const skyStructure = q > 0 ? kth(structure, q >> 1, q) : Infinity
   const object = new Uint8Array(columns * rows)
   const raw = new Float32Array(columns * rows)
   for (let b = 0; b < raw.length; b++) {
-    object[b] = level[b] - sky > NOISE_OBJECT * noise[b] ? 1 : 0
+    const detail = wide[b] > OBJECT_STRUCTURE * skyStructure * noise[b]
+    object[b] = level[b] - sky > OBJECT_STEP * noise[b] || detail ? 1 : 0
     raw[b] = object[b] ? 1 : Math.max(1, noise[b] / typical)
   }
   // Median over neighboring boxes: removes isolated ones with a bright star;
   // wedges are contiguous and remain.
   const ratio = new Float32Array(columns * rows)
   const neighbors = new Float32Array(9)
-  let max = 1
   for (let cy = 0; cy < rows; cy++) {
     for (let cx = 0; cx < columns; cx++) {
       let k = 0
@@ -124,12 +154,57 @@ function measureBoxes(plane: Float32Array, w: number, h: number): Boxes | null {
       }
       const q = kth(neighbors, 4, 9)
       const b = cy * columns + cx
-      const v = object[b] ? 1 : 1 + (q - 1) * smooth(MIN_RATIO, MIN_RATIO + 0.25, q)
-      ratio[b] = v
-      if (v > max) max = v
+      ratio[b] = object[b] ? 1 : 1 + (q - 1) * smooth(MIN_RATIO, MIN_RATIO + 0.25, q)
     }
   }
+  const max = keepFromEdges(ratio, columns, rows)
   return { columns, rows, ratio, object, max }
+}
+
+/**
+ * Keeps only the noisy areas connected to the edge of the image, bringing
+ * the others back to 1, and returns the highest ratio left.
+ *
+ * Frames that rotate leave their poorly covered wedges and bands along the
+ * edges and corners: a noisy area enclosed in the middle of the field is
+ * not one of them. It is the detail of an object in data with very little
+ * grain (survey images, already background-subtracted): there knots and
+ * dust lanes raise the second difference above the grain, the box is no
+ * longer recognized as object, and equalizing its "sky" would dig black
+ * holes in the galaxy.
+ */
+function keepFromEdges(ratio: Float32Array, columns: number, rows: number): number {
+  const reached = new Uint8Array(columns * rows)
+  const queue = new Int32Array(columns * rows)
+  let end = 0
+  const visit = (b: number): void => {
+    if (reached[b] || ratio[b] <= 1) return
+    reached[b] = 1
+    queue[end++] = b
+  }
+  for (let cx = 0; cx < columns; cx++) {
+    visit(cx)
+    visit((rows - 1) * columns + cx)
+  }
+  for (let cy = 0; cy < rows; cy++) {
+    visit(cy * columns)
+    visit(cy * columns + columns - 1)
+  }
+  for (let start = 0; start < end; start++) {
+    const b = queue[start]
+    const cx = b % columns
+    const cy = (b - cx) / columns
+    if (cx > 0) visit(b - 1)
+    if (cx < columns - 1) visit(b + 1)
+    if (cy > 0) visit(b - columns)
+    if (cy < rows - 1) visit(b + columns)
+  }
+  let max = 1
+  for (let b = 0; b < ratio.length; b++) {
+    if (!reached[b]) ratio[b] = 1
+    else if (ratio[b] > max) max = ratio[b]
+  }
+  return max
 }
 
 /** From boxes to pixels, interpolating between the centers (into `map`, if given). */

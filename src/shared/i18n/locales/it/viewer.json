@@ -18,6 +18,10 @@
   "instrumentTitle": "Modello dello strumento dichiarato nell’intestazione del file",
   "objectTitle": "Oggetto riconosciuto nel campo inquadrato",
   "comparisonBefore": "Prima: l’immagine com’era all’apertura",
+  "clipping": {
+    "label": "Mostra i pixel tagliati",
+    "title": "Mostra i pixel tagliati (tasto {key}). In blu i punti finiti a nero pieno: lì il fondo e le zone scure, come le fasce di polvere, non hanno più dettaglio; abbassa un po’ il punto di nero o alza la protezione delle ombre. In magenta i punti con almeno un colore finito a bianco pieno: nuclei e stelle bruciati, che perdono anche il colore; alza il punto di bianco, usa la protezione delle luci o abbassa la parte alta delle curve. I colori servono solo a guardare e non finiscono mai nell’esportazione."
+  },
   "inField": "Nel campo: {names}",
   "inFieldHidden": "Nel campo (posizioni nascoste perché un plugin ha spostato i pixel senza dichiarare la trasformazione): {names}"
 }

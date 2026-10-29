@@ -31,5 +31,16 @@
   "magicWand": {
     "label": "Abracadabra",
     "title": "Prepare the image automatically by measuring it and correcting sky background, color, noise, detail, stars and tones. The chosen values remain editable in the Process and Correct steps, and the Reset button returns the image to the original."
+  },
+  "strength": {
+    "menu": "Abracadabra strength",
+    "title": "Abracadabra strength: {level}",
+    "note": "Applies to the button and to batch processing. Defects, sky background and color are always corrected the same way; it changes how much it acts on grain, sharpness, stars, local contrast and saturation.",
+    "gentle": "Gentle",
+    "gentleHint": "For data that is already clean or images that only need a finishing touch: half the measured dose.",
+    "balanced": "Balanced",
+    "balancedHint": "The dose measured on the image. This is the recommended choice.",
+    "strong": "Strong",
+    "strongHint": "For short, very grainy sessions: a stronger dose, with more risk of halos and a plastic look."
   }
 }

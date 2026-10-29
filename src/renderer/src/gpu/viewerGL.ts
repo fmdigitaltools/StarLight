@@ -40,6 +40,11 @@ export interface ViewParams {
   vignetteBox?: { x: number; y: number; width: number; height: number }
   /** Local adjustments (masks), or null if there are none. */
   locals?: ViewLocalParams | null
+  /**
+   * Paints the clipped pixels (pure black in blue, pure white in magenta).
+   * Absent = off: only the live view sets it, never the before/after comparison.
+   */
+  clipping?: boolean
   /** Zoom factor: 1 means one image pixel per screen pixel. */
   zoom: number
   /** Pan offset in screen pixels. */
@@ -556,6 +561,7 @@ export class ViewerGL {
     gl.uniform1f(this.loc('uMonochrome'), filter.monochrome)
 
     this.setLocals(p.locals)
+    gl.uniform1i(this.loc('uClipping'), p.clipping ? 1 : 0)
 
     // Size of the image on screen, as a fraction of the window.
     const displayWidth = this.canvas.clientWidth

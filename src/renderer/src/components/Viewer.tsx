@@ -5,13 +5,13 @@ import { useStraighten } from '../hooks/straighten'
 import { StraightenViewer } from './StraightenViewer'
 import { ViewerGL } from '../gpu/viewerGL'
 import { Empty, Button, Label } from './Controls'
-import { ImportIcon, FolderIcon } from './Icons'
+import { ImportIcon, FolderIcon, ClippingIcon } from './Icons'
 import galaxySvg from '../assets/galaxy.svg?raw'
 import { useLibrary } from '../hooks/useLibrary'
 import { imageSkyBackground } from '@core/image/skyBackground'
 import { NEUTRAL_FILTER, effectiveFilter } from '@core/image/photoFilters'
 import { NEUTRAL_CURVES, buildLut, neutralCurves } from '@core/image/curve'
-import { autoStretch } from '@core/image/stretch'
+import { openingStretch } from '@core/image/abracadabraFinish'
 import { buildGhsLut } from '@core/image/ghs'
 import { Histogram } from './Histogram'
 import type { RecognizedObject, ImageData32, Wcs } from '@shared/types'
@@ -28,6 +28,8 @@ import { useDisplayedAstrometry } from '../hooks/displayedAstrometry'
 import { NucleusMarker, pointFromScreen } from './NucleusMarker'
 import { useCometNucleus } from '../hooks/cometNucleus'
 import { useComparison } from '../hooks/comparison'
+import { useClippingWarning, toggleClippingWarning } from '../hooks/clippingWarning'
+import { keysOf } from '../shortcuts'
 import { useLocalAdjustmentsInViewer } from '../hooks/viewerMasks'
 import { MasksLayer } from './MasksLayer'
 import { CropLayer } from './CropLayer'
@@ -99,17 +101,24 @@ export function Viewer(): JSX.Element {
 
   // Before/after comparison (backslash key held down, see hooks/useShortcuts.ts):
   // shows the image as it was when opened, i.e. the original data with only
-  // the automatic stretch, without touching any of the work done.
+  // the stretch chosen on opening, without touching any of the work done.
   const originalImage = useApp((s) => s.originalImage)
   const comparison = useComparison((s) => s.active)
   const before = useMemo(() => {
     if (!comparison || !image) return null
     const base = originalImage ?? image
-    return { image: base, adjustments: { ...NEUTRAL_ADJUSTMENTS, stretch: autoStretch(base) } }
-  }, [comparison, originalImage, image])
+    const opened = frame.find((f) => f.id === activeFrameId)
+    return {
+      image: base,
+      adjustments: { ...NEUTRAL_ADJUSTMENTS, stretch: openingStretch(base, opened?.metadata, opened?.bitpix ?? 16) }
+    }
+  }, [comparison, originalImage, image, frame, activeFrameId])
   const shown = before?.image ?? image
   const shownAdjustments = before?.adjustments ?? adjustments
   const shownCurves = before ? NEUTRAL_CURVES : curves
+  // Clipping warning: never on the "before" image, which is there to be seen as it was.
+  const clippingOn = useClippingWarning((s) => s.on)
+  const clipping = clippingOn && !before
   // Last loaded image: the comparison must not refit the view.
   const loaded = useRef<{ image: ImageData32 | null; generation: number }>({ image: null, generation: -1 })
 
@@ -281,11 +290,12 @@ export function Viewer(): JSX.Element {
       vignetteBox: crop,
       // The "before" comparison leaves out local adjustments too.
       locals: before ? null : locals,
+      clipping,
       zoom: effectiveZoom,
       panX: pan.x,
       panY: pan.y
     })
-  }, [shown, shownAdjustments, viewerZoom, pan, sky, generation, shownCurves, locals, before, crop])
+  }, [shown, shownAdjustments, viewerZoom, pan, sky, generation, shownCurves, locals, before, crop, clipping])
 
   useRedrawOnResize(canvasRef, generation)
 
@@ -399,6 +409,17 @@ export function Viewer(): JSX.Element {
           ) : null}
         </div>
         <div className="sl-topbar-spacer" />
+        {/* Next to the histogram: it says how many pixels are clipped, this shows where. */}
+        <button
+          type="button"
+          className={'sl-btn sl-btn-secondary sl-btn-icon' + (clippingOn ? ' sl-btn-on' : '')}
+          onClick={toggleClippingWarning}
+          aria-pressed={clippingOn}
+          aria-label={t('viewer.clipping.label')}
+          title={t('viewer.clipping.title', { key: keysOf('clipping') })}
+        >
+          <ClippingIcon size={17} />
+        </button>
         <Histogram compactValue />
       </div>
 

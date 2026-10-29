@@ -73,6 +73,14 @@ uniform vec4 uVignetteBox;
 uniform float uMonochrome;
 
 /*
+ * Clipping warning: paints in flat colors the pixels that the display ends
+ * up crushing to black or blowing out to white, so the user sees where the
+ * stretch or the curves lose detail (the histogram only says how many).
+ * Viewer only: exports are computed on the CPU and never pass through here.
+ */
+uniform bool uClipping;
+
+/*
  * Local adjustments (masks), up to four levels.
  *
  * Twin of src/core/image/masks.ts, which performs the same computation for
@@ -482,6 +490,8 @@ void main() {
   vec3 raw = readPixel(vUV);
   vec3 linearColor = spatialFilter(vUV, uNoiseReduction, uSharpness);
   vec3 color = adjustmentChain(linearColor, vUV);
+  // Strength of the mask overlay shown for the selected level, 0 for none.
+  float maskShown = 0.0;
 
   if (uLocCount > 0) {
     // Pixel position: in the displayed image and in the source image.
@@ -531,11 +541,25 @@ void main() {
       if (i >= uLocCount) break;
       if (m[i] > 0.0) color = mix(color, applyLocal(color, uLocTones[i], uLocColor[i]), m[i]);
     }
-    // The mask in semi-transparent red, while it is being adjusted.
     for (int i = 0; i < 4; i++) {
-      if (i == uShowMask) color = mix(clamp(color, 0.0, 1.0), vec3(1.0, 0.12, 0.12), 0.6 * m[i]);
+      if (i == uShowMask) maskShown = m[i];
     }
   }
 
-  fragColor = vec4(clamp(color, 0.0, 1.0), 1.0);
+  color = clamp(color, 0.0, 1.0);
+
+  // Checked on the final displayed value, before the red mask overlay that
+  // would otherwise hide or fake a clip. Black only when all three channels
+  // are gone; white as soon as one channel saturates, because a core with a
+  // single saturated channel has already lost its color. Blue and magenta
+  // stand out on a dark sky and do not mix up with the red mask overlay.
+  if (uClipping) {
+    if (all(lessThanEqual(color, vec3(1.0 / 255.0)))) color = vec3(0.1, 0.45, 1.0);
+    else if (any(greaterThanEqual(color, vec3(254.0 / 255.0)))) color = vec3(1.0, 0.1, 0.85);
+  }
+
+  // The mask in semi-transparent red, while it is being adjusted.
+  if (maskShown > 0.0) color = mix(color, vec3(1.0, 0.12, 0.12), 0.6 * maskShown);
+
+  fragColor = vec4(color, 1.0);
 }

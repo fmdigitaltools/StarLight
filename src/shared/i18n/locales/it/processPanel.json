@@ -23,7 +23,9 @@
     "smoothness": "Levigatezza",
     "smoothnessHint": "Un valore più alto rende il modello del fondo più morbido e meno aderente ai dettagli.",
     "tolerance": "Tolleranza",
-    "toleranceHint": "Definisce lo scostamento massimo di un campione dal modello, oltre il quale il campione viene considerato parte dell’oggetto e scartato."
+    "toleranceHint": "Definisce lo scostamento massimo di un campione dal modello, oltre il quale il campione viene considerato parte dell’oggetto e scartato.",
+    "wedges": "Pareggia i bordi poco coperti",
+    "wedgesHint": "Quando le pose ruotano durante la ripresa, verso i bordi restano zone coperte da meno pose, con più grana e un cielo un po’ diverso. Questa opzione ne riconosce la grana più forte e porta il loro cielo al livello del resto. Spegnila se nell’oggetto compaiono macchie o buchi scuri, come può succedere con dati che hanno pochissima grana, per esempio immagini di archivi professionali."
   },
   "trails": {
     "title": "Scie di satelliti",

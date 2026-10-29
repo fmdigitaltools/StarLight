@@ -1,4 +1,5 @@
 import type { ImageData32 } from '@shared/types'
+import { t } from '@shared/i18n/i18n'
 import {
   DECONVOLUTION_MARGIN,
   measureDeconvolution,
@@ -75,17 +76,41 @@ export async function deconvolveParallel(
   const concurrent = Math.max(1, Math.min(tasks.length, Math.floor(budget / (largest * STRIP_BYTES_PER_PIXEL))))
 
   let completedItems = 0
+  // After the first failure the other stripes are stopped and report
+  // nothing more: a late progress report would reopen the job that the
+  // caller has just closed, and the bar would stay stuck.
+  let failed = false
+  const running = new Set<Worker>()
+  const fail = (worker: Worker, reject: (e: Error) => void, error: Error): void => {
+    worker.terminate()
+    running.delete(worker)
+    if (failed) return
+    failed = true
+    for (const other of running) other.terminate()
+    running.clear()
+    reject(error)
+  }
   const run = (task: { start: number; end: number }, index: number): Promise<void> =>
     new Promise((solve, reject) => {
+      if (failed) {
+        solve()
+        return
+      }
       const [from, a] = rowsOf(task)
       const worker = new Worker(new URL('./deconvolution.worker.ts', import.meta.url), {
         type: 'module',
         name: 'deconvolution-' + (index + 1)
       })
+      running.add(worker)
       worker.onmessage = (e: MessageEvent<DeconvolutionResponse>): void => {
-        worker.terminate()
         if (e.data.result === 'error') {
-          reject(new Error(e.data.message))
+          fail(worker, reject, new Error(e.data.message))
+          return
+        }
+        worker.terminate()
+        running.delete(worker)
+        if (failed) {
+          solve()
           return
         }
         const { u, weight } = e.data
@@ -109,8 +134,8 @@ export async function deconvolveParallel(
         solve()
       }
       worker.onerror = (e): void => {
-        worker.terminate()
-        reject(new Error(e.message))
+        // A worker that cannot even start gives an empty message.
+        fail(worker, reject, new Error(e.message || t('workersDeconvolveParallel.workerFailed')))
       }
       const request: DeconvolutionRequest = {
         y: y.slice(from * w, a * w),

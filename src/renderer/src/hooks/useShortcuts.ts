@@ -15,6 +15,7 @@ import { STEPS } from '../components/WorkflowBar'
 import { useLibrary } from './useLibrary'
 import { undo, repeat } from './history'
 import { setComparison } from './comparison'
+import { toggleClippingWarning } from './clippingWarning'
 import { shortcutFor, type ShortcutId } from '../shortcuts'
 import { useMaskTools, type MaskTool } from './viewerMasks'
 import { useViewerCrop } from './viewerCrop'
@@ -126,6 +127,9 @@ export function useShortcuts(): void {
           return
         case 'crop':
           if (withImage) useViewerCrop.getState().toggle()
+          return
+        case 'clipping':
+          if (withImage) toggleClippingWarning()
           return
         case 'panel':
           state.togglePanel()

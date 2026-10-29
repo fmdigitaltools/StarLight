@@ -212,6 +212,19 @@ export function CropIcon({ size = 20, className }: Props): JSX.Element {
   )
 }
 
+/** Clipping warning: a histogram hump between the two limits where tones are cut. */
+export function ClippingIcon({ size = 20, className }: Props): JSX.Element {
+  return wrap(
+    <>
+      <path d="M4 18c3 0 4-10 8-10s5 10 8 10" />
+      <path d="M4 4v16" />
+      <path d="M20 4v16" />
+    </>,
+    size,
+    className
+  )
+}
+
 export function RestartIcon({ size = 20, className }: Props): JSX.Element {
   return wrap(
     <>
@@ -301,6 +314,11 @@ export function WandIcon({ size = 20, className }: Props): JSX.Element {
     size,
     className
   )
+}
+
+/** Small downward arrow: opens a menu of choices attached to a button. */
+export function ChevronDownIcon({ size = 20, className }: Props): JSX.Element {
+  return wrap(<path d="M7 10l5 5 5-5" />, size, className)
 }
 
 /** Clockwise circular arrow: rotates the image by a quarter turn. */

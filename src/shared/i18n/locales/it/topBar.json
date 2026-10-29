@@ -31,5 +31,16 @@
   "magicWand": {
     "label": "Abracadabra",
     "title": "Prepara l’immagine automaticamente, misurandola e correggendo fondo cielo, colore, rumore, dettagli, stelle e toni. I valori scelti restano modificabili nei passi Elabora e Correggi, e il pulsante Ripristina riporta l’immagine all’originale."
+  },
+  "strength": {
+    "menu": "Intensità di Abracadabra",
+    "title": "Intensità di Abracadabra: {level}",
+    "note": "Vale per il pulsante e per l’elaborazione in serie. Corregge sempre allo stesso modo difetti, fondo cielo e colore; cambia quanto agisce su grana, nitidezza, stelle, contrasto locale e saturazione.",
+    "gentle": "Delicata",
+    "gentleHint": "Per dati già puliti o immagini a cui basta una rifinitura: metà della dose misurata.",
+    "balanced": "Equilibrata",
+    "balancedHint": "La dose misurata sull’immagine. È la scelta consigliata.",
+    "strong": "Spinta",
+    "strongHint": "Per riprese brevi e molto granulose: dose più forte, con più rischio di aloni e aspetto «di plastica»."
   }
 }

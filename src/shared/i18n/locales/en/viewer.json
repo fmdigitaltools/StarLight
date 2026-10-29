@@ -18,6 +18,10 @@
   "instrumentTitle": "Instrument model declared in the file header",
   "objectTitle": "Object recognized in the framed field",
   "comparisonBefore": "Before: the image as it was when opened",
+  "clipping": {
+    "label": "Show clipped pixels",
+    "title": "Show clipped pixels ({key} key). Blue marks points crushed to pure black: there the background and the dark areas, such as dust lanes, have lost all detail; lower the black point a little or raise the shadow protection. Magenta marks points with at least one color blown to pure white: burnt cores and stars, which lose their color too; raise the white point, use the highlight protection or lower the top of the curves. The colors are only for looking and never reach the export."
+  },
   "inField": "In the field: {names}",
   "inFieldHidden": "In the field (positions hidden because a plugin moved the pixels without declaring the transformation): {names}"
 }

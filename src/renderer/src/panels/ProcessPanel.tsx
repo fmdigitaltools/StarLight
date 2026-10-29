@@ -123,7 +123,15 @@ export function ProcessPanel(): JSX.Element {
             />
           </>
         ) : null}
-        <ApplyCard keys={['hotPixels', 'background', 'rbfBackground']} apply={apply} />
+        {p.background !== 'none' ? (
+          <Toggle
+            label={t('processPanel.defects.wedges')}
+            active={p.wedgeEqualization}
+            onChange={(v) => update({ wedgeEqualization: v })}
+            hint={t('processPanel.defects.wedgesHint')}
+          />
+        ) : null}
+        <ApplyCard keys={['hotPixels', 'background', 'rbfBackground', 'wedgeEqualization']} apply={apply} />
       </Tab>
 
       <Tab

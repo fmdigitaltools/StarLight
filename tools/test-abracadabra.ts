@@ -35,10 +35,10 @@ import type { ImageData32 } from '../src/shared/types'
 import { firstStage, thirdStage, applyReductionAmount, ABRACADABRA_PROCESSING } from '../src/core/image/chain'
 import { nlBayes } from '../src/core/image/nlbayes'
 import { computeStats, MAD_TO_SIGMA } from '../src/core/image/stats'
-import { abracadabraFinish } from '../src/core/image/abracadabraFinish'
+import { abracadabraFinish, openingStretch } from '../src/core/image/abracadabraFinish'
 import { applyCorrections } from '../src/core/export/processing'
 import { blur } from '../src/core/image/cleanup'
-import { mtf } from '../src/core/image/stretch'
+import { mtf, type StretchParams } from '../src/core/image/stretch'
 import { findWedges, equalizeWedgeBackground, wedgeMap } from '../src/core/image/wedges'
 import type { FirstStageMeasurements } from '../src/core/image/chain'
 
@@ -285,6 +285,14 @@ result(
   nucleusD < 0.8,
   nucleusD.toFixed(3) + ' (was ' + stretchedNucleus.toFixed(3) + ')'
 )
+
+/* ---- Stretch on opening: only linear data are stretched ---- */
+
+const linearOpened = synthetic({ strip: false, wedge: false, nucleusLight: 0.15 })
+const isNeutral = (p: StretchParams): boolean => p.shadows === 0 && p.midtones === 0.5 && p.highlights === 1
+result('linear stack stretched on opening', !isNeutral(openingStretch(linearOpened, null, 16)))
+result('8-bit file shown as it is on opening', isNeutral(openingStretch(linearOpened, null, 8)))
+result('8-bit file treated as already stretched by Abracadabra', abracadabraFinish(linearOpened, null, false, 8).alreadyStretched)
 
 // Crescents: around each star, the lowest light (smoothed 3 x 3)
 // between 3 and 8 pixels from the center must not drop much below the

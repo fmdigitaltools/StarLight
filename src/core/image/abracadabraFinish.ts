@@ -1,7 +1,7 @@
 import type { FrameMetadata, ImageData32 } from '@shared/types'
-import type { StretchParams } from './stretch'
+import { autoStretch, NEUTRAL_STRETCH, type StretchParams } from './stretch'
 import type { Crop } from '@core/export/crop'
-import type { FirstStageMeasurements } from './chain'
+import { STRENGTH_FACTOR, type AbracadabraStrength, type FirstStageMeasurements } from './chain'
 import type { WedgeMap } from './wedges'
 import { buildGhsLut, automaticGhs, GHS_TARGETS, type GhsTargets, type GhsParams } from './ghs'
 import { computeStats, MAD_TO_SIGMA } from './stats'
@@ -105,12 +105,22 @@ export function knownLinear(metadata: FrameMetadata | null | undefined): boolean
   return !!metadata && (metadata.raw !== undefined || (metadata.stackCount ?? 0) > 0)
 }
 
-export function abracadabraFinish(
-  image: ImageData32,
-  measurements: FirstStageMeasurements | null,
-  /** See `knownLinear`. */
-  linear = false
-): AbracadabraFinish {
+/**
+ * Stretch shown when a file is opened. Linear data get the automatic
+ * stretch; data that whoever produced the file has already stretched are
+ * shown as they are, instead of being stretched a second time: 8-bit files
+ * (256 levels cannot hold a linear deep-sky signal, so they are always
+ * finished images) and files whose values are distributed like a finished
+ * image (see `alreadyStretched`).
+ */
+export function openingStretch(image: ImageData32, metadata: FrameMetadata | null | undefined, bitpix: number): StretchParams {
+  if (knownLinear(metadata)) return autoStretch(image)
+  if (bitpix === 8) return { ...NEUTRAL_STRETCH }
+  return alreadyStretched(meanLight(image)) ? { ...NEUTRAL_STRETCH } : autoStretch(image)
+}
+
+/** Mean of the channels of each pixel. */
+function meanLight(image: ImageData32): Float32Array {
   const { width: w, height: h, channels } = image
   const n = w * h
   const lum = new Float32Array(n)
@@ -119,6 +129,21 @@ export function abracadabraFinish(
     for (let c = 0; c < channels; c++) t += image.data[c * n + i]
     lum[i] = t / channels
   }
+  return lum
+}
+
+export function abracadabraFinish(
+  image: ImageData32,
+  measurements: FirstStageMeasurements | null,
+  /** See `knownLinear`. */
+  linear = false,
+  /** Bits per value in the file: 8-bit files are always already stretched (see `openingStretch`). */
+  bitpix = 16,
+  /** Strength chosen for Abracadabra: it doses the saturation like the tools of the chain. */
+  strength: AbracadabraStrength = 'balanced'
+): AbracadabraFinish {
+  const { width: w, height: h, channels } = image
+  const lum = meanLight(image)
 
   // Sky measured on the dark areas of a star-free map (see `lightMap`),
   // noise as the spread of the values: after noise reduction the remaining
@@ -134,7 +159,7 @@ export function abracadabraFinish(
   // curve to bring it back to 0.11 would push toward white even the center
   // of the object, which is already high) and the sky is only slightly
   // brightened.
-  const stretched = !linear && alreadyStretched(lum)
+  const stretched = !linear && (bitpix === 8 || alreadyStretched(lum))
   const black = stretched ? 0 : Math.max(0, sky - BLACK_SIGMA * sigma)
   const white = 1
   const ghs = automaticGhs(image, black, white, {
@@ -144,7 +169,12 @@ export function abracadabraFinish(
   })
 
   const saturation =
-    channels === 3 ? dosedSaturation(image, map, { shadows: black, midtones: 0.5, highlights: white }, ghs) : 0
+    channels === 3
+      ? Math.min(
+          1,
+          dosedSaturation(image, map, { shadows: black, midtones: 0.5, highlights: white }, ghs) * STRENGTH_FACTOR[strength]
+        )
+      : 0
 
   const adjustments: AbracadabraAdjustments = {
     stretch: { shadows: black, midtones: 0.5, highlights: white },

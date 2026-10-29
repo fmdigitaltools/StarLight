@@ -6,6 +6,7 @@ import { PRERELEASE } from '@shared/version'
 import { DEFAULT_STARTUP_CHOICES, startupChoices, type Gpu } from '@shared/performance'
 import type { CaptionCorner, CaptionTemplate, CaptionChoice } from '@core/export/caption'
 import type { CoordinatesChoice } from '@core/astrometry/imageCoordinates'
+import { ABRACADABRA_STRENGTHS, type AbracadabraStrength } from '@core/image/chain'
 import { getLanguage, isLanguage, LANGUAGES, languageForLocale, setLanguage, t, type Language } from '@shared/i18n/i18n'
 
 /** Language setting: `auto` follows the Windows language. */
@@ -108,6 +109,9 @@ export interface Settings {
   /** Gaia catalog stars requested for calibration: down to this magnitude. */
   gaiaMagnitude: number
 
+  /** How hard Abracadabra works, on the open image and in batch processing (menu next to the button). */
+  abracadabraStrength: AbracadabraStrength
+
   /* Appearance */
   /** Animated glow and sparkles on the Abracadabra button. */
   animatedAbracadabra: boolean
@@ -149,6 +153,7 @@ export const DEFAULT_SETTINGS: Settings = {
   internet: true,
   // The same value as CATALOG_MAGNITUDE in core/image/photometry.ts.
   gaiaMagnitude: 15.5,
+  abracadabraStrength: 'balanced',
   animatedAbracadabra: true,
   reducedMotion: false,
   splashWindow: true,
@@ -245,6 +250,7 @@ function clean(rawValues: unknown): Settings {
       GAIA_MAGNITUDE_MIN,
       GAIA_MAGNITUDE_MAX
     ),
+    abracadabraStrength: oneOf(g['abracadabraStrength'], ABRACADABRA_STRENGTHS, p.abracadabraStrength),
     // These three choices are not exposed in the Settings window: the
     // defaults always apply, even if an older file stores another value.
     animatedAbracadabra: p.animatedAbracadabra,

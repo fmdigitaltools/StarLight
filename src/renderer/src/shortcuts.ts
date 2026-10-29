@@ -63,6 +63,7 @@ export type ShortcutId =
   | 'markers'
   | 'stars'
   | 'crop'
+  | 'clipping'
   | 'panel'
   | 'fullScreen'
   | 'step1'
@@ -181,6 +182,7 @@ export const SHORTCUTS: Shortcut[] = [
   sc({ id: 'markers', group: 'View', combinations: [{ key: 'o' }] }, true),
   sc({ id: 'stars', group: 'View', combinations: [{ key: 's' }] }, true),
   sc({ id: 'crop', group: 'View', combinations: [{ key: 'c' }] }, true),
+  sc({ id: 'clipping', group: 'View', combinations: [{ key: 'k' }] }, true),
   sc({ id: 'panel', group: 'View', combinations: [{ key: 'tab', label: ['Tab'] }] }, true),
   sc({ id: 'fullScreen', group: 'View', combinations: [{ key: 'f11', label: ['F11'] }], alsoInFields: true }, true),
 

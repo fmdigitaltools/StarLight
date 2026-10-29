@@ -1,9 +1,8 @@
 import type { FileHandleInfo, FrameMetadata, ImageData32, RecognizedObject } from '@shared/types'
 import { readFits } from '@core/fits/reader'
 import { debayer } from '@core/image/debayer'
-import { autoStretch } from '@core/image/stretch'
-import { ABRACADABRA_PROCESSING } from '@core/image/chain'
-import { abracadabraFinish, edgeTrimming, knownLinear } from '@core/image/abracadabraFinish'
+import { abracadabraProcessing } from '@core/image/chain'
+import { abracadabraFinish, edgeTrimming, knownLinear, openingStretch } from '@core/image/abracadabraFinish'
 import { cropDimensions, type Crop } from '@core/export/crop'
 import { FORMATS } from '@core/export/encoding'
 import { recognizeObjects } from '@core/catalog/recognition'
@@ -16,7 +15,7 @@ import { produceExport } from '../export/exportImage'
 import { prepareRawInBrowser } from '../workers/libraw'
 import { analysisWorkerPool } from '../workers/pool'
 import type { Adjustments } from '../store/appStore'
-import { captionChoice } from '../settings'
+import { captionChoice, readSettings } from '../settings'
 import { collectCaptionData } from '@core/export/caption'
 import { loadLogo } from '../export/starLightLogo'
 import { t } from '@shared/i18n/i18n'
@@ -81,6 +80,8 @@ interface LoadedFile {
   image: ImageData32
   metadata: FrameMetadata
   header: Record<string, string | number | boolean | null>
+  /** Bits per value in the file (see `openingStretch`). */
+  bitpix: number
 }
 
 class Interruption extends Error {}
@@ -108,7 +109,8 @@ export async function readBatchFile(f: FileHandleInfo): Promise<LoadedFile> {
         data: new Float32Array(r.data)
       },
       metadata: info.metadata,
-      header: info.header.cards as Record<string, string | number | boolean | null>
+      header: info.header.cards as Record<string, string | number | boolean | null>,
+      bitpix: 16
     }
   }
   const readResult = readFits(new Uint8Array(buffer), f.fileName)
@@ -119,7 +121,8 @@ export async function readBatchFile(f: FileHandleInfo): Promise<LoadedFile> {
   return {
     image: debayer(readResult.image, readResult.metadata.bayer),
     metadata: info.metadata,
-    header: info.header.cards as Record<string, string | number | boolean | null>
+    header: info.header.cards as Record<string, string | number | boolean | null>,
+    bitpix: readResult.bitpix
   }
 }
 
@@ -149,7 +152,7 @@ export async function prepareBatchFile(
   const { image: original, metadata } = readResult
   // As when opening in the app: automatic stretch and objects recognised from
   // the exposure data.
-  const openStretch = autoStretch(original)
+  const openStretch = openingStretch(original, metadata, readResult.bitpix)
   const openedObjects = recognizeObjects(metadata)
   let adjustments: Adjustments = {
     ...recipe.adjustments,
@@ -171,7 +174,7 @@ export async function prepareBatchFile(
       // Mirror and rotations from the bar apply to the open image, not to the batch.
       orientation: { mirrored: false, quarters: 0, degrees: 0 }
     },
-    recipe.abracadabra ? ABRACADABRA_PROCESSING : recipe.processing,
+    recipe.abracadabra ? abracadabraProcessing(readSettings().abracadabraStrength) : recipe.processing,
     recipe.abracadabra,
     recipe.abracadabra ? 'Abracadabra' : t('batchRunBatch.processing')
   )
@@ -179,7 +182,13 @@ export async function prepareBatchFile(
 
   let edges: Crop | null = null
   if (recipe.abracadabra) {
-    const finish = abracadabraFinish(result.image, result.measurements, knownLinear(metadata))
+    const finish = abracadabraFinish(
+      result.image,
+      result.measurements,
+      knownLinear(metadata),
+      readResult.bitpix,
+      readSettings().abracadabraStrength
+    )
     adjustments = { ...adjustments, ...finish.adjustments }
     edges = finish.crop
   } else if (result.measurements) {

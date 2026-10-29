@@ -34,7 +34,18 @@ import { readFits } from '../src/core/fits/reader'
 import { debayer } from '../src/core/image/debayer'
 import { autoStretch } from '../src/core/image/stretch'
 import { computeStats, MAD_TO_SIGMA } from '../src/core/image/stats'
-import { firstStage, thirdStage, applyReductionAmount, ABRACADABRA_PROCESSING, type FirstStageMeasurements } from '../src/core/image/chain'
+import {
+  firstStage,
+  thirdStage,
+  applyReductionAmount,
+  abracadabraProcessing,
+  type AbracadabraStrength,
+  type FirstStageMeasurements,
+  type ProcessingParams
+} from '../src/core/image/chain'
+import { NEUTRAL_WAVELETS } from '../src/core/image/wavelets'
+import { NEUTRAL_STAR_REDUCTION } from '../src/core/image/starReduction'
+import { NEUTRAL_LOCAL_CONTRAST } from '../src/core/image/localContrast'
 import { nlBayes, STRIP_MARGIN } from '../src/core/image/nlbayes'
 import { abracadabraFinish, knownLinear } from '../src/core/image/abracadabraFinish'
 import { applyCorrections, type CorrectionParams } from '../src/core/export/processing'
@@ -345,6 +356,28 @@ function skyBackground(im: ImageData32): [number, number, number] {
   return im.channels === 3 ? [m(0), m(1), m(2)] : [m(0), m(0), m(0)]
 }
 
+/**
+ * Steps switched off to find which one causes a defect, comma separated in
+ * SKIP: hotPixels, trails, background, colorNoise, deconvolution, nlBayes,
+ * thirdStage (wavelets, star reduction and local contrast together), or one
+ * of wavelets, starReduction, localContrast.
+ * Use a different output folder, or the chain kept by REUSE is mixed up.
+ */
+/** Strength of Abracadabra (gentle, balanced, strong), in STRENGTH; balanced if missing. */
+const strength = (process.env.STRENGTH ?? 'balanced') as AbracadabraStrength
+
+const skipped = new Set((process.env.SKIP ?? '').split(',').filter((s) => s !== ''))
+
+function withSkipped(p: ProcessingParams): ProcessingParams {
+  return {
+    ...p,
+    ...(skipped.has('hotPixels') ? { hotPixels: false } : {}),
+    ...(skipped.has('trails') ? { trails: { ...p.trails, active: false } } : {}),
+    ...(skipped.has('background') ? { background: 'none' as const } : {}),
+    ...(skipped.has('colorNoise') ? { colorNoise: 0 } : {})
+  }
+}
+
 async function main(): Promise<void> {
   const [output, ...list] = process.argv.slice(2)
   if (!output) {
@@ -375,11 +408,23 @@ async function main(): Promise<void> {
     } else {
       // As in the app: the caller runs the deconvolution (there in stripes
       // over several workers, with the same result).
-      const first = firstStage(original, ABRACADABRA_PROCESSING, true, true)
+      const first = firstStage(original, withSkipped(abracadabraProcessing(strength)), true, true)
       let im = first.image
-      if (first.parameters.deconvolution.iterations > 0) im = deconvolve(im, first.parameters.deconvolution)
-      if (first.parameters.nlBayes > 0) im = applyReductionAmount(im, await nlBayesParallel(im), first.parameters.nlBayes)
-      const third = thirdStage(im, first.parameters, true)
+      if (first.parameters.deconvolution.iterations > 0 && !skipped.has('deconvolution')) {
+        im = deconvolve(im, first.parameters.deconvolution)
+      }
+      if (first.parameters.nlBayes > 0 && !skipped.has('nlBayes')) {
+        im = applyReductionAmount(im, await nlBayesParallel(im), first.parameters.nlBayes)
+      }
+      let third = skipped.has('thirdStage') ? { image: im, parameters: first.parameters } : thirdStage(im, first.parameters, true)
+      // A single tool of the third stage off: the automatic choices of the
+      // others are kept and the stage is run again without choosing.
+      const neutralThird: Partial<ProcessingParams> = {
+        ...(skipped.has('wavelets') ? { wavelets: NEUTRAL_WAVELETS } : {}),
+        ...(skipped.has('starReduction') ? { starReduction: NEUTRAL_STAR_REDUCTION } : {}),
+        ...(skipped.has('localContrast') ? { localContrast: NEUTRAL_LOCAL_CONTRAST } : {})
+      }
+      if (Object.keys(neutralThird).length > 0) third = thirdStage(im, { ...third.parameters, ...neutralThird }, false)
       processed = third.image
       chainMeasurements = first.measurements
       writeF32(cache, processed)
@@ -388,7 +433,7 @@ async function main(): Promise<void> {
     }
     const tChain = Date.now()
 
-    const fin = abracadabraFinish(processed, chainMeasurements, knownLinear(readResult.metadata))
+    const fin = abracadabraFinish(processed, chainMeasurements, knownLinear(readResult.metadata), readResult.bitpix, strength)
     const r = fin.adjustments
     const parAfter: CorrectionParams = {
       ...r,

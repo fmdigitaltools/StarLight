@@ -79,6 +79,13 @@ export interface ProcessingParams {
   trails: TrailsParams
   background: BackgroundMode
   rbfBackground: RbfBackgroundParams
+  /**
+   * With the sky background on, evens out the sky of the wedges poorly
+   * covered by field rotation (see wedges.ts). It can be turned off for
+   * data with very little grain, where the detail of an object could be
+   * taken for a wedge.
+   */
+  wedgeEqualization: boolean
   balance: BalanceMode
   /** Gains from the photometric calibration, computed on request. */
   photometricGains: [number, number, number] | null
@@ -101,6 +108,12 @@ export interface ProcessingParams {
    * useProcessing.ts). Disabled ones are kept only to remember their values.
    */
   plugin: ActivePlugin[]
+  /**
+   * Only for the automatic choice (see `abracadabraProcessing`): multiplies
+   * the doses chosen by measuring the image. Removed from the parameters
+   * returned by `thirdStage`, so it never reaches the interface or a project.
+   */
+  automaticStrength?: number
 }
 
 export const NEUTRAL_PROCESSING: ProcessingParams = {
@@ -108,6 +121,7 @@ export const NEUTRAL_PROCESSING: ProcessingParams = {
   trails: NEUTRAL_TRAILS,
   background: 'none',
   rbfBackground: DEFAULT_RBF_BACKGROUND,
+  wedgeEqualization: true,
   balance: 'none',
   photometricGains: null,
   colorNoise: 0,
@@ -162,6 +176,32 @@ export const ABRACADABRA_PROCESSING: ProcessingParams = {
   // looked clumpier and faint stars were lost. Most of the fine grain
   // remains, which the eye reads as natural.
   nlBayes: 0.3
+}
+
+/** How hard Abracadabra works: lighter on data that is already clean, heavier on very noisy data. */
+export type AbracadabraStrength = 'gentle' | 'balanced' | 'strong'
+export const ABRACADABRA_STRENGTHS: readonly AbracadabraStrength[] = ['gentle', 'balanced', 'strong']
+
+/**
+ * Factor on the doses of the tools that change the look (color grain,
+ * NL-Bayes, deconvolution, wavelets, star reduction, local contrast,
+ * saturation). Defects, sky background and color balance are corrections,
+ * not a matter of taste, and stay the same. "Balanced" is the measured
+ * choice; "strong" stops at 1.4 because beyond it the wavelets and local
+ * contrast leave halos and the noise reduction a plastic look.
+ */
+export const STRENGTH_FACTOR: Record<AbracadabraStrength, number> = { gentle: 0.5, balanced: 1, strong: 1.4 }
+
+/** Parameters of Abracadabra at the chosen strength. */
+export function abracadabraProcessing(strength: AbracadabraStrength = 'balanced'): ProcessingParams {
+  const f = STRENGTH_FACTOR[strength]
+  if (f === 1) return ABRACADABRA_PROCESSING
+  return {
+    ...ABRACADABRA_PROCESSING,
+    colorNoise: Math.min(1, ABRACADABRA_PROCESSING.colorNoise * f),
+    nlBayes: Math.min(1, ABRACADABRA_PROCESSING.nlBayes * f),
+    automaticStrength: f
+  }
 }
 
 /** Measurements of the first stage, for the report and the crop. */
@@ -276,9 +316,13 @@ export function firstStage(
 
   // Field-rotation wedges, for the crop suggestion: measured here, on the
   // still intact grain (see wedges.ts).
-  const wedges = p.background !== 'none' ? wedgeMap(image) : null
+  const wedges = withWedges(p) ? wedgeMap(image) : null
 
-  if (automatic) usedValues.deconvolution = automaticDeconvolution(image)
+  if (automatic) {
+    const d = automaticDeconvolution(image)
+    const f = p.automaticStrength ?? 1
+    usedValues.deconvolution = f === 1 ? d : { ...d, iterations: Math.min(50, Math.round(d.iterations * f)) }
+  }
   if (!externalDeconvolution && usedValues.deconvolution.iterations > 0) {
     image = deconvolve(image, usedValues.deconvolution, undefined, true)
   }
@@ -332,7 +376,8 @@ export function thirdStage(
   // The wavelets even out their grain, then their sky is evened out, which
   // the background model, a soft surface, does not follow across its
   // sharp step.
-  const wedges = p.background !== 'none' ? findWedges(im) : null
+  const wedges = withWedges(p) ? findWedges(im) : null
+  const f = automatic ? (p.automaticStrength ?? 1) : 1
   if (narrowbandActive(usedValues) && im.channels === 3) {
     im = bandsToPalette(im, usedValues, automatic, bands, colorGains)
   } else {
@@ -340,7 +385,7 @@ export function thirdStage(
     // needed twice on the same image (to choose and to apply): they are
     // taken once, the result is the same.
     let measurements = automatic ? analyzeWavelets(im) : undefined
-    if (measurements) usedValues.wavelets = automaticWavelets(im, measurements)
+    if (measurements) usedValues.wavelets = strongerWavelets(automaticWavelets(im, measurements), f)
     im = imageWavelets(im, usedValues.wavelets, measurements, true)
     measurements = undefined
   }
@@ -351,16 +396,36 @@ export function thirdStage(
     // lower their brightness: in a finished image the stars stay full.
     // The full reduction remains available by hand in the Process step.
     const choice = automaticStarReduction(im, starMeasurements)
-    usedValues.starReduction = { quantity: Math.round(choice.quantity * 50) / 100, attenuation: 0 }
+    usedValues.starReduction = { quantity: Math.min(1, Math.round(choice.quantity * 50 * f) / 100), attenuation: 0 }
   }
   if (usedValues.starReduction.quantity > 0 || usedValues.starReduction.attenuation > 0) {
     im = reduceStars(im, usedValues.starReduction, starMeasurements, true)
   }
   if (starMeasurements) releaseStarAnalysis(starMeasurements)
   starMeasurements = undefined
-  if (automatic) usedValues.localContrast = automaticLocalContrast(im)
+  if (automatic) {
+    const c = automaticLocalContrast(im)
+    usedValues.localContrast = { ...c, strength: Math.min(1, c.strength * f) }
+  }
   if (usedValues.localContrast.strength > 0) im = localContrast(im, usedValues.localContrast, true)
+  // The strength has done its job: the values chosen stay editable by hand.
+  delete usedValues.automaticStrength
   return { image: im, parameters: usedValues }
+}
+
+/** True if the wedges are searched for and evened out (see `wedgeEqualization`). */
+function withWedges(p: ProcessingParams): boolean {
+  // Parameters saved before the switch existed have no value: on, as then.
+  return p.background !== 'none' && p.wedgeEqualization !== false
+}
+
+/** Automatic wavelets at the chosen strength (see `STRENGTH_FACTOR`). */
+function strongerWavelets(w: WaveletParams, f: number): WaveletParams {
+  if (f === 1) return w
+  return {
+    noiseReduction: w.noiseReduction.map((v) => Math.min(1, v * f)),
+    sharpness: w.sharpness.map((v) => Math.min(2, v * f))
+  }
 }
 
 /**
@@ -395,7 +460,7 @@ function bandsToPalette(
   const b = givenBands ?? extractBands(im, usedValues.narrowband.sensor, colorGains)
   // The automatic choice looks at the brightness of the image, as without
   // narrowband; the thresholds are then measured on each band.
-  if (automatic) usedValues.wavelets = automaticWavelets(im)
+  if (automatic) usedValues.wavelets = strongerWavelets(automaticWavelets(im), usedValues.automaticStrength ?? 1)
   const cleanedItems: ExtractedBands = { ...b, ...cleanBands(b, usedValues.wavelets, usedValues.colorNoise) }
   const perStars = usedValues.narrowband.naturalStars ? imageWavelets(im, usedValues.wavelets) : im
   return narrowband(perStars, usedValues.narrowband, cleanedItems)

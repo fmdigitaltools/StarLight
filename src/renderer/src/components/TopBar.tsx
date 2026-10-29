@@ -14,6 +14,7 @@ import { useLibrary } from '../hooks/useLibrary'
 import { GalaxyLogo } from './GalaxyLogo'
 import { VERSION_LABEL } from '@shared/version'
 import { MenuBar } from './MenuBar'
+import { AbracadabraStrength } from './AbracadabraStrength'
 import { WhatsNewButton } from './WhatsNewButton'
 import { ProjectDialogs } from './ProjectDialogs'
 import { HistoryControls } from './HistoryControls'
@@ -206,6 +207,7 @@ export function TopBar(): JSX.Element {
             </span>
             <span className="sl-abracadabra-text">{t('topBar.magicWand.label')}</span>
           </button>
+          <AbracadabraStrength />
         </div>
 
       </div>
