@@ -1,7 +1,7 @@
 {
   "name": "starlight",
   "productName": "StarLight",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "StarLight — elaborazione delle immagini astronomiche: file FITS e XISF, immagini TIFF e PNG, formati RAW delle fotocamere",
   "author": {
     "name": "FM Digital Tools",

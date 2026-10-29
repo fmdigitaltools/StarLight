@@ -14,7 +14,7 @@ export const APP_NAME = 'StarLight'
  * releases (1.0.0-beta.1, 1.0.0-beta.2…, then 1.0.0). After 1.0.0: PATCH for
  * fixes, MINOR for compatible new features, MAJOR for incompatible changes.
  */
-export const APP_VERSION = '1.0.0-beta.1'
+export const APP_VERSION = '1.0.0-beta.2'
 
 /** Pre-release tag of the version ("beta" in 1.0.0-beta.1), empty for a stable release. */
 export const PRERELEASE = /^\d+\.\d+\.\d+-([0-9A-Za-z]+)/.exec(APP_VERSION)?.[1]?.toLowerCase() ?? ''
@@ -23,11 +23,10 @@ export const PRERELEASE = /^\d+\.\d+\.\d+-([0-9A-Za-z]+)/.exec(APP_VERSION)?.[1]
 export const APP_STAGE = PRERELEASE === 'rc' ? 'RC' : PRERELEASE.charAt(0).toUpperCase() + PRERELEASE.slice(1)
 
 /**
- * Code name. It was "Andromeda" throughout the Alpha stage; from the Beta
- * onwards each new version is named after a different well-known celestial
- * object, never repeated (patch releases keep the name of their version).
+ * Code name: each version is named after a well-known celestial object
+ * (patch releases keep the name of their version).
  */
-export const APP_CODENAME = 'Vega'
+export const APP_CODENAME = 'Andromeda'
 
 /** Compact label for the top bar, e.g. "v1.0.0-beta.1": the version already names the stage. */
 export const VERSION_LABEL = `v${APP_VERSION}`

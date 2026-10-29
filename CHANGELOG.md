@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html): test releases carry a pre-release tag
 (`1.0.0-beta.1`), stable releases do not. Each version also has a code name, a well-known celestial object.
 
+## [1.0.0-beta.2] «Andromeda»
+
+### Added
+
+- Abracadabra strength (Gentle, Balanced, Strong), from the arrow next to the button; it also applies to batch
+  processing.
+- Clipping warning in the viewer (K key): points crushed to full black in blue, burnt points in magenta.
+- “Even out poorly covered edges” switch in Defects and sky background.
+
+### Fixed
+
+- Abracadabra dug dark blotches and holes into galaxies with very little grain (survey images, already
+  background-subtracted): their detail was mistaken for edges poorly covered by field rotation.
+- Already processed 8-bit images were stretched a second time on opening.
+- The progress bar stayed stuck when a deconvolution worker failed.
+
 ## [1.0.0-beta.1] «Vega»
 
 First public Beta.
@@ -24,4 +40,5 @@ First public Beta.
 - Interface in Italian and English.
 - Automatic updates, with a stable and a test (Beta) channel.
 
+[1.0.0-beta.2]: https://github.com/fmdigitaltools/StarLight/releases/tag/v1.0.0-beta.2
 [1.0.0-beta.1]: https://github.com/fmdigitaltools/StarLight/releases/tag/v1.0.0-beta.1

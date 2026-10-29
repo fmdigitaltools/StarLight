@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.0.0-beta.2",
+    "entries": [
+      "Abracadabra strength: from the arrow next to the button choose Gentle, Balanced or Strong. It also applies to batch processing.",
+      "New clipping warning (K key): in the viewer it colors in blue the points crushed to full black and in magenta the burnt ones.",
+      "New “Even out poorly covered edges” switch in Defects and sky background, to turn off the evening out of the edges left by field rotation.",
+      "Abracadabra no longer digs dark blotches and holes into galaxies taken with very little grain, such as images from professional archives.",
+      "Already processed 8-bit images (PNG and TIFF) open as they are, without being stretched a second time.",
+      "If a deconvolution computation fails, the progress bar no longer stays stuck."
+    ]
+  },
+  {
     "version": "1.0.0-beta.1",
     "entries": [
       "First public Beta of StarLight: free and open source, under the GPL-3.0 license.",

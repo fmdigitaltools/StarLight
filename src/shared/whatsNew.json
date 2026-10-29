@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.0.0-beta.2",
+    "entries": [
+      "Intensità di Abracadabra: dalla freccia accanto al pulsante scegli Delicata, Equilibrata o Spinta. Vale anche per l’elaborazione in serie.",
+      "Nuovo avviso dei pixel tagliati (tasto K): nel visore colora in blu i punti finiti a nero pieno e in magenta quelli bruciati.",
+      "Nuovo interruttore «Pareggia i bordi poco coperti» in Difetti e fondo cielo, per spegnere il pareggio dei bordi lasciati dalla rotazione di campo.",
+      "Abracadabra non scava più macchie e buchi scuri nelle galassie riprese con pochissima grana, come le immagini degli archivi professionali.",
+      "Le immagini già elaborate a 8 bit (PNG e TIFF) si aprono così come sono, senza essere distese una seconda volta.",
+      "Se un calcolo della deconvoluzione non riesce, la barra di avanzamento non resta più bloccata."
+    ]
+  },
+  {
     "version": "1.0.0-beta.1",
     "entries": [
       "Prima Beta pubblica di StarLight: gratuita e open source, con licenza GPL-3.0.",
